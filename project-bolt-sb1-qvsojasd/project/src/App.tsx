@@ -160,6 +160,12 @@ const DEMO_PROPERTIES: Property[] = [
 ];
 
 const WHATSAPP_NUMBER = '25377313443';
+const DARNA_SERVICE_FEE_RATE = 0.10;
+// Unified fee-inclusive price: the stored `price` is the base price BEFORE the
+// 10% tenant service fee; the displayed price includes it exactly once.
+function finalPrice(base: number): number {
+  return Math.round(base * (1 + DARNA_SERVICE_FEE_RATE) * 100) / 100;
+}
 const AREA_OPTIONS = ['جيبوتي المدينة', 'علي صبيح', 'تاجورة', 'أوبوك', 'أرتابو', 'دخيل'];
 const TYPE_OPTIONS = ['شقة', 'فيلا', 'منزل', 'استوديو', 'غرفة'];
 
@@ -199,7 +205,7 @@ export default function App() {
   }, []);
 
   const buildWhatsAppLink = (prop: Property) => {
-    const msg = `السلام عليكم، أرغب بالاستفسار عن العقار ${prop.id} — ${prop.title}. السعر المعلن: ${prop.price} USD ${prop.priceUnit}. الرابط: [ضع-رابط-العقار]`;
+    const msg = `السلام عليكم، أرغب بالاستفسار عن العقار ${prop.id} — ${prop.title}. السعر النهائي (شامل الرسوم): ${finalPrice(prop.price)} USD ${prop.priceUnit}. الرابط: [ضع-رابط-العقار]`;
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
   };
 
@@ -404,14 +410,13 @@ export default function App() {
               </div>
 
               <div className="text-2xl font-bold text-teal-700 mb-4">
-                ${selectedProperty.price}
+                ${finalPrice(selectedProperty.price)}
                 <span className="text-sm font-normal text-stone-500"> {selectedProperty.priceUnit}</span>
               </div>
 
               {/* Fee disclosure */}
               <div className="bg-amber-50 border-r-4 border-amber-600 rounded-lg p-4 text-sm leading-relaxed mb-6">
-                السعر المعروض هو السعر الأساسي للإقامة. رسوم خدمة المنصة 10% من إجمالي قيمة الإقامة تضاف بشكل منفصل.
-                سيتم تقديم عرض سعر مكتوب مفصل يشمل: مبلغ الإقامة، رسوم الخدمة، أي رسوم أخرى، والإجمالي قبل تأكيد الحجز.
+                السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا. تفاصيل الرسوم موضحة في صفحة سياسة الرسوم.
               </div>
 
               {/* Gallery */}
@@ -602,11 +607,11 @@ function PropertyCard({ prop, onClick }: { prop: Property; onClick: () => void }
           <span className="bg-stone-100 px-2 py-0.5 rounded text-xs text-stone-600">{prop.bedrooms} غرف</span>
         </div>
         <div className="text-xl font-bold text-teal-700 mb-1">
-          ${prop.price}
+          ${finalPrice(prop.price)}
           <span className="text-xs font-normal text-stone-500"> {prop.priceUnit}</span>
         </div>
-        <div className="text-xs text-amber-800 bg-amber-50 border border-amber-200 rounded px-2 py-1 mb-3">
-          السعر الأساسي. رسوم خدمة 10% تضاف منفصلاً.
+        <div className="text-xs text-teal-800 bg-teal-50 border border-teal-200 rounded px-2 py-1 mb-3">
+          ✓ السعر النهائي شامل رسوم الخدمة (10%)
         </div>
         <button className="mt-auto bg-teal-700 hover:bg-teal-800 text-white text-center py-2.5 rounded-lg font-semibold text-sm transition-colors">
           عرض التفاصيل
@@ -651,19 +656,18 @@ function FeesPage() {
       </ul>
       <h2 className="text-lg font-bold mb-2">رسوم خدمة المستأجر</h2>
       <ul className="space-y-2 mb-4">
-        <li>• رسوم خدمة مقترحة: 10% من إجمالي قيمة الإقامة لكامل مدة الإقامة.</li>
-        <li>• رسوم منفصلة عن السعر المعلن. لا يتم إخفاؤها في السعر.</li>
-        <li>• يتم عرضها بوضوح في صفحة العقار قرب السعر.</li>
+        <li>• رسوم خدمة ثابتة: 10% من إجمالي قيمة الإقامة لكامل مدة الإقامة.</li>
+        <li>• الرسوم مشمولة مسبقًا في السعر الرقمي الظاهر للعميل، وتُحتسب مرة واحدة فقط.</li>
+        <li>• لا تُضاف أي رسوم خدمة أخرى لاحقًا؛ تفاصيل الرسوم في صفحة سياسة الرسوم.</li>
         <li>• قبل تأكيد الحجز، يُرسل عرض سعر مكتوب مفصل يشمل جميع البنود.</li>
       </ul>
       <h2 className="text-lg font-bold mb-2">مثال توضيحي</h2>
-      <p className="mb-2">بالنسبة لإقامة بقيمة 1,000 دولار أمريكي:</p>
+      <p className="mb-2">مثال: سعر أساسي 100 دولار لليلة → السعر النهائي المعروض 110 دولارات / الليلة (شامل الرسوم). وبالنسبة لإقامة بقيمة 1,000 دولار أمريكي:</p>
       <ul className="space-y-1 mb-4">
-        <li>• قيمة الإقامة: 1,000 دولار</li>
-        <li>• عمولة المالك (10%): 100 دولار</li>
-        <li>• رسوم خدمة المستأجر (10%): 100 دولار</li>
+        <li>• قيمة الإقامة (السعر الأساسي): 1,000 دولار</li>
+        <li>• عمولة المالك (10%): 100 دولار — التزام تعاقدي منفصل على المالك.</li>
+        <li>• رسوم خدمة المستأجر (10%) مشمولة في السعر الظاهر: 100 دولار، فيكون السعر الظاهر 1,100 دولار.</li>
         <li>• إجمالي إيراد المنصة المحتمل: 200 دولار (قبل المصاريف والضرائب)</li>
-        <li>• إذا دفع المستأجر مباشرة للمالك: إجمالي ما يدفعه المستأجر = 1,100 دولار</li>
       </ul>
       <div className="bg-amber-50 border-r-4 border-amber-600 p-3 rounded text-sm">
         <ShieldAlert size={18} className="inline ml-1 text-amber-600" />
@@ -722,7 +726,7 @@ function TermsPage() {
         <h2 className="text-lg font-bold">طبيعة المنصة</h2>
         <p>دارنا DJ منصة وسيطة لعرض العقارات للإيجار. لا تملك العقارات ولا تتحكم بتوافرها الفعلي. الإدارة تتحقق من التوافر والسعر مع المالك قبل الإرسال.</p>
         <h2 className="text-lg font-bold">الأسعار والرسوم</h2>
-        <p>السعر المعروض هو السعر الأساسي. رسوم خدمة 10% تضاف بشكل منفصل. عرض السعر المكتوب هو المرجع الملزم قبل الحجز.</p>
+        <p>السعر المعروض على بطاقات العقارات وصفحة التفاصيل هو السعر النهائي الشامل لرسوم خدمة المنصة (10%)، ويُحتسب مرة واحدة فقط. لا تُضاف أي رسوم خدمة أخرى لاحقًا. عرض السعر المكتوب هو المرجع الملزم قبل الحجز.</p>
         <h2 className="text-lg font-bold">مسؤولية المستخدم</h2>
         <p>الاستفسار عبر واتساب لا يشكل حجزًا مؤكدًا. المستأجر ملزم بمراجعة عرض السعر المكتوب والموافقة عليه قبل الالتزام.</p>
       </div>

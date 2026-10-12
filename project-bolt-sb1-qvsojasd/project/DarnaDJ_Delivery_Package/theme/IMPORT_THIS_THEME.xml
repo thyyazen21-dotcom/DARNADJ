@@ -223,7 +223,8 @@
   }
   .property-card .card-image {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 4 / 3;
+    height: auto;
     object-fit: cover;
     background: $(border.color);
   }
@@ -317,6 +318,31 @@
     border-radius: 6px;
     font-size: .9rem;
     line-height: 1.7;
+  }
+
+  /* ===== Price (final, fee-inclusive) ===== */
+  .darna-price-value { display: inline-block; }
+  .price-missing {
+    display: inline-block;
+    font-size: .8rem;
+    font-weight: 600;
+    color: #8a6d00;
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 6px;
+    padding: 4px 8px;
+    line-height: 1.5;
+  }
+  .price-included-badge {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 600;
+    color: #0a5d4c;
+    background: #e7f5f0;
+    border: 1px solid #bfe3d8;
+    border-radius: 6px;
+    padding: 3px 8px;
+    margin-bottom: 10px;
   }
 
   /* ===== Gallery ===== */
@@ -664,7 +690,7 @@
                       <article class='property-card'>
                         <a expr:href='data:post.url'>
                           <b:if cond='data:post.featuredImage'>
-                            <img class='card-image' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 400, &quot;1:1&quot;)'/>
+                            <img class='card-image' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 600, &quot;4:3&quot;)'/>
                           <b:else/>
                             <div class='card-image' style='display:flex;align-items:center;justify-content:center;color:#999;font-size:.9rem;'>لا توجد صورة</div>
                           </b:if>
@@ -678,10 +704,13 @@
                               </b:loop>
                             </b:if>
                           </div>
-                          <div class='card-price' expr:id='&quot;card-price-&quot; + data:post.id'>
-                            <data:post.snippet/>
+                          <div class='card-price' data-darna-price='1' data-lang='ar' expr:id='&quot;card-price-&quot; + data:post.id'>
+                            <b:loop values='data:post.labels' var='label'>
+                              <span class='darna-label' style='display:none'><data:label.name/></span>
+                            </b:loop>
+                            <span class='darna-price-value'>&#8230;</span>
                           </div>
-                          <div class='fee-note'>السعر المعروض هو السعر الأساسي. رسوم خدمة المنصة 10% تضاف بشكل منفصل في عرض السعر النهائي.</div>
+                          <div class='price-included-badge'>&#10003; السعر النهائي شامل رسوم خدمة المنصة (10%)</div>
                           <a class='card-link' expr:href='data:post.url'>عرض التفاصيل</a>
                         </div>
                       </article>
@@ -749,11 +778,16 @@
                         </b:loop>
                       </b:if>
                     </div>
-                    <div class='detail-price'><data:post.snippet/></div>
+                    <div class='detail-price' data-darna-price='1' data-lang='ar'>
+                      <b:loop values='data:post.labels' var='label'>
+                        <span class='darna-label' style='display:none'><data:label.name/></span>
+                      </b:loop>
+                      <span class='darna-price-value'>&#8230;</span>
+                    </div>
                   </div>
 
                   <div class='detail-fee-disclosure'>
-                    السعر المعروض هو السعر الأساسي للإقامة. رسوم خدمة المنصة 10% من إجمالي قيمة الإقامة تضاف بشكل منفصل. سيتم تقديم عرض سعر مكتوب مفصل يشمل: مبلغ الإقامة، رسوم الخدمة، أي رسوم أخرى، والإجمالي قبل تأكيد الحجز.
+                    السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا. تفاصيل الرسوم موضحة في <a expr:href='data:blog.homepageUrl + &quot;p/fees.html&quot;'>صفحة سياسة الرسوم</a>.
                   </div>
 
                   <div class='gallery-container'>
@@ -832,7 +866,7 @@
                       <article class='property-card'>
                         <a expr:href='data:post.url'>
                           <b:if cond='data:post.featuredImage'>
-                            <img class='card-image' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 400, &quot;1:1&quot;)'/>
+                            <img class='card-image' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 600, &quot;4:3&quot;)'/>
                           <b:else/>
                             <div class='card-image' style='display:flex;align-items:center;justify-content:center;color:#999;font-size:.9rem;'>لا توجد صورة</div>
                           </b:if>
@@ -846,8 +880,13 @@
                               </b:loop>
                             </b:if>
                           </div>
-                          <div class='card-price'><data:post.snippet/></div>
-                          <div class='fee-note'>رسوم خدمة 10% تضاف بشكل منفصل</div>
+                          <div class='card-price' data-darna-price='1' data-lang='ar'>
+                            <b:loop values='data:post.labels' var='label'>
+                              <span class='darna-label' style='display:none'><data:label.name/></span>
+                            </b:loop>
+                            <span class='darna-price-value'>&#8230;</span>
+                          </div>
+                          <div class='price-included-badge'>&#10003; شامل رسوم الخدمة (10%)</div>
                           <a class='card-link' expr:href='data:post.url'>عرض التفاصيل</a>
                         </div>
                       </article>
@@ -940,7 +979,7 @@
 
         <b:widget id='PopularPosts1' locked='false' title='عقارات شائعة' type='PopularPosts' version='2'>
           <b:widget-settings>
-            <b:widget-setting name='numPostsToShow'>5</b:widget-setting>
+            <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
             <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
           </b:widget-settings>
           <b:includable id='main'>
@@ -1120,11 +1159,104 @@
     }, { passive: true });
   })();
 
+  // ===== Unified price logic (single source of truth) =====
+  // Recorded-price convention (Blogger post labels; separator may be ':' '-' or '_'):
+  //   price:100       -> base price BEFORE the 10% tenant service fee -> displayed = base * 1.10
+  //   pricefinal:110  -> final price ALREADY including the 10% fee    -> displayed as-is (no extra)
+  //   cur:USD         -> currency code (default USD)
+  //   per:night       -> pricing unit (night|day|week|month|stay)
+  // The 10% tenant service fee is applied exactly once. Never fabricate a price and never hide the numeric price.
+  var DARNA_SERVICE_FEE_RATE = 0.10;
+  var DARNA_PRICE_LABEL_RE = /^(pricefinal|price|cur|per)\s*[:\-_]\s*(.+)$/i;
+  var DARNA_CUR_SYMBOL = { USD:'$', EUR:'\u20AC', GBP:'\u00A3', JPY:'\u00A5', CNY:'\u00A5', INR:'\u20B9', NGN:'\u20A6', TRY:'\u20BA', RUB:'\u20BD', KRW:'\u20A9' };
+  var DARNA_CUR_NAME_AR = { USD:'\u062F\u0648\u0644\u0627\u0631', EUR:'\u064A\u0648\u0631\u0648', GBP:'\u062C\u0646\u064A\u0647 \u0625\u0633\u062A\u0631\u0644\u064A\u0646\u064A', MRU:'\u0623\u0648\u0642\u064A\u0629', DJF:'\u0641\u0631\u0646\u0643 \u062C\u064A\u0628\u0648\u062A\u064A', SAR:'\u0631\u064A\u0627\u0644', AED:'\u062F\u0631\u0647\u0645', EGP:'\u062C\u0646\u064A\u0647', MAD:'\u062F\u0631\u0647\u0645', QAR:'\u0631\u064A\u0627\u0644', KWD:'\u062F\u064A\u0646\u0627\u0631' };
+  var DARNA_UNITS = {
+    ar: { night:'\u0627\u0644\u0644\u064A\u0644\u0629', day:'\u0627\u0644\u064A\u0648\u0645', week:'\u0627\u0644\u0623\u0633\u0628\u0648\u0639', month:'\u0627\u0644\u0634\u0647\u0631', stay:'\u0645\u062F\u0629 \u0627\u0644\u0625\u0642\u0627\u0645\u0629' },
+    en: { night:'night', day:'day', week:'week', month:'month', stay:'stay' },
+    fr: { night:'nuit', day:'jour', week:'semaine', month:'mois', stay:'s\u00E9jour' }
+  };
+
+  function darnaParsePriceLabels(labels) {
+    var out = { base: null, final: null, cur: 'USD', per: '' };
+    (labels || []).forEach(function(raw) {
+      if (raw == null) return;
+      var m = DARNA_PRICE_LABEL_RE.exec(String(raw).trim());
+      if (!m) return;
+      var key = m[1].toLowerCase();
+      var val = m[2].trim();
+      if (key === 'price') out.base = val;
+      else if (key === 'pricefinal') out.final = val;
+      else if (key === 'cur') out.cur = val.toUpperCase();
+      else if (key === 'per') out.per = val.toLowerCase();
+    });
+    return out;
+  }
+
+  function darnaComputePrice(labels) {
+    var p = darnaParsePriceLabels(labels);
+    var num = null, source = null;
+    if (p.final !== null && isFinite(parseFloat(p.final))) {
+      num = parseFloat(p.final); source = 'final';
+    } else if (p.base !== null && isFinite(parseFloat(p.base))) {
+      num = parseFloat(p.base) * (1 + DARNA_SERVICE_FEE_RATE); source = 'base';
+    }
+    if (num === null || !isFinite(num)) return null;
+    num = Math.round(num * 100) / 100;
+    return { amount: num, currency: p.cur, per: p.per, source: source };
+  }
+
+  function darnaFormatPrice(info, lang) {
+    if (!info) return null;
+    lang = lang || 'ar';
+    var amount = (info.amount % 1 === 0) ? String(info.amount) : info.amount.toFixed(2);
+    var unit = '';
+    if (info.per) {
+      var map = DARNA_UNITS[lang] || DARNA_UNITS.en;
+      unit = map[info.per] || info.per;
+    }
+    if (lang === 'ar') {
+      var name = DARNA_CUR_NAME_AR[info.currency] || info.currency;
+      return amount + ' ' + name + (unit ? ' / ' + unit : '');
+    }
+    var sym = DARNA_CUR_SYMBOL[info.currency] || (info.currency + ' ');
+    return sym + amount + (unit ? ' / ' + unit : '');
+  }
+
+  function darnaRenderPrices() {
+    var nodes = document.querySelectorAll('[data-darna-price]');
+    Array.prototype.forEach.call(nodes, function(el) {
+      var labels = Array.prototype.map.call(el.querySelectorAll('.darna-label'), function(s) { return s.textContent; });
+      var out = el.querySelector('.darna-price-value');
+      if (!out) return;
+      var info = darnaComputePrice(labels);
+      if (!info) {
+        out.innerHTML = '<span class="price-missing">\u26A0 \u0628\u064A\u0627\u0646\u0627\u062A \u0627\u0644\u0633\u0639\u0631 \u063A\u064A\u0631 \u0645\u0643\u062A\u0645\u0644\u0629 \u2014 \u0623\u0636\u0641 \u062A\u0633\u0645\u064A\u0629 price:100 (\u0644\u0644\u0625\u062F\u0627\u0631\u0629)</span>';
+        return;
+      }
+      out.textContent = darnaFormatPrice(info, el.getAttribute('data-lang') || 'ar');
+    });
+  }
+
+  // Hide price-related labels from the meta chips (they are shown as the price, not as tags)
+  function darnaCleanMeta() {
+    var re = /^(pricefinal|price|cur|per)\s*[:\-_]/i;
+    Array.prototype.forEach.call(document.querySelectorAll('.card-meta span, .detail-meta span'), function(s) {
+      if (re.test(s.textContent.trim())) s.style.display = 'none';
+    });
+  }
+
+  // Expose for testing / debugging
+  window.darnaParsePriceLabels = darnaParsePriceLabels;
+  window.darnaComputePrice = darnaComputePrice;
+  window.darnaFormatPrice = darnaFormatPrice;
+  window.darnaRenderPrices = darnaRenderPrices;
+
   // Initialize on load
+  function darnaInit() { initGallery(); darnaCleanMeta(); darnaRenderPrices(); }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initGallery);
+    document.addEventListener('DOMContentLoaded', darnaInit);
   } else {
-    initGallery();
+    darnaInit();
   }
 })();
 //]]>
