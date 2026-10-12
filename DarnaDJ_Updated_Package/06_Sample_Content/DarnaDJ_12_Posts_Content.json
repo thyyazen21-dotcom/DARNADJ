@@ -1,0 +1,367 @@
+{
+  "generated": "2026-10-12",
+  "service_fee_rate": 0.1,
+  "currency": "USD",
+  "posts": [
+    {
+      "pid": "DJ-APT-0001",
+      "title": "شقة مفروشة حديثة في قلب المدينة",
+      "area": "جيبوتي المدينة",
+      "ptype": "شقة مفروشة",
+      "bed": 2,
+      "bath": 1,
+      "cap": 4,
+      "per": "month",
+      "price_label": "price:1000",
+      "base": 1000,
+      "final": 1100.0,
+      "currency": "USD",
+      "labels": [
+        "عقارات",
+        "للإيجار",
+        "جيبوتي المدينة",
+        "شقة مفروشة",
+        "price:1000",
+        "cur:USD",
+        "per:month"
+      ],
+      "labels_str": "عقارات, للإيجار, جيبوتي المدينة, شقة مفروشة, price:1000, cur:USD, per:month",
+      "images": [
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80&auto=format&fit=crop"
+      ],
+      "body": "<div class=\"property-entry\" dir=\"rtl\" lang=\"ar\">\n<div class=\"property-gallery\">\n  <img alt=\"شقة مفروشة حديثة في قلب المدينة - صورة 1\" src=\"https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"شقة مفروشة حديثة في قلب المدينة - صورة 2\" src=\"https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"شقة مفروشة حديثة في قلب المدينة - صورة 3\" src=\"https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80&auto=format&fit=crop\"/>\n</div>\n<p><strong>رقم العقار:</strong> DJ-APT-0001</p>\n<p><strong>السعر النهائي (شامل رسوم الخدمة 10%):</strong> 1100 دولار شهريًا</p>\n<p><strong>المنطقة:</strong> جيبوتي المدينة | <strong>النوع:</strong> شقة مفروشة</p>\n<p><strong>غرف النوم:</strong> 2 | <strong>الحمامات:</strong> 1 | <strong>السعة:</strong> 4 أشخاص</p>\n<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>\n<h2>وصف العقار</h2>\n<p>شقة مفروشة بالكامل بمساحة 90 م² في قلب جيبوتي المدينة، على مقربة من الأسواق والمطاعم والخدمات. تتميز بتشطيبات حديثة وإضاءة طبيعية وموقع حيوي مناسب للإقامات الطويلة.</p>\n<h2>المواصفات والخدمات</h2>\n<ul><li>تكييف في جميع الغرف</li><li>مطبخ مجهز بالكامل</li><li>إنترنت عالي السرعة</li><li>مصعد</li><li>حراسة على مدار الساعة</li><li>قريبة من المواصلات العامة</li></ul>\n<p>السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.</p>\n<p><a href=\"https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-APT-0001%20%E2%80%94%20%D8%B4%D9%82%D8%A9%20%D9%85%D9%81%D8%B1%D9%88%D8%B4%D8%A9%20%D8%AD%D8%AF%D9%8A%D8%AB%D8%A9%20%D9%81%D9%8A%20%D9%82%D9%84%D8%A8%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%201100%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D\">تحقق من التوافر عبر واتساب</a></p>\n</div>"
+    },
+    {
+      "pid": "DJ-VIL-0002",
+      "title": "فيلا فاخرة مع حديقة خاصة",
+      "area": "علي صبيح",
+      "ptype": "فيلا",
+      "bed": 4,
+      "bath": 3,
+      "cap": 8,
+      "per": "month",
+      "price_label": "price:2500",
+      "base": 2500,
+      "final": 2750.0,
+      "currency": "USD",
+      "labels": [
+        "عقارات",
+        "للإيجار",
+        "علي صبيح",
+        "فيلا",
+        "price:2500",
+        "cur:USD",
+        "per:month"
+      ],
+      "labels_str": "عقارات, للإيجار, علي صبيح, فيلا, price:2500, cur:USD, per:month",
+      "images": [
+        "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&q=80&auto=format&fit=crop"
+      ],
+      "body": "<div class=\"property-entry\" dir=\"rtl\" lang=\"ar\">\n<div class=\"property-gallery\">\n  <img alt=\"فيلا فاخرة مع حديقة خاصة - صورة 1\" src=\"https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"فيلا فاخرة مع حديقة خاصة - صورة 2\" src=\"https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"فيلا فاخرة مع حديقة خاصة - صورة 3\" src=\"https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&q=80&auto=format&fit=crop\"/>\n</div>\n<p><strong>رقم العقار:</strong> DJ-VIL-0002</p>\n<p><strong>السعر النهائي (شامل رسوم الخدمة 10%):</strong> 2750 دولار شهريًا</p>\n<p><strong>المنطقة:</strong> علي صبيح | <strong>النوع:</strong> فيلا</p>\n<p><strong>غرف النوم:</strong> 4 | <strong>الحمامات:</strong> 3 | <strong>السعة:</strong> 8 أشخاص</p>\n<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>\n<h2>وصف العقار</h2>\n<p>فيلا مستقلة بمساحة 320 م² في حي علي صبيح الهادئ، مع حديقة خاصة ومواقف سيارات. مناسبة للعائلات الكبيرة أو الإقامة الرسمية، وتوفر خصوصية ومساحات واسعة.</p>\n<h2>المواصفات والخدمات</h2>\n<ul><li>4 غرف نوم</li><li>3 حمامات</li><li>صالة واسعة</li><li>حديقة خاصة</li><li>موقف سيارات</li><li>خزان ماء</li><li>مولد كهرباء احتياطي</li></ul>\n<p>السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.</p>\n<p><a href=\"https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-VIL-0002%20%E2%80%94%20%D9%81%D9%8A%D9%84%D8%A7%20%D9%81%D8%A7%D8%AE%D8%B1%D8%A9%20%D9%85%D8%B9%20%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%AE%D8%A7%D8%B5%D8%A9.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%202750%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D\">تحقق من التوافر عبر واتساب</a></p>\n</div>"
+    },
+    {
+      "pid": "DJ-STD-0003",
+      "title": "استوديو مفروش قرب المركز التجاري",
+      "area": "جيبوتي المدينة",
+      "ptype": "استوديو",
+      "bed": 1,
+      "bath": 1,
+      "cap": 2,
+      "per": "night",
+      "price_label": "price:45",
+      "base": 45,
+      "final": 49.5,
+      "currency": "USD",
+      "labels": [
+        "عقارات",
+        "للإيجار",
+        "جيبوتي المدينة",
+        "استوديو",
+        "price:45",
+        "cur:USD",
+        "per:night"
+      ],
+      "labels_str": "عقارات, للإيجار, جيبوتي المدينة, استوديو, price:45, cur:USD, per:night",
+      "images": [
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=1200&q=80&auto=format&fit=crop"
+      ],
+      "body": "<div class=\"property-entry\" dir=\"rtl\" lang=\"ar\">\n<div class=\"property-gallery\">\n  <img alt=\"استوديو مفروش قرب المركز التجاري - صورة 1\" src=\"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"استوديو مفروش قرب المركز التجاري - صورة 2\" src=\"https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"استوديو مفروش قرب المركز التجاري - صورة 3\" src=\"https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=1200&q=80&auto=format&fit=crop\"/>\n</div>\n<p><strong>رقم العقار:</strong> DJ-STD-0003</p>\n<p><strong>السعر النهائي (شامل رسوم الخدمة 10%):</strong> 49.50 دولار لليلة</p>\n<p><strong>المنطقة:</strong> جيبوتي المدينة | <strong>النوع:</strong> استوديو</p>\n<p><strong>غرف النوم:</strong> 1 | <strong>الحمامات:</strong> 1 | <strong>السعة:</strong> 2 أشخاص</p>\n<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>\n<h2>وصف العقار</h2>\n<p>استوديو مفروش بمساحة 35 م² قريب من المركز التجاري، مناسب للأفراد أو رجال الأعمال. متاح للإقامة القصيرة أو الطويلة مع خدمات أساسية متكاملة.</p>\n<h2>المواصفات والخدمات</h2>\n<ul><li>تكييف</li><li>مطبخ صغير</li><li>إنترنت</li><li>نظافة دورية</li><li>قريب من المقاهي والخدمات</li></ul>\n<p>السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.</p>\n<p><a href=\"https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-STD-0003%20%E2%80%94%20%D8%A7%D8%B3%D8%AA%D9%88%D8%AF%D9%8A%D9%88%20%D9%85%D9%81%D8%B1%D9%88%D8%B4%20%D9%82%D8%B1%D8%A8%20%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%20%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%2049.50%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D9%84%D9%84%D9%8A%D9%84%D8%A9.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D\">تحقق من التوافر عبر واتساب</a></p>\n</div>"
+    },
+    {
+      "pid": "DJ-HOM-0004",
+      "title": "منزل عائلي واسع",
+      "area": "تاجورة",
+      "ptype": "منزل",
+      "bed": 3,
+      "bath": 2,
+      "cap": 6,
+      "per": "month",
+      "price_label": "price:1800",
+      "base": 1800,
+      "final": 1980.0,
+      "currency": "USD",
+      "labels": [
+        "عقارات",
+        "للإيجار",
+        "تاجورة",
+        "منزل",
+        "price:1800",
+        "cur:USD",
+        "per:month"
+      ],
+      "labels_str": "عقارات, للإيجار, تاجورة, منزل, price:1800, cur:USD, per:month",
+      "images": [
+        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80&auto=format&fit=crop"
+      ],
+      "body": "<div class=\"property-entry\" dir=\"rtl\" lang=\"ar\">\n<div class=\"property-gallery\">\n  <img alt=\"منزل عائلي واسع - صورة 1\" src=\"https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"منزل عائلي واسع - صورة 2\" src=\"https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"منزل عائلي واسع - صورة 3\" src=\"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80&auto=format&fit=crop\"/>\n</div>\n<p><strong>رقم العقار:</strong> DJ-HOM-0004</p>\n<p><strong>السعر النهائي (شامل رسوم الخدمة 10%):</strong> 1980 دولار شهريًا</p>\n<p><strong>المنطقة:</strong> تاجورة | <strong>النوع:</strong> منزل</p>\n<p><strong>غرف النوم:</strong> 3 | <strong>الحمامات:</strong> 2 | <strong>السعة:</strong> 6 أشخاص</p>\n<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>\n<h2>وصف العقار</h2>\n<p>منزل عائلي بمساحة 180 م² في تاجورة، هادئ وقريب من المدارس والخدمات الأساسية. يوفر مساحات مريحة للعائلات مع فناء خاص.</p>\n<h2>المواصفات والخدمات</h2>\n<ul><li>3 غرف نوم</li><li>2 حمام</li><li>صالة</li><li>مطبخ</li><li>فناء</li><li>خزان ماء</li></ul>\n<p>السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.</p>\n<p><a href=\"https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-HOM-0004%20%E2%80%94%20%D9%85%D9%86%D8%B2%D9%84%20%D8%B9%D8%A7%D8%A6%D9%84%D9%8A%20%D9%88%D8%A7%D8%B3%D8%B9.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%201980%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D\">تحقق من التوافر عبر واتساب</a></p>\n</div>"
+    },
+    {
+      "pid": "DJ-APT-0005",
+      "title": "شقة بإطلالة على البحر",
+      "area": "أوبوك",
+      "ptype": "شقة",
+      "bed": 2,
+      "bath": 2,
+      "cap": 4,
+      "per": "month",
+      "price_label": "pricefinal:1650",
+      "base": null,
+      "final": 1650.0,
+      "currency": "USD",
+      "labels": [
+        "عقارات",
+        "للإيجار",
+        "أوبوك",
+        "شقة",
+        "pricefinal:1650",
+        "cur:USD",
+        "per:month"
+      ],
+      "labels_str": "عقارات, للإيجار, أوبوك, شقة, pricefinal:1650, cur:USD, per:month",
+      "images": [
+        "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&q=80&auto=format&fit=crop"
+      ],
+      "body": "<div class=\"property-entry\" dir=\"rtl\" lang=\"ar\">\n<div class=\"property-gallery\">\n  <img alt=\"شقة بإطلالة على البحر - صورة 1\" src=\"https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"شقة بإطلالة على البحر - صورة 2\" src=\"https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"شقة بإطلالة على البحر - صورة 3\" src=\"https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&q=80&auto=format&fit=crop\"/>\n</div>\n<p><strong>رقم العقار:</strong> DJ-APT-0005</p>\n<p><strong>السعر النهائي (شامل رسوم الخدمة 10%):</strong> 1650 دولار شهريًا</p>\n<p><strong>المنطقة:</strong> أوبوك | <strong>النوع:</strong> شقة</p>\n<p><strong>غرف النوم:</strong> 2 | <strong>الحمامات:</strong> 2 | <strong>السعة:</strong> 4 أشخاص</p>\n<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>\n<h2>وصف العقار</h2>\n<p>شقة بمساحة 110 م² في أوبوك بإطلالة مباشرة على البحر، بتشطيبات راقية وشرفة واسعة. موقع مثالي للاسترخاء والاستمتاع بالمنظر البحري.</p>\n<h2>المواصفات والخدمات</h2>\n<ul><li>إطلالة مباشرة على البحر</li><li>شرفة واسعة</li><li>تكييف</li><li>مطبخ مجهز</li><li>موقف سيارات</li><li>أمن على مدار الساعة</li></ul>\n<p>السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.</p>\n<p><a href=\"https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-APT-0005%20%E2%80%94%20%D8%B4%D9%82%D8%A9%20%D8%A8%D8%A5%D8%B7%D9%84%D8%A7%D9%84%D8%A9%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%A8%D8%AD%D8%B1.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%201650%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D\">تحقق من التوافر عبر واتساب</a></p>\n</div>"
+    },
+    {
+      "pid": "DJ-ROO-0006",
+      "title": "غرفة مفروشة للطلاب",
+      "area": "أرتا",
+      "ptype": "غرفة",
+      "bed": 1,
+      "bath": 1,
+      "cap": 1,
+      "per": "night",
+      "price_label": "price:25",
+      "base": 25,
+      "final": 27.5,
+      "currency": "USD",
+      "labels": [
+        "عقارات",
+        "للإيجار",
+        "أرتا",
+        "غرفة",
+        "price:25",
+        "cur:USD",
+        "per:night"
+      ],
+      "labels_str": "عقارات, للإيجار, أرتا, غرفة, price:25, cur:USD, per:night",
+      "images": [
+        "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=80&auto=format&fit=crop"
+      ],
+      "body": "<div class=\"property-entry\" dir=\"rtl\" lang=\"ar\">\n<div class=\"property-gallery\">\n  <img alt=\"غرفة مفروشة للطلاب - صورة 1\" src=\"https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"غرفة مفروشة للطلاب - صورة 2\" src=\"https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"غرفة مفروشة للطلاب - صورة 3\" src=\"https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=80&auto=format&fit=crop\"/>\n</div>\n<p><strong>رقم العقار:</strong> DJ-ROO-0006</p>\n<p><strong>السعر النهائي (شامل رسوم الخدمة 10%):</strong> 27.50 دولار لليلة</p>\n<p><strong>المنطقة:</strong> أرتا | <strong>النوع:</strong> غرفة</p>\n<p><strong>غرف النوم:</strong> 1 | <strong>الحمامات:</strong> 1 | <strong>السعة:</strong> 1 أشخاص</p>\n<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>\n<h2>وصف العقار</h2>\n<p>غرفة مفروشة بمساحة 20 م² في أرتا، قريبة من الجامعة والمواصلات. مناسبة للطلاب والأفراد الباحثين عن إقامة اقتصادية ومريحة.</p>\n<h2>المواصفات والخدمات</h2>\n<ul><li>سرير ومكتب</li><li>تكييف</li><li>إنترنت</li><li>حمام مشترك</li><li>مطبخ مشترك</li></ul>\n<p>السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.</p>\n<p><a href=\"https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-ROO-0006%20%E2%80%94%20%D8%BA%D8%B1%D9%81%D8%A9%20%D9%85%D9%81%D8%B1%D9%88%D8%B4%D8%A9%20%D9%84%D9%84%D8%B7%D9%84%D8%A7%D8%A8.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%2027.50%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D9%84%D9%84%D9%8A%D9%84%D8%A9.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D\">تحقق من التوافر عبر واتساب</a></p>\n</div>"
+    },
+    {
+      "pid": "DJ-VIL-0007",
+      "title": "فيلا بمسبح خاص",
+      "area": "جيبوتي المدينة",
+      "ptype": "فيلا",
+      "bed": 5,
+      "bath": 4,
+      "cap": 10,
+      "per": "month",
+      "price_label": "price:4000",
+      "base": 4000,
+      "final": 4400.0,
+      "currency": "USD",
+      "labels": [
+        "عقارات",
+        "للإيجار",
+        "جيبوتي المدينة",
+        "فيلا",
+        "price:4000",
+        "cur:USD",
+        "per:month"
+      ],
+      "labels_str": "عقارات, للإيجار, جيبوتي المدينة, فيلا, price:4000, cur:USD, per:month",
+      "images": [
+        "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600585153490-76fb20a32601?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?w=1200&q=80&auto=format&fit=crop"
+      ],
+      "body": "<div class=\"property-entry\" dir=\"rtl\" lang=\"ar\">\n<div class=\"property-gallery\">\n  <img alt=\"فيلا بمسبح خاص - صورة 1\" src=\"https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"فيلا بمسبح خاص - صورة 2\" src=\"https://images.unsplash.com/photo-1600585153490-76fb20a32601?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"فيلا بمسبح خاص - صورة 3\" src=\"https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?w=1200&q=80&auto=format&fit=crop\"/>\n</div>\n<p><strong>رقم العقار:</strong> DJ-VIL-0007</p>\n<p><strong>السعر النهائي (شامل رسوم الخدمة 10%):</strong> 4400 دولار شهريًا</p>\n<p><strong>المنطقة:</strong> جيبوتي المدينة | <strong>النوع:</strong> فيلا</p>\n<p><strong>غرف النوم:</strong> 5 | <strong>الحمامات:</strong> 4 | <strong>السعة:</strong> 10 أشخاص</p>\n<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>\n<h2>وصف العقار</h2>\n<p>فيلا فاخرة بمساحة 450 م² في جيبوتي المدينة مع مسبح خاص وحديقة منسقة. خيار مثالي للإقامة الراقية والمناسبات العائلية.</p>\n<h2>المواصفات والخدمات</h2>\n<ul><li>5 غرف نوم</li><li>4 حمامات</li><li>مسبح خاص</li><li>حديقة منسقة</li><li>غرفة خدم</li><li>مواقف متعددة</li><li>مولد كهرباء</li></ul>\n<p>السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.</p>\n<p><a href=\"https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-VIL-0007%20%E2%80%94%20%D9%81%D9%8A%D9%84%D8%A7%20%D8%A8%D9%85%D8%B3%D8%A8%D8%AD%20%D8%AE%D8%A7%D8%B5.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%204400%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D\">تحقق من التوافر عبر واتساب</a></p>\n</div>"
+    },
+    {
+      "pid": "DJ-APT-0008",
+      "title": "شقة عصرية قرب المطار",
+      "area": "دخيل",
+      "ptype": "شقة",
+      "bed": 2,
+      "bath": 1,
+      "cap": 4,
+      "per": "month",
+      "price_label": "price:1200",
+      "base": 1200,
+      "final": 1320.0,
+      "currency": "USD",
+      "labels": [
+        "عقارات",
+        "للإيجار",
+        "دخيل",
+        "شقة",
+        "price:1200",
+        "cur:USD",
+        "per:month"
+      ],
+      "labels_str": "عقارات, للإيجار, دخيل, شقة, price:1200, cur:USD, per:month",
+      "images": [
+        "https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600607688066-890987f18a86?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80&auto=format&fit=crop"
+      ],
+      "body": "<div class=\"property-entry\" dir=\"rtl\" lang=\"ar\">\n<div class=\"property-gallery\">\n  <img alt=\"شقة عصرية قرب المطار - صورة 1\" src=\"https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"شقة عصرية قرب المطار - صورة 2\" src=\"https://images.unsplash.com/photo-1600607688066-890987f18a86?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"شقة عصرية قرب المطار - صورة 3\" src=\"https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80&auto=format&fit=crop\"/>\n</div>\n<p><strong>رقم العقار:</strong> DJ-APT-0008</p>\n<p><strong>السعر النهائي (شامل رسوم الخدمة 10%):</strong> 1320 دولار شهريًا</p>\n<p><strong>المنطقة:</strong> دخيل | <strong>النوع:</strong> شقة</p>\n<p><strong>غرف النوم:</strong> 2 | <strong>الحمامات:</strong> 1 | <strong>السعة:</strong> 4 أشخاص</p>\n<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>\n<h2>وصف العقار</h2>\n<p>شقة بمساحة 85 م² في دخيل قرب المطار، مثالية للمسافرين ورجال الأعمال. تشطيبات عصرية وموقع مريح يسهّل التنقل.</p>\n<h2>المواصفات والخدمات</h2>\n<ul><li>تكييف</li><li>مطبخ مجهز</li><li>إنترنت</li><li>مصعد</li><li>موقف سيارات</li><li>قريبة من المطار</li></ul>\n<p>السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.</p>\n<p><a href=\"https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-APT-0008%20%E2%80%94%20%D8%B4%D9%82%D8%A9%20%D8%B9%D8%B5%D8%B1%D9%8A%D8%A9%20%D9%82%D8%B1%D8%A8%20%D8%A7%D9%84%D9%85%D8%B7%D8%A7%D8%B1.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%201320%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D\">تحقق من التوافر عبر واتساب</a></p>\n</div>"
+    },
+    {
+      "pid": "DJ-STD-0009",
+      "title": "استوديو أنيق لرجال الأعمال",
+      "area": "جيبوتي المدينة",
+      "ptype": "استوديو",
+      "bed": 1,
+      "bath": 1,
+      "cap": 2,
+      "per": "night",
+      "price_label": "pricefinal:60",
+      "base": null,
+      "final": 60.0,
+      "currency": "USD",
+      "labels": [
+        "عقارات",
+        "للإيجار",
+        "جيبوتي المدينة",
+        "استوديو",
+        "pricefinal:60",
+        "cur:USD",
+        "per:night"
+      ],
+      "labels_str": "عقارات, للإيجار, جيبوتي المدينة, استوديو, pricefinal:60, cur:USD, per:night",
+      "images": [
+        "https://images.unsplash.com/photo-1600566752229-250ed79470f8?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1200&q=80&auto=format&fit=crop"
+      ],
+      "body": "<div class=\"property-entry\" dir=\"rtl\" lang=\"ar\">\n<div class=\"property-gallery\">\n  <img alt=\"استوديو أنيق لرجال الأعمال - صورة 1\" src=\"https://images.unsplash.com/photo-1600566752229-250ed79470f8?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"استوديو أنيق لرجال الأعمال - صورة 2\" src=\"https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"استوديو أنيق لرجال الأعمال - صورة 3\" src=\"https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1200&q=80&auto=format&fit=crop\"/>\n</div>\n<p><strong>رقم العقار:</strong> DJ-STD-0009</p>\n<p><strong>السعر النهائي (شامل رسوم الخدمة 10%):</strong> 60 دولار لليلة</p>\n<p><strong>المنطقة:</strong> جيبوتي المدينة | <strong>النوع:</strong> استوديو</p>\n<p><strong>غرف النوم:</strong> 1 | <strong>الحمامات:</strong> 1 | <strong>السعة:</strong> 2 أشخاص</p>\n<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>\n<h2>وصف العقار</h2>\n<p>استوديو بمساحة 40 م² في جيبوتي المدينة، مصمم لرجال الأعمال مع مكتب عمل وإنترنت سريع. قريب من المراكز التجارية والمطاعم.</p>\n<h2>المواصفات والخدمات</h2>\n<ul><li>مكتب عمل</li><li>إنترنت سريع</li><li>تكييف</li><li>مطبخ صغير</li><li>خدمة غرف</li><li>أمن</li></ul>\n<p>السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.</p>\n<p><a href=\"https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-STD-0009%20%E2%80%94%20%D8%A7%D8%B3%D8%AA%D9%88%D8%AF%D9%8A%D9%88%20%D8%A3%D9%86%D9%8A%D9%82%20%D9%84%D8%B1%D8%AC%D8%A7%D9%84%20%D8%A7%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%2060%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D9%84%D9%84%D9%8A%D9%84%D8%A9.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D\">تحقق من التوافر عبر واتساب</a></p>\n</div>"
+    },
+    {
+      "pid": "DJ-HOM-0010",
+      "title": "منزل تقليدي مجدّد",
+      "area": "تاجورة",
+      "ptype": "منزل",
+      "bed": 3,
+      "bath": 2,
+      "cap": 6,
+      "per": "month",
+      "price_label": "price:1500",
+      "base": 1500,
+      "final": 1650.0,
+      "currency": "USD",
+      "labels": [
+        "عقارات",
+        "للإيجار",
+        "تاجورة",
+        "منزل",
+        "price:1500",
+        "cur:USD",
+        "per:month"
+      ],
+      "labels_str": "عقارات, للإيجار, تاجورة, منزل, price:1500, cur:USD, per:month",
+      "images": [
+        "https://images.unsplash.com/photo-1600607688960-e095ff83135c?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600047509782-20d39509f26d?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=1200&q=80&auto=format&fit=crop"
+      ],
+      "body": "<div class=\"property-entry\" dir=\"rtl\" lang=\"ar\">\n<div class=\"property-gallery\">\n  <img alt=\"منزل تقليدي مجدّد - صورة 1\" src=\"https://images.unsplash.com/photo-1600607688960-e095ff83135c?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"منزل تقليدي مجدّد - صورة 2\" src=\"https://images.unsplash.com/photo-1600047509782-20d39509f26d?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"منزل تقليدي مجدّد - صورة 3\" src=\"https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=1200&q=80&auto=format&fit=crop\"/>\n</div>\n<p><strong>رقم العقار:</strong> DJ-HOM-0010</p>\n<p><strong>السعر النهائي (شامل رسوم الخدمة 10%):</strong> 1650 دولار شهريًا</p>\n<p><strong>المنطقة:</strong> تاجورة | <strong>النوع:</strong> منزل</p>\n<p><strong>غرف النوم:</strong> 3 | <strong>الحمامات:</strong> 2 | <strong>السعة:</strong> 6 أشخاص</p>\n<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>\n<h2>وصف العقار</h2>\n<p>منزل تقليدي مجدّد بمساحة 160 م² في تاجورة، يجمع بين الطابع الأصيل والراحة الحديثة. مناسب للعائلات الباحثة عن الهدوء.</p>\n<h2>المواصفات والخدمات</h2>\n<ul><li>3 غرف نوم</li><li>2 حمام</li><li>صالة</li><li>مطبخ</li><li>فناء داخلي</li><li>خزان ماء</li></ul>\n<p>السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.</p>\n<p><a href=\"https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-HOM-0010%20%E2%80%94%20%D9%85%D9%86%D8%B2%D9%84%20%D8%AA%D9%82%D9%84%D9%8A%D8%AF%D9%8A%20%D9%85%D8%AC%D8%AF%D9%91%D8%AF.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%201650%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D\">تحقق من التوافر عبر واتساب</a></p>\n</div>"
+    },
+    {
+      "pid": "DJ-APT-0011",
+      "title": "شقة عائلية بثلاث غرف",
+      "area": "علي صبيح",
+      "ptype": "شقة",
+      "bed": 3,
+      "bath": 2,
+      "cap": 6,
+      "per": "month",
+      "price_label": "price:2000",
+      "base": 2000,
+      "final": 2200.0,
+      "currency": "USD",
+      "labels": [
+        "عقارات",
+        "للإيجار",
+        "علي صبيح",
+        "شقة",
+        "price:2000",
+        "cur:USD",
+        "per:month"
+      ],
+      "labels_str": "عقارات, للإيجار, علي صبيح, شقة, price:2000, cur:USD, per:month",
+      "images": [
+        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1200&q=80&auto=format&fit=crop"
+      ],
+      "body": "<div class=\"property-entry\" dir=\"rtl\" lang=\"ar\">\n<div class=\"property-gallery\">\n  <img alt=\"شقة عائلية بثلاث غرف - صورة 1\" src=\"https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"شقة عائلية بثلاث غرف - صورة 2\" src=\"https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"شقة عائلية بثلاث غرف - صورة 3\" src=\"https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1200&q=80&auto=format&fit=crop\"/>\n</div>\n<p><strong>رقم العقار:</strong> DJ-APT-0011</p>\n<p><strong>السعر النهائي (شامل رسوم الخدمة 10%):</strong> 2200 دولار شهريًا</p>\n<p><strong>المنطقة:</strong> علي صبيح | <strong>النوع:</strong> شقة</p>\n<p><strong>غرف النوم:</strong> 3 | <strong>الحمامات:</strong> 2 | <strong>السعة:</strong> 6 أشخاص</p>\n<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>\n<h2>وصف العقار</h2>\n<p>شقة عائلية بمساحة 130 م² في علي صبيح، واسعة ومريحة وقريبة من الخدمات والمدارس. مثالية للعائلات المستقرة.</p>\n<h2>المواصفات والخدمات</h2>\n<ul><li>3 غرف نوم</li><li>2 حمام</li><li>صالة</li><li>مطبخ</li><li>شرفة</li><li>موقف سيارات</li></ul>\n<p>السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.</p>\n<p><a href=\"https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-APT-0011%20%E2%80%94%20%D8%B4%D9%82%D8%A9%20%D8%B9%D8%A7%D8%A6%D9%84%D9%8A%D8%A9%20%D8%A8%D8%AB%D9%84%D8%A7%D8%AB%20%D8%BA%D8%B1%D9%81.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%202200%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D\">تحقق من التوافر عبر واتساب</a></p>\n</div>"
+    },
+    {
+      "pid": "DJ-VIL-0012",
+      "title": "فيلا شاطئية للإيجار",
+      "area": "أوبوك",
+      "ptype": "فيلا",
+      "bed": 4,
+      "bath": 3,
+      "cap": 8,
+      "per": "night",
+      "price_label": "price:300",
+      "base": 300,
+      "final": 330.0,
+      "currency": "USD",
+      "labels": [
+        "عقارات",
+        "للإيجار",
+        "أوبوك",
+        "فيلا",
+        "price:300",
+        "cur:USD",
+        "per:night"
+      ],
+      "labels_str": "عقارات, للإيجار, أوبوك, فيلا, price:300, cur:USD, per:night",
+      "images": [
+        "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1200&q=80&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=1200&q=80&auto=format&fit=crop"
+      ],
+      "body": "<div class=\"property-entry\" dir=\"rtl\" lang=\"ar\">\n<div class=\"property-gallery\">\n  <img alt=\"فيلا شاطئية للإيجار - صورة 1\" src=\"https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"فيلا شاطئية للإيجار - صورة 2\" src=\"https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1200&q=80&auto=format&fit=crop\"/>\n  <img alt=\"فيلا شاطئية للإيجار - صورة 3\" src=\"https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=1200&q=80&auto=format&fit=crop\"/>\n</div>\n<p><strong>رقم العقار:</strong> DJ-VIL-0012</p>\n<p><strong>السعر النهائي (شامل رسوم الخدمة 10%):</strong> 330 دولار لليلة</p>\n<p><strong>المنطقة:</strong> أوبوك | <strong>النوع:</strong> فيلا</p>\n<p><strong>غرف النوم:</strong> 4 | <strong>الحمامات:</strong> 3 | <strong>السعة:</strong> 8 أشخاص</p>\n<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>\n<h2>وصف العقار</h2>\n<p>فيلا شاطئية بمساحة 280 م² في أوبوك، على مقربة من الشاطئ مع تراس وإطلالة بحرية. مثالية للإقامات القصيرة والعطلات.</p>\n<h2>المواصفات والخدمات</h2>\n<ul><li>4 غرف نوم</li><li>3 حمامات</li><li>تراس</li><li>إطلالة بحرية</li><li>تكييف</li><li>موقف سيارات</li></ul>\n<p>السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.</p>\n<p><a href=\"https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-VIL-0012%20%E2%80%94%20%D9%81%D9%8A%D9%84%D8%A7%20%D8%B4%D8%A7%D8%B7%D8%A6%D9%8A%D8%A9%20%D9%84%D9%84%D8%A5%D9%8A%D8%AC%D8%A7%D8%B1.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%20330%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D9%84%D9%84%D9%8A%D9%84%D8%A9.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D\">تحقق من التوافر عبر واتساب</a></p>\n</div>"
+    }
+  ]
+}

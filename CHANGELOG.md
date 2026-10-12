@@ -1,5 +1,20 @@
 # Changelog — DARNADJ
 
+## 2026-10-12 — Sample content pack (12 posts)
+
+### New — `DarnaDJ_Updated_Package/06_Sample_Content/`
+- `DarnaDJ_12_Posts_Content_AR.html`: formatted (RTL) pack for 12 property posts —
+  title, Blogger labels, 3 images each, and a full copy-paste HTML body per post.
+- `DarnaDJ_12_Posts_Content.csv` / `.json`: the same 12 posts in structured form
+  (property id, area, type, price label, base/final price, currency, unit, labels,
+  image URLs, body HTML).
+- `images/`: 36 placeholder JPEGs (3 per property), verified real-estate photos.
+- `README.md`: usage + price-rule notes.
+- Prices follow the unified convention: `price:` (base → ×1.10 once) or
+  `pricefinal:` (already inclusive → as-is); `cur:` + `per:` for currency/unit.
+- Verified: `tests/sample_posts.test.js` runs every post's labels through the
+  theme's real price functions — 99/99 checks pass.
+
 ## 2026-10-12 — Final delivery execution (fee-inclusive pricing)
 
 ### Theme — `project-bolt-sb1-qvsojasd/project/DarnaDJ_Delivery_Package/theme/IMPORT_THIS_THEME.xml`
