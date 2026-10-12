@@ -1,0 +1,13 @@
+ULTRATHINK — SuperNinja | Darna DJ Build, Test, and Handoff
+
+First reconcile workspace/repository state and read the updated package. Do not overwrite existing files before inspection. Keep one source-of-truth repository and a portable checkpoint report.
+
+Produce a native Blogger-importable XML theme and separate content assets; not a standalone React site. Owner-managed listings, no owner accounts, stable Property IDs, flexible labels, Arabic source plus separate English/French blogs, Google Sheets operational register, Google Form intake, WhatsApp +25377313443 inquiry and manual availability confirmation. No payment gateway or booking backend in v1.
+
+Revenue: proposed 10% owner commission + 10% tenant service fee on a clearly defined base, separately disclosed and agreed in writing. Example $1,000 rent base: $100 owner fee + $100 tenant fee = $200 gross revenue before costs. If tenant pays rent directly to owner, tenant total is $1,100 including separate $100 fee; owner pays $100 commission. Do not hide fees or promise guaranteed collection without a tested process. Each contract must state whether the base is total stay rent or one month's rent.
+
+Implement the engineering specification: Blogger-native sections/widgets, menus, lightweight slider, pagination, posts/pages/comments/share, image cards and multi-image galleries, touch/keyboard support, USD pricing, responsive RTL/LTR, flexible property types/areas, tested search across feeds/pagination, WhatsApp message, complaint/policy/advertising pages, SEO, accessibility, performance, and accurate structured data.
+
+Every control must work or be removed. Validate XML/scripts/links/images, real thumbnail extraction, search/pagination behavior, WhatsApp URL/message, responsive layouts, content import separately from theme import, and backup/rollback. Run focused tests, fix defects, retest. Distinguish passed, failed, and not tested. Do not claim live Blogger compatibility without an actual import.
+
+Deliver final XML, editable source, sample content, ready-to-paste page/post templates, Apps Script that creates a listing form and response sheet, operational spreadsheet schema, Arabic installation/add/edit/delete guide, customization/backup/rollback guide, test evidence, and account-independent checkpoint with repo/branch/commit/known issues/next action. Minimize credits: inspect once, implement once, focused fix pass.

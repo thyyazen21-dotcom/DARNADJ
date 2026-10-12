@@ -1,0 +1,18 @@
+ULTRATHINK — Replit | Darna DJ Native Blogger XML Portal
+
+Read the updated study, revenue model, operational guide, engineering specification, and acceptance checklist before coding. Final deliverable MUST be a Blogger-importable XML theme, not a React/Vite website.
+
+Operating decisions:
+- Owner-managed listings; no owner accounts or permissions.
+- Blogger posts are individual property listings with stable Property IDs and flexible type/area labels.
+- Arabic is the source language; English and French are separate blogs. Do not claim native automatic cross-blog synchronization.
+- Google Sheets is an operational ledger, not a built-in Blogger database.
+- WhatsApp +25377313443 is for inquiries and availability checks; clicking it does not confirm a booking.
+- Proposed fee model: 10% owner commission + 10% tenant service fee on a clearly defined base, disclosed separately and accepted in writing. For a $1,000 contracted rent base: $100 owner fee + $100 tenant fee = $200 gross platform revenue before costs. If rent is paid directly to owner, tenant total is $1,100 including a separate $100 platform fee; owner pays $100 platform commission. Never call gross revenue net profit or hide fees in a secret markup.
+- No payment gateway or custom booking backend in v1.
+
+Build: premium Djibouti-flag-inspired visual identity; responsive home sections; configurable Blogger sections/widgets/menus; lightweight slider; real pagination; posts/pages/comments/sharing; multi-image property galleries with touch and keyboard support; flexible property types and neighborhoods; search/filters tested across actual feeds and pagination; USD price display; property specifications; WhatsApp message prefill; complaints, contact, privacy, terms, cancellation, owner-submission and advertising pages; RTL Arabic and LTR English/French; accurate SEO/canonical/language links and structured data; accessible controls, reduced motion, optimized images, minimal JavaScript.
+
+Every button, link, menu, widget, pagination control, and gallery control must work or be removed. Ensure home cards display images from actual multi-image Blogger posts and provide a fallback. Do not claim global filtering if only current-page cards are searched.
+
+Deliver final XML, editable source, separate content assets/instructions, ready-to-paste post/page HTML, sample data, Google Apps Script to create the listing form and response spreadsheet, Arabic guide to install/add/edit/delete/customize/backup/rollback, and a report with passed/failed/not-tested items. Run XML parsing and focused tests, then fix confirmed defects and retest. XML parsing alone does not prove live Blogger import. Keep one implementation pass and one focused fix pass to conserve credits. Record repo/branch/commit and exact handoff checkpoint. Never claim 100% certainty without evidence.
