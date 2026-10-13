@@ -26,6 +26,11 @@ function ok(name, cond, extra) {
   else { fail++; console.log('  FAIL ' + name + (extra ? '  -> ' + extra : '')); }
 }
 function fmt(x) { return Number.isInteger(x) ? String(x) : x.toFixed(2); }
+function fmtMoney(x) {
+  return '$' + (Number.isInteger(x)
+    ? x.toLocaleString('en-US')
+    : x.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+}
 
 console.log('DARNADJ sample content validation\n');
 ok('12 posts generated', data.posts.length === 12, 'got ' + data.posts.length);
@@ -39,8 +44,11 @@ for (const p of data.posts) {
      'theme=' + info.amount + ' file=' + p.final);
   ok(label + ' currency USD', info.currency === 'USD', info.currency);
   ok(label + ' unit ' + p.per, info.per === p.per, info.per);
-  // body shows the same numeric final price
-  ok(label + ' body shows final price', p.body.indexOf(fmt(p.final)) >= 0);
+  // body shows the same numeric final price (clean USD format, e.g. $1,100 / شهر)
+  ok(label + ' body shows final price', p.body.indexOf(fmtMoney(p.final)) >= 0, fmtMoney(p.final));
+  // body must NOT contain the two forbidden visitor-facing fee messages (brief Section 3)
+  ok(label + ' no forbidden fee message',
+     !/شامل رسوم|السعر النهائي|رسوم خدمة المنصة|بيانات السعر غير مكتملة|أضف تسمية/.test(p.body));
   // 3 images, first is the cover/featured
   ok(label + ' has 3 images', p.images.length === 3, p.images.length);
   ok(label + ' body embeds all images',

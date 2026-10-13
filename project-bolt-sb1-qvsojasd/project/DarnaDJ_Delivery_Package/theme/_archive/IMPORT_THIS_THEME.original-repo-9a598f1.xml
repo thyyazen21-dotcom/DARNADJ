@@ -1,0 +1,1268 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.0.0' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta charset='UTF-8'/>
+  <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+  <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+
+  <b:include data='blog' name='all-head-content'/>
+
+  <title><data:blog.pageTitle/></title>
+
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' name='description'/>
+  <b:else/>
+    <meta content='منصة دارنا للإيجار في جيبوتي — شقق وفلل ومنازل للإيجار مع رسوم واضحة وتواصل مباشر عبر واتساب' name='description'/>
+  </b:if>
+
+  <link expr:href='data:blog.canonicalUrl' rel='canonical'/>
+
+  <b:if cond='data:view.isHomepage'>
+    <link href='https://www.darnadj.dj/' hreflang='ar' rel='alternate'/>
+  </b:if>
+
+  <link href='https://fonts.googleapis.com' rel='preconnect'/>
+  <link href='https://fonts.gstatic.com' crossorigin='anonymous' rel='preconnect'/>
+  <link href='https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&amp;display=swap' rel='stylesheet'/>
+
+  <b:skin><![CDATA[
+  /* Variable Definitions
+  ====================
+  <Variable name="bg.color" description="خلفية الصفحة" type="color" default="#f8f6f1" value="#f8f6f1"/>
+  <Variable name="card.bg" description="خلفية البطاقات" type="color" default="#ffffff" value="#ffffff"/>
+  <Variable name="primary.color" description="اللون الأساسي" type="color" default="#0e7c66" value="#0e7c66"/>
+  <Variable name="primary.dark" description="اللون الأساسي الداكن" type="color" default="#0a5d4c" value="#0a5d4c"/>
+  <Variable name="accent.color" description="لون التمييز" type="color" default="#c9962b" value="#c9962b"/>
+  <Variable name="text.color" description="لون النص" type="color" default="#1a1a1a" value="#1a1a1a"/>
+  <Variable name="muted.color" description="لون النص الثانوي" type="color" default="#6b6b6b" value="#6b6b6b"/>
+  <Variable name="border.color" description="لون الحدود" type="color" default="#e2ddd2" value="#e2ddd2"/>
+  <Variable name="header.bg" description="خلفية الرأس" type="color" default="#0e7c66" value="#0e7c66"/>
+  <Variable name="footer.bg" description="خلفية التذييل" type="color" default="#1a2e2a" value="#1a2e2a"/>
+  <Variable name="whatsapp.color" description="لون واتساب" type="color" default="#25d366" value="#25d366"/>
+  */
+
+  /* ===== Reset & Base ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Cairo', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
+    background: $(bg.color);
+    color: $(text.color);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+  a { color: $(primary.color); text-decoration: none; transition: color .2s ease; }
+  a:hover { color: $(primary.dark); }
+  img { max-width: 100%; height: auto; display: block; }
+  ul { list-style: none; }
+
+  /* ===== Layout ===== */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+  .row { display: flex; flex-wrap: wrap; gap: 16px; }
+
+  /* ===== Header ===== */
+  .site-header {
+    background: $(header.bg);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,.12);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    flex-wrap: wrap;
+  }
+  .site-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .site-logo:hover { color: #fff; opacity: .9; }
+  .site-logo .logo-icon {
+    width: 36px; height: 36px;
+    background: $(accent.color);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+  .main-nav { display: flex; gap: 4px; flex-wrap: wrap; }
+  .main-nav a {
+    color: rgba(255,255,255,.9);
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: .9rem;
+    font-weight: 600;
+    transition: background .2s ease;
+  }
+  .main-nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 4px 8px;
+  }
+
+  /* ===== Search Bar ===== */
+  .search-bar {
+    background: rgba(255,255,255,.1);
+    border-radius: 8px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .search-bar input[type="text"] {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: .9rem;
+    outline: none;
+    width: 180px;
+    font-family: inherit;
+  }
+  .search-bar input[type="text"]::placeholder { color: rgba(255,255,255,.6); }
+  .search-bar button {
+    background: $(accent.color);
+    border: none;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: .85rem;
+    font-weight: 600;
+    font-family: inherit;
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    background: linear-gradient(135deg, $(primary.color) 0%, $(primary.dark) 100%);
+    color: #fff;
+    padding: 60px 0 48px;
+    text-align: center;
+  }
+  .hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 12px; }
+  .hero p { font-size: 1.1rem; opacity: .9; max-width: 700px; margin: 0 auto 24px; }
+  .hero-filters {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .hero-filters select, .hero-filters input {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: .9rem;
+    font-family: inherit;
+    background: #fff;
+    color: $(text.color);
+  }
+  .hero-filters button {
+    background: $(accent.color);
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: .9rem;
+  }
+
+  /* ===== Sections ===== */
+  .section { padding: 40px 0; }
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: $(primary.dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: $(border.color);
+  }
+
+  /* ===== Property Cards Grid ===== */
+  .property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .property-card {
+    background: $(card.bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    transition: transform .2s ease, box-shadow .2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .property-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  }
+  .property-card .card-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    object-fit: cover;
+    background: $(border.color);
+  }
+  .property-card .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+  .property-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: $(text.color);
+  }
+  .property-card .card-meta {
+    font-size: .85rem;
+    color: $(muted.color);
+    margin-bottom: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .property-card .card-meta span {
+    background: $(bg.color);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .property-card .card-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: $(primary.color);
+    margin-bottom: 4px;
+  }
+  .property-card .card-price-unit {
+    font-size: .8rem;
+    color: $(muted.color);
+    font-weight: 400;
+  }
+  .property-card .card-id {
+    font-size: .75rem;
+    color: $(muted.color);
+    margin-bottom: 12px;
+  }
+  .property-card .card-link {
+    margin-top: auto;
+    background: $(primary.color);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: .9rem;
+    transition: background .2s ease;
+  }
+  .property-card .card-link:hover { background: $(primary.dark); color: #fff; }
+
+  /* ===== Fee Badge ===== */
+  .fee-note {
+    font-size: .75rem;
+    color: $(muted.color);
+    padding: 6px 10px;
+    background: #fff8e7;
+    border: 1px solid #f0e0b0;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+
+  /* ===== Property Detail ===== */
+  .property-detail { padding: 40px 0; }
+  .property-detail .detail-header { margin-bottom: 24px; }
+  .property-detail .detail-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; }
+  .property-detail .detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .property-detail .detail-meta span {
+    background: $(card.bg);
+    border: 1px solid $(border.color);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: .85rem;
+  }
+  .property-detail .detail-price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $(primary.color);
+  }
+  .property-detail .detail-fee-disclosure {
+    margin: 16px 0;
+    padding: 12px 16px;
+    background: #fff8e7;
+    border-left: 4px solid $(accent.color);
+    border-radius: 6px;
+    font-size: .9rem;
+    line-height: 1.7;
+  }
+
+  /* ===== Price (final, fee-inclusive) ===== */
+  .darna-price-value { display: inline-block; }
+  .price-missing {
+    display: inline-block;
+    font-size: .8rem;
+    font-weight: 600;
+    color: #8a6d00;
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 6px;
+    padding: 4px 8px;
+    line-height: 1.5;
+  }
+  .price-included-badge {
+    display: inline-block;
+    font-size: .72rem;
+    font-weight: 600;
+    color: #0a5d4c;
+    background: #e7f5f0;
+    border: 1px solid #bfe3d8;
+    border-radius: 6px;
+    padding: 3px 8px;
+    margin-bottom: 10px;
+  }
+
+  /* ===== Gallery ===== */
+  .gallery-container { margin-bottom: 24px; }
+  .gallery-main {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    background: $(border.color);
+  }
+  .gallery-main img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  .gallery-nav {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .gallery-thumb {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    flex-shrink: 0;
+    transition: border-color .2s ease;
+  }
+  .gallery-thumb.active { border-color: $(primary.color); }
+  .gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s ease;
+  }
+  .gallery-btn:hover { background: rgba(0,0,0,.7); }
+  .gallery-btn.prev { left: 12px; }
+  .gallery-btn.next { right: 12px; }
+
+  /* ===== WhatsApp CTA ===== */
+  .whatsapp-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: $(whatsapp.color);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: opacity .2s ease;
+  }
+  .whatsapp-cta:hover { opacity: .9; color: #fff; }
+  .whatsapp-note {
+    font-size: .8rem;
+    color: $(muted.color);
+    margin-top: 8px;
+  }
+
+  /* ===== Inquiry Notice ===== */
+  .inquiry-notice {
+    padding: 10px 16px;
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 6px;
+    font-size: .85rem;
+    margin: 16px 0;
+  }
+
+  /* ===== Blog Posts (generic) ===== */
+  .post { background: $(card.bg); border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+  .post-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+  .post-title a { color: $(text.color); }
+  .post-title a:hover { color: $(primary.color); }
+  .post-meta { font-size: .8rem; color: $(muted.color); margin-bottom: 16px; }
+  .post-body { line-height: 1.8; }
+  .post-body p { margin-bottom: 12px; }
+  .post-body h2, .post-body h3 { margin: 20px 0 10px; font-weight: 700; }
+  .post-body ul { padding-inline-start: 20px; list-style: disc; }
+  .post-body li { margin-bottom: 4px; }
+
+  /* ===== Pagination ===== */
+  .pagination { display: flex; justify-content: center; gap: 4px; padding: 24px 0; flex-wrap: wrap; }
+  .pagination a, .pagination span {
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: .9rem;
+    font-weight: 600;
+    border: 1px solid $(border.color);
+    background: $(card.bg);
+    color: $(text.color);
+  }
+  .pagination a:hover { background: $(primary.color); color: #fff; border-color: $(primary.color); }
+  .pagination .current-page { background: $(primary.color); color: #fff; border-color: $(primary.color); }
+
+  /* ===== Filter Labels Bar ===== */
+  .filter-bar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 16px 0;
+    align-items: center;
+  }
+  .filter-bar .filter-label { font-weight: 600; font-size: .9rem; color: $(muted.color); }
+  .filter-bar .filter-chip {
+    background: $(card.bg);
+    border: 1px solid $(border.color);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: .85rem;
+    color: $(text.color);
+    transition: all .2s ease;
+  }
+  .filter-bar .filter-chip:hover, .filter-bar .filter-chip.active {
+    background: $(primary.color);
+    color: #fff;
+    border-color: $(primary.color);
+  }
+
+  /* ===== No Results / Loading ===== */
+  .no-results, .loading-state {
+    text-align: center;
+    padding: 40px;
+    color: $(muted.color);
+    font-size: 1.1rem;
+  }
+
+  /* ===== Sidebar Widgets ===== */
+  .sidebar { display: flex; flex-direction: column; gap: 20px; }
+  .widget-card {
+    background: $(card.bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  }
+  .widget-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; color: $(primary.dark); }
+  .widget-card ul li { padding: 6px 0; border-bottom: 1px solid $(border.color); font-size: .9rem; }
+  .widget-card ul li:last-child { border-bottom: none; }
+
+  /* ===== Ad Slot ===== */
+  .ad-slot {
+    background: $(bg.color);
+    border: 2px dashed $(border.color);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    color: $(muted.color);
+    font-size: .85rem;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ===== Footer ===== */
+  .site-footer {
+    background: $(footer.bg);
+    color: rgba(255,255,255,.8);
+    padding: 40px 0 20px;
+    margin-top: 40px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .footer-grid h4 { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 12px; }
+  .footer-grid ul li { padding: 4px 0; }
+  .footer-grid ul li a { color: rgba(255,255,255,.7); font-size: .9rem; }
+  .footer-grid ul li a:hover { color: #fff; }
+  .footer-contact { font-size: .9rem; }
+  .footer-contact a { color: $(whatsapp.color); font-weight: 600; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: 16px;
+    text-align: center;
+    font-size: .85rem;
+    color: rgba(255,255,255,.5);
+  }
+
+  /* ===== RTL Adjustments ===== */
+  html[dir="rtl"] .gallery-btn.prev { left: auto; right: 12px; }
+  html[dir="rtl"] .gallery-btn.next { right: auto; left: 12px; }
+  html[dir="rtl"] .detail-fee-disclosure { border-left: none; border-right: 4px solid $(accent.color); }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .nav-toggle { display: block; }
+    .main-nav {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      padding: 8px 0;
+    }
+    .main-nav.open { display: flex; }
+    .main-nav a { width: 100%; }
+    .search-bar { width: 100%; }
+    .search-bar input[type="text"] { flex: 1; }
+    .hero h1 { font-size: 1.6rem; }
+    .hero p { font-size: 1rem; }
+    .property-grid { grid-template-columns: 1fr; }
+    .gallery-main img { height: 250px; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .property-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ===== Reduced Motion ===== */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ===== Focus Visibility ===== */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+    outline: 3px solid $(accent.color);
+    outline-offset: 2px;
+  }
+
+  /* ===== Main Content Layout ===== */
+  .main-content { display: flex; gap: 24px; padding: 40px 0; }
+  .content-area { flex: 1; min-width: 0; }
+  .sidebar-area { width: 300px; flex-shrink: 0; }
+  @media (max-width: 768px) {
+    .main-content { flex-direction: column; }
+    .sidebar-area { width: 100%; }
+  }
+
+  /* ===== JSON-LD Structured Data ===== */
+  .structured-data { display: none; }
+  ]]></b:skin>
+
+  <b:template-skin>
+    <![CDATA[
+    body { min-height: 100vh; display: flex; flex-direction: column; }
+    #main-wrapper { flex: 1; }
+    ]]>
+  </b:template-skin>
+</head>
+
+<body>
+
+<!-- ===== Header Section ===== -->
+<header class='site-header'>
+  <div class='container'>
+    <div class='header-inner'>
+      <a class='site-logo' expr:href='data:blog.homepageUrl'>
+        <span class='logo-icon'>D</span>
+        دارنا DJ
+      </a>
+      <button aria-label='القائمة' class='nav-toggle' onclick='this.nextElementSibling.classList.toggle(&quot;open&quot;)' type='button'>☰</button>
+      <nav class='main-nav'>
+        <a expr:href='data:blog.homepageUrl'>الرئيسية</a>
+        <a expr:href='data:blog.homepageUrl + &quot;search/label/شقة&quot;'>شقق</a>
+        <a expr:href='data:blog.homepageUrl + &quot;search/label/فيلا&quot;'>فلل</a>
+        <a expr:href='data:blog.homepageUrl + &quot;search/label/منزل&quot;'>منازل</a>
+        <a expr:href='data:blog.homepageUrl + &quot;p/contact.html&quot;'>تواصل</a>
+        <a expr:href='data:blog.homepageUrl + &quot;p/fees.html&quot;'>الرسوم</a>
+      </nav>
+      <form class='search-bar' expr:action='data:blog.searchUrl' method='get'>
+        <input aria-label='بحث' name='q' placeholder='ابحث عن عقار...' type='text'/>
+        <button type='submit'>بحث</button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<div id='main-wrapper'>
+
+<!-- ===== Homepage Hero (only on homepage) ===== -->
+<b:if cond='data:view.isHomepage'>
+  <section class='hero'>
+    <div class='container'>
+      <h1>منصة دارنا للإيجار في جيبوتي</h1>
+      <p>اعثر على شقق وفلل ومنازل للإيجار مع أسعار واضحة ورسوم شفافة وتواصل مباشر عبر واتساب</p>
+      <div class='hero-filters'>
+        <input aria-label='بحث' id='hero-search' placeholder='ابحث بكلمة...' type='text'/>
+        <select aria-label='النوع' id='hero-type'>
+          <option value=''>كل الأنواع</option>
+          <option value='شقة'>شقة</option>
+          <option value='فيلا'>فيلا</option>
+          <option value='منزل'>منزل</option>
+          <option value='استوديو'>استوديو</option>
+          <option value='غرفة'>غرفة</option>
+        </select>
+        <select aria-label='المنطقة' id='hero-area'>
+          <option value=''>كل المناطق</option>
+          <option value='جيبوتي المدينة'>جيبوتي المدينة</option>
+          <option value='علي صبيح'>علي صبيح</option>
+          <option value='تاجورة'>تاجورة</option>
+          <option value='أوبوك'>أوبوك</option>
+          <option value='أرتابو'>أرتابو</option>
+          <option value='دخيل'>دخيل</option>
+        </select>
+        <button onclick='applyHeroFilters()' type='button'>تصفية</button>
+      </div>
+    </div>
+  </section>
+</b:if>
+
+<!-- ===== Main Content Area ===== -->
+<div class='container'>
+  <div class='main-content'>
+    <div class='content-area'>
+
+      <!-- Homepage: Featured Properties -->
+      <b:if cond='data:view.isHomepage'>
+        <section class='section'>
+          <h2 class='section-title'>عقارات مميزة</h2>
+          <div class='blog-posts property-grid'>
+            <b:section class='main' id='featured-posts' maxwidgets='1' showaddelement='no'>
+              <b:widget id='Blog1' locked='true' title='مشاركات المدونة' type='Blog' version='2'>
+                <b:widget-settings>
+                  <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+                  <b:widget-setting name='style.bordercolor'>#e2ddd2</b:widget-setting>
+                  <b:widget-setting name='postsPerAd'>0</b:widget-setting>
+                  <b:widget-setting name='showShareButtons'>false</b:widget-setting>
+                  <b:widget-setting name='showCommentLink'>false</b:widget-setting>
+                  <b:widget-setting name='numPostsToShow'>8</b:widget-setting>
+                  <b:widget-setting name='showAuthor'>false</b:widget-setting>
+                  <b:widget-setting name='showLabels'>false</b:widget-setting>
+                  <b:widget-setting name='showLocation'>false</b:widget-setting>
+                </b:widget-settings>
+                <b:includable id='main' var='top'>
+                  <div class='property-grid'>
+                    <b:loop values='data:posts' var='post'>
+                      <article class='property-card'>
+                        <a expr:href='data:post.url'>
+                          <b:if cond='data:post.featuredImage'>
+                            <img class='card-image' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 600, &quot;4:3&quot;)'/>
+                          <b:else/>
+                            <div class='card-image' style='display:flex;align-items:center;justify-content:center;color:#999;font-size:.9rem;'>لا توجد صورة</div>
+                          </b:if>
+                        </a>
+                        <div class='card-body'>
+                          <h3 class='card-title'><a expr:href='data:post.url'><data:post.title/></a></h3>
+                          <div class='card-meta'>
+                            <b:if cond='data:post.labels'>
+                              <b:loop values='data:post.labels' var='label'>
+                                <span><data:label.name/></span>
+                              </b:loop>
+                            </b:if>
+                          </div>
+                          <div class='card-price' data-darna-price='1' data-lang='ar' expr:id='&quot;card-price-&quot; + data:post.id'>
+                            <b:loop values='data:post.labels' var='label'>
+                              <span class='darna-label' style='display:none'><data:label.name/></span>
+                            </b:loop>
+                            <span class='darna-price-value'>&#8230;</span>
+                          </div>
+                          <div class='price-included-badge'>&#10003; السعر النهائي شامل رسوم خدمة المنصة (10%)</div>
+                          <a class='card-link' expr:href='data:post.url'>عرض التفاصيل</a>
+                        </div>
+                      </article>
+                    </b:loop>
+                  </div>
+
+                  <b:if cond='data:olderPageUrl or data:newerPageUrl'>
+                    <div class='pagination'>
+                      <b:if cond='data:newerPageUrl'>
+                        <a expr:href='data:newerPageUrl'>« السابق</a>
+                      </b:if>
+                      <span class='current-page'><data:blog.pageNumber/></span>
+                      <b:if cond='data:olderPageUrl'>
+                        <a expr:href='data:olderPageUrl'>التالي »</a>
+                      </b:if>
+                    </div>
+                  </b:if>
+                </b:includable>
+              </b:widget>
+            </b:section>
+          </div>
+        </section>
+
+        <section class='section'>
+          <h2 class='section-title'>تصفية حسب النوع</h2>
+          <div class='filter-bar'>
+            <span class='filter-label'>النوع:</span>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/شقة&quot;'>شقق</a>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/فيلا&quot;'>فلل</a>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/منزل&quot;'>منازل</a>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/استوديو&quot;'>استوديوهات</a>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/غرفة&quot;'>غرف</a>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/مفروش&quot;'>مفروشة</a>
+          </div>
+          <div class='filter-bar'>
+            <span class='filter-label'>المنطقة:</span>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/جيبوتي-المدينة&quot;'>جيبوتي المدينة</a>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/علي-صبيح&quot;'>علي صبيح</a>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/تاجورة&quot;'>تاجورة</a>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/أوبوك&quot;'>أوبوك</a>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/أرتابو&quot;'>أرتابو</a>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/دخيل&quot;'>دخيل</a>
+          </div>
+          <p style='font-size:.8rem;color:#6b6b6b;margin-top:8px;'>ملاحظة: التصفية تعرض المشاركات المصنفة بهذا التصنيف في المدونة الحالية. قد لا تشمل كل العقارات في كل الصفحات.</p>
+        </section>
+      </b:if>
+
+      <!-- Item (Post Detail) View -->
+      <b:if cond='data:view.isPost'>
+        <b:section class='main' id='post-detail' maxwidgets='1' showaddelement='no'>
+          <b:widget id='Blog2' locked='true' title='تفاصيل العقار' type='Blog' version='2'>
+            <b:widget-settings>
+              <b:widget-setting name='numPostsToShow'>1</b:widget-setting>
+              <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main' var='top'>
+              <b:loop values='data:posts' var='post'>
+                <article class='post property-detail'>
+                  <div class='detail-header'>
+                    <h1 class='detail-title'><data:post.title/></h1>
+                    <div class='detail-meta'>
+                      <b:if cond='data:post.labels'>
+                        <b:loop values='data:post.labels' var='label'>
+                          <span><data:label.name/></span>
+                        </b:loop>
+                      </b:if>
+                    </div>
+                    <div class='detail-price' data-darna-price='1' data-lang='ar'>
+                      <b:loop values='data:post.labels' var='label'>
+                        <span class='darna-label' style='display:none'><data:label.name/></span>
+                      </b:loop>
+                      <span class='darna-price-value'>&#8230;</span>
+                    </div>
+                  </div>
+
+                  <div class='detail-fee-disclosure'>
+                    السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا. تفاصيل الرسوم موضحة في <a expr:href='data:blog.homepageUrl + &quot;p/fees.html&quot;'>صفحة سياسة الرسوم</a>.
+                  </div>
+
+                  <div class='gallery-container'>
+                    <div class='gallery-main'>
+                      <b:if cond='data:post.featuredImage'>
+                        <img expr:alt='data:post.title' expr:id='&quot;gallery-main-img&quot;' expr:src='data:post.featuredImage' id='gallery-main-img'/>
+                      <b:else/>
+                        <div style='height:400px;display:flex;align-items:center;justify-content:center;color:#999;'>لا توجد صور</div>
+                      </b:if>
+                      <button aria-label='السابق' class='gallery-btn prev' onclick='galleryNav(-1)' type='button'>‹</button>
+                      <button aria-label='التالي' class='gallery-btn next' onclick='galleryNav(1)' type='button'>›</button>
+                    </div>
+                    <div class='gallery-nav' id='gallery-thumbs'>
+                      <b:if cond='data:post.featuredImage'>
+                        <img class='gallery-thumb active' expr:alt='data:post.title' expr:onclick='&quot;gallerySelect(0)&quot;' expr:src='resizeImage(data:post.featuredImage, 80, &quot;4:3&quot;)'/>
+                      </b:if>
+                    </div>
+                  </div>
+
+                  <div class='post-body'>
+                    <data:post.body/>
+                  </div>
+
+                  <div class='inquiry-notice'>
+                    الاستفسار عبر واتساب لا يؤكد التوافر ولا يشكل حجزًا. يجب على الإدارة التحقق من التوافر والسعر والشروط مع المالك، ثم إرسال عرض سعر مكتوب قبل تأكيد الحجز.
+                  </div>
+
+                  <div style='margin:24px 0;'>
+                    <a class='whatsapp-cta' expr:href='&quot;https://wa.me/25377313443?text=&quot; + data:post.url' target='_blank'>
+                      <span style='font-size:1.3rem;'>WhatsApp</span>
+                      استفسر عن هذا العقار عبر واتساب
+                    </a>
+                    <p class='whatsapp-note'>رقم الواتساب: +253 77 31 34 43 — سيتم إدراج عنوان العقار ورقمه في رسالتك</p>
+                  </div>
+
+                  <b:if cond='data:post.labels'>
+                    <div class='filter-bar' style='margin-top:24px;'>
+                      <span class='filter-label'>التصنيفات:</span>
+                      <b:loop values='data:post.labels' var='label'>
+                        <a class='filter-chip' expr:href='data:label.url'><data:label.name/></a>
+                      </b:loop>
+                    </div>
+                  </b:if>
+                </article>
+              </b:loop>
+            </b:includable>
+          </b:widget>
+        </b:section>
+      </b:if>
+
+      <!-- Search/Archive/Label View -->
+      <b:if cond='data:view.isSearch or data:view.isArchive or data:view.isLabelSearch'>
+        <section class='section'>
+          <h2 class='section-title'>
+            <b:if cond='data:view.isSearch'>
+              نتائج البحث: <data:blog.searchQuery/>
+            <b:else/>
+              <data:blog.pageName/>
+            </b:if>
+          </h2>
+          <b:section class='main' id='search-results' maxwidgets='1' showaddelement='no'>
+            <b:widget id='Blog3' locked='true' title='نتائج البحث' type='Blog' version='2'>
+              <b:widget-settings>
+                <b:widget-setting name='numPostsToShow'>12</b:widget-setting>
+                <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+              </b:widget-settings>
+              <b:includable id='main' var='top'>
+                <b:if cond='data:posts.empty'>
+                  <div class='no-results'>
+                    <p>لا توجد عقارات مطابقة في هذه الصفحة.</p>
+                    <p style='font-size:.85rem;margin-top:8px;'>جرّب تغيير كلمات البحث أو تصفح التصنيفات.</p>
+                  </div>
+                <b:else/>
+                  <div class='property-grid'>
+                    <b:loop values='data:posts' var='post'>
+                      <article class='property-card'>
+                        <a expr:href='data:post.url'>
+                          <b:if cond='data:post.featuredImage'>
+                            <img class='card-image' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 600, &quot;4:3&quot;)'/>
+                          <b:else/>
+                            <div class='card-image' style='display:flex;align-items:center;justify-content:center;color:#999;font-size:.9rem;'>لا توجد صورة</div>
+                          </b:if>
+                        </a>
+                        <div class='card-body'>
+                          <h3 class='card-title'><a expr:href='data:post.url'><data:post.title/></a></h3>
+                          <div class='card-meta'>
+                            <b:if cond='data:post.labels'>
+                              <b:loop values='data:post.labels' var='label'>
+                                <span><data:label.name/></span>
+                              </b:loop>
+                            </b:if>
+                          </div>
+                          <div class='card-price' data-darna-price='1' data-lang='ar'>
+                            <b:loop values='data:post.labels' var='label'>
+                              <span class='darna-label' style='display:none'><data:label.name/></span>
+                            </b:loop>
+                            <span class='darna-price-value'>&#8230;</span>
+                          </div>
+                          <div class='price-included-badge'>&#10003; شامل رسوم الخدمة (10%)</div>
+                          <a class='card-link' expr:href='data:post.url'>عرض التفاصيل</a>
+                        </div>
+                      </article>
+                    </b:loop>
+                  </div>
+
+                  <b:if cond='data:olderPageUrl or data:newerPageUrl'>
+                    <div class='pagination'>
+                      <b:if cond='data:newerPageUrl'>
+                        <a expr:href='data:newerPageUrl'>« السابق</a>
+                      </b:if>
+                      <b:if cond='data:olderPageUrl'>
+                        <a expr:href='data:olderPageUrl'>التالي »</a>
+                      </b:if>
+                    </div>
+                  </b:if>
+                </b:if>
+              </b:includable>
+            </b:widget>
+          </b:section>
+        </section>
+      </b:if>
+
+      <!-- Static Page View -->
+      <b:if cond='data:view.isPage'>
+        <b:section class='main' id='static-page' maxwidgets='1' showaddelement='no'>
+          <b:widget id='Blog4' locked='true' title='صفحة ثابتة' type='Blog' version='2'>
+            <b:widget-settings>
+              <b:widget-setting name='numPostsToShow'>1</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main' var='top'>
+              <b:loop values='data:posts' var='post'>
+                <article class='post'>
+                  <h1 class='post-title'><data:post.title/></h1>
+                  <div class='post-body'>
+                    <data:post.body/>
+                  </div>
+                </article>
+              </b:loop>
+            </b:includable>
+          </b:widget>
+        </b:section>
+      </b:if>
+
+    </div><!-- /.content-area -->
+
+    <!-- ===== Sidebar ===== -->
+    <aside class='sidebar-area sidebar'>
+      <b:section class='sidebar-section' id='sidebar-widgets' preferred='yes' showaddelement='yes'>
+        <b:widget id='HTML1' locked='false' title='تواصل معنا' type='HTML' version='2'>
+          <b:widget-settings>
+            <b:widget-setting name='content'>&lt;div style=&quot;text-align:center;padding:8px;&quot;&gt;&lt;a href=&quot;https://wa.me/25377313443&quot; style=&quot;display:inline-block;background:#25d366;color:#fff;padding:12px 24px;border-radius:10px;font-weight:700;text-decoration:none;&quot;&gt;واتساب: +253 77 31 34 43&lt;/a&gt;&lt;/div&gt;</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <div class='widget-card'>
+              <h3><data:title/></h3>
+              <div class='widget-content'><data:content/></div>
+            </div>
+          </b:includable>
+        </b:widget>
+
+        <b:widget id='Label1' locked='false' title='تصفح حسب النوع' type='Label' version='2'>
+          <b:widget-settings>
+            <b:widget-setting name='display'>LIST</b:widget-setting>
+            <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <div class='widget-card'>
+              <h3><data:title/></h3>
+              <ul>
+                <b:loop values='data:labels' var='label'>
+                  <li><a expr:href='data:label.url'><data:label.name/></a></li>
+                </b:loop>
+              </ul>
+            </div>
+          </b:includable>
+        </b:widget>
+
+        <b:widget id='HTML2' locked='false' title='مساحة إعلانية' type='HTML' version='2'>
+          <b:widget-settings>
+            <b:widget-setting name='content'>&lt;div class=&quot;ad-slot&quot;&gt;مساحة إعلانية قابلة للتعديل من تخطيط Blogger&lt;/div&gt;</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <div class='widget-card'>
+              <h3><data:title/></h3>
+              <div class='widget-content'><data:content/></div>
+            </div>
+          </b:includable>
+        </b:widget>
+
+        <b:widget id='PopularPosts1' locked='false' title='عقارات شائعة' type='PopularPosts' version='2'>
+          <b:widget-settings>
+            <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
+            <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <div class='widget-card'>
+              <h3><data:title/></h3>
+              <ul>
+                <b:loop values='data:posts' var='post'>
+                  <li><a expr:href='data:post.url'><data:post.title/></a></li>
+                </b:loop>
+              </ul>
+            </div>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </aside>
+
+  </div><!-- /.main-content -->
+</div><!-- /.container -->
+
+</div><!-- /#main-wrapper -->
+
+<!-- ===== Footer ===== -->
+<footer class='site-footer'>
+  <div class='container'>
+    <div class='footer-grid'>
+      <div>
+        <h4>دارنا DJ</h4>
+        <p style='font-size:.9rem;opacity:.7;'>منصة إيجار العقارات في جيبوتي. أسعار واضحة ورسوم شفافة.</p>
+      </div>
+      <div>
+        <h4>روابط</h4>
+        <ul>
+          <li><a expr:href='data:blog.homepageUrl'>الرئيسية</a></li>
+          <li><a expr:href='data:blog.homepageUrl + &quot;p/contact.html&quot;'>تواصل معنا</a></li>
+          <li><a expr:href='data:blog.homepageUrl + &quot;p/fees.html&quot;'>سياسة الرسوم</a></li>
+          <li><a expr:href='data:blog.homepageUrl + &quot;p/terms.html&quot;'>الشروط والأحكام</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>سياسات</h4>
+        <ul>
+          <li><a expr:href='data:blog.homepageUrl + &quot;p/privacy.html&quot;'>الخصوصية</a></li>
+          <li><a expr:href='data:blog.homepageUrl + &quot;p/cancellation.html&quot;'>الإلغاء والاسترداد</a></li>
+          <li><a expr:href='data:blog.homepageUrl + &quot;p/complaints.html&quot;'>تقديم شكوى</a></li>
+          <li><a expr:href='data:blog.homepageUrl + &quot;p/advertise.html&quot;'>الإعلان</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>تواصل</h4>
+        <div class='footer-contact'>
+          <p>واتساب: <a href='https://wa.me/25377313443'>+253 77 31 34 43</a></p>
+          <p style='margin-top:8px;'>الاستفسار لا يؤكد التوافر أو الحجز</p>
+        </div>
+      </div>
+    </div>
+    <div class='footer-bottom'>
+      <p>© <data:blog.title/> — جميع الحقوق محفوظة. الاسم ترشيحي مؤقت ولم يتم تأكيد تسجيله.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Theme Scripts ===== -->
+<script type='text/javascript'>
+//<![CDATA[
+(function() {
+  // Gallery state
+  var galleryImages = [];
+  var currentIndex = 0;
+
+  // Collect gallery images from post body
+  function initGallery() {
+    var body = document.querySelector('.post-body');
+    if (!body) return;
+    var imgs = body.querySelectorAll('img');
+    var thumbsContainer = document.getElementById('gallery-thumbs');
+    var mainImg = document.getElementById('gallery-main-img');
+    if (!imgs.length || !thumbsContainer || !mainImg) return;
+
+    galleryImages = [];
+    imgs.forEach(function(img, i) {
+      var src = img.src;
+      galleryImages.push(src);
+      // Hide original images in body
+      img.style.display = 'none';
+
+      // Create thumbnail
+      var thumb = document.createElement('img');
+      thumb.className = 'gallery-thumb';
+      thumb.src = src;
+      thumb.alt = 'صورة ' + (i + 1);
+      thumb.setAttribute('onclick', 'gallerySelect(' + i + ')');
+      thumb.setAttribute('role', 'button');
+      thumb.setAttribute('tabindex', '0');
+      thumb.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          gallerySelect(i);
+        }
+      });
+      thumbsContainer.appendChild(thumb);
+    });
+
+    if (galleryImages.length > 0) {
+      mainImg.src = galleryImages[0];
+    }
+  }
+
+  // Gallery navigation
+  window.galleryNav = function(direction) {
+    if (galleryImages.length === 0) return;
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = galleryImages.length - 1;
+    if (currentIndex >= galleryImages.length) currentIndex = 0;
+    updateGalleryMain();
+  };
+
+  window.gallerySelect = function(index) {
+    currentIndex = index;
+    updateGalleryMain();
+  };
+
+  function updateGalleryMain() {
+    var mainImg = document.getElementById('gallery-main-img');
+    if (!mainImg || !galleryImages[currentIndex]) return;
+    mainImg.src = galleryImages[currentIndex];
+
+    var thumbs = document.querySelectorAll('.gallery-thumb');
+    thumbs.forEach(function(t, i) {
+      t.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  // Keyboard navigation for gallery
+  document.addEventListener('keydown', function(e) {
+    var main = document.querySelector('.gallery-main');
+    if (!main) return;
+    if (e.key === 'ArrowLeft') galleryNav(1);
+    if (e.key === 'ArrowRight') galleryNav(-1);
+  });
+
+  // Hero filters
+  window.applyHeroFilters = function() {
+    var search = document.getElementById('hero-search');
+    var type = document.getElementById('hero-type');
+    var area = document.getElementById('hero-area');
+    var baseUrl = window.location.origin + window.location.pathname;
+    var query = [];
+
+    if (search && search.value.trim()) {
+      window.location.href = baseUrl + 'search?q=' + encodeURIComponent(search.value.trim());
+      return;
+    }
+    if (type && type.value) query.push(type.value);
+    if (area && area.value) query.push(area.value);
+
+    if (query.length > 0) {
+      window.location.href = baseUrl + 'search/label/' + encodeURIComponent(query.join('+'));
+    } else {
+      window.location.href = baseUrl;
+    }
+  };
+
+  // Touch swipe for gallery
+  (function() {
+    var main = document.querySelector('.gallery-main');
+    if (!main) return;
+    var touchStartX = 0;
+    main.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    main.addEventListener('touchend', function(e) {
+      var touchEndX = e.changedTouches[0].clientX;
+      var diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        galleryNav(diff > 0 ? 1 : -1);
+      }
+    }, { passive: true });
+  })();
+
+  // ===== Unified price logic (single source of truth) =====
+  // Recorded-price convention (Blogger post labels; separator may be ':' '-' or '_'):
+  //   price:100       -> base price BEFORE the 10% tenant service fee -> displayed = base * 1.10
+  //   pricefinal:110  -> final price ALREADY including the 10% fee    -> displayed as-is (no extra)
+  //   cur:USD         -> currency code (default USD)
+  //   per:night       -> pricing unit (night|day|week|month|stay)
+  // The 10% tenant service fee is applied exactly once. Never fabricate a price and never hide the numeric price.
+  var DARNA_SERVICE_FEE_RATE = 0.10;
+  var DARNA_PRICE_LABEL_RE = /^(pricefinal|price|cur|per)\s*[:\-_]\s*(.+)$/i;
+  var DARNA_CUR_SYMBOL = { USD:'$', EUR:'\u20AC', GBP:'\u00A3', JPY:'\u00A5', CNY:'\u00A5', INR:'\u20B9', NGN:'\u20A6', TRY:'\u20BA', RUB:'\u20BD', KRW:'\u20A9' };
+  var DARNA_CUR_NAME_AR = { USD:'\u062F\u0648\u0644\u0627\u0631', EUR:'\u064A\u0648\u0631\u0648', GBP:'\u062C\u0646\u064A\u0647 \u0625\u0633\u062A\u0631\u0644\u064A\u0646\u064A', MRU:'\u0623\u0648\u0642\u064A\u0629', DJF:'\u0641\u0631\u0646\u0643 \u062C\u064A\u0628\u0648\u062A\u064A', SAR:'\u0631\u064A\u0627\u0644', AED:'\u062F\u0631\u0647\u0645', EGP:'\u062C\u0646\u064A\u0647', MAD:'\u062F\u0631\u0647\u0645', QAR:'\u0631\u064A\u0627\u0644', KWD:'\u062F\u064A\u0646\u0627\u0631' };
+  var DARNA_UNITS = {
+    ar: { night:'\u0627\u0644\u0644\u064A\u0644\u0629', day:'\u0627\u0644\u064A\u0648\u0645', week:'\u0627\u0644\u0623\u0633\u0628\u0648\u0639', month:'\u0627\u0644\u0634\u0647\u0631', stay:'\u0645\u062F\u0629 \u0627\u0644\u0625\u0642\u0627\u0645\u0629' },
+    en: { night:'night', day:'day', week:'week', month:'month', stay:'stay' },
+    fr: { night:'nuit', day:'jour', week:'semaine', month:'mois', stay:'s\u00E9jour' }
+  };
+
+  function darnaParsePriceLabels(labels) {
+    var out = { base: null, final: null, cur: 'USD', per: '' };
+    (labels || []).forEach(function(raw) {
+      if (raw == null) return;
+      var m = DARNA_PRICE_LABEL_RE.exec(String(raw).trim());
+      if (!m) return;
+      var key = m[1].toLowerCase();
+      var val = m[2].trim();
+      if (key === 'price') out.base = val;
+      else if (key === 'pricefinal') out.final = val;
+      else if (key === 'cur') out.cur = val.toUpperCase();
+      else if (key === 'per') out.per = val.toLowerCase();
+    });
+    return out;
+  }
+
+  function darnaComputePrice(labels) {
+    var p = darnaParsePriceLabels(labels);
+    var num = null, source = null;
+    if (p.final !== null && isFinite(parseFloat(p.final))) {
+      num = parseFloat(p.final); source = 'final';
+    } else if (p.base !== null && isFinite(parseFloat(p.base))) {
+      num = parseFloat(p.base) * (1 + DARNA_SERVICE_FEE_RATE); source = 'base';
+    }
+    if (num === null || !isFinite(num)) return null;
+    num = Math.round(num * 100) / 100;
+    return { amount: num, currency: p.cur, per: p.per, source: source };
+  }
+
+  function darnaFormatPrice(info, lang) {
+    if (!info) return null;
+    lang = lang || 'ar';
+    var amount = (info.amount % 1 === 0) ? String(info.amount) : info.amount.toFixed(2);
+    var unit = '';
+    if (info.per) {
+      var map = DARNA_UNITS[lang] || DARNA_UNITS.en;
+      unit = map[info.per] || info.per;
+    }
+    if (lang === 'ar') {
+      var name = DARNA_CUR_NAME_AR[info.currency] || info.currency;
+      return amount + ' ' + name + (unit ? ' / ' + unit : '');
+    }
+    var sym = DARNA_CUR_SYMBOL[info.currency] || (info.currency + ' ');
+    return sym + amount + (unit ? ' / ' + unit : '');
+  }
+
+  function darnaRenderPrices() {
+    var nodes = document.querySelectorAll('[data-darna-price]');
+    Array.prototype.forEach.call(nodes, function(el) {
+      var labels = Array.prototype.map.call(el.querySelectorAll('.darna-label'), function(s) { return s.textContent; });
+      var out = el.querySelector('.darna-price-value');
+      if (!out) return;
+      var info = darnaComputePrice(labels);
+      if (!info) {
+        out.innerHTML = '<span class="price-missing">\u26A0 \u0628\u064A\u0627\u0646\u0627\u062A \u0627\u0644\u0633\u0639\u0631 \u063A\u064A\u0631 \u0645\u0643\u062A\u0645\u0644\u0629 \u2014 \u0623\u0636\u0641 \u062A\u0633\u0645\u064A\u0629 price:100 (\u0644\u0644\u0625\u062F\u0627\u0631\u0629)</span>';
+        return;
+      }
+      out.textContent = darnaFormatPrice(info, el.getAttribute('data-lang') || 'ar');
+    });
+  }
+
+  // Hide price-related labels from the meta chips (they are shown as the price, not as tags)
+  function darnaCleanMeta() {
+    var re = /^(pricefinal|price|cur|per)\s*[:\-_]/i;
+    Array.prototype.forEach.call(document.querySelectorAll('.card-meta span, .detail-meta span'), function(s) {
+      if (re.test(s.textContent.trim())) s.style.display = 'none';
+    });
+  }
+
+  // Expose for testing / debugging
+  window.darnaParsePriceLabels = darnaParsePriceLabels;
+  window.darnaComputePrice = darnaComputePrice;
+  window.darnaFormatPrice = darnaFormatPrice;
+  window.darnaRenderPrices = darnaRenderPrices;
+
+  // Initialize on load
+  function darnaInit() { initGallery(); darnaCleanMeta(); darnaRenderPrices(); }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', darnaInit);
+  } else {
+    darnaInit();
+  }
+})();
+//]]>
+</script>
+
+<b:include data='blog' name='google-analytics'/>
+
+</body>
+</html>

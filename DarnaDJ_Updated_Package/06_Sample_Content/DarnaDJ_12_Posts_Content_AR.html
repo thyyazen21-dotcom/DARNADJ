@@ -1,439 +1,235 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8"/>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>DARNADJ — ملف محتوى 12 مشاركة</title>
 <style>
-  :root{ --teal:#0f766e; --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --bg:#f8fafc; }
-  *{box-sizing:border-box}
-  body{font-family:"Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink);background:var(--bg);margin:0;line-height:1.7}
-  .wrap{max-width:960px;margin:0 auto;padding:28px 20px 60px}
-  h1{font-size:1.7rem;margin:0 0 6px}
-  .lead{color:var(--muted);margin:0 0 18px}
-  .note{background:#fff;border:1px solid var(--line);border-right:4px solid var(--teal);border-radius:10px;padding:14px 16px;margin:16px 0}
-  .note h3{margin:0 0 8px;font-size:1rem;color:var(--teal)}
-  .note ul{margin:6px 0 0;padding-right:20px}
-  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:.9rem}
-  th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}
-  th{background:#ecfdf5;color:#065f46;font-weight:700}
-  tr:last-child td{border-bottom:none}
-  section.post{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:22px 0}
-  section.post h2{font-size:1.2rem;margin:0 0 12px;display:flex;align-items:center;gap:10px}
-  .num{display:inline-flex;width:30px;height:30px;background:var(--teal);color:#fff;border-radius:50%;align-items:center;justify-content:center;font-size:.95rem}
-  .meta{display:grid;gap:8px;margin-bottom:12px}
-  .k{color:var(--muted);font-weight:600}
-  .price{color:var(--teal);font-size:1.05rem}
-  .src{color:var(--muted);font-size:.85rem}
-  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-  .chip{background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;border-radius:999px;padding:2px 10px;font-size:.82rem}
-  .labelsline{margin-top:4px}
-  code{background:#f1f5f9;border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85rem;direction:ltr;display:inline-block}
-  .thumbs{display:flex;gap:8px;margin:10px 0 14px;flex-wrap:wrap}
-  .thumbs img{width:150px;height:100px;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
-  details{border:1px dashed var(--line);border-radius:10px;padding:8px 12px;background:#fbfdff}
-  summary{cursor:pointer;font-weight:600;color:var(--teal)}
-  pre.code{white-space:pre-wrap;word-break:break-word;background:#0f172a;color:#e2e8f0;border-radius:8px;padding:14px;font-size:.82rem;direction:ltr;text-align:left;margin:10px 0 0;max-height:420px;overflow:auto}
-  @media print{ body{background:#fff} section.post{break-inside:avoid} details{display:block} }
-</style>
-</head>
-<body>
-<div class="wrap">
-  <h1>DARNADJ — ملف محتوى 12 مشاركة (عربي)</h1>
-  <p class="lead">جاهز للصق في Blogger وفق «قالب المخرج». كل مشاركة تحتوي: العنوان، التسميات (Labels)، صور افتراضية، وكود HTML كامل.</p>
-
-  <div class="note">
-    <h3>كيفية الاستخدام</h3>
-    <ul>
-      <li>في Blogger: مشاركة جديدة ← العنوان من الحقل أعلاه ← بدّل إلى «عرض HTML» والصق الكود ← أضف التسميات (Labels) كما هي ← انشر.</li>
-      <li>أول صورة في الكود تصبح الصورة البارزة تلقائيًا، وبقية الصور تظهر في المعرض.</li>
-      <li>قاعدة السعر: <code>price:1000</code> = أساسي قبل الرسوم ← يُعرض 1100. <code>pricefinal:1650</code> = شامل مسبقًا ← يُعرض كما هو. الرسوم (10%) تُحتسب مرة واحدة فقط.</li>
-      <li>لو رفض Blogger الرمز <code>:</code> في التسميات، استبدله بـ <code>-</code> مثل <code>price-1000</code> — القالب يدعم الفواصل <code>:</code> و<code>-</code> و<code>_</code>.</li>
-      <li>الصور روابط مباشرة (Unsplash) وتعمل فورًا؛ النسخ المحلية متوفرة في مجلد <code>images/</code> لرفعها إلى Blogger إن رغبت.</li>
-    </ul>
-  </div>
-
-  <h2 style="font-size:1.1rem">ملخص المشاركات</h2>
-  <table>
-    <thead><tr><th>#</th><th>رقم العقار</th><th>العنوان</th><th>المنطقة</th><th>النوع</th><th>السعر النهائي</th><th>التسمية</th></tr></thead>
-    <tbody><tr><td>1</td><td>DJ-APT-0001</td><td>شقة مفروشة حديثة في قلب المدينة</td><td>جيبوتي المدينة</td><td>شقة مفروشة</td><td>1100 دولار شهريًا</td><td><code>price:1000</code></td></tr><tr><td>2</td><td>DJ-VIL-0002</td><td>فيلا فاخرة مع حديقة خاصة</td><td>علي صبيح</td><td>فيلا</td><td>2750 دولار شهريًا</td><td><code>price:2500</code></td></tr><tr><td>3</td><td>DJ-STD-0003</td><td>استوديو مفروش قرب المركز التجاري</td><td>جيبوتي المدينة</td><td>استوديو</td><td>49.50 دولار لليلة</td><td><code>price:45</code></td></tr><tr><td>4</td><td>DJ-HOM-0004</td><td>منزل عائلي واسع</td><td>تاجورة</td><td>منزل</td><td>1980 دولار شهريًا</td><td><code>price:1800</code></td></tr><tr><td>5</td><td>DJ-APT-0005</td><td>شقة بإطلالة على البحر</td><td>أوبوك</td><td>شقة</td><td>1650 دولار شهريًا</td><td><code>pricefinal:1650</code></td></tr><tr><td>6</td><td>DJ-ROO-0006</td><td>غرفة مفروشة للطلاب</td><td>أرتا</td><td>غرفة</td><td>27.50 دولار لليلة</td><td><code>price:25</code></td></tr><tr><td>7</td><td>DJ-VIL-0007</td><td>فيلا بمسبح خاص</td><td>جيبوتي المدينة</td><td>فيلا</td><td>4400 دولار شهريًا</td><td><code>price:4000</code></td></tr><tr><td>8</td><td>DJ-APT-0008</td><td>شقة عصرية قرب المطار</td><td>دخيل</td><td>شقة</td><td>1320 دولار شهريًا</td><td><code>price:1200</code></td></tr><tr><td>9</td><td>DJ-STD-0009</td><td>استوديو أنيق لرجال الأعمال</td><td>جيبوتي المدينة</td><td>استوديو</td><td>60 دولار لليلة</td><td><code>pricefinal:60</code></td></tr><tr><td>10</td><td>DJ-HOM-0010</td><td>منزل تقليدي مجدّد</td><td>تاجورة</td><td>منزل</td><td>1650 دولار شهريًا</td><td><code>price:1500</code></td></tr><tr><td>11</td><td>DJ-APT-0011</td><td>شقة عائلية بثلاث غرف</td><td>علي صبيح</td><td>شقة</td><td>2200 دولار شهريًا</td><td><code>price:2000</code></td></tr><tr><td>12</td><td>DJ-VIL-0012</td><td>فيلا شاطئية للإيجار</td><td>أوبوك</td><td>فيلا</td><td>330 دولار لليلة</td><td><code>price:300</code></td></tr></tbody>
-  </table>
-
-  
-  <section class="post">
-    <h2><span class="num">1</span> شقة مفروشة حديثة في قلب المدينة</h2>
-    <div class="meta">
-      <div><span class="k">رقم العقار:</span> <code>DJ-APT-0001</code></div>
-      <div><span class="k">السعر النهائي المعروض:</span> <strong class="price">1100 دولار شهريًا</strong> <span class="src">(الأساسي 1000 × 1.10)</span></div>
-      <div><span class="k">التسميات (Labels) — الصقها في حقل التسميات:</span><div class="chips"><span class='chip'>عقارات</span><span class='chip'>للإيجار</span><span class='chip'>جيبوتي المدينة</span><span class='chip'>شقة مفروشة</span><span class='chip'>price:1000</span><span class='chip'>cur:USD</span><span class='chip'>per:month</span></div></div>
-      <div class="labelsline"><code>عقارات, للإيجار, جيبوتي المدينة, شقة مفروشة, price:1000, cur:USD, per:month</code></div>
-    </div>
-    <div class="thumbs"><img src='https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80&auto=format&fit=crop' alt='شقة مفروشة حديثة في قلب المدينة'/><img src='https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80&auto=format&fit=crop' alt='شقة مفروشة حديثة في قلب المدينة'/><img src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80&auto=format&fit=crop' alt='شقة مفروشة حديثة في قلب المدينة'/></div>
-    <details open>
-      <summary>كود المشاركة (وضع HTML في Blogger) — انسخه كما هو</summary>
-      <pre class="code">&lt;div class=&quot;property-entry&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;
-&lt;div class=&quot;property-gallery&quot;&gt;
-  &lt;img alt=&quot;شقة مفروشة حديثة في قلب المدينة - صورة 1&quot; src=&quot;https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;شقة مفروشة حديثة في قلب المدينة - صورة 2&quot; src=&quot;https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;شقة مفروشة حديثة في قلب المدينة - صورة 3&quot; src=&quot;https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;رقم العقار:&lt;/strong&gt; DJ-APT-0001&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;السعر النهائي (شامل رسوم الخدمة 10%):&lt;/strong&gt; 1100 دولار شهريًا&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;المنطقة:&lt;/strong&gt; جيبوتي المدينة | &lt;strong&gt;النوع:&lt;/strong&gt; شقة مفروشة&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;غرف النوم:&lt;/strong&gt; 2 | &lt;strong&gt;الحمامات:&lt;/strong&gt; 1 | &lt;strong&gt;السعة:&lt;/strong&gt; 4 أشخاص&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;آخر تحقق من السعر والتوافر:&lt;/strong&gt; 2026-10-12 — فريق DARNADJ&lt;/p&gt;
-&lt;h2&gt;وصف العقار&lt;/h2&gt;
-&lt;p&gt;شقة مفروشة بالكامل بمساحة 90 م² في قلب جيبوتي المدينة، على مقربة من الأسواق والمطاعم والخدمات. تتميز بتشطيبات حديثة وإضاءة طبيعية وموقع حيوي مناسب للإقامات الطويلة.&lt;/p&gt;
-&lt;h2&gt;المواصفات والخدمات&lt;/h2&gt;
-&lt;ul&gt;&lt;li&gt;تكييف في جميع الغرف&lt;/li&gt;&lt;li&gt;مطبخ مجهز بالكامل&lt;/li&gt;&lt;li&gt;إنترنت عالي السرعة&lt;/li&gt;&lt;li&gt;مصعد&lt;/li&gt;&lt;li&gt;حراسة على مدار الساعة&lt;/li&gt;&lt;li&gt;قريبة من المواصلات العامة&lt;/li&gt;&lt;/ul&gt;
-&lt;p&gt;السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-APT-0001%20%E2%80%94%20%D8%B4%D9%82%D8%A9%20%D9%85%D9%81%D8%B1%D9%88%D8%B4%D8%A9%20%D8%AD%D8%AF%D9%8A%D8%AB%D8%A9%20%D9%81%D9%8A%20%D9%82%D9%84%D8%A8%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%201100%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D&quot;&gt;تحقق من التوافر عبر واتساب&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</pre>
-    </details>
-  </section>
-  <section class="post">
-    <h2><span class="num">2</span> فيلا فاخرة مع حديقة خاصة</h2>
-    <div class="meta">
-      <div><span class="k">رقم العقار:</span> <code>DJ-VIL-0002</code></div>
-      <div><span class="k">السعر النهائي المعروض:</span> <strong class="price">2750 دولار شهريًا</strong> <span class="src">(الأساسي 2500 × 1.10)</span></div>
-      <div><span class="k">التسميات (Labels) — الصقها في حقل التسميات:</span><div class="chips"><span class='chip'>عقارات</span><span class='chip'>للإيجار</span><span class='chip'>علي صبيح</span><span class='chip'>فيلا</span><span class='chip'>price:2500</span><span class='chip'>cur:USD</span><span class='chip'>per:month</span></div></div>
-      <div class="labelsline"><code>عقارات, للإيجار, علي صبيح, فيلا, price:2500, cur:USD, per:month</code></div>
-    </div>
-    <div class="thumbs"><img src='https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&q=80&auto=format&fit=crop' alt='فيلا فاخرة مع حديقة خاصة'/><img src='https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80&auto=format&fit=crop' alt='فيلا فاخرة مع حديقة خاصة'/><img src='https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&q=80&auto=format&fit=crop' alt='فيلا فاخرة مع حديقة خاصة'/></div>
-    <details open>
-      <summary>كود المشاركة (وضع HTML في Blogger) — انسخه كما هو</summary>
-      <pre class="code">&lt;div class=&quot;property-entry&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;
-&lt;div class=&quot;property-gallery&quot;&gt;
-  &lt;img alt=&quot;فيلا فاخرة مع حديقة خاصة - صورة 1&quot; src=&quot;https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;فيلا فاخرة مع حديقة خاصة - صورة 2&quot; src=&quot;https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;فيلا فاخرة مع حديقة خاصة - صورة 3&quot; src=&quot;https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;رقم العقار:&lt;/strong&gt; DJ-VIL-0002&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;السعر النهائي (شامل رسوم الخدمة 10%):&lt;/strong&gt; 2750 دولار شهريًا&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;المنطقة:&lt;/strong&gt; علي صبيح | &lt;strong&gt;النوع:&lt;/strong&gt; فيلا&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;غرف النوم:&lt;/strong&gt; 4 | &lt;strong&gt;الحمامات:&lt;/strong&gt; 3 | &lt;strong&gt;السعة:&lt;/strong&gt; 8 أشخاص&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;آخر تحقق من السعر والتوافر:&lt;/strong&gt; 2026-10-12 — فريق DARNADJ&lt;/p&gt;
-&lt;h2&gt;وصف العقار&lt;/h2&gt;
-&lt;p&gt;فيلا مستقلة بمساحة 320 م² في حي علي صبيح الهادئ، مع حديقة خاصة ومواقف سيارات. مناسبة للعائلات الكبيرة أو الإقامة الرسمية، وتوفر خصوصية ومساحات واسعة.&lt;/p&gt;
-&lt;h2&gt;المواصفات والخدمات&lt;/h2&gt;
-&lt;ul&gt;&lt;li&gt;4 غرف نوم&lt;/li&gt;&lt;li&gt;3 حمامات&lt;/li&gt;&lt;li&gt;صالة واسعة&lt;/li&gt;&lt;li&gt;حديقة خاصة&lt;/li&gt;&lt;li&gt;موقف سيارات&lt;/li&gt;&lt;li&gt;خزان ماء&lt;/li&gt;&lt;li&gt;مولد كهرباء احتياطي&lt;/li&gt;&lt;/ul&gt;
-&lt;p&gt;السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-VIL-0002%20%E2%80%94%20%D9%81%D9%8A%D9%84%D8%A7%20%D9%81%D8%A7%D8%AE%D8%B1%D8%A9%20%D9%85%D8%B9%20%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%AE%D8%A7%D8%B5%D8%A9.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%202750%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D&quot;&gt;تحقق من التوافر عبر واتساب&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</pre>
-    </details>
-  </section>
-  <section class="post">
-    <h2><span class="num">3</span> استوديو مفروش قرب المركز التجاري</h2>
-    <div class="meta">
-      <div><span class="k">رقم العقار:</span> <code>DJ-STD-0003</code></div>
-      <div><span class="k">السعر النهائي المعروض:</span> <strong class="price">49.50 دولار لليلة</strong> <span class="src">(الأساسي 45 × 1.10)</span></div>
-      <div><span class="k">التسميات (Labels) — الصقها في حقل التسميات:</span><div class="chips"><span class='chip'>عقارات</span><span class='chip'>للإيجار</span><span class='chip'>جيبوتي المدينة</span><span class='chip'>استوديو</span><span class='chip'>price:45</span><span class='chip'>cur:USD</span><span class='chip'>per:night</span></div></div>
-      <div class="labelsline"><code>عقارات, للإيجار, جيبوتي المدينة, استوديو, price:45, cur:USD, per:night</code></div>
-    </div>
-    <div class="thumbs"><img src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80&auto=format&fit=crop' alt='استوديو مفروش قرب المركز التجاري'/><img src='https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80&auto=format&fit=crop' alt='استوديو مفروش قرب المركز التجاري'/><img src='https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=1200&q=80&auto=format&fit=crop' alt='استوديو مفروش قرب المركز التجاري'/></div>
-    <details open>
-      <summary>كود المشاركة (وضع HTML في Blogger) — انسخه كما هو</summary>
-      <pre class="code">&lt;div class=&quot;property-entry&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;
-&lt;div class=&quot;property-gallery&quot;&gt;
-  &lt;img alt=&quot;استوديو مفروش قرب المركز التجاري - صورة 1&quot; src=&quot;https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;استوديو مفروش قرب المركز التجاري - صورة 2&quot; src=&quot;https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;استوديو مفروش قرب المركز التجاري - صورة 3&quot; src=&quot;https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;رقم العقار:&lt;/strong&gt; DJ-STD-0003&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;السعر النهائي (شامل رسوم الخدمة 10%):&lt;/strong&gt; 49.50 دولار لليلة&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;المنطقة:&lt;/strong&gt; جيبوتي المدينة | &lt;strong&gt;النوع:&lt;/strong&gt; استوديو&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;غرف النوم:&lt;/strong&gt; 1 | &lt;strong&gt;الحمامات:&lt;/strong&gt; 1 | &lt;strong&gt;السعة:&lt;/strong&gt; 2 أشخاص&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;آخر تحقق من السعر والتوافر:&lt;/strong&gt; 2026-10-12 — فريق DARNADJ&lt;/p&gt;
-&lt;h2&gt;وصف العقار&lt;/h2&gt;
-&lt;p&gt;استوديو مفروش بمساحة 35 م² قريب من المركز التجاري، مناسب للأفراد أو رجال الأعمال. متاح للإقامة القصيرة أو الطويلة مع خدمات أساسية متكاملة.&lt;/p&gt;
-&lt;h2&gt;المواصفات والخدمات&lt;/h2&gt;
-&lt;ul&gt;&lt;li&gt;تكييف&lt;/li&gt;&lt;li&gt;مطبخ صغير&lt;/li&gt;&lt;li&gt;إنترنت&lt;/li&gt;&lt;li&gt;نظافة دورية&lt;/li&gt;&lt;li&gt;قريب من المقاهي والخدمات&lt;/li&gt;&lt;/ul&gt;
-&lt;p&gt;السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-STD-0003%20%E2%80%94%20%D8%A7%D8%B3%D8%AA%D9%88%D8%AF%D9%8A%D9%88%20%D9%85%D9%81%D8%B1%D9%88%D8%B4%20%D9%82%D8%B1%D8%A8%20%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%20%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%2049.50%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D9%84%D9%84%D9%8A%D9%84%D8%A9.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D&quot;&gt;تحقق من التوافر عبر واتساب&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</pre>
-    </details>
-  </section>
-  <section class="post">
-    <h2><span class="num">4</span> منزل عائلي واسع</h2>
-    <div class="meta">
-      <div><span class="k">رقم العقار:</span> <code>DJ-HOM-0004</code></div>
-      <div><span class="k">السعر النهائي المعروض:</span> <strong class="price">1980 دولار شهريًا</strong> <span class="src">(الأساسي 1800 × 1.10)</span></div>
-      <div><span class="k">التسميات (Labels) — الصقها في حقل التسميات:</span><div class="chips"><span class='chip'>عقارات</span><span class='chip'>للإيجار</span><span class='chip'>تاجورة</span><span class='chip'>منزل</span><span class='chip'>price:1800</span><span class='chip'>cur:USD</span><span class='chip'>per:month</span></div></div>
-      <div class="labelsline"><code>عقارات, للإيجار, تاجورة, منزل, price:1800, cur:USD, per:month</code></div>
-    </div>
-    <div class="thumbs"><img src='https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80&auto=format&fit=crop' alt='منزل عائلي واسع'/><img src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80&auto=format&fit=crop' alt='منزل عائلي واسع'/><img src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80&auto=format&fit=crop' alt='منزل عائلي واسع'/></div>
-    <details open>
-      <summary>كود المشاركة (وضع HTML في Blogger) — انسخه كما هو</summary>
-      <pre class="code">&lt;div class=&quot;property-entry&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;
-&lt;div class=&quot;property-gallery&quot;&gt;
-  &lt;img alt=&quot;منزل عائلي واسع - صورة 1&quot; src=&quot;https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;منزل عائلي واسع - صورة 2&quot; src=&quot;https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;منزل عائلي واسع - صورة 3&quot; src=&quot;https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;رقم العقار:&lt;/strong&gt; DJ-HOM-0004&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;السعر النهائي (شامل رسوم الخدمة 10%):&lt;/strong&gt; 1980 دولار شهريًا&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;المنطقة:&lt;/strong&gt; تاجورة | &lt;strong&gt;النوع:&lt;/strong&gt; منزل&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;غرف النوم:&lt;/strong&gt; 3 | &lt;strong&gt;الحمامات:&lt;/strong&gt; 2 | &lt;strong&gt;السعة:&lt;/strong&gt; 6 أشخاص&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;آخر تحقق من السعر والتوافر:&lt;/strong&gt; 2026-10-12 — فريق DARNADJ&lt;/p&gt;
-&lt;h2&gt;وصف العقار&lt;/h2&gt;
-&lt;p&gt;منزل عائلي بمساحة 180 م² في تاجورة، هادئ وقريب من المدارس والخدمات الأساسية. يوفر مساحات مريحة للعائلات مع فناء خاص.&lt;/p&gt;
-&lt;h2&gt;المواصفات والخدمات&lt;/h2&gt;
-&lt;ul&gt;&lt;li&gt;3 غرف نوم&lt;/li&gt;&lt;li&gt;2 حمام&lt;/li&gt;&lt;li&gt;صالة&lt;/li&gt;&lt;li&gt;مطبخ&lt;/li&gt;&lt;li&gt;فناء&lt;/li&gt;&lt;li&gt;خزان ماء&lt;/li&gt;&lt;/ul&gt;
-&lt;p&gt;السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-HOM-0004%20%E2%80%94%20%D9%85%D9%86%D8%B2%D9%84%20%D8%B9%D8%A7%D8%A6%D9%84%D9%8A%20%D9%88%D8%A7%D8%B3%D8%B9.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%201980%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D&quot;&gt;تحقق من التوافر عبر واتساب&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</pre>
-    </details>
-  </section>
-  <section class="post">
-    <h2><span class="num">5</span> شقة بإطلالة على البحر</h2>
-    <div class="meta">
-      <div><span class="k">رقم العقار:</span> <code>DJ-APT-0005</code></div>
-      <div><span class="k">السعر النهائي المعروض:</span> <strong class="price">1650 دولار شهريًا</strong> <span class="src">(السعر شامل مسبقًا — يُعرض كما هو)</span></div>
-      <div><span class="k">التسميات (Labels) — الصقها في حقل التسميات:</span><div class="chips"><span class='chip'>عقارات</span><span class='chip'>للإيجار</span><span class='chip'>أوبوك</span><span class='chip'>شقة</span><span class='chip'>pricefinal:1650</span><span class='chip'>cur:USD</span><span class='chip'>per:month</span></div></div>
-      <div class="labelsline"><code>عقارات, للإيجار, أوبوك, شقة, pricefinal:1650, cur:USD, per:month</code></div>
-    </div>
-    <div class="thumbs"><img src='https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=1200&q=80&auto=format&fit=crop' alt='شقة بإطلالة على البحر'/><img src='https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80&auto=format&fit=crop' alt='شقة بإطلالة على البحر'/><img src='https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&q=80&auto=format&fit=crop' alt='شقة بإطلالة على البحر'/></div>
-    <details open>
-      <summary>كود المشاركة (وضع HTML في Blogger) — انسخه كما هو</summary>
-      <pre class="code">&lt;div class=&quot;property-entry&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;
-&lt;div class=&quot;property-gallery&quot;&gt;
-  &lt;img alt=&quot;شقة بإطلالة على البحر - صورة 1&quot; src=&quot;https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;شقة بإطلالة على البحر - صورة 2&quot; src=&quot;https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;شقة بإطلالة على البحر - صورة 3&quot; src=&quot;https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;رقم العقار:&lt;/strong&gt; DJ-APT-0005&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;السعر النهائي (شامل رسوم الخدمة 10%):&lt;/strong&gt; 1650 دولار شهريًا&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;المنطقة:&lt;/strong&gt; أوبوك | &lt;strong&gt;النوع:&lt;/strong&gt; شقة&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;غرف النوم:&lt;/strong&gt; 2 | &lt;strong&gt;الحمامات:&lt;/strong&gt; 2 | &lt;strong&gt;السعة:&lt;/strong&gt; 4 أشخاص&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;آخر تحقق من السعر والتوافر:&lt;/strong&gt; 2026-10-12 — فريق DARNADJ&lt;/p&gt;
-&lt;h2&gt;وصف العقار&lt;/h2&gt;
-&lt;p&gt;شقة بمساحة 110 م² في أوبوك بإطلالة مباشرة على البحر، بتشطيبات راقية وشرفة واسعة. موقع مثالي للاسترخاء والاستمتاع بالمنظر البحري.&lt;/p&gt;
-&lt;h2&gt;المواصفات والخدمات&lt;/h2&gt;
-&lt;ul&gt;&lt;li&gt;إطلالة مباشرة على البحر&lt;/li&gt;&lt;li&gt;شرفة واسعة&lt;/li&gt;&lt;li&gt;تكييف&lt;/li&gt;&lt;li&gt;مطبخ مجهز&lt;/li&gt;&lt;li&gt;موقف سيارات&lt;/li&gt;&lt;li&gt;أمن على مدار الساعة&lt;/li&gt;&lt;/ul&gt;
-&lt;p&gt;السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-APT-0005%20%E2%80%94%20%D8%B4%D9%82%D8%A9%20%D8%A8%D8%A5%D8%B7%D9%84%D8%A7%D9%84%D8%A9%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%A8%D8%AD%D8%B1.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%201650%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D&quot;&gt;تحقق من التوافر عبر واتساب&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</pre>
-    </details>
-  </section>
-  <section class="post">
-    <h2><span class="num">6</span> غرفة مفروشة للطلاب</h2>
-    <div class="meta">
-      <div><span class="k">رقم العقار:</span> <code>DJ-ROO-0006</code></div>
-      <div><span class="k">السعر النهائي المعروض:</span> <strong class="price">27.50 دولار لليلة</strong> <span class="src">(الأساسي 25 × 1.10)</span></div>
-      <div><span class="k">التسميات (Labels) — الصقها في حقل التسميات:</span><div class="chips"><span class='chip'>عقارات</span><span class='chip'>للإيجار</span><span class='chip'>أرتا</span><span class='chip'>غرفة</span><span class='chip'>price:25</span><span class='chip'>cur:USD</span><span class='chip'>per:night</span></div></div>
-      <div class="labelsline"><code>عقارات, للإيجار, أرتا, غرفة, price:25, cur:USD, per:night</code></div>
-    </div>
-    <div class="thumbs"><img src='https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=1200&q=80&auto=format&fit=crop' alt='غرفة مفروشة للطلاب'/><img src='https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=80&auto=format&fit=crop' alt='غرفة مفروشة للطلاب'/><img src='https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=80&auto=format&fit=crop' alt='غرفة مفروشة للطلاب'/></div>
-    <details open>
-      <summary>كود المشاركة (وضع HTML في Blogger) — انسخه كما هو</summary>
-      <pre class="code">&lt;div class=&quot;property-entry&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;
-&lt;div class=&quot;property-gallery&quot;&gt;
-  &lt;img alt=&quot;غرفة مفروشة للطلاب - صورة 1&quot; src=&quot;https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;غرفة مفروشة للطلاب - صورة 2&quot; src=&quot;https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;غرفة مفروشة للطلاب - صورة 3&quot; src=&quot;https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;رقم العقار:&lt;/strong&gt; DJ-ROO-0006&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;السعر النهائي (شامل رسوم الخدمة 10%):&lt;/strong&gt; 27.50 دولار لليلة&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;المنطقة:&lt;/strong&gt; أرتا | &lt;strong&gt;النوع:&lt;/strong&gt; غرفة&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;غرف النوم:&lt;/strong&gt; 1 | &lt;strong&gt;الحمامات:&lt;/strong&gt; 1 | &lt;strong&gt;السعة:&lt;/strong&gt; 1 أشخاص&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;آخر تحقق من السعر والتوافر:&lt;/strong&gt; 2026-10-12 — فريق DARNADJ&lt;/p&gt;
-&lt;h2&gt;وصف العقار&lt;/h2&gt;
-&lt;p&gt;غرفة مفروشة بمساحة 20 م² في أرتا، قريبة من الجامعة والمواصلات. مناسبة للطلاب والأفراد الباحثين عن إقامة اقتصادية ومريحة.&lt;/p&gt;
-&lt;h2&gt;المواصفات والخدمات&lt;/h2&gt;
-&lt;ul&gt;&lt;li&gt;سرير ومكتب&lt;/li&gt;&lt;li&gt;تكييف&lt;/li&gt;&lt;li&gt;إنترنت&lt;/li&gt;&lt;li&gt;حمام مشترك&lt;/li&gt;&lt;li&gt;مطبخ مشترك&lt;/li&gt;&lt;/ul&gt;
-&lt;p&gt;السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-ROO-0006%20%E2%80%94%20%D8%BA%D8%B1%D9%81%D8%A9%20%D9%85%D9%81%D8%B1%D9%88%D8%B4%D8%A9%20%D9%84%D9%84%D8%B7%D9%84%D8%A7%D8%A8.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%2027.50%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D9%84%D9%84%D9%8A%D9%84%D8%A9.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D&quot;&gt;تحقق من التوافر عبر واتساب&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</pre>
-    </details>
-  </section>
-  <section class="post">
-    <h2><span class="num">7</span> فيلا بمسبح خاص</h2>
-    <div class="meta">
-      <div><span class="k">رقم العقار:</span> <code>DJ-VIL-0007</code></div>
-      <div><span class="k">السعر النهائي المعروض:</span> <strong class="price">4400 دولار شهريًا</strong> <span class="src">(الأساسي 4000 × 1.10)</span></div>
-      <div><span class="k">التسميات (Labels) — الصقها في حقل التسميات:</span><div class="chips"><span class='chip'>عقارات</span><span class='chip'>للإيجار</span><span class='chip'>جيبوتي المدينة</span><span class='chip'>فيلا</span><span class='chip'>price:4000</span><span class='chip'>cur:USD</span><span class='chip'>per:month</span></div></div>
-      <div class="labelsline"><code>عقارات, للإيجار, جيبوتي المدينة, فيلا, price:4000, cur:USD, per:month</code></div>
-    </div>
-    <div class="thumbs"><img src='https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80&auto=format&fit=crop' alt='فيلا بمسبح خاص'/><img src='https://images.unsplash.com/photo-1600585153490-76fb20a32601?w=1200&q=80&auto=format&fit=crop' alt='فيلا بمسبح خاص'/><img src='https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?w=1200&q=80&auto=format&fit=crop' alt='فيلا بمسبح خاص'/></div>
-    <details open>
-      <summary>كود المشاركة (وضع HTML في Blogger) — انسخه كما هو</summary>
-      <pre class="code">&lt;div class=&quot;property-entry&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;
-&lt;div class=&quot;property-gallery&quot;&gt;
-  &lt;img alt=&quot;فيلا بمسبح خاص - صورة 1&quot; src=&quot;https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;فيلا بمسبح خاص - صورة 2&quot; src=&quot;https://images.unsplash.com/photo-1600585153490-76fb20a32601?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;فيلا بمسبح خاص - صورة 3&quot; src=&quot;https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;رقم العقار:&lt;/strong&gt; DJ-VIL-0007&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;السعر النهائي (شامل رسوم الخدمة 10%):&lt;/strong&gt; 4400 دولار شهريًا&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;المنطقة:&lt;/strong&gt; جيبوتي المدينة | &lt;strong&gt;النوع:&lt;/strong&gt; فيلا&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;غرف النوم:&lt;/strong&gt; 5 | &lt;strong&gt;الحمامات:&lt;/strong&gt; 4 | &lt;strong&gt;السعة:&lt;/strong&gt; 10 أشخاص&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;آخر تحقق من السعر والتوافر:&lt;/strong&gt; 2026-10-12 — فريق DARNADJ&lt;/p&gt;
-&lt;h2&gt;وصف العقار&lt;/h2&gt;
-&lt;p&gt;فيلا فاخرة بمساحة 450 م² في جيبوتي المدينة مع مسبح خاص وحديقة منسقة. خيار مثالي للإقامة الراقية والمناسبات العائلية.&lt;/p&gt;
-&lt;h2&gt;المواصفات والخدمات&lt;/h2&gt;
-&lt;ul&gt;&lt;li&gt;5 غرف نوم&lt;/li&gt;&lt;li&gt;4 حمامات&lt;/li&gt;&lt;li&gt;مسبح خاص&lt;/li&gt;&lt;li&gt;حديقة منسقة&lt;/li&gt;&lt;li&gt;غرفة خدم&lt;/li&gt;&lt;li&gt;مواقف متعددة&lt;/li&gt;&lt;li&gt;مولد كهرباء&lt;/li&gt;&lt;/ul&gt;
-&lt;p&gt;السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-VIL-0007%20%E2%80%94%20%D9%81%D9%8A%D9%84%D8%A7%20%D8%A8%D9%85%D8%B3%D8%A8%D8%AD%20%D8%AE%D8%A7%D8%B5.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%204400%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D&quot;&gt;تحقق من التوافر عبر واتساب&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</pre>
-    </details>
-  </section>
-  <section class="post">
-    <h2><span class="num">8</span> شقة عصرية قرب المطار</h2>
-    <div class="meta">
-      <div><span class="k">رقم العقار:</span> <code>DJ-APT-0008</code></div>
-      <div><span class="k">السعر النهائي المعروض:</span> <strong class="price">1320 دولار شهريًا</strong> <span class="src">(الأساسي 1200 × 1.10)</span></div>
-      <div><span class="k">التسميات (Labels) — الصقها في حقل التسميات:</span><div class="chips"><span class='chip'>عقارات</span><span class='chip'>للإيجار</span><span class='chip'>دخيل</span><span class='chip'>شقة</span><span class='chip'>price:1200</span><span class='chip'>cur:USD</span><span class='chip'>per:month</span></div></div>
-      <div class="labelsline"><code>عقارات, للإيجار, دخيل, شقة, price:1200, cur:USD, per:month</code></div>
-    </div>
-    <div class="thumbs"><img src='https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=1200&q=80&auto=format&fit=crop' alt='شقة عصرية قرب المطار'/><img src='https://images.unsplash.com/photo-1600607688066-890987f18a86?w=1200&q=80&auto=format&fit=crop' alt='شقة عصرية قرب المطار'/><img src='https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80&auto=format&fit=crop' alt='شقة عصرية قرب المطار'/></div>
-    <details open>
-      <summary>كود المشاركة (وضع HTML في Blogger) — انسخه كما هو</summary>
-      <pre class="code">&lt;div class=&quot;property-entry&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;
-&lt;div class=&quot;property-gallery&quot;&gt;
-  &lt;img alt=&quot;شقة عصرية قرب المطار - صورة 1&quot; src=&quot;https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;شقة عصرية قرب المطار - صورة 2&quot; src=&quot;https://images.unsplash.com/photo-1600607688066-890987f18a86?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;شقة عصرية قرب المطار - صورة 3&quot; src=&quot;https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;رقم العقار:&lt;/strong&gt; DJ-APT-0008&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;السعر النهائي (شامل رسوم الخدمة 10%):&lt;/strong&gt; 1320 دولار شهريًا&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;المنطقة:&lt;/strong&gt; دخيل | &lt;strong&gt;النوع:&lt;/strong&gt; شقة&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;غرف النوم:&lt;/strong&gt; 2 | &lt;strong&gt;الحمامات:&lt;/strong&gt; 1 | &lt;strong&gt;السعة:&lt;/strong&gt; 4 أشخاص&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;آخر تحقق من السعر والتوافر:&lt;/strong&gt; 2026-10-12 — فريق DARNADJ&lt;/p&gt;
-&lt;h2&gt;وصف العقار&lt;/h2&gt;
-&lt;p&gt;شقة بمساحة 85 م² في دخيل قرب المطار، مثالية للمسافرين ورجال الأعمال. تشطيبات عصرية وموقع مريح يسهّل التنقل.&lt;/p&gt;
-&lt;h2&gt;المواصفات والخدمات&lt;/h2&gt;
-&lt;ul&gt;&lt;li&gt;تكييف&lt;/li&gt;&lt;li&gt;مطبخ مجهز&lt;/li&gt;&lt;li&gt;إنترنت&lt;/li&gt;&lt;li&gt;مصعد&lt;/li&gt;&lt;li&gt;موقف سيارات&lt;/li&gt;&lt;li&gt;قريبة من المطار&lt;/li&gt;&lt;/ul&gt;
-&lt;p&gt;السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-APT-0008%20%E2%80%94%20%D8%B4%D9%82%D8%A9%20%D8%B9%D8%B5%D8%B1%D9%8A%D8%A9%20%D9%82%D8%B1%D8%A8%20%D8%A7%D9%84%D9%85%D8%B7%D8%A7%D8%B1.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%201320%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D&quot;&gt;تحقق من التوافر عبر واتساب&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</pre>
-    </details>
-  </section>
-  <section class="post">
-    <h2><span class="num">9</span> استوديو أنيق لرجال الأعمال</h2>
-    <div class="meta">
-      <div><span class="k">رقم العقار:</span> <code>DJ-STD-0009</code></div>
-      <div><span class="k">السعر النهائي المعروض:</span> <strong class="price">60 دولار لليلة</strong> <span class="src">(السعر شامل مسبقًا — يُعرض كما هو)</span></div>
-      <div><span class="k">التسميات (Labels) — الصقها في حقل التسميات:</span><div class="chips"><span class='chip'>عقارات</span><span class='chip'>للإيجار</span><span class='chip'>جيبوتي المدينة</span><span class='chip'>استوديو</span><span class='chip'>pricefinal:60</span><span class='chip'>cur:USD</span><span class='chip'>per:night</span></div></div>
-      <div class="labelsline"><code>عقارات, للإيجار, جيبوتي المدينة, استوديو, pricefinal:60, cur:USD, per:night</code></div>
-    </div>
-    <div class="thumbs"><img src='https://images.unsplash.com/photo-1600566752229-250ed79470f8?w=1200&q=80&auto=format&fit=crop' alt='استوديو أنيق لرجال الأعمال'/><img src='https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=1200&q=80&auto=format&fit=crop' alt='استوديو أنيق لرجال الأعمال'/><img src='https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1200&q=80&auto=format&fit=crop' alt='استوديو أنيق لرجال الأعمال'/></div>
-    <details open>
-      <summary>كود المشاركة (وضع HTML في Blogger) — انسخه كما هو</summary>
-      <pre class="code">&lt;div class=&quot;property-entry&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;
-&lt;div class=&quot;property-gallery&quot;&gt;
-  &lt;img alt=&quot;استوديو أنيق لرجال الأعمال - صورة 1&quot; src=&quot;https://images.unsplash.com/photo-1600566752229-250ed79470f8?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;استوديو أنيق لرجال الأعمال - صورة 2&quot; src=&quot;https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;استوديو أنيق لرجال الأعمال - صورة 3&quot; src=&quot;https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;رقم العقار:&lt;/strong&gt; DJ-STD-0009&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;السعر النهائي (شامل رسوم الخدمة 10%):&lt;/strong&gt; 60 دولار لليلة&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;المنطقة:&lt;/strong&gt; جيبوتي المدينة | &lt;strong&gt;النوع:&lt;/strong&gt; استوديو&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;غرف النوم:&lt;/strong&gt; 1 | &lt;strong&gt;الحمامات:&lt;/strong&gt; 1 | &lt;strong&gt;السعة:&lt;/strong&gt; 2 أشخاص&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;آخر تحقق من السعر والتوافر:&lt;/strong&gt; 2026-10-12 — فريق DARNADJ&lt;/p&gt;
-&lt;h2&gt;وصف العقار&lt;/h2&gt;
-&lt;p&gt;استوديو بمساحة 40 م² في جيبوتي المدينة، مصمم لرجال الأعمال مع مكتب عمل وإنترنت سريع. قريب من المراكز التجارية والمطاعم.&lt;/p&gt;
-&lt;h2&gt;المواصفات والخدمات&lt;/h2&gt;
-&lt;ul&gt;&lt;li&gt;مكتب عمل&lt;/li&gt;&lt;li&gt;إنترنت سريع&lt;/li&gt;&lt;li&gt;تكييف&lt;/li&gt;&lt;li&gt;مطبخ صغير&lt;/li&gt;&lt;li&gt;خدمة غرف&lt;/li&gt;&lt;li&gt;أمن&lt;/li&gt;&lt;/ul&gt;
-&lt;p&gt;السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-STD-0009%20%E2%80%94%20%D8%A7%D8%B3%D8%AA%D9%88%D8%AF%D9%8A%D9%88%20%D8%A3%D9%86%D9%8A%D9%82%20%D9%84%D8%B1%D8%AC%D8%A7%D9%84%20%D8%A7%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%2060%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D9%84%D9%84%D9%8A%D9%84%D8%A9.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D&quot;&gt;تحقق من التوافر عبر واتساب&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</pre>
-    </details>
-  </section>
-  <section class="post">
-    <h2><span class="num">10</span> منزل تقليدي مجدّد</h2>
-    <div class="meta">
-      <div><span class="k">رقم العقار:</span> <code>DJ-HOM-0010</code></div>
-      <div><span class="k">السعر النهائي المعروض:</span> <strong class="price">1650 دولار شهريًا</strong> <span class="src">(الأساسي 1500 × 1.10)</span></div>
-      <div><span class="k">التسميات (Labels) — الصقها في حقل التسميات:</span><div class="chips"><span class='chip'>عقارات</span><span class='chip'>للإيجار</span><span class='chip'>تاجورة</span><span class='chip'>منزل</span><span class='chip'>price:1500</span><span class='chip'>cur:USD</span><span class='chip'>per:month</span></div></div>
-      <div class="labelsline"><code>عقارات, للإيجار, تاجورة, منزل, price:1500, cur:USD, per:month</code></div>
-    </div>
-    <div class="thumbs"><img src='https://images.unsplash.com/photo-1600607688960-e095ff83135c?w=1200&q=80&auto=format&fit=crop' alt='منزل تقليدي مجدّد'/><img src='https://images.unsplash.com/photo-1600047509782-20d39509f26d?w=1200&q=80&auto=format&fit=crop' alt='منزل تقليدي مجدّد'/><img src='https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=1200&q=80&auto=format&fit=crop' alt='منزل تقليدي مجدّد'/></div>
-    <details open>
-      <summary>كود المشاركة (وضع HTML في Blogger) — انسخه كما هو</summary>
-      <pre class="code">&lt;div class=&quot;property-entry&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;
-&lt;div class=&quot;property-gallery&quot;&gt;
-  &lt;img alt=&quot;منزل تقليدي مجدّد - صورة 1&quot; src=&quot;https://images.unsplash.com/photo-1600607688960-e095ff83135c?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;منزل تقليدي مجدّد - صورة 2&quot; src=&quot;https://images.unsplash.com/photo-1600047509782-20d39509f26d?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;منزل تقليدي مجدّد - صورة 3&quot; src=&quot;https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;رقم العقار:&lt;/strong&gt; DJ-HOM-0010&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;السعر النهائي (شامل رسوم الخدمة 10%):&lt;/strong&gt; 1650 دولار شهريًا&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;المنطقة:&lt;/strong&gt; تاجورة | &lt;strong&gt;النوع:&lt;/strong&gt; منزل&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;غرف النوم:&lt;/strong&gt; 3 | &lt;strong&gt;الحمامات:&lt;/strong&gt; 2 | &lt;strong&gt;السعة:&lt;/strong&gt; 6 أشخاص&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;آخر تحقق من السعر والتوافر:&lt;/strong&gt; 2026-10-12 — فريق DARNADJ&lt;/p&gt;
-&lt;h2&gt;وصف العقار&lt;/h2&gt;
-&lt;p&gt;منزل تقليدي مجدّد بمساحة 160 م² في تاجورة، يجمع بين الطابع الأصيل والراحة الحديثة. مناسب للعائلات الباحثة عن الهدوء.&lt;/p&gt;
-&lt;h2&gt;المواصفات والخدمات&lt;/h2&gt;
-&lt;ul&gt;&lt;li&gt;3 غرف نوم&lt;/li&gt;&lt;li&gt;2 حمام&lt;/li&gt;&lt;li&gt;صالة&lt;/li&gt;&lt;li&gt;مطبخ&lt;/li&gt;&lt;li&gt;فناء داخلي&lt;/li&gt;&lt;li&gt;خزان ماء&lt;/li&gt;&lt;/ul&gt;
-&lt;p&gt;السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-HOM-0010%20%E2%80%94%20%D9%85%D9%86%D8%B2%D9%84%20%D8%AA%D9%82%D9%84%D9%8A%D8%AF%D9%8A%20%D9%85%D8%AC%D8%AF%D9%91%D8%AF.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%201650%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D&quot;&gt;تحقق من التوافر عبر واتساب&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</pre>
-    </details>
-  </section>
-  <section class="post">
-    <h2><span class="num">11</span> شقة عائلية بثلاث غرف</h2>
-    <div class="meta">
-      <div><span class="k">رقم العقار:</span> <code>DJ-APT-0011</code></div>
-      <div><span class="k">السعر النهائي المعروض:</span> <strong class="price">2200 دولار شهريًا</strong> <span class="src">(الأساسي 2000 × 1.10)</span></div>
-      <div><span class="k">التسميات (Labels) — الصقها في حقل التسميات:</span><div class="chips"><span class='chip'>عقارات</span><span class='chip'>للإيجار</span><span class='chip'>علي صبيح</span><span class='chip'>شقة</span><span class='chip'>price:2000</span><span class='chip'>cur:USD</span><span class='chip'>per:month</span></div></div>
-      <div class="labelsline"><code>عقارات, للإيجار, علي صبيح, شقة, price:2000, cur:USD, per:month</code></div>
-    </div>
-    <div class="thumbs"><img src='https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200&q=80&auto=format&fit=crop' alt='شقة عائلية بثلاث غرف'/><img src='https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200&q=80&auto=format&fit=crop' alt='شقة عائلية بثلاث غرف'/><img src='https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1200&q=80&auto=format&fit=crop' alt='شقة عائلية بثلاث غرف'/></div>
-    <details open>
-      <summary>كود المشاركة (وضع HTML في Blogger) — انسخه كما هو</summary>
-      <pre class="code">&lt;div class=&quot;property-entry&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;
-&lt;div class=&quot;property-gallery&quot;&gt;
-  &lt;img alt=&quot;شقة عائلية بثلاث غرف - صورة 1&quot; src=&quot;https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;شقة عائلية بثلاث غرف - صورة 2&quot; src=&quot;https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;شقة عائلية بثلاث غرف - صورة 3&quot; src=&quot;https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;رقم العقار:&lt;/strong&gt; DJ-APT-0011&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;السعر النهائي (شامل رسوم الخدمة 10%):&lt;/strong&gt; 2200 دولار شهريًا&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;المنطقة:&lt;/strong&gt; علي صبيح | &lt;strong&gt;النوع:&lt;/strong&gt; شقة&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;غرف النوم:&lt;/strong&gt; 3 | &lt;strong&gt;الحمامات:&lt;/strong&gt; 2 | &lt;strong&gt;السعة:&lt;/strong&gt; 6 أشخاص&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;آخر تحقق من السعر والتوافر:&lt;/strong&gt; 2026-10-12 — فريق DARNADJ&lt;/p&gt;
-&lt;h2&gt;وصف العقار&lt;/h2&gt;
-&lt;p&gt;شقة عائلية بمساحة 130 م² في علي صبيح، واسعة ومريحة وقريبة من الخدمات والمدارس. مثالية للعائلات المستقرة.&lt;/p&gt;
-&lt;h2&gt;المواصفات والخدمات&lt;/h2&gt;
-&lt;ul&gt;&lt;li&gt;3 غرف نوم&lt;/li&gt;&lt;li&gt;2 حمام&lt;/li&gt;&lt;li&gt;صالة&lt;/li&gt;&lt;li&gt;مطبخ&lt;/li&gt;&lt;li&gt;شرفة&lt;/li&gt;&lt;li&gt;موقف سيارات&lt;/li&gt;&lt;/ul&gt;
-&lt;p&gt;السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-APT-0011%20%E2%80%94%20%D8%B4%D9%82%D8%A9%20%D8%B9%D8%A7%D8%A6%D9%84%D9%8A%D8%A9%20%D8%A8%D8%AB%D9%84%D8%A7%D8%AB%20%D8%BA%D8%B1%D9%81.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%202200%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D8%B4%D9%87%D8%B1%D9%8A%D9%8B%D8%A7.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D&quot;&gt;تحقق من التوافر عبر واتساب&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</pre>
-    </details>
-  </section>
-  <section class="post">
-    <h2><span class="num">12</span> فيلا شاطئية للإيجار</h2>
-    <div class="meta">
-      <div><span class="k">رقم العقار:</span> <code>DJ-VIL-0012</code></div>
-      <div><span class="k">السعر النهائي المعروض:</span> <strong class="price">330 دولار لليلة</strong> <span class="src">(الأساسي 300 × 1.10)</span></div>
-      <div><span class="k">التسميات (Labels) — الصقها في حقل التسميات:</span><div class="chips"><span class='chip'>عقارات</span><span class='chip'>للإيجار</span><span class='chip'>أوبوك</span><span class='chip'>فيلا</span><span class='chip'>price:300</span><span class='chip'>cur:USD</span><span class='chip'>per:night</span></div></div>
-      <div class="labelsline"><code>عقارات, للإيجار, أوبوك, فيلا, price:300, cur:USD, per:night</code></div>
-    </div>
-    <div class="thumbs"><img src='https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=80&auto=format&fit=crop' alt='فيلا شاطئية للإيجار'/><img src='https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1200&q=80&auto=format&fit=crop' alt='فيلا شاطئية للإيجار'/><img src='https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=1200&q=80&auto=format&fit=crop' alt='فيلا شاطئية للإيجار'/></div>
-    <details open>
-      <summary>كود المشاركة (وضع HTML في Blogger) — انسخه كما هو</summary>
-      <pre class="code">&lt;div class=&quot;property-entry&quot; dir=&quot;rtl&quot; lang=&quot;ar&quot;&gt;
-&lt;div class=&quot;property-gallery&quot;&gt;
-  &lt;img alt=&quot;فيلا شاطئية للإيجار - صورة 1&quot; src=&quot;https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;فيلا شاطئية للإيجار - صورة 2&quot; src=&quot;https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-  &lt;img alt=&quot;فيلا شاطئية للإيجار - صورة 3&quot; src=&quot;https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=1200&amp;q=80&amp;auto=format&amp;fit=crop&quot;/&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;رقم العقار:&lt;/strong&gt; DJ-VIL-0012&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;السعر النهائي (شامل رسوم الخدمة 10%):&lt;/strong&gt; 330 دولار لليلة&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;المنطقة:&lt;/strong&gt; أوبوك | &lt;strong&gt;النوع:&lt;/strong&gt; فيلا&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;غرف النوم:&lt;/strong&gt; 4 | &lt;strong&gt;الحمامات:&lt;/strong&gt; 3 | &lt;strong&gt;السعة:&lt;/strong&gt; 8 أشخاص&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;آخر تحقق من السعر والتوافر:&lt;/strong&gt; 2026-10-12 — فريق DARNADJ&lt;/p&gt;
-&lt;h2&gt;وصف العقار&lt;/h2&gt;
-&lt;p&gt;فيلا شاطئية بمساحة 280 م² في أوبوك، على مقربة من الشاطئ مع تراس وإطلالة بحرية. مثالية للإقامات القصيرة والعطلات.&lt;/p&gt;
-&lt;h2&gt;المواصفات والخدمات&lt;/h2&gt;
-&lt;ul&gt;&lt;li&gt;4 غرف نوم&lt;/li&gt;&lt;li&gt;3 حمامات&lt;/li&gt;&lt;li&gt;تراس&lt;/li&gt;&lt;li&gt;إطلالة بحرية&lt;/li&gt;&lt;li&gt;تكييف&lt;/li&gt;&lt;li&gt;موقف سيارات&lt;/li&gt;&lt;/ul&gt;
-&lt;p&gt;السعر المعروض نهائي وشامل رسوم خدمة المنصة (10%) المحسوبة مرة واحدة فقط، ولا تُضاف أي رسوم خدمة أخرى لاحقًا.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-VIL-0012%20%E2%80%94%20%D9%81%D9%8A%D9%84%D8%A7%20%D8%B4%D8%A7%D8%B7%D8%A6%D9%8A%D8%A9%20%D9%84%D9%84%D8%A5%D9%8A%D8%AC%D8%A7%D8%B1.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%20%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%20%28%D8%B4%D8%A7%D9%85%D9%84%20%D8%A7%D9%84%D8%B1%D8%B3%D9%88%D9%85%29%3A%20330%20%D8%AF%D9%88%D9%84%D8%A7%D8%B1%20%D9%84%D9%84%D9%8A%D9%84%D8%A9.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D&quot;&gt;تحقق من التوافر عبر واتساب&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</pre>
-    </details>
-  </section>
-
-  <p class="lead" style="margin-top:24px">تم التوليد بتاريخ 2026-10-12 — DARNADJ. الأسعار نهائية وشاملة رسوم خدمة المنصة (10%) المحسوبة مرة واحدة.</p>
+:root{--teal:#0f766e;--ink:#1f2937;--muted:#6b7280;--line:#e5e7eb;--bg:#f8fafc}
+*{box-sizing:border-box}body{font-family:"Segoe UI",Tahoma,Arial,sans-serif;color:var(--ink);background:var(--bg);margin:0;line-height:1.7}
+.wrap{max-width:960px;margin:0 auto;padding:28px 20px 60px}h1{font-size:1.7rem;margin:0 0 6px}.lead{color:var(--muted);margin:0 0 18px}
+.note{background:#fff;border:1px solid var(--line);border-right:4px solid var(--teal);border-radius:10px;padding:14px 16px;margin:16px 0}
+.note h3{margin:0 0 8px;font-size:1rem;color:var(--teal)}.note ul{margin:6px 0 0;padding-right:20px}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:.9rem}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}
+th{background:#ecfdf5;color:#065f46;font-weight:700}tr:last-child td{border-bottom:none}
+section.post{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin:22px 0}
+section.post h2{font-size:1.2rem;margin:0 0 12px;display:flex;align-items:center;gap:10px}
+.num{display:inline-flex;width:30px;height:30px;background:var(--teal);color:#fff;border-radius:50%;align-items:center;justify-content:center;font-size:.9rem}
+.meta{font-size:.85rem;color:var(--muted)}code{background:#f1f5f9;padding:2px 6px;border-radius:6px}
+.post img{max-width:220px;border-radius:8px;margin:4px}
+</style></head><body><div class="wrap">
+<h1>DARNADJ — ملف محتوى 12 مشاركة عقارية</h1>
+<p class="lead">محتوى جاهز للنسخ إلى Blogger (وضع HTML) مع التسميات المنظّمة.</p>
+<div class="note"><h3>طريقة الاستخدام</h3><ul>
+<li>مشاركة جديدة ← اكتب العنوان ← بدّل إلى «عرض HTML» ← الصق كود المشاركة.</li>
+<li>أضف التسميات (Labels) كما هي مفصولة بفواصل.</li>
+<li>التسميات المنظّمة: <code>beds:</code> <code>baths:</code> <code>kitchens:</code> <code>sqm:</code> <code>status:</code> <code>price:</code> / <code>pricefinal:</code> <code>cur:</code> <code>per:</code>.</li>
+<li>يُعرض السعر الرقمي دائمًا؛ والرسوم (10%) تُحتسب مرة واحدة فقط. عند غياب السعر لا يُعرض سعر وهمي ولا رسالة إدارية للعميل.</li>
+</ul></div>
+<table><thead><tr><th>#</th><th>رقم العقار</th><th>العنوان</th><th>المنطقة</th><th>النوع</th><th>غرف</th><th>حمامات</th><th>السعر</th></tr></thead>
+<tbody><tr><td>1</td><td>DJ-APT-0001</td><td>شقة مفروشة حديثة في قلب المدينة</td><td>جيبوتي المدينة</td><td>شقة مفروشة</td><td>2</td><td>1</td><td>$1100</td></tr><tr><td>2</td><td>DJ-VIL-0002</td><td>فيلا فاخرة مع حديقة خاصة</td><td>علي صبيح</td><td>فيلا</td><td>4</td><td>3</td><td>$2750</td></tr><tr><td>3</td><td>DJ-STD-0003</td><td>استوديو مفروش قرب المركز التجاري</td><td>جيبوتي المدينة</td><td>استوديو</td><td>1</td><td>1</td><td>$49.5</td></tr><tr><td>4</td><td>DJ-HOM-0004</td><td>منزل عائلي واسع</td><td>تاجورة</td><td>منزل</td><td>3</td><td>2</td><td>$1980</td></tr><tr><td>5</td><td>DJ-APT-0005</td><td>شقة بإطلالة على البحر</td><td>أوبوك</td><td>شقة</td><td>2</td><td>2</td><td>$1650</td></tr><tr><td>6</td><td>DJ-ROO-0006</td><td>غرفة مفروشة للطلاب</td><td>أرتا</td><td>غرفة</td><td>1</td><td>1</td><td>$27.5</td></tr><tr><td>7</td><td>DJ-VIL-0007</td><td>فيلا بمسبح خاص</td><td>جيبوتي المدينة</td><td>فيلا</td><td>5</td><td>4</td><td>$4400</td></tr><tr><td>8</td><td>DJ-APT-0008</td><td>شقة عصرية قرب المطار</td><td>دخيل</td><td>شقة</td><td>2</td><td>1</td><td>$1320</td></tr><tr><td>9</td><td>DJ-STD-0009</td><td>استوديو أنيق لرجال الأعمال</td><td>جيبوتي المدينة</td><td>استوديو</td><td>1</td><td>1</td><td>$60</td></tr><tr><td>10</td><td>DJ-HOM-0010</td><td>منزل تقليدي مجدّد</td><td>تاجورة</td><td>منزل</td><td>3</td><td>2</td><td>$1650</td></tr><tr><td>11</td><td>DJ-APT-0011</td><td>شقة عائلية بثلاث غرف</td><td>علي صبيح</td><td>شقة</td><td>3</td><td>2</td><td>$2200</td></tr><tr><td>12</td><td>DJ-VIL-0012</td><td>فيلا شاطئية للإيجار</td><td>أوبوك</td><td>فيلا</td><td>4</td><td>3</td><td>$330</td></tr></tbody></table>
+<section class='post'><h2><span class='num'>1</span> شقة مفروشة حديثة في قلب المدينة</h2><p class='meta'><b>التسميات:</b> <code>عقارات, للإيجار, جيبوتي المدينة, شقة مفروشة, price:1000, cur:USD, per:month, type:شقة, beds:2, baths:1, kitchens:1, sqm:95, status:متوفر</code></p><p class='meta'><b>السعر:</b> $1100 / month</p><div class="property-entry" dir="rtl" lang="ar">
+<div class="property-gallery">
+  <img alt="شقة مفروشة حديثة في قلب المدينة - صورة 1" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="شقة مفروشة حديثة في قلب المدينة - صورة 2" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="شقة مفروشة حديثة في قلب المدينة - صورة 3" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&q=80&auto=format&fit=crop"/>
 </div>
-</body>
-</html>
+<p><strong>رقم العقار:</strong> DJ-APT-0001</p>
+<p><strong>السعر:</strong> $1,100 / شهر</p>
+<p><strong>المنطقة:</strong> جيبوتي المدينة | <strong>النوع:</strong> شقة مفروشة</p>
+<p><strong>غرف النوم:</strong> 2 | <strong>الحمامات:</strong> 1 | <strong>السعة:</strong> 4 أشخاص</p>
+<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>
+<h2>وصف العقار</h2>
+<p>شقة مفروشة بالكامل بمساحة 90 م² في قلب جيبوتي المدينة، على مقربة من الأسواق والمطاعم والخدمات. تتميز بتشطيبات حديثة وإضاءة طبيعية وموقع حيوي مناسب للإقامات الطويلة.</p>
+<h2>المواصفات والخدمات</h2>
+<ul><li>تكييف في جميع الغرف</li><li>مطبخ مجهز بالكامل</li><li>إنترنت عالي السرعة</li><li>مصعد</li><li>حراسة على مدار الساعة</li><li>قريبة من المواصلات العامة</li></ul>
+
+<p><a href="https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-APT-0001%20%E2%80%94%20%D8%B4%D9%82%D8%A9%20%D9%85%D9%81%D8%B1%D9%88%D8%B4%D8%A9%20%D8%AD%D8%AF%D9%8A%D8%AB%D8%A9%20%D9%81%D9%8A%20%D9%82%D9%84%D8%A8%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20%241%2C100%20/%20%D8%B4%D9%87%D8%B1.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D">تحقق من التوافر عبر واتساب</a></p>
+</div></section><section class='post'><h2><span class='num'>2</span> فيلا فاخرة مع حديقة خاصة</h2><p class='meta'><b>التسميات:</b> <code>عقارات, للإيجار, علي صبيح, فيلا, price:2500, cur:USD, per:month, type:فيلا, beds:4, baths:3, kitchens:2, sqm:320, status:متوفر</code></p><p class='meta'><b>السعر:</b> $2750 / month</p><div class="property-entry" dir="rtl" lang="ar">
+<div class="property-gallery">
+  <img alt="فيلا فاخرة مع حديقة خاصة - صورة 1" src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="فيلا فاخرة مع حديقة خاصة - صورة 2" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="فيلا فاخرة مع حديقة خاصة - صورة 3" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1200&q=80&auto=format&fit=crop"/>
+</div>
+<p><strong>رقم العقار:</strong> DJ-VIL-0002</p>
+<p><strong>السعر:</strong> $2,750 / شهر</p>
+<p><strong>المنطقة:</strong> علي صبيح | <strong>النوع:</strong> فيلا</p>
+<p><strong>غرف النوم:</strong> 4 | <strong>الحمامات:</strong> 3 | <strong>السعة:</strong> 8 أشخاص</p>
+<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>
+<h2>وصف العقار</h2>
+<p>فيلا مستقلة بمساحة 320 م² في حي علي صبيح الهادئ، مع حديقة خاصة ومواقف سيارات. مناسبة للعائلات الكبيرة أو الإقامة الرسمية، وتوفر خصوصية ومساحات واسعة.</p>
+<h2>المواصفات والخدمات</h2>
+<ul><li>4 غرف نوم</li><li>3 حمامات</li><li>صالة واسعة</li><li>حديقة خاصة</li><li>موقف سيارات</li><li>خزان ماء</li><li>مولد كهرباء احتياطي</li></ul>
+
+<p><a href="https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-VIL-0002%20%E2%80%94%20%D9%81%D9%8A%D9%84%D8%A7%20%D9%81%D8%A7%D8%AE%D8%B1%D8%A9%20%D9%85%D8%B9%20%D8%AD%D8%AF%D9%8A%D9%82%D8%A9%20%D8%AE%D8%A7%D8%B5%D8%A9.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20%242%2C750%20/%20%D8%B4%D9%87%D8%B1.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D">تحقق من التوافر عبر واتساب</a></p>
+</div></section><section class='post'><h2><span class='num'>3</span> استوديو مفروش قرب المركز التجاري</h2><p class='meta'><b>التسميات:</b> <code>عقارات, للإيجار, جيبوتي المدينة, استوديو, price:45, cur:USD, per:night, type:استوديو, beds:1, baths:1, kitchens:1, sqm:42, status:غير متوفر</code></p><p class='meta'><b>السعر:</b> $49.5 / night</p><div class="property-entry" dir="rtl" lang="ar">
+<div class="property-gallery">
+  <img alt="استوديو مفروش قرب المركز التجاري - صورة 1" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="استوديو مفروش قرب المركز التجاري - صورة 2" src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="استوديو مفروش قرب المركز التجاري - صورة 3" src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=1200&q=80&auto=format&fit=crop"/>
+</div>
+<p><strong>رقم العقار:</strong> DJ-STD-0003</p>
+<p><strong>السعر:</strong> $49.50 / ليلة</p>
+<p><strong>المنطقة:</strong> جيبوتي المدينة | <strong>النوع:</strong> استوديو</p>
+<p><strong>غرف النوم:</strong> 1 | <strong>الحمامات:</strong> 1 | <strong>السعة:</strong> 2 أشخاص</p>
+<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>
+<h2>وصف العقار</h2>
+<p>استوديو مفروش بمساحة 35 م² قريب من المركز التجاري، مناسب للأفراد أو رجال الأعمال. متاح للإقامة القصيرة أو الطويلة مع خدمات أساسية متكاملة.</p>
+<h2>المواصفات والخدمات</h2>
+<ul><li>تكييف</li><li>مطبخ صغير</li><li>إنترنت</li><li>نظافة دورية</li><li>قريب من المقاهي والخدمات</li></ul>
+
+<p><a href="https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-STD-0003%20%E2%80%94%20%D8%A7%D8%B3%D8%AA%D9%88%D8%AF%D9%8A%D9%88%20%D9%85%D9%81%D8%B1%D9%88%D8%B4%20%D9%82%D8%B1%D8%A8%20%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2%20%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20%2449.50%20/%20%D9%84%D9%8A%D9%84%D8%A9.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D">تحقق من التوافر عبر واتساب</a></p>
+</div></section><section class='post'><h2><span class='num'>4</span> منزل عائلي واسع</h2><p class='meta'><b>التسميات:</b> <code>عقارات, للإيجار, تاجورة, منزل, price:1800, cur:USD, per:month, type:منزل, beds:3, baths:2, kitchens:2, sqm:190, status:متوفر</code></p><p class='meta'><b>السعر:</b> $1980 / month</p><div class="property-entry" dir="rtl" lang="ar">
+<div class="property-gallery">
+  <img alt="منزل عائلي واسع - صورة 1" src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="منزل عائلي واسع - صورة 2" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="منزل عائلي واسع - صورة 3" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80&auto=format&fit=crop"/>
+</div>
+<p><strong>رقم العقار:</strong> DJ-HOM-0004</p>
+<p><strong>السعر:</strong> $1,980 / شهر</p>
+<p><strong>المنطقة:</strong> تاجورة | <strong>النوع:</strong> منزل</p>
+<p><strong>غرف النوم:</strong> 3 | <strong>الحمامات:</strong> 2 | <strong>السعة:</strong> 6 أشخاص</p>
+<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>
+<h2>وصف العقار</h2>
+<p>منزل عائلي بمساحة 180 م² في تاجورة، هادئ وقريب من المدارس والخدمات الأساسية. يوفر مساحات مريحة للعائلات مع فناء خاص.</p>
+<h2>المواصفات والخدمات</h2>
+<ul><li>3 غرف نوم</li><li>2 حمام</li><li>صالة</li><li>مطبخ</li><li>فناء</li><li>خزان ماء</li></ul>
+
+<p><a href="https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-HOM-0004%20%E2%80%94%20%D9%85%D9%86%D8%B2%D9%84%20%D8%B9%D8%A7%D8%A6%D9%84%D9%8A%20%D9%88%D8%A7%D8%B3%D8%B9.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20%241%2C980%20/%20%D8%B4%D9%87%D8%B1.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D">تحقق من التوافر عبر واتساب</a></p>
+</div></section><section class='post'><h2><span class='num'>5</span> شقة بإطلالة على البحر</h2><p class='meta'><b>التسميات:</b> <code>عقارات, للإيجار, أوبوك, شقة, pricefinal:1650, cur:USD, per:month, type:شقة, beds:2, baths:2, kitchens:1, sqm:95, status:متوفر</code></p><p class='meta'><b>السعر:</b> $1650 / month</p><div class="property-entry" dir="rtl" lang="ar">
+<div class="property-gallery">
+  <img alt="شقة بإطلالة على البحر - صورة 1" src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="شقة بإطلالة على البحر - صورة 2" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="شقة بإطلالة على البحر - صورة 3" src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&q=80&auto=format&fit=crop"/>
+</div>
+<p><strong>رقم العقار:</strong> DJ-APT-0005</p>
+<p><strong>السعر:</strong> $1,650 / شهر</p>
+<p><strong>المنطقة:</strong> أوبوك | <strong>النوع:</strong> شقة</p>
+<p><strong>غرف النوم:</strong> 2 | <strong>الحمامات:</strong> 2 | <strong>السعة:</strong> 4 أشخاص</p>
+<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>
+<h2>وصف العقار</h2>
+<p>شقة بمساحة 110 م² في أوبوك بإطلالة مباشرة على البحر، بتشطيبات راقية وشرفة واسعة. موقع مثالي للاسترخاء والاستمتاع بالمنظر البحري.</p>
+<h2>المواصفات والخدمات</h2>
+<ul><li>إطلالة مباشرة على البحر</li><li>شرفة واسعة</li><li>تكييف</li><li>مطبخ مجهز</li><li>موقف سيارات</li><li>أمن على مدار الساعة</li></ul>
+
+<p><a href="https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-APT-0005%20%E2%80%94%20%D8%B4%D9%82%D8%A9%20%D8%A8%D8%A5%D8%B7%D9%84%D8%A7%D9%84%D8%A9%20%D8%B9%D9%84%D9%89%20%D8%A7%D9%84%D8%A8%D8%AD%D8%B1.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20%241%2C650%20/%20%D8%B4%D9%87%D8%B1.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D">تحقق من التوافر عبر واتساب</a></p>
+</div></section><section class='post'><h2><span class='num'>6</span> غرفة مفروشة للطلاب</h2><p class='meta'><b>التسميات:</b> <code>عقارات, للإيجار, أرتا, غرفة, price:25, cur:USD, per:night, type:غرفة, beds:1, baths:1, kitchens:1, sqm:20, status:متوفر</code></p><p class='meta'><b>السعر:</b> $27.5 / night</p><div class="property-entry" dir="rtl" lang="ar">
+<div class="property-gallery">
+  <img alt="غرفة مفروشة للطلاب - صورة 1" src="https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="غرفة مفروشة للطلاب - صورة 2" src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="غرفة مفروشة للطلاب - صورة 3" src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?w=1200&q=80&auto=format&fit=crop"/>
+</div>
+<p><strong>رقم العقار:</strong> DJ-ROO-0006</p>
+<p><strong>السعر:</strong> $27.50 / ليلة</p>
+<p><strong>المنطقة:</strong> أرتا | <strong>النوع:</strong> غرفة</p>
+<p><strong>غرف النوم:</strong> 1 | <strong>الحمامات:</strong> 1 | <strong>السعة:</strong> 1 أشخاص</p>
+<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>
+<h2>وصف العقار</h2>
+<p>غرفة مفروشة بمساحة 20 م² في أرتا، قريبة من الجامعة والمواصلات. مناسبة للطلاب والأفراد الباحثين عن إقامة اقتصادية ومريحة.</p>
+<h2>المواصفات والخدمات</h2>
+<ul><li>سرير ومكتب</li><li>تكييف</li><li>إنترنت</li><li>حمام مشترك</li><li>مطبخ مشترك</li></ul>
+
+<p><a href="https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-ROO-0006%20%E2%80%94%20%D8%BA%D8%B1%D9%81%D8%A9%20%D9%85%D9%81%D8%B1%D9%88%D8%B4%D8%A9%20%D9%84%D9%84%D8%B7%D9%84%D8%A7%D8%A8.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20%2427.50%20/%20%D9%84%D9%8A%D9%84%D8%A9.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D">تحقق من التوافر عبر واتساب</a></p>
+</div></section><section class='post'><h2><span class='num'>7</span> فيلا بمسبح خاص</h2><p class='meta'><b>التسميات:</b> <code>عقارات, للبيع, جيبوتي المدينة, فيلا, price:4000, cur:USD, type:فيلا, beds:5, baths:4, kitchens:2, sqm:345, status:متوفر</code></p><p class='meta'><b>السعر:</b> $4400</p><div class="property-entry" dir="rtl" lang="ar">
+<div class="property-gallery">
+  <img alt="فيلا بمسبح خاص - صورة 1" src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="فيلا بمسبح خاص - صورة 2" src="https://images.unsplash.com/photo-1600585153490-76fb20a32601?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="فيلا بمسبح خاص - صورة 3" src="https://images.unsplash.com/photo-1600566753051-f0b89df2dd90?w=1200&q=80&auto=format&fit=crop"/>
+</div>
+<p><strong>رقم العقار:</strong> DJ-VIL-0007</p>
+<p><strong>السعر:</strong> $4,400</p>
+<p><strong>المنطقة:</strong> جيبوتي المدينة | <strong>النوع:</strong> فيلا</p>
+<p><strong>غرف النوم:</strong> 5 | <strong>الحمامات:</strong> 4 | <strong>السعة:</strong> 10 أشخاص</p>
+<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>
+<h2>وصف العقار</h2>
+<p>فيلا فاخرة بمساحة 450 م² في جيبوتي المدينة مع مسبح خاص وحديقة منسقة. خيار مثالي للإقامة الراقية والمناسبات العائلية.</p>
+<h2>المواصفات والخدمات</h2>
+<ul><li>5 غرف نوم</li><li>4 حمامات</li><li>مسبح خاص</li><li>حديقة منسقة</li><li>غرفة خدم</li><li>مواقف متعددة</li><li>مولد كهرباء</li></ul>
+
+<p><a href="https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-VIL-0007%20%E2%80%94%20%D9%81%D9%8A%D9%84%D8%A7%20%D8%A8%D9%85%D8%B3%D8%A8%D8%AD%20%D8%AE%D8%A7%D8%B5.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20%244%2C400.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D">تحقق من التوافر عبر واتساب</a></p>
+</div></section><section class='post'><h2><span class='num'>8</span> شقة عصرية قرب المطار</h2><p class='meta'><b>التسميات:</b> <code>عقارات, للإيجار, دخيل, شقة, price:1200, cur:USD, per:month, type:شقة, beds:2, baths:1, kitchens:1, sqm:95, status:متوفر</code></p><p class='meta'><b>السعر:</b> $1320 / month</p><div class="property-entry" dir="rtl" lang="ar">
+<div class="property-gallery">
+  <img alt="شقة عصرية قرب المطار - صورة 1" src="https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="شقة عصرية قرب المطار - صورة 2" src="https://images.unsplash.com/photo-1600607688066-890987f18a86?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="شقة عصرية قرب المطار - صورة 3" src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&q=80&auto=format&fit=crop"/>
+</div>
+<p><strong>رقم العقار:</strong> DJ-APT-0008</p>
+<p><strong>السعر:</strong> $1,320 / شهر</p>
+<p><strong>المنطقة:</strong> دخيل | <strong>النوع:</strong> شقة</p>
+<p><strong>غرف النوم:</strong> 2 | <strong>الحمامات:</strong> 1 | <strong>السعة:</strong> 4 أشخاص</p>
+<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>
+<h2>وصف العقار</h2>
+<p>شقة بمساحة 85 م² في دخيل قرب المطار، مثالية للمسافرين ورجال الأعمال. تشطيبات عصرية وموقع مريح يسهّل التنقل.</p>
+<h2>المواصفات والخدمات</h2>
+<ul><li>تكييف</li><li>مطبخ مجهز</li><li>إنترنت</li><li>مصعد</li><li>موقف سيارات</li><li>قريبة من المطار</li></ul>
+
+<p><a href="https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-APT-0008%20%E2%80%94%20%D8%B4%D9%82%D8%A9%20%D8%B9%D8%B5%D8%B1%D9%8A%D8%A9%20%D9%82%D8%B1%D8%A8%20%D8%A7%D9%84%D9%85%D8%B7%D8%A7%D8%B1.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20%241%2C320%20/%20%D8%B4%D9%87%D8%B1.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D">تحقق من التوافر عبر واتساب</a></p>
+</div></section><section class='post'><h2><span class='num'>9</span> استوديو أنيق لرجال الأعمال</h2><p class='meta'><b>التسميات:</b> <code>عقارات, للإيجار, جيبوتي المدينة, استوديو, pricefinal:60, cur:USD, per:night, type:استوديو, beds:1, baths:1, kitchens:1, sqm:42, status:غير متوفر</code></p><p class='meta'><b>السعر:</b> $60 / night</p><div class="property-entry" dir="rtl" lang="ar">
+<div class="property-gallery">
+  <img alt="استوديو أنيق لرجال الأعمال - صورة 1" src="https://images.unsplash.com/photo-1600566752229-250ed79470f8?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="استوديو أنيق لرجال الأعمال - صورة 2" src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="استوديو أنيق لرجال الأعمال - صورة 3" src="https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=1200&q=80&auto=format&fit=crop"/>
+</div>
+<p><strong>رقم العقار:</strong> DJ-STD-0009</p>
+<p><strong>السعر:</strong> $60 / ليلة</p>
+<p><strong>المنطقة:</strong> جيبوتي المدينة | <strong>النوع:</strong> استوديو</p>
+<p><strong>غرف النوم:</strong> 1 | <strong>الحمامات:</strong> 1 | <strong>السعة:</strong> 2 أشخاص</p>
+<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>
+<h2>وصف العقار</h2>
+<p>استوديو بمساحة 40 م² في جيبوتي المدينة، مصمم لرجال الأعمال مع مكتب عمل وإنترنت سريع. قريب من المراكز التجارية والمطاعم.</p>
+<h2>المواصفات والخدمات</h2>
+<ul><li>مكتب عمل</li><li>إنترنت سريع</li><li>تكييف</li><li>مطبخ صغير</li><li>خدمة غرف</li><li>أمن</li></ul>
+
+<p><a href="https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-STD-0009%20%E2%80%94%20%D8%A7%D8%B3%D8%AA%D9%88%D8%AF%D9%8A%D9%88%20%D8%A3%D9%86%D9%8A%D9%82%20%D9%84%D8%B1%D8%AC%D8%A7%D9%84%20%D8%A7%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20%2460%20/%20%D9%84%D9%8A%D9%84%D8%A9.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D">تحقق من التوافر عبر واتساب</a></p>
+</div></section><section class='post'><h2><span class='num'>10</span> منزل تقليدي مجدّد</h2><p class='meta'><b>التسميات:</b> <code>عقارات, للإيجار, تاجورة, منزل, price:1500, cur:USD, per:month, type:منزل, beds:3, baths:2, kitchens:2, sqm:190, status:متوفر</code></p><p class='meta'><b>السعر:</b> $1650 / month</p><div class="property-entry" dir="rtl" lang="ar">
+<div class="property-gallery">
+  <img alt="منزل تقليدي مجدّد - صورة 1" src="https://images.unsplash.com/photo-1600607688960-e095ff83135c?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="منزل تقليدي مجدّد - صورة 2" src="https://images.unsplash.com/photo-1600047509782-20d39509f26d?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="منزل تقليدي مجدّد - صورة 3" src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=1200&q=80&auto=format&fit=crop"/>
+</div>
+<p><strong>رقم العقار:</strong> DJ-HOM-0010</p>
+<p><strong>السعر:</strong> $1,650 / شهر</p>
+<p><strong>المنطقة:</strong> تاجورة | <strong>النوع:</strong> منزل</p>
+<p><strong>غرف النوم:</strong> 3 | <strong>الحمامات:</strong> 2 | <strong>السعة:</strong> 6 أشخاص</p>
+<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>
+<h2>وصف العقار</h2>
+<p>منزل تقليدي مجدّد بمساحة 160 م² في تاجورة، يجمع بين الطابع الأصيل والراحة الحديثة. مناسب للعائلات الباحثة عن الهدوء.</p>
+<h2>المواصفات والخدمات</h2>
+<ul><li>3 غرف نوم</li><li>2 حمام</li><li>صالة</li><li>مطبخ</li><li>فناء داخلي</li><li>خزان ماء</li></ul>
+
+<p><a href="https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-HOM-0010%20%E2%80%94%20%D9%85%D9%86%D8%B2%D9%84%20%D8%AA%D9%82%D9%84%D9%8A%D8%AF%D9%8A%20%D9%85%D8%AC%D8%AF%D9%91%D8%AF.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20%241%2C650%20/%20%D8%B4%D9%87%D8%B1.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D">تحقق من التوافر عبر واتساب</a></p>
+</div></section><section class='post'><h2><span class='num'>11</span> شقة عائلية بثلاث غرف</h2><p class='meta'><b>التسميات:</b> <code>عقارات, للإيجار, علي صبيح, شقة, price:2000, cur:USD, per:month, type:شقة, beds:3, baths:2, kitchens:1, sqm:120, status:متوفر</code></p><p class='meta'><b>السعر:</b> $2200 / month</p><div class="property-entry" dir="rtl" lang="ar">
+<div class="property-gallery">
+  <img alt="شقة عائلية بثلاث غرف - صورة 1" src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="شقة عائلية بثلاث غرف - صورة 2" src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="شقة عائلية بثلاث غرف - صورة 3" src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1200&q=80&auto=format&fit=crop"/>
+</div>
+<p><strong>رقم العقار:</strong> DJ-APT-0011</p>
+<p><strong>السعر:</strong> $2,200 / شهر</p>
+<p><strong>المنطقة:</strong> علي صبيح | <strong>النوع:</strong> شقة</p>
+<p><strong>غرف النوم:</strong> 3 | <strong>الحمامات:</strong> 2 | <strong>السعة:</strong> 6 أشخاص</p>
+<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>
+<h2>وصف العقار</h2>
+<p>شقة عائلية بمساحة 130 م² في علي صبيح، واسعة ومريحة وقريبة من الخدمات والمدارس. مثالية للعائلات المستقرة.</p>
+<h2>المواصفات والخدمات</h2>
+<ul><li>3 غرف نوم</li><li>2 حمام</li><li>صالة</li><li>مطبخ</li><li>شرفة</li><li>موقف سيارات</li></ul>
+
+<p><a href="https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-APT-0011%20%E2%80%94%20%D8%B4%D9%82%D8%A9%20%D8%B9%D8%A7%D8%A6%D9%84%D9%8A%D8%A9%20%D8%A8%D8%AB%D9%84%D8%A7%D8%AB%20%D8%BA%D8%B1%D9%81.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20%242%2C200%20/%20%D8%B4%D9%87%D8%B1.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D">تحقق من التوافر عبر واتساب</a></p>
+</div></section><section class='post'><h2><span class='num'>12</span> فيلا شاطئية للإيجار</h2><p class='meta'><b>التسميات:</b> <code>عقارات, للإيجار, أوبوك, فيلا, price:300, cur:USD, per:night, type:فيلا, beds:4, baths:3, kitchens:2, sqm:320, status:متوفر</code></p><p class='meta'><b>السعر:</b> $330 / night</p><div class="property-entry" dir="rtl" lang="ar">
+<div class="property-gallery">
+  <img alt="فيلا شاطئية للإيجار - صورة 1" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="فيلا شاطئية للإيجار - صورة 2" src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1200&q=80&auto=format&fit=crop"/>
+  <img alt="فيلا شاطئية للإيجار - صورة 3" src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?w=1200&q=80&auto=format&fit=crop"/>
+</div>
+<p><strong>رقم العقار:</strong> DJ-VIL-0012</p>
+<p><strong>السعر:</strong> $330 / ليلة</p>
+<p><strong>المنطقة:</strong> أوبوك | <strong>النوع:</strong> فيلا</p>
+<p><strong>غرف النوم:</strong> 4 | <strong>الحمامات:</strong> 3 | <strong>السعة:</strong> 8 أشخاص</p>
+<p><strong>آخر تحقق من السعر والتوافر:</strong> 2026-10-12 — فريق DARNADJ</p>
+<h2>وصف العقار</h2>
+<p>فيلا شاطئية بمساحة 280 م² في أوبوك، على مقربة من الشاطئ مع تراس وإطلالة بحرية. مثالية للإقامات القصيرة والعطلات.</p>
+<h2>المواصفات والخدمات</h2>
+<ul><li>4 غرف نوم</li><li>3 حمامات</li><li>تراس</li><li>إطلالة بحرية</li><li>تكييف</li><li>موقف سيارات</li></ul>
+
+<p><a href="https://wa.me/25377313443?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%20DJ-VIL-0012%20%E2%80%94%20%D9%81%D9%8A%D9%84%D8%A7%20%D8%B4%D8%A7%D8%B7%D8%A6%D9%8A%D8%A9%20%D9%84%D9%84%D8%A5%D9%8A%D8%AC%D8%A7%D8%B1.%20%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%3A%20%24330%20/%20%D9%84%D9%8A%D9%84%D8%A9.%20%D8%A7%D9%84%D8%B1%D8%A7%D8%A8%D8%B7%3A%20%5B%D8%B6%D8%B9-%D8%B1%D8%A7%D8%A8%D8%B7-%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%5D">تحقق من التوافر عبر واتساب</a></p>
+</div></section>
+</div></body></html>

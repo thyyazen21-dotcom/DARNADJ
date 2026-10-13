@@ -75,7 +75,8 @@ eq('price:99.5 -> 109.45',
   { amount: 109.45, currency: 'USD', per: '', source: 'base' });
 
 // 9) formatting
-eq('format AR', api.darnaFormatPrice({ amount: 110, currency: 'USD', per: 'night' }, 'ar'), '110 دولار / الليلة');
+eq('format AR', api.darnaFormatPrice({ amount: 110, currency: 'USD', per: 'night' }, 'ar'), '$110 / ليلة');
+eq('format AR month + thousands separator', api.darnaFormatPrice({ amount: 1100, currency: 'USD', per: 'month' }, 'ar'), '$1,100 / شهر');
 eq('format EN', api.darnaFormatPrice({ amount: 110, currency: 'USD', per: 'night' }, 'en'), '$110 / night');
 eq('format FR', api.darnaFormatPrice({ amount: 110, currency: 'USD', per: 'night' }, 'fr'), '$110 / nuit');
 eq('format no unit', api.darnaFormatPrice({ amount: 55, currency: 'EUR', per: '' }, 'en'), '€55');
