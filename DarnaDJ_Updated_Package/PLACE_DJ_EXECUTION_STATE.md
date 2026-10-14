@@ -15,6 +15,7 @@
 | النسخة الأصلية (Backup) | `DarnaDJ_Updated_Package/_archive/theme-Place-dj-com.original.xml` |
 | المستودع | `github.com/thyyazen21-dotcom/DARNADJ` (branch `main`) |
 | آخر commit أساس | `b71279d27bb5daa2f263f32919514c70916a74c0` ("upload feed project") |
+| commit التسليم (مدفوع) | `306735a237ef82bd2778435346761301b1e6f3c1` (branch `main`، تم التحقق من SHA البعيد) |
 | حالة التسليم | **READY TO IMPORT** (نشر الموقع الحيّ يتطلب إذن المالك — لم يُنشر) |
 | اختبارات الوحدة (JS) | 41/41 ناجح |
 | اختبارات البنية (XML/JS) | 31/31 ناجح |
