@@ -8,26 +8,26 @@
 
   <b:include data='blog' name='all-head-content'/>
 
-  <!-- Title: overrides the Blogger blog-title setting ("بلاس") with the Place-dj brand.
+  <!-- Title: overrides the Blogger blog-title setting ("بلاس") with the بلاَس (Place-dj) brand.
        NOTE: og:title on the homepage is emitted by all-head-content from the blog-title
        setting and cannot be overridden here without creating a duplicate tag; the owner
-       should also set the blog title to "Place-dj" in Blogger Settings (external action). -->
+       should also set the blog title to "بلاَس" in Blogger Settings (external action). -->
   <b:if cond='data:view.isHomepage'>
-    <title>Place-dj &#8212; منصة تأجير العقارات في جيبوتي</title>
+    <title>بلاَس &#8212; اعثر على سكنك في جيبوتي</title>
   <b:else/>
-    <title><data:view.title/> &#8212; Place-dj</title>
+    <title><data:view.title/> &#8212; بلاَس</title>
   </b:if>
 
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' name='description'/>
   <b:else/>
-    <meta content='Place-dj — منصة تأجير العقارات في جيبوتي: شقق وفلل ومنازل للإيجار مع أسعار واضحة بالدولار وتواصل مباشر عبر واتساب' name='description'/>
+    <meta content='بلاَس — اعثر على سكنك في جيبوتي: اكتشف الشقق والفلل والمنازل والاستوديوهات، واستكشف الخيارات المناسبة لك وتواصل معنا للتحقق من التوفر والحجز.' name='description'/>
   </b:if>
 
   <!-- NOTE: canonical, og:url, og:title, og:description and og:image are already emitted
        correctly by Blogger's all-head-content. We intentionally do NOT re-declare them here
        to avoid duplicate tags and the empty og:url on post pages. -->
-  <meta content='Place-dj' property='og:site_name'/>
+  <meta content='بلاَس' property='og:site_name'/>
   <meta content='ar' property='og:locale'/>
   <meta content='summary_large_image' name='twitter:card'/>
   <meta content='#0d6ea8' name='theme-color'/>
@@ -40,11 +40,11 @@
   </b:if>
   <b:if cond='data:view.isPost'>
     <script type='application/ld+json'>
-    {&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;BlogPosting&quot;,&quot;headline&quot;:&quot;<data:view.title.jsonEscaped/>&quot;,&quot;mainEntityOfPage&quot;:&quot;<data:blog.canonicalUrl/>&quot;,&quot;author&quot;:{&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:&quot;Place-dj&quot;},&quot;publisher&quot;:{&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:&quot;Place-dj&quot;},&quot;inLanguage&quot;:&quot;ar&quot;}
+    {&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;BlogPosting&quot;,&quot;headline&quot;:&quot;<data:view.title.jsonEscaped/>&quot;,&quot;mainEntityOfPage&quot;:&quot;<data:blog.canonicalUrl/>&quot;,&quot;author&quot;:{&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:&quot;بلاَس&quot;},&quot;publisher&quot;:{&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:&quot;بلاَس&quot;},&quot;inLanguage&quot;:&quot;ar&quot;}
     </script>
   <b:else/>
     <script type='application/ld+json'>
-    {&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;WebSite&quot;,&quot;name&quot;:&quot;Place-dj&quot;,&quot;url&quot;:&quot;<data:blog.homepageUrl/>&quot;,&quot;inLanguage&quot;:&quot;ar&quot;}
+    {&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;WebSite&quot;,&quot;name&quot;:&quot;بلاَس&quot;,&quot;url&quot;:&quot;<data:blog.homepageUrl/>&quot;,&quot;inLanguage&quot;:&quot;ar&quot;}
     </script>
   </b:if>
 
@@ -554,11 +554,11 @@
 <header class='site-header'>
   <div class='container'>
     <div class='header-inner'>
-      <a aria-label='Place-dj — الصفحة الرئيسية' class='site-logo' expr:href='data:blog.homepageUrl'>
+      <a aria-label='بلاَس — الصفحة الرئيسية' class='site-logo' expr:href='data:blog.homepageUrl'>
         <span aria-hidden='true' class='logo-icon'>
           <svg focusable='false' role='img' viewBox='0 0 48 48'><rect fill='#0d6ea8' height='48' rx='11' width='48'/><path d='M24 11 L39 24 H34 V37 H27 V29 H21 V37 H14 V24 H9 Z' fill='#ffffff'/><path d='M24 11 L39 24 H34 V22 L24 13.5 L14 22 V24 H9 Z' fill='#12AD2B'/><circle cx='24' cy='20.5' fill='#D7141A' r='2.6'/></svg>
         </span>
-        <span class='logo-text'>Place-dj</span>
+        <span class='logo-text'>بلاَس</span>
       </a>
       <button aria-label='القائمة' class='nav-toggle' onclick='this.nextElementSibling.classList.toggle(&quot;open&quot;)' type='button'>&#9776;</button>
       <nav class='main-nav'>
@@ -599,8 +599,8 @@
 <b:if cond='data:view.isHomepage'>
   <section class='hero'>
     <div class='container'>
-      <h1>Place-dj &#8212; منصة تأجير العقارات في جيبوتي</h1>
-      <p>اعثر على شقق وفلل ومنازل واستوديوهات للإيجار في جيبوتي مع أسعار واضحة بالدولار وتواصل مباشر عبر واتساب</p>
+      <h1>بلاَس &#8212; اعثر على سكنك في جيبوتي</h1>
+      <p>اكتشف الشقق والفلل والمنازل والاستوديوهات، واستكشف الخيارات المناسبة لك وتواصل معنا للتحقق من التوفر والحجز.</p>
       <div class='hero-filters'>
         <input aria-label='بحث' id='hero-search' placeholder='ابحث بكلمة...' type='text'/>
         <select aria-label='النوع' id='hero-type'>
@@ -1390,7 +1390,7 @@
         <section class='section'>
           <div class='add-property-card'>
             <h2>هل تملك عقار&#1611;ا في جيبوتي&#1567;</h2>
-            <p>أضف عقارك إلى Place-dj ليصل إلى المستأجرين الباحثين عن سكن في جيبوتي.</p>
+            <p>أضف عقارك إلى بلاَس ليصل إلى المستأجرين الباحثين عن سكن في جيبوتي.</p>
             <a class='add-property-btn' href='#' id='add-property-btn' rel='noopener' target='_blank'>أضف عقارك</a>
             <p class='add-property-note' id='add-property-note'>إرسال النموذج لا يعني النشر التلقائي&#1563; تتم مراجعة العقار قبل النشر.</p>
           </div>
@@ -1468,7 +1468,7 @@
             </div>
           </b:includable>
         </b:widget>
-        <b:widget id='PopularPosts1' locked='false' title='عقارات شائعة' type='PopularPosts' version='2' visible='true'>
+        <b:widget id='PopularPosts1' locked='false' title='يفضلها الزائرون' type='PopularPosts' version='2' visible='true'>
           <b:widget-settings>
             <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
             <b:widget-setting name='showThumbnails'>true</b:widget-setting>
@@ -1500,7 +1500,7 @@
     <b:section class='footer-widgets' id='footer-widgets' maxwidgets='3' showaddelement='yes'/>
     <div class='footer-grid'>
       <div>
-        <h4>Place-dj</h4>
+        <h4>بلاَس</h4>
         <p style='font-size:.9rem;opacity:.7;'>منصة تأجير العقارات في جيبوتي. أسعار واضحة بالدولار وتواصل مباشر.</p>
       </div>
       <div>
@@ -1647,6 +1647,9 @@
   window.darnaParsePriceLabels = darnaParsePriceLabels;
   window.darnaComputePrice = darnaComputePrice;
   window.darnaFormatPrice = darnaFormatPrice;
+  window.darnaParseFields = darnaParseFields;
+  window.darnaStatusClass = darnaStatusClass;
+  window.darnaNorm = darnaNorm;
 
   /* ================= Small helpers ================= */
   function escapeHtml(s) {
@@ -1664,6 +1667,8 @@
 
   /* ================= Label parsing shared by cards + detail ================= */
   var DARNA_LABEL_RE = /^(pricefinal|price|cur|per|beds|bedrooms|baths|bathrooms|kitchens|kitchen|sqm|area|size|cap|guests|status|availability|type|ptype|loc|location|area_name)\s*[:\-_]\s*(.+)$/i;
+  // Labels that look like a place name but are NOT a region — never parse as area.
+  var DARNA_NON_AREA = /^(\u0639\u0642\u0627\u0631\u0627\u062a|\u0639\u0642\u0627\u0631|\u0644\u0644\u0625\u064a\u062c\u0627\u0631|\u0644\u0644\u0628\u064a\u0639|\u0645\u0645\u064a\u0632|\u0645\u0645\u064a\u0632\u0629|\u062c\u062f\u064a\u062f|\u062c\u062f\u064a\u062f\u0629|\u0645\u0641\u0631\u0648\u0634|\u0645\u0641\u0631\u0648\u0634\u0629|\u0645\u0624\u0643\u062f|\u0645\u0648\u062b\u0642|\u0645\u0642\u062a\u0631\u062d|\u0645\u0637\u0644\u0648\u0628)$/;
   var DARNA_STATUS_WORDS = /^(available|unavailable|occupied|\u0645\u062a\u0648\u0641\u0631|\u0645\u062a\u0648\u0641\u0631\u0629|\u063a\u064a\u0631 \u0645\u062a\u0648\u0641\u0631|\u063a\u064a\u0631 \u0645\u062a\u0648\u0641\u0631\u0629)$/i;
 
   function darnaReadLabels(scope) {
@@ -1695,7 +1700,7 @@
       if (DARNA_STATUS_WORDS.test(t)) { if (!f.status) f.status = t; return; }
       // Plain-label fallbacks (Arabic / English property words) — rental product only.
       if (!f.type && /^(\u0634\u0642\u0629|\u0634\u0642\u0629 \u0645\u0641\u0631\u0648\u0634\u0629|\u0641\u064a\u0644\u0627|\u0645\u0646\u0632\u0644|\u0627\u0633\u062a\u0648\u062f\u064a\u0648|\u063a\u0631\u0641\u0629|\u0645\u0641\u0631\u0648\u0634|apartment|villa|house|studio|room)/i.test(t)) f.type = t;
-      else if (!f.area && /^[\u0600-\u06FF\s\-]{3,40}$/.test(t) && !/^(\u0639\u0642\u0627\u0631\u0627\u062a|\u0639\u0642\u0627\u0631)$/.test(t)) f.area = t;
+      else if (!f.area && /^[\u0600-\u06FF\s\-]{3,40}$/.test(t) && !DARNA_NON_AREA.test(t)) f.area = t;
     });
     return f;
   }
@@ -1765,13 +1770,13 @@
       else { typeChip.hidden = true; }
     }
 
-    // availability badge (separate from type)
+    // availability badge (separate from type) — hidden when no status is recorded
     var st = darnaStatusClass(f.status);
     var badge = card.querySelector('.feature-status');
     if (badge) {
-      badge.textContent = st.label;
       badge.classList.remove('is-available', 'is-unavailable');
-      if (st.cls) badge.classList.add(st.cls);
+      if (st.cls) { badge.textContent = st.label; badge.classList.add(st.cls); badge.hidden = false; }
+      else { badge.textContent = ''; badge.hidden = true; }
     }
 
     // short description (1-2 lines)
@@ -1794,6 +1799,8 @@
     card.setAttribute('data-unit', info && info.per ? info.per : '');
     card.setAttribute('data-price', info ? String(info.amount) : '');
     card.setAttribute('data-search', darnaNorm((card.getAttribute('data-title') || '') + ' ' + bodyText + ' ' + labels.join(' ')));
+    // mark whether this post is a real property listing (has a type, an area, or a price)
+    card.setAttribute('data-property', (f.type || f.beds || f.baths || f.sqm || f.kitchens || (info && info.amount != null)) ? '1' : '0');
   }
 
   /* ================= Card photo carousel (one click = one image) ================= */
@@ -1909,9 +1916,9 @@
     var st = darnaStatusClass(f.status);
     var badge = art.querySelector('.detail-status');
     if (badge) {
-      badge.textContent = st.label;
       badge.classList.remove('is-available', 'is-unavailable');
-      if (st.cls) badge.classList.add(st.cls);
+      if (st.cls) { badge.textContent = st.label; badge.classList.add(st.cls); }
+      else { badge.textContent = 'التوفر يُتحقق عند التواصل'; }
     }
 
     // type chip (separate from availability)
@@ -2064,7 +2071,7 @@
       var guests = document.getElementById('inq-guests').value || '';
       var msg = (document.getElementById('inq-msg').value || '').trim();
       var lines = [
-        '\u0627\u0644\u0633\u0644\u0627\u0645 \u0639\u0644\u064a\u0643\u0645\u060c \u0623\u0631\u063a\u0628 \u0628\u0627\u0644\u0627\u0633\u062a\u0641\u0633\u0627\u0631 \u0639\u0628\u0631 Place-dj.',
+        '\u0627\u0644\u0633\u0644\u0627\u0645 \u0639\u0644\u064a\u0643\u0645\u060c \u0623\u0631\u063a\u0628 \u0628\u0627\u0644\u0627\u0633\u062a\u0641\u0633\u0627\u0631 \u0639\u0628\u0631 بلاَس.',
         '\u0627\u0644\u0639\u0642\u0627\u0631: ' + prop,
         '\u0646\u0648\u0639 \u0627\u0644\u0637\u0644\u0628: ' + type,
         '\u0627\u0644\u0627\u0633\u0645: ' + name,
@@ -2417,14 +2424,27 @@
   }
 
   /* ================= Add-property section (single editable setting) ================= */
-  // Set this to your Google Docs / Form URL. Leave empty to hide the button.
+  // Set this to your Google Form URL after creating it with the owner's Google account.
+  // While empty, the button safely falls back to a real WhatsApp intake (never a dead placeholder).
   window.PLACEDJ_ADD_PROPERTY_URL = '';
   function darnaInitAddProperty() {
     var btn = document.getElementById('add-property-btn');
     if (!btn) return;
     var url = String(window.PLACEDJ_ADD_PROPERTY_URL || '').trim();
-    if (!url || url === '#') { btn.hidden = true; return; }
-    btn.setAttribute('href', url);
+    var note = document.getElementById('add-property-note');
+    if (url && url !== '#') {
+      btn.setAttribute('href', url);
+      btn.setAttribute('target', '_blank');
+      btn.setAttribute('rel', 'noopener');
+      return;
+    }
+    // Google Form not configured yet (BLOCKED pending the owner's Google account).
+    // Fall back to a working WhatsApp intake so the CTA is never a broken link.
+    var waMsg = 'أرغب بإضافة عقاري إلى بلاَس (Place-dj).\nالاسم: \nنوع العقار: \nالمنطقة: \nالسعر ووحدة السعر: \nالوصف: \nروابط الصور: ';
+    btn.setAttribute('href', 'https://wa.me/25377313443?text=' + encodeURIComponent(waMsg));
+    btn.setAttribute('target', '_blank');
+    btn.setAttribute('rel', 'noopener');
+    if (note) note.textContent = 'نموذج Google Forms قيد التجهيز من حساب المالك. حاليًا يُرسل طلبك عبر واتساب، وتُراجع الإدارة العقار قبل النشر.';
   }
 
   /* ================= Hero quick filter ================= */
@@ -2474,6 +2494,10 @@
     document.querySelectorAll('.property-card').forEach(function (c) {
       if (c.closest('#similar-grid')) return;
       darnaRenderCard(c);
+    });
+    // Exclude non-property posts (e.g. complaint / informational posts) from the property grid
+    document.querySelectorAll('#property-grid .property-card[data-property="0"]').forEach(function (c) {
+      if (c.parentNode) c.parentNode.removeChild(c);
     });
     document.querySelectorAll('.property-photo-carousel').forEach(function (b) {
       if (b.closest('#similar-grid')) return;
