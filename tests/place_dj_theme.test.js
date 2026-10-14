@@ -41,8 +41,19 @@ for (const wid of ['Blog1', 'Label1', 'HTML2', 'PopularPosts1']) {
   ok(`widget present: ${wid}`, src.includes(`id='${wid}'`));
 }
 ok('hero H1 exact (بلاَس — اعثر على سكنك في جيبوتي)', src.includes('<h1>بلاَس &#8212; اعثر على سكنك في جيبوتي</h1>'));
-ok('hero description exact', src.includes('اكتشف الشقق والفلل والمنازل والاستوديوهات، واستكشف الخيارات المناسبة لك وتواصل معنا للتحقق من التوفر والحجز.'));
-ok('browse-by-region has 6 regions', ['جيبوتي المدينة','علي صبيح','تاجورة','أوبوك','أرتا','دخيل'].every(r => src.includes(`search/label/${r}`)));
+ok('hero description exact (marketing copy)', src.includes('اكتشف خيارات السكن في جيبوتي، وقارن العقارات المتاحة، واختر ما يناسب احتياجاتك.'));
+ok('browse-by-region has 9 regions', ['قلب جيبوتي المدينة','حي هيرون','هراموس','غبودة','أمبولي','البلاتو','بُلوص','أربها','بلبلا وما حولها'].every(r => src.includes(r)));
+ok('region links use place-dj.com (9)', (src.match(/https:\/\/www\.place-dj\.com\/search\/label\//g) || []).length === 9);
+ok('old disclaimer removed', !src.includes('الاستفسار لا يؤكد التوفر أو الحجز'));
+ok('old brand tagline removed', !src.includes('منصة تأجير العقارات في جيبوتي. أسعار واضحة بالدولار وتواصل مباشر.'));
+ok('old Google Forms note removed', !src.includes('نموذج Google Forms قيد التجهيز'));
+ok('sidebar filter widget present', src.includes("id='HTMLFilter1'"));
+ok('top picks section present', src.includes("id='home-top-picks'"));
+ok('top picks rail present', src.includes('id="top-picks-rail"'));
+ok('rating section present', src.includes("id='rating-section'"));
+ok('rating has 5 stars', (src.match(/class='rating-star'/g) || []).length === 5);
+ok('top picks JS wired', src.includes('darnaInitTopPicks();'));
+ok('rating JS wired', src.includes('darnaInitRating();'));
 ok('no placeholder Google Forms URL', !src.includes('docs.google.com/forms'));
 ok('add-property URL is a central config', src.includes('window.PLACEDJ_ADD_PROPERTY_URL'));
 ok('popular widget titled يفضلها الزائرون', src.includes("title='يفضلها الزائرون'"));

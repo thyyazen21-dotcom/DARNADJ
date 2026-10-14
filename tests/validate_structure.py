@@ -24,13 +24,13 @@ except Exception as e:
     check("XML well-formed", False, str(e))
 
 # 2. Required sections
-required_sections = ["header-widgets","home-before-posts","main-blog","home-after-posts","sidebar-widgets","footer-widgets"]
+required_sections = ["header-widgets","home-before-posts","home-top-picks","main-blog","home-after-posts","sidebar-widgets","footer-widgets"]
 found_sections = re.findall(r"<b:section[^>]*\bid='([^']+)'", raw)
 for s in required_sections:
     check(f"section present: {s}", s in found_sections)
 
 # 3. Required widgets
-required_widgets = {"Blog1":"Blog","Label1":"Label","HTML2":"HTML","PopularPosts1":"PopularPosts"}
+required_widgets = {"Blog1":"Blog","Label1":"Label","HTML2":"HTML","HTMLFilter1":"HTML","HTMLTopPicks1":"HTML","PopularPosts1":"PopularPosts"}
 found_widgets = dict(re.findall(r"<b:widget[^>]*\bid='([^']+)'[^>]*\btype='([^']+)'", raw))
 for wid, wtype in required_widgets.items():
     check(f"widget present: {wid} ({wtype})", found_widgets.get(wid) == wtype, found_widgets.get(wid,"missing"))
@@ -64,7 +64,17 @@ for tag in ["b:section","b:widget","b:includable"]:
 # 6. Required feature markers
 features = {
     "search form (data:blog.searchUrl)": "data:blog.searchUrl",
-    "filter panel (darna-filters)": "id='darna-filters'",
+    "filter panel (darna-filters)": 'id="darna-filters"',
+    "sidebar filter widget": "id='HTMLFilter1'",
+    "top picks section": "id='home-top-picks'",
+    "top picks rail": 'id="top-picks-rail"',
+    "rating section": "id='rating-section'",
+    "rating stars input": "id='rating-input'",
+    "region browse intro": "اختر الحي الأقرب إلى أسلوب حياتك",
+    "region links (place-dj.com)": "https://www.place-dj.com/search/label/",
+    "footer 2-col mobile rule": ".footer-grid { grid-template-columns: 1fr 1fr; }",
+    "top picks JS wired": "darnaInitTopPicks();",
+    "rating JS wired": "darnaInitRating();",
     "property grid": "id='property-grid'",
     "language selector": "id='lang-select'",
     "RTL/LTR dir binding": "expr:dir='data:blog.languageDirection'",

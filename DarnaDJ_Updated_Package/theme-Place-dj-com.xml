@@ -21,7 +21,7 @@
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' name='description'/>
   <b:else/>
-    <meta content='بلاَس — اعثر على سكنك في جيبوتي: اكتشف الشقق والفلل والمنازل والاستوديوهات، واستكشف الخيارات المناسبة لك وتواصل معنا للتحقق من التوفر والحجز.' name='description'/>
+    <meta content='بلاَس — اعثر على سكنك في جيبوتي: اكتشف خيارات السكن، وقارن العقارات المتاحة، واختر ما يناسب احتياجاتك.' name='description'/>
   </b:if>
 
   <!-- NOTE: canonical, og:url, og:title, og:description and og:image are already emitted
@@ -114,8 +114,13 @@
   }
   body#layout #main-wrapper { display: block !important; flex: none !important; }
   body#layout .site-header,
+  body#layout .site-footer { background: #eef1f4 !important; color: #1a1a1a !important; box-shadow: none !important; position: static !important; }
+  body#layout .header-widgets .widget,
+  body#layout .footer-widgets .widget { color: #1a1a1a !important; }
+  body#layout .header-inner,
   body#layout .hero,
-  body#layout .site-footer,
+  body#layout .footer-grid,
+  body#layout .footer-bottom,
   body#layout .search-bar,
   body#layout .nav-toggle,
   body#layout .main-nav,
@@ -151,9 +156,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 12px 16px;
     padding: 12px 0;
     flex-wrap: wrap;
+    min-height: 60px;
   }
   .site-logo { font-size: 1.5rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
   .site-logo:hover { color: #fff; opacity: .9; }
@@ -168,7 +174,7 @@
   .header-widgets .widget h2 { display: none; }
 
   /* ===== Search Bar ===== */
-  .search-bar { background: rgba(255,255,255,.1); border-radius: 8px; padding: 8px 16px; display: flex; align-items: center; gap: 8px; }
+  .search-bar { background: rgba(255,255,255,.1); border-radius: 8px; padding: 8px 16px; display: flex; align-items: center; gap: 8px; min-width: 0; flex: 0 1 auto; }
   .search-bar input[type="text"] { background: transparent; border: none; color: #fff; font-size: .9rem; outline: none; width: 180px; font-family: inherit; }
   .search-bar input[type="text"]::placeholder { color: rgba(255,255,255,.6); }
   .search-bar button { background: $(accent.color); border: none; color: #fff; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: .85rem; font-weight: 600; font-family: inherit; }
@@ -492,6 +498,58 @@
   .darna-filters .filter-apply:hover { background: $(primary.dark); border-color: $(primary.dark); }
   @media (min-width: 769px) { .filters-disclosure > summary.filters-summary { display: none; } }
 
+  /* ===== "Most liked" rail (editorial selection) ===== */
+  .top-picks-note { font-size: .85rem; color: $(muted.color); margin: -14px 0 16px; }
+  .top-picks-rail { display: flex; gap: 14px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; padding: 4px 2px 14px; scrollbar-width: thin; }
+  .top-picks-rail::-webkit-scrollbar { height: 8px; }
+  .top-picks-rail::-webkit-scrollbar-thumb { background: $(border.color); border-radius: 8px; }
+  .top-pick-card { flex: 0 0 240px; scroll-snap-align: start; }
+  .top-pick-link { display: block; background: $(card.bg); border: 1px solid $(border.color); border-radius: 14px; overflow: hidden; color: $(text.color); height: 100%; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+  .top-pick-link:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.10); }
+  .top-pick-link:focus-visible { outline: none; border-color: $(accent.color); box-shadow: 0 0 0 3px rgba(201,150,43,.35); }
+  .top-pick-media { display: block; aspect-ratio: 4 / 3; background: $(bg.color); overflow: hidden; }
+  .top-pick-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .top-pick-noimg { display: flex; align-items: center; justify-content: center; height: 100%; color: $(muted.color); font-size: .8rem; }
+  .top-pick-body { display: block; padding: 12px 14px 14px; }
+  .top-pick-title { display: block; font-weight: 700; font-size: .95rem; margin-bottom: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .top-pick-meta { display: block; font-size: .8rem; color: $(muted.color); margin-bottom: 6px; }
+  .top-pick-price { display: block; font-weight: 700; color: $(primary.color); }
+  @media (max-width: 768px) { .top-pick-card { flex-basis: 74%; } }
+
+  /* ===== Rating section ===== */
+  .rating-section { margin-top: 36px; background: $(card.bg); border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+  .rating-summary { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+  .rating-avg { font-size: 1.6rem; font-weight: 700; color: $(primary.dark); }
+  .rating-stars { color: $(accent.color); letter-spacing: 2px; }
+  .rating-count { color: $(muted.color); font-size: .9rem; }
+  .rating-avg-label { font-size: .85rem; color: $(muted.color); }
+  .rating-fieldset { border: 0; padding: 0; margin: 0 0 12px; }
+  .rating-fieldset legend { font-size: .85rem; font-weight: 600; color: $(muted.color); margin-bottom: 6px; padding: 0; }
+  .rating-input { display: inline-flex; gap: 4px; direction: ltr; }
+  .rating-star { background: none; border: 0; font-size: 1.9rem; line-height: 1; color: $(border.color); cursor: pointer; padding: 0 2px; transition: color .15s ease, transform .15s ease; }
+  .rating-star:hover, .rating-star.is-on { color: $(accent.color); }
+  .rating-star:focus-visible { outline: 2px solid $(accent.color); outline-offset: 2px; border-radius: 4px; }
+  .rating-note { font-size: .78rem; color: $(muted.color); margin-top: 10px; }
+  .rating-feedback { font-size: .85rem; color: $(primary.color); margin-top: 8px; min-height: 1em; }
+  .rating-list-wrap { margin-top: 20px; }
+  .rating-list-wrap h3 { font-size: 1rem; color: $(primary.dark); margin-bottom: 10px; }
+  .rating-list { list-style: none; padding: 0; margin: 0; }
+  .rating-item { padding: 10px 0; border-bottom: 1px solid $(border.color); display: grid; gap: 2px; }
+  .rating-item:last-child { border-bottom: 0; }
+  .rating-item-stars { color: $(accent.color); letter-spacing: 2px; }
+  .rating-item-text { font-size: .9rem; }
+  .rating-item-date { font-size: .75rem; color: $(muted.color); }
+
+  /* ===== Sidebar filter card ===== */
+  .darna-filters-card { padding: 18px; }
+  .darna-filters-card .darna-filters { background: transparent; border: 0; box-shadow: none; padding: 0; margin: 0; border-radius: 0; }
+  .darna-filters-card .filters-row { grid-template-columns: 1fr; }
+
+  /* ===== Region descriptions ===== */
+  .discovery-intro { color: $(muted.color); margin: -14px 0 20px; font-size: .95rem; }
+  .discovery-card .discovery-desc { display: block; font-size: .78rem; color: $(muted.color); margin-top: 4px; font-weight: 400; }
+  .discovery-card:hover .discovery-desc { color: $(primary.color); }
+
   /* ===== Responsive ===== */
   @media (max-width: 768px) {
     .nav-toggle { display: block; }
@@ -503,7 +561,9 @@
     .hero h1 { font-size: 1.6rem; }
     .hero p { font-size: 1rem; }
     .property-grid { grid-template-columns: minmax(0, 1fr); }
-    .footer-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid > div:first-child,
+    .footer-grid > div:last-child { grid-column: 1 / -1; }
     .main-content { flex-direction: column; }
     .sidebar-area { width: 100%; }
     .detail-side { position: static; }
@@ -600,7 +660,7 @@
   <section class='hero'>
     <div class='container'>
       <h1>بلاَس &#8212; اعثر على سكنك في جيبوتي</h1>
-      <p>اكتشف الشقق والفلل والمنازل والاستوديوهات، واستكشف الخيارات المناسبة لك وتواصل معنا للتحقق من التوفر والحجز.</p>
+      <p>اكتشف خيارات السكن في جيبوتي، وقارن العقارات المتاحة، واختر ما يناسب احتياجاتك.</p>
       <div class='hero-filters'>
         <input aria-label='بحث' id='hero-search' placeholder='ابحث بكلمة...' type='text'/>
         <select aria-label='النوع' id='hero-type'>
@@ -633,6 +693,23 @@
 
       <b:if cond='data:view.isHomepage'>
         <b:section class='home-before-posts' id='home-before-posts' maxwidgets='2' showaddelement='yes'/>
+      </b:if>
+
+      <b:if cond='data:view.isHomepage'>
+        <b:section class='home-top-picks' id='home-top-picks' maxwidgets='1' showaddelement='yes'>
+          <b:widget id='HTMLTopPicks1' locked='false' title='يفضلها الكثيرون' type='HTML' version='2' visible='true'>
+            <b:widget-settings>
+              <b:widget-setting name='content'><![CDATA[<section class="top-picks-section" data-source="editorial" hidden="hidden" id="top-picks-section">
+  <h2 class="section-title">يفضلها الكثيرون</h2>
+  <p class="top-picks-note">اختيارات مقترحة من عقارات متاحة على بلاَس.</p>
+  <div aria-label="يفضلها الكثيرون" class="top-picks-rail" id="top-picks-rail" role="list"></div>
+</section>]]></b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+              <div class='widget-content'><data:content/></div>
+            </b:includable>
+          </b:widget>
+        </b:section>
       </b:if>
 
       <b:section class='main' id='main-blog' maxwidgets='1' showaddelement='no'>
@@ -765,6 +842,39 @@
                     </aside>
                   </div>
 
+                  <section class='rating-section' id='rating-section'>
+                    <h2 class='section-title'>قيّم هذا العقار</h2>
+                    <div class='rating-summary' hidden='hidden' id='rating-summary'>
+                      <span class='rating-avg-label'>متوسط تقييماتك على هذا الجهاز:</span>
+                      <span class='rating-avg' id='rating-avg'>—</span>
+                      <span aria-hidden='true' class='rating-stars' id='rating-stars-display'></span>
+                      <span class='rating-count' id='rating-count'></span>
+                    </div>
+                    <form class='rating-form' id='rating-form' novalidate='novalidate'>
+                      <fieldset class='rating-fieldset'>
+                        <legend>اختر تقييمك من 1 إلى 5 نجوم</legend>
+                        <div aria-label='التقييم بالنجوم' class='rating-input' id='rating-input' role='radiogroup'>
+                          <button aria-checked='false' aria-label='1 نجمة' class='rating-star' data-value='1' role='radio' tabindex='0' type='button'>★</button>
+                          <button aria-checked='false' aria-label='2 نجوم' class='rating-star' data-value='2' role='radio' tabindex='-1' type='button'>★</button>
+                          <button aria-checked='false' aria-label='3 نجوم' class='rating-star' data-value='3' role='radio' tabindex='-1' type='button'>★</button>
+                          <button aria-checked='false' aria-label='4 نجوم' class='rating-star' data-value='4' role='radio' tabindex='-1' type='button'>★</button>
+                          <button aria-checked='false' aria-label='5 نجوم' class='rating-star' data-value='5' role='radio' tabindex='-1' type='button'>★</button>
+                        </div>
+                      </fieldset>
+                      <div class='field'>
+                        <label for='rating-comment'>تعليق (اختياري)</label>
+                        <textarea id='rating-comment' maxlength='500' rows='3'></textarea>
+                      </div>
+                      <button class='form-submit rating-submit' id='rating-submit' type='submit'>إرسال التقييم</button>
+                      <p class='rating-note' id='rating-note'>تُحفط تقييماتك على هذا الجهاز فقط. لعرض تقييمات مشتركة بين كل الزوار يلزم ربط خدمة تخزين خارجية.</p>
+                      <div aria-live='polite' class='rating-feedback' id='rating-feedback' role='status'></div>
+                    </form>
+                    <div class='rating-list-wrap' hidden='hidden' id='rating-list-wrap'>
+                      <h3>التقييمات السابقة</h3>
+                      <ul class='rating-list' id='rating-list'></ul>
+                    </div>
+                  </section>
+
                   <section class='similar-section' hidden='hidden' id='similar-section'>
                     <h2 class='section-title'>عقارات مشابهة</h2>
                     <div class='property-grid' id='similar-grid'/>
@@ -809,85 +919,6 @@
                   </h1>
                 </section>
               </b:if>
-
-              <div class='darna-filters' id='darna-filters'>
-                <p class='filters-scope'>ت&#1615;طب&#1614;&#1617;ق هذه الفلاتر على العقارات المعروضة في هذه الصفحة فقط. للبحث في كل المنشورات استخدم صندوق البحث في الأعلى.</p>
-                <details class='filters-disclosure' id='filters-disclosure' open='open'>
-                <summary class='filters-summary'>كل الفلاتر</summary>
-                <div class='filters-row'>
-                  <div class='filter-field' style='grid-column:1/-1;'>
-                    <label for='f-q'>تصفية نصية (داخل هذه الصفحة)</label>
-                    <input id='f-q' placeholder='ابحث بالاسم أو الوصف أو المنطقة...' type='search'/>
-                  </div>
-                  <div class='filter-field'>
-                    <label for='f-type'>النوع</label>
-                    <select id='f-type'><option value=''>كل الأنواع</option></select>
-                  </div>
-                  <div class='filter-field'>
-                    <label for='f-area'>المنطقة</label>
-                    <select id='f-area'><option value=''>كل المناطق</option></select>
-                  </div>
-                  <div class='filter-field'>
-                    <label for='f-status'>التوفر</label>
-                    <select id='f-status'>
-                      <option value=''>الكل</option>
-                      <option value='available'>متوفر</option>
-                      <option value='unavailable'>غير متوفر</option>
-                    </select>
-                  </div>
-                  <div class='filter-field'>
-                    <label for='f-min'>أدنى سعر ($)</label>
-                    <input id='f-min' inputmode='numeric' min='0' type='number'/>
-                  </div>
-                  <div class='filter-field'>
-                    <label for='f-max'>أقصى سعر ($)</label>
-                    <input id='f-max' inputmode='numeric' min='0' type='number'/>
-                  </div>
-                  <div class='filter-field'>
-                    <label for='f-unit'>وحدة السعر</label>
-                    <select id='f-unit'><option value=''>كل الوحدات</option></select>
-                  </div>
-                  <div class='filter-field'>
-                    <label for='f-beds'>غرف النوم</label>
-                    <select id='f-beds'>
-                      <option value=''>الكل</option>
-                      <option value='1'>1+</option>
-                      <option value='2'>2+</option>
-                      <option value='3'>3+</option>
-                      <option value='4'>4+</option>
-                      <option value='5'>5+</option>
-                    </select>
-                  </div>
-                  <div class='filter-field'>
-                    <label for='f-baths'>الحمامات</label>
-                    <select id='f-baths'>
-                      <option value=''>الكل</option>
-                      <option value='1'>1+</option>
-                      <option value='2'>2+</option>
-                      <option value='3'>3+</option>
-                    </select>
-                  </div>
-                  <div class='filter-field'>
-                    <label for='f-sqm'>أدنى مساحة (م&#178;)</label>
-                    <input id='f-sqm' inputmode='numeric' min='0' type='number'/>
-                  </div>
-                  <div class='filter-field'>
-                    <label for='f-sort'>الترتيب</label>
-                    <select id='f-sort'>
-                      <option value='default'>الافتراضي</option>
-                      <option value='price-asc'>السعر: من الأقل للأعلى</option>
-                      <option value='price-desc'>السعر: من الأعلى للأقل</option>
-                      <option value='beds-desc'>غرف النوم: الأكثر أولا&#1611;</option>
-                      <option value='sqm-desc'>المساحة: الأكبر أولا&#1611;</option>
-                    </select>
-                  </div>
-                  <div class='filter-actions'>
-                    <button class='filter-apply' id='f-apply' type='button'>تطبيق</button>
-                    <button class='filter-reset' id='f-reset' type='button'>إعادة تعيين</button>
-                  </div>
-                </div></details>
-                <div aria-live='polite' class='filters-status' id='f-count'/>
-              </div>
 
               <div class='blog-posts'>
                 <b:if cond='data:posts.empty'>
@@ -1368,16 +1399,20 @@
 
       <b:if cond='data:view.isHomepage'>
         <section class='section discovery-section'>
-          <h2 class='section-title'>تصف&#1617;ح حسب المنطقة في جيبوتي</h2>
+          <h2 class='section-title'>تصفّح حسب المنطقة في جيبوتي</h2>
+          <p class='discovery-intro'>اختر الحي الأقرب إلى أسلوب حياتك، وابدأ بجولة سريعة بين عقارات جيبوتي المدينة والمناطق المحيطة.</p>
           <div class='discovery-grid'>
-            <a class='discovery-card' expr:href='data:blog.homepageUrl + &quot;search/label/جيبوتي المدينة&quot;'><span aria-hidden='true' class='discovery-icon'>🏙&#65039;</span><span class='discovery-name'>جيبوتي المدينة</span></a>
-            <a class='discovery-card' expr:href='data:blog.homepageUrl + &quot;search/label/علي صبيح&quot;'><span aria-hidden='true' class='discovery-icon'>🏘&#65039;</span><span class='discovery-name'>علي صبيح</span></a>
-            <a class='discovery-card' expr:href='data:blog.homepageUrl + &quot;search/label/تاجورة&quot;'><span aria-hidden='true' class='discovery-icon'>🌅</span><span class='discovery-name'>تاجورة</span></a>
-            <a class='discovery-card' expr:href='data:blog.homepageUrl + &quot;search/label/أوبوك&quot;'><span aria-hidden='true' class='discovery-icon'>&#9968;</span><span class='discovery-name'>أوبوك</span></a>
-            <a class='discovery-card' expr:href='data:blog.homepageUrl + &quot;search/label/أرتا&quot;'><span aria-hidden='true' class='discovery-icon'>🌊</span><span class='discovery-name'>أرتا</span></a>
-            <a class='discovery-card' expr:href='data:blog.homepageUrl + &quot;search/label/دخيل&quot;'><span aria-hidden='true' class='discovery-icon'>🏖&#65039;</span><span class='discovery-name'>دخيل</span></a>
+            <a class='discovery-card' href='https://www.place-dj.com/search/label/%D8%AC%D9%8A%D8%A8%D9%88%D8%AA%D9%8A%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9'><span aria-hidden='true' class='discovery-icon'>🏙️</span><span class='discovery-name'>قلب جيبوتي المدينة</span><span class='discovery-desc'>حياة المدينة والخدمات قريبة منك</span></a>
+            <a class='discovery-card' href='https://www.place-dj.com/search/label/%D9%87%D9%8A%D8%B1%D9%88%D9%86'><span aria-hidden='true' class='discovery-icon'>🌊</span><span class='discovery-name'>حي هيرون</span><span class='discovery-desc'>إطلالة بحرية وأجواء هادئة</span></a>
+            <a class='discovery-card' href='https://www.place-dj.com/search/label/%D9%87%D8%B1%D8%A7%D9%85%D9%88%D8%B3'><span aria-hidden='true' class='discovery-icon'>🏛️</span><span class='discovery-name'>هراموس</span><span class='discovery-desc'>مساحات راقية للعيش والاستقرار</span></a>
+            <a class='discovery-card' href='https://www.place-dj.com/search/label/%D8%BA%D8%A8%D9%88%D8%AF%D8%A9'><span aria-hidden='true' class='discovery-icon'>🏘️</span><span class='discovery-name'>غبودة</span><span class='discovery-desc'>اختيارات عملية للعائلات</span></a>
+            <a class='discovery-card' href='https://www.place-dj.com/search/label/%D8%A3%D9%85%D8%A8%D9%88%D9%84%D9%8A'><span aria-hidden='true' class='discovery-icon'>✈️</span><span class='discovery-name'>أمبولي</span><span class='discovery-desc'>قرب المطار والوجهات الرئيسية</span></a>
+            <a class='discovery-card' href='https://www.place-dj.com/search/label/%D8%A7%D9%84%D8%A8%D9%84%D8%A7%D8%AA%D9%88'><span aria-hidden='true' class='discovery-icon'>📍</span><span class='discovery-name'>البلاتو</span><span class='discovery-desc'>موقع مميز وسط المدينة</span></a>
+            <a class='discovery-card' href='https://www.place-dj.com/search/label/%D8%A8%D9%8F%D9%84%D9%88%D8%B5'><span aria-hidden='true' class='discovery-icon'>🏡</span><span class='discovery-name'>بُلوص</span><span class='discovery-desc'>تنوع منازل وشقق سكنية</span></a>
+            <a class='discovery-card' href='https://www.place-dj.com/search/label/%D8%A3%D8%B1%D8%A8%D9%87%D8%A7'><span aria-hidden='true' class='discovery-icon'>🏙️</span><span class='discovery-name'>أربها</span><span class='discovery-desc'>حي قريب من نبض المدينة</span></a>
+            <a class='discovery-card' href='https://www.place-dj.com/search/label/%D8%A8%D9%84%D8%A8%D9%84%D8%A7'><span aria-hidden='true' class='discovery-icon'>🌅</span><span class='discovery-name'>بلبلا وما حولها</span><span class='discovery-desc'>خيارات إضافية حول العاصمة</span></a>
           </div>
-          <h2 class='section-title'>تصف&#1617;ح حسب النوع</h2>
+          <h2 class='section-title'>تصفّح حسب النوع</h2>
           <div class='filter-bar'>
             <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/شقة&quot;'>شقق</a>
             <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/فيلا&quot;'>فلل</a>
@@ -1392,7 +1427,7 @@
             <h2>هل تملك عقار&#1611;ا في جيبوتي&#1567;</h2>
             <p>أضف عقارك إلى بلاَس ليصل إلى المستأجرين الباحثين عن سكن في جيبوتي.</p>
             <a class='add-property-btn' href='#' id='add-property-btn' rel='noopener' target='_blank'>أضف عقارك</a>
-            <p class='add-property-note' id='add-property-note'>إرسال النموذج لا يعني النشر التلقائي&#1563; تتم مراجعة العقار قبل النشر.</p>
+            <p class='add-property-note' id='add-property-note'>أضف عقارك ليصل إلى الباحثين عن سكن في جيبوتي — تُراجع الإدارة العقار قبل النشر.</p>
           </div>
         </section>
 
@@ -1468,6 +1503,114 @@
             </div>
           </b:includable>
         </b:widget>
+        <b:widget id='HTMLFilter1' locked='false' title='تصفية نصية (داخل هذه الصفحة)' type='HTML' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='content'><![CDATA[<div class="darna-filters" id="darna-filters">
+  <p class="filters-scope">تُطبَّق هذه الفلاتر على العقارات المعروضة في هذه الصفحة فقط. للبحث في كل المنشورات استخدم صندوق البحث في الأعلى.</p>
+  <details class="filters-disclosure" id="filters-disclosure" open="open">
+    <summary class="filters-summary">كل الفلاتر</summary>
+    <div class="filters-row">
+      <div class="filter-field" style="grid-column:1/-1;">
+        <label for="f-q">بحث بالاسم أو الوصف</label>
+        <input id="f-q" placeholder="ابحث بالاسم أو الوصف أو المنطقة..." type="search"/>
+      </div>
+      <div class="filter-field">
+        <label for="f-type">النوع</label>
+        <select id="f-type">
+          <option value="">كل الأنواع</option>
+          <option value="فيلا">فيلا</option>
+          <option value="شقة">شقة</option>
+          <option value="منزل">منزل</option>
+          <option value="استوديو">استوديو</option>
+          <option value="غرفة">غرفة</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="f-area">المنطقة</label>
+        <select id="f-area">
+          <option value="">كل المناطق</option>
+          <option value="أوبوك">أوبوك</option>
+          <option value="علي صبيح">علي صبيح</option>
+          <option value="تاجورة">تاجورة</option>
+          <option value="جيبوتي المدينة">جيبوتي المدينة</option>
+          <option value="دخيل">دخيل</option>
+          <option value="أرتّا">أرتّا</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="f-status">التوفر</label>
+        <select id="f-status">
+          <option value="">الكل</option>
+          <option value="available">متوفر</option>
+          <option value="unavailable">غير متوفر</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="f-min">أدنى سعر ($)</label>
+        <input id="f-min" inputmode="numeric" min="0" type="number"/>
+      </div>
+      <div class="filter-field">
+        <label for="f-max">أقصى سعر ($)</label>
+        <input id="f-max" inputmode="numeric" min="0" type="number"/>
+      </div>
+      <div class="filter-field">
+        <label for="f-unit">وحدة السعر</label>
+        <select id="f-unit">
+          <option value="">كل الوحدات</option>
+          <option value="night">night</option>
+          <option value="month">month</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="f-beds">غرف النوم</label>
+        <select id="f-beds">
+          <option value="">الكل</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+          <option value="5">5+</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="f-baths">الحمامات</label>
+        <select id="f-baths">
+          <option value="">الكل</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="f-sqm">أدنى مساحة (م²)</label>
+        <input id="f-sqm" inputmode="numeric" min="0" type="number"/>
+      </div>
+      <div class="filter-field">
+        <label for="f-sort">الترتيب</label>
+        <select id="f-sort">
+          <option value="default">الافتراضي</option>
+          <option value="price-asc">السعر: من الأقل للأعلى</option>
+          <option value="price-desc">السعر: من الأعلى للأقل</option>
+          <option value="beds-desc">غرف النوم: الأكثر أولاً</option>
+          <option value="sqm-desc">المساحة: الأكبر أولاً</option>
+        </select>
+      </div>
+      <div class="filter-actions">
+        <button class="filter-apply" id="f-apply" type="button">تطبيق</button>
+        <button class="filter-reset" id="f-reset" type="button">إعادة تعيين</button>
+      </div>
+    </div>
+  </details>
+  <div aria-live="polite" class="filters-status" id="f-count"></div>
+</div>]]></b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <div class='widget-card darna-filters-card' id='darna-filters-section'>
+              <h3><data:title/></h3>
+              <div class='widget-content'><data:content/></div>
+            </div>
+          </b:includable>
+        </b:widget>
         <b:widget id='PopularPosts1' locked='false' title='يفضلها الزائرون' type='PopularPosts' version='2' visible='true'>
           <b:widget-settings>
             <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
@@ -1501,7 +1644,7 @@
     <div class='footer-grid'>
       <div>
         <h4>بلاَس</h4>
-        <p style='font-size:.9rem;opacity:.7;'>منصة تأجير العقارات في جيبوتي. أسعار واضحة بالدولار وتواصل مباشر.</p>
+        <p style='font-size:.9rem;opacity:.7;'>مساحتك القادمة تبدأ من هنا.</p>
       </div>
       <div>
         <h4>روابط</h4>
@@ -1524,7 +1667,7 @@
         <h4>تواصل</h4>
         <div class='footer-contact'>
           <p>واتساب: <a dir='ltr' href='https://wa.me/25377313443'>+253 77 31 34 43</a></p>
-          <p style='margin-top:8px;'>الاستفسار لا يؤكد التوفر أو الحجز</p>
+          <p style='margin-top:8px;'>اكتشف المكان الذي يناسبك، وتواصل معنا للاستفسار عن التوفر.</p>
         </div>
       </div>
     </div>
@@ -2444,7 +2587,7 @@
     btn.setAttribute('href', 'https://wa.me/25377313443?text=' + encodeURIComponent(waMsg));
     btn.setAttribute('target', '_blank');
     btn.setAttribute('rel', 'noopener');
-    if (note) note.textContent = 'نموذج Google Forms قيد التجهيز من حساب المالك. حاليًا يُرسل طلبك عبر واتساب، وتُراجع الإدارة العقار قبل النشر.';
+    if (note) note.textContent = 'أضف عقارك ليصل إلى الباحثين عن سكن في جيبوتي — تُراجع الإدارة العقار قبل النشر.';
   }
 
   /* ================= Hero quick filter ================= */
@@ -2489,6 +2632,175 @@
     });
   }
 
+
+  /* ================= Top picks rail (editorial, manually configurable) ================= */
+  // CURATION: set window.PLACEDJ_TOP_PICKS to an array of post URLs (or unique parts of
+  // them). Only REAL posts already present on this page are shown. If left empty, the rail
+  // shows the first available real properties (an editorial default). This section NEVER
+  // fabricates view counts and does NOT claim to be sorted by views.
+  window.PLACEDJ_TOP_PICKS = window.PLACEDJ_TOP_PICKS || [];
+  function darnaInitTopPicks() {
+    var rail = document.getElementById('top-picks-rail');
+    var section = document.getElementById('top-picks-section');
+    if (!rail || !section) return;
+    var grid = document.getElementById('property-grid');
+    var pool = grid ? Array.prototype.slice.call(grid.querySelectorAll('.property-card')) : [];
+    if (!pool.length) return; // nothing real to show -> keep the section hidden
+    var configured = Array.isArray(window.PLACEDJ_TOP_PICKS) ? window.PLACEDJ_TOP_PICKS : [];
+    var chosen = [];
+    configured.forEach(function (u) {
+      if (!u) return;
+      var m = pool.filter(function (c) {
+        var cu = c.getAttribute('data-url') || '';
+        return cu === u || cu.indexOf(u) !== -1;
+      })[0];
+      if (m && chosen.indexOf(m) === -1) chosen.push(m);
+    });
+    if (!chosen.length) chosen = pool.slice(0, 6);
+    function txt(cls, s) { var e = document.createElement('span'); e.className = cls; e.textContent = s; return e; }
+    chosen.forEach(function (card) {
+      var rec = darnaRecordFrom(card);
+      var art = document.createElement('article');
+      art.className = 'top-pick-card';
+      art.setAttribute('role', 'listitem');
+      var a = document.createElement('a');
+      a.className = 'top-pick-link';
+      a.setAttribute('href', rec.url || '#');
+      var media = document.createElement('span');
+      media.className = 'top-pick-media';
+      if (rec.image) {
+        var img = document.createElement('img');
+        img.setAttribute('src', rec.image);
+        img.setAttribute('alt', rec.title || '');
+        img.setAttribute('loading', 'lazy');
+        media.appendChild(img);
+      } else {
+        media.appendChild(txt('top-pick-noimg', 'لا توجد صورة'));
+      }
+      a.appendChild(media);
+      var body = document.createElement('span');
+      body.className = 'top-pick-body';
+      body.appendChild(txt('top-pick-title', rec.title || ''));
+      var meta = [rec.type, rec.area].filter(function (x) { return x; }).join(' · ');
+      body.appendChild(txt('top-pick-meta', meta));
+      var price = rec.price ? (rec.price + (rec.unit ? ' / ' + rec.unit : '')) : '';
+      body.appendChild(txt('top-pick-price', price));
+      a.appendChild(body);
+      art.appendChild(a);
+      rail.appendChild(art);
+    });
+    section.hidden = false;
+  }
+
+  /* ================= Ratings (per-device; integratable with an external service) ================= */
+  // STORAGE: ratings are saved in THIS browser's localStorage only (per device, per post).
+  // They are NOT shared between visitors. To collect shared ratings, connect an external
+  // service by setting window.PLACEDJ_RATINGS_ENDPOINT to a URL that accepts
+  // POST {postId, value, comment}. No secrets are placed in this public script.
+  window.PLACEDJ_RATINGS_ENDPOINT = window.PLACEDJ_RATINGS_ENDPOINT || '';
+  var RATING_STORE = 'placedj_ratings_v1';
+  function darnaRatingPostId() {
+    var art = document.querySelector('.property-detail');
+    var id = art && art.getAttribute('data-post-id');
+    return id || (window.location.pathname || 'post');
+  }
+  function darnaRatingKey() { return RATING_STORE + '::' + darnaRatingPostId(); }
+  function darnaReadRatings() {
+    try { var raw = localStorage.getItem(darnaRatingKey()); var arr = raw ? JSON.parse(raw) : []; return Array.isArray(arr) ? arr : []; }
+    catch (e) { return []; }
+  }
+  function darnaWriteRatings(list) {
+    try { localStorage.setItem(darnaRatingKey(), JSON.stringify(list)); return true; } catch (e) { return false; }
+  }
+  function darnaInitRating() {
+    var form = document.getElementById('rating-form');
+    var input = document.getElementById('rating-input');
+    if (!form || !input) return;
+    var stars = Array.prototype.slice.call(input.querySelectorAll('.rating-star'));
+    var current = 0;
+    function paint(v) {
+      stars.forEach(function (s) {
+        var sv = parseInt(s.getAttribute('data-value'), 10);
+        s.classList.toggle('is-on', sv <= v);
+        s.setAttribute('aria-checked', sv === current ? 'true' : 'false');
+      });
+    }
+    function setCurrent(v) { current = v; paint(v); }
+    stars.forEach(function (s, i) {
+      s.addEventListener('click', function () { setCurrent(parseInt(s.getAttribute('data-value'), 10)); });
+      s.addEventListener('mouseenter', function () { paint(parseInt(s.getAttribute('data-value'), 10)); });
+      s.addEventListener('focus', function () { paint(parseInt(s.getAttribute('data-value'), 10)); });
+      s.addEventListener('keydown', function (e) {
+        var k = e.key;
+        if (k === 'ArrowRight' || k === 'ArrowUp') { e.preventDefault(); if (stars[i + 1]) stars[i + 1].focus(); }
+        else if (k === 'ArrowLeft' || k === 'ArrowDown') { e.preventDefault(); if (stars[i - 1]) stars[i - 1].focus(); }
+        else if (k === 'Enter' || k === ' ') { e.preventDefault(); setCurrent(parseInt(s.getAttribute('data-value'), 10)); }
+      });
+    });
+    input.addEventListener('mouseleave', function () { paint(current); });
+    var avgEl = document.getElementById('rating-avg');
+    var countEl = document.getElementById('rating-count');
+    var summary = document.getElementById('rating-summary');
+    var disp = document.getElementById('rating-stars-display');
+    var listWrap = document.getElementById('rating-list-wrap');
+    var listEl = document.getElementById('rating-list');
+    var feedback = document.getElementById('rating-feedback');
+    function starString(n) { var s = ''; for (var i = 0; i < 5; i++) s += (i < n ? '\u2605' : '\u2606'); return s; }
+    function render() {
+      var list = darnaReadRatings();
+      if (list.length) {
+        var sum = list.reduce(function (a, r) { return a + (parseInt(r.v, 10) || 0); }, 0);
+        var avg = sum / list.length;
+        if (avgEl) avgEl.textContent = avg.toFixed(1);
+        if (disp) disp.textContent = starString(Math.round(avg));
+        if (countEl) countEl.textContent = '(' + list.length + ')';
+        if (summary) summary.hidden = false;
+        if (listWrap) listWrap.hidden = false;
+        if (listEl) {
+          listEl.innerHTML = '';
+          list.slice().reverse().forEach(function (r) {
+            var li = document.createElement('li');
+            li.className = 'rating-item';
+            var st = document.createElement('span');
+            st.className = 'rating-item-stars';
+            st.textContent = starString(parseInt(r.v, 10) || 0);
+            li.appendChild(st);
+            if (r.c) { var c = document.createElement('span'); c.className = 'rating-item-text'; c.textContent = r.c; li.appendChild(c); }
+            listEl.appendChild(li);
+          });
+        }
+      } else {
+        if (summary) summary.hidden = true;
+        if (listWrap) listWrap.hidden = true;
+      }
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!current) { if (feedback) feedback.textContent = 'اختر عدد النجوم أولاً.'; return; }
+      var commentEl = document.getElementById('rating-comment');
+      var comment = commentEl ? String(commentEl.value || '').trim().slice(0, 500) : '';
+      var list = darnaReadRatings();
+      var entry = { v: current, c: comment, t: Date.now(), self: true };
+      var mineIdx = -1;
+      for (var i = 0; i < list.length; i++) { if (list[i] && list[i].self) { mineIdx = i; break; } }
+      if (mineIdx >= 0) list[mineIdx] = entry; else list.push(entry); // anti-abuse: one entry per device
+      var saved = darnaWriteRatings(list);
+      if (window.PLACEDJ_RATINGS_ENDPOINT) {
+        try {
+          fetch(window.PLACEDJ_RATINGS_ENDPOINT, {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ postId: darnaRatingPostId(), value: current, comment: comment })
+          }).catch(function () { });
+        } catch (e) { }
+      }
+      render();
+      if (feedback) feedback.textContent = saved ? 'شكرًا لك! تم حفظ تقييمك على هذا الجهاز.' : 'تعذّر حفظ التقييم على هذا الجهاز.';
+      if (commentEl) commentEl.value = '';
+      setCurrent(0);
+    });
+    render();
+  }
+
   /* ================= Init ================= */
   function darnaInit() {
     document.querySelectorAll('.property-card').forEach(function (c) {
@@ -2513,6 +2825,8 @@
     }
     darnaInitInquiry();
     darnaInitFilters();
+    darnaInitTopPicks();
+    darnaInitRating();
     darnaInitFavorites();
     darnaInitCompare();
     darnaInitLang();

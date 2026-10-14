@@ -1,0 +1,2530 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='2.0.0' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+  <meta charset='UTF-8'/>
+  <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+  <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+
+  <b:include data='blog' name='all-head-content'/>
+
+  <!-- Title: overrides the Blogger blog-title setting ("بلاس") with the بلاَس (Place-dj) brand.
+       NOTE: og:title on the homepage is emitted by all-head-content from the blog-title
+       setting and cannot be overridden here without creating a duplicate tag; the owner
+       should also set the blog title to "بلاَس" in Blogger Settings (external action). -->
+  <b:if cond='data:view.isHomepage'>
+    <title>بلاَس &#8212; اعثر على سكنك في جيبوتي</title>
+  <b:else/>
+    <title><data:view.title/> &#8212; بلاَس</title>
+  </b:if>
+
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' name='description'/>
+  <b:else/>
+    <meta content='بلاَس — اعثر على سكنك في جيبوتي: اكتشف الشقق والفلل والمنازل والاستوديوهات، واستكشف الخيارات المناسبة لك وتواصل معنا للتحقق من التوفر والحجز.' name='description'/>
+  </b:if>
+
+  <!-- NOTE: canonical, og:url, og:title, og:description and og:image are already emitted
+       correctly by Blogger's all-head-content. We intentionally do NOT re-declare them here
+       to avoid duplicate tags and the empty og:url on post pages. -->
+  <meta content='بلاَس' property='og:site_name'/>
+  <meta content='ar' property='og:locale'/>
+  <meta content='summary_large_image' name='twitter:card'/>
+  <meta content='#0d6ea8' name='theme-color'/>
+  <!-- Favicon: mirrors the visible site logo (house mark) for identity consistency. -->
+  <link href='data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2048%2048%27%3E%3Crect%20width%3D%2748%27%20height%3D%2748%27%20rx%3D%2711%27%20fill%3D%27%230D6EA8%27%2F%3E%3Cpath%20d%3D%27M24%2011%20L39%2024%20H34%20V37%20H27%20V29%20H21%20V37%20H14%20V24%20H9%20Z%27%20fill%3D%27%23FFFFFF%27%2F%3E%3Cpath%20d%3D%27M24%2011%20L39%2024%20H34%20V22%20L24%2013.5%20L14%2022%20V24%20H9%20Z%27%20fill%3D%27%2312AD2B%27%2F%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%2720.5%27%20r%3D%272.6%27%20fill%3D%27%23D7141A%27%2F%3E%3C%2Fsvg%3E' rel='icon' type='image/svg+xml'/>
+  <b:if cond='data:view.isPost'>
+    <meta content='article' property='og:type'/>
+  <b:else/>
+    <meta content='website' property='og:type'/>
+  </b:if>
+  <b:if cond='data:view.isPost'>
+    <script type='application/ld+json'>
+    {&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;BlogPosting&quot;,&quot;headline&quot;:&quot;<data:view.title.jsonEscaped/>&quot;,&quot;mainEntityOfPage&quot;:&quot;<data:blog.canonicalUrl/>&quot;,&quot;author&quot;:{&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:&quot;بلاَس&quot;},&quot;publisher&quot;:{&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:&quot;بلاَس&quot;},&quot;inLanguage&quot;:&quot;ar&quot;}
+    </script>
+  <b:else/>
+    <script type='application/ld+json'>
+    {&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;WebSite&quot;,&quot;name&quot;:&quot;بلاَس&quot;,&quot;url&quot;:&quot;<data:blog.homepageUrl/>&quot;,&quot;inLanguage&quot;:&quot;ar&quot;}
+    </script>
+  </b:if>
+
+  <b:if cond='data:view.isHomepage'>
+    <link expr:href='data:blog.homepageUrl' hreflang='ar' rel='alternate'/>
+  </b:if>
+
+  <link href='https://fonts.googleapis.com' rel='preconnect'/>
+  <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+  <link href='https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&amp;display=swap' rel='stylesheet'/>
+
+  <b:skin><![CDATA[
+  /* Variable Definitions
+  ====================
+  <Variable name="bg.color" description="خلفية الصفحة" type="color" default="#f3f7fa" value="#f3f7fa"/>
+  <Variable name="card.bg" description="خلفية البطاقات" type="color" default="#ffffff" value="#ffffff"/>
+  <Variable name="primary.color" description="اللون الأساسي" type="color" default="#0d6ea8" value="#0d6ea8"/>
+  <Variable name="primary.dark" description="اللون الأساسي الداكن" type="color" default="#084a72" value="#084a72"/>
+  <Variable name="accent.color" description="لون التمييز" type="color" default="#12AD2B" value="#12AD2B"/>
+  <Variable name="text.color" description="لون النص" type="color" default="#1a1a1a" value="#1a1a1a"/>
+  <Variable name="muted.color" description="لون النص الثانوي" type="color" default="#6b6b6b" value="#6b6b6b"/>
+  <Variable name="border.color" description="لون الحدود" type="color" default="#dbe4ea" value="#dbe4ea"/>
+  <Variable name="header.bg" description="خلفية الرأس" type="color" default="#0d6ea8" value="#0d6ea8"/>
+  <Variable name="footer.bg" description="خلفية التذييل" type="color" default="#0a2a3d" value="#0a2a3d"/>
+  <Variable name="whatsapp.color" description="لون واتساب" type="color" default="#25d366" value="#25d366"/>
+  */
+
+  /* ===== Reset & Base ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Cairo', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
+    background: $(bg.color);
+    color: $(text.color);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+  a { color: $(primary.color); text-decoration: none; transition: color .2s ease; }
+  a:hover { color: $(primary.dark); }
+  img { max-width: 100%; height: auto; display: block; }
+  ul { list-style: none; }
+  .visually-hidden { position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+  .skip-link { position:absolute; inset-inline-start:-9999px; top:0; background:$(primary.dark); color:#fff; padding:10px 16px; z-index:9999; border-radius:0 0 8px 0; }
+  .skip-link:focus { inset-inline-start:0; }
+  [hidden] { display: none !important; }
+
+  /* ===== Unified container (Section 2) ===== */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: clamp(14px, 4vw, 32px);
+    box-sizing: border-box;
+  }
+
+  /* ===== Blogger Layout Editor isolation (body#layout) ===== */
+  /* The Blogger layout editor must never inherit the visitor-facing layout rules. */
+  body#layout {
+    display: block !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    background: #eef1f4 !important;
+    color: #1a1a1a !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    padding: 0 !important;
+  }
+  body#layout #main-wrapper { display: block !important; flex: none !important; }
+  body#layout .site-header,
+  body#layout .hero,
+  body#layout .site-footer,
+  body#layout .search-bar,
+  body#layout .nav-toggle,
+  body#layout .main-nav,
+  body#layout .darna-filters,
+  body#layout .skip-link { display: none !important; }
+  body#layout .container { max-width: 100% !important; padding: 0 10px !important; }
+  body#layout .main-content { display: block !important; padding: 10px 0 !important; }
+  body#layout .content-area,
+  body#layout .sidebar-area,
+  body#layout .sidebar { display: block !important; width: auto !important; max-width: 100% !important; float: none !important; }
+  body#layout .property-grid,
+  body#layout .blog-posts,
+  body#layout .blog-posts > .section,
+  body#layout .post,
+  body#layout .property-card { display: block !important; width: auto !important; max-width: 100% !important; }
+  body#layout .section { margin: 10px 0 !important; }
+  body#layout .section h2,
+  body#layout .section h3 { font-size: 13px !important; }
+  body#layout .widget { margin: 8px 0 !important; }
+  body#layout .layout-title,
+  body#layout .layout-widget-description { display: block !important; }
+
+  /* ===== Header ===== */
+  .site-header {
+    background: $(header.bg);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,.12);
+  }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    flex-wrap: wrap;
+  }
+  .site-logo { font-size: 1.5rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 8px; }
+  .site-logo:hover { color: #fff; opacity: .9; }
+  .site-logo .logo-icon { width: 36px; height: 36px; background: $(accent.color); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+  .main-nav { display: flex; gap: 4px; flex-wrap: wrap; }
+  .main-nav a { color: rgba(255,255,255,.9); padding: 8px 14px; border-radius: 6px; font-size: .9rem; font-weight: 600; transition: background .2s ease; }
+  .main-nav a:hover { background: rgba(255,255,255,.15); color: #fff; }
+  .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; padding: 4px 8px; }
+
+  /* ===== Header widget region ===== */
+  .header-widgets .widget { color: #fff; }
+  .header-widgets .widget h2 { display: none; }
+
+  /* ===== Search Bar ===== */
+  .search-bar { background: rgba(255,255,255,.1); border-radius: 8px; padding: 8px 16px; display: flex; align-items: center; gap: 8px; }
+  .search-bar input[type="text"] { background: transparent; border: none; color: #fff; font-size: .9rem; outline: none; width: 180px; font-family: inherit; }
+  .search-bar input[type="text"]::placeholder { color: rgba(255,255,255,.6); }
+  .search-bar button { background: $(accent.color); border: none; color: #fff; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: .85rem; font-weight: 600; font-family: inherit; }
+
+  /* ===== Hero ===== */
+  .hero { background: linear-gradient(135deg, $(primary.color) 0%, $(primary.dark) 100%); color: #fff; padding: 60px 0 48px; text-align: center; }
+  .hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 12px; }
+  .hero p { font-size: 1.1rem; opacity: .9; max-width: 700px; margin: 0 auto 24px; }
+  .hero-filters { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; max-width: 700px; margin: 0 auto; }
+  .hero-filters select, .hero-filters input { padding: 10px 14px; border: none; border-radius: 8px; font-size: .9rem; font-family: inherit; background: #fff; color: $(text.color); }
+  .hero-filters button { background: $(accent.color); color: #fff; border: none; padding: 10px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; font-family: inherit; font-size: .9rem; }
+
+  /* ===== Sections ===== */
+  .section { padding: 40px 0; }
+  .section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; color: $(primary.dark); display: flex; align-items: center; gap: 8px; }
+  .section-title::after { content: ''; flex: 1; height: 2px; background: $(border.color); }
+
+  /* ===== Property Cards Grid (3 / 2 / 1) ===== */
+  .property-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    min-width: 0;
+    align-items: stretch;
+  }
+  @media (min-width: 1100px) {
+    .property-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  /* Neutralise the Blogger Blog widget wrapper so it does not collapse the grid into one cell */
+  .blog-posts, .blog-posts > .section, .blog-posts > .widget, .blog-posts > .widget > .widget-content {
+    display: block; width: 100%; max-width: 100%; min-width: 0;
+  }
+  .blog-posts > .widget > h2 { display: none; }
+  .property-grid > .property-card { min-width: 0; width: 100%; max-width: none; }
+
+  .property-card {
+    background: $(card.bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    transition: transform .2s ease, box-shadow .2s ease;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .property-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+  .property-card .card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .property-card .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: $(text.color); overflow-wrap: anywhere; }
+  .property-card .card-title a { color: $(text.color); }
+  .property-card .card-title a:hover { color: $(primary.color); }
+
+  /* ===== Card photo carousel ===== */
+  .property-photo-carousel { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: $(border.color); touch-action: pan-y pinch-zoom; user-select: none; -webkit-user-select: none; }
+  .property-photo-carousel .property-photo-link { display: block; width: 100%; height: 100%; }
+  .property-photo-carousel .card-image { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .property-photo-carousel .carousel-current-image { pointer-events: none; }
+  .property-photo-carousel .carousel-empty { display: flex; align-items: center; justify-content: center; color: #999; font-size: .9rem; }
+  .property-photo-carousel .photo-nav {
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
+    width: 34px; height: 34px; border: 0; border-radius: 50%; background: rgba(255,255,255,.9);
+    color: #333; font-size: 25px; line-height: 1; cursor: pointer; box-shadow: 0 1px 5px rgba(0,0,0,.18);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .property-photo-carousel .photo-prev { left: 10px; }
+  .property-photo-carousel .photo-next { right: 10px; }
+  .property-photo-carousel .photo-nav:disabled { opacity: .35; cursor: default; }
+  .property-photo-carousel .photo-counter { position: absolute; bottom: 10px; right: 10px; padding: 3px 8px; border-radius: 12px; background: rgba(0,0,0,.62); color: #fff; font-size: 12px; direction: ltr; }
+  .property-photo-carousel[data-image-count='1'] .photo-nav,
+  .property-photo-carousel[data-image-count='1'] .photo-counter { display: none; }
+
+  /* ===== Card features + status badge ===== */
+  .card-meta.property-features { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 10px 0; margin: 0 0 8px; border-bottom: 1px solid $(border.color); }
+  .property-features .feature-item { display: inline-flex; align-items: center; gap: 4px; color: $(muted.color); font-size: .82rem; }
+  .property-features .feature-icon { font-size: 1rem; display: inline-flex; align-items: center; }
+  .property-features .feature-icon svg { width: 1.05em; height: 1.05em; }
+  .property-features .feature-status { margin-inline-start: auto; border-radius: 4px; padding: 3px 8px; font-size: .78rem; font-weight: 700; background: #f1f3f4; color: #5f6368; white-space: nowrap; }
+  .property-features .feature-status.is-available { background: #e5f6eb; color: #137333; }
+  .property-features .feature-status.is-unavailable { background: #fce8e6; color: #c5221f; }
+
+  /* ===== Price (final, USD) ===== */
+  .property-card .card-price { display: block; min-height: 1.5em; font-size: 1.35rem; line-height: 1.5; font-weight: 800; color: $(primary.color); padding: 4px 0 8px; overflow-wrap: anywhere; }
+  .property-card .card-price .darna-price-value { display: inline-block; }
+  .property-card .card-link { margin-top: auto; background: $(primary.color); color: #fff; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: .9rem; transition: background .2s ease; }
+  .property-card .card-link:hover { background: $(primary.dark); color: #fff; }
+
+  /* ===== Detail page ===== */
+  .property-detail { padding: 32px 0; }
+  .detail-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 28px; align-items: start; }
+  @media (max-width: 980px) { .detail-grid { grid-template-columns: minmax(0, 1fr); } }
+  .detail-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; overflow-wrap: anywhere; }
+  .detail-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .detail-tags .detail-tag { background: $(card.bg); border: 1px solid $(border.color); padding: 4px 12px; border-radius: 6px; font-size: .82rem; color: $(muted.color); }
+  .detail-tags .detail-tag:hover { border-color: $(primary.color); color: $(primary.color); }
+
+  .gallery-container { margin-bottom: 24px; }
+  .gallery-main { position: relative; width: 100%; aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; background: $(border.color); touch-action: pan-y pinch-zoom; }
+  .gallery-main img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,.5); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2; }
+  .gallery-btn:hover { background: rgba(0,0,0,.72); }
+  .gallery-btn.prev { left: 12px; }
+  .gallery-btn.next { right: 12px; }
+  .gallery-btn:disabled { opacity: .35; cursor: default; }
+  .gallery-counter { position: absolute; bottom: 12px; right: 12px; background: rgba(0,0,0,.62); color: #fff; padding: 4px 10px; border-radius: 12px; font-size: .8rem; direction: ltr; }
+  .gallery-nav { display: flex; gap: 8px; margin-top: 8px; overflow-x: auto; padding-bottom: 4px; }
+  .gallery-thumb { width: 84px; height: 62px; object-fit: cover; border-radius: 6px; cursor: pointer; border: 2px solid transparent; flex-shrink: 0; transition: border-color .2s ease; }
+  .gallery-thumb.active { border-color: $(primary.color); }
+
+  /* ===== Specs bar ===== */
+  .detail-specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 12px; margin: 20px 0; }
+  .spec-item { background: $(card.bg); border: 1px solid $(border.color); border-radius: 10px; padding: 14px 10px; text-align: center; }
+  .spec-item .spec-icon { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+  .spec-item .spec-value { font-weight: 700; font-size: 1.05rem; display: block; }
+  .spec-item .spec-label { font-size: .78rem; color: $(muted.color); }
+
+  /* ===== Detail price card / sidebar ===== */
+  .detail-side { position: sticky; top: 90px; }
+  @media (max-width: 980px) { .detail-side { position: static; } }
+  .detail-price-card { background: $(card.bg); border: 1px solid $(border.color); border-radius: 12px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,.05); }
+  .detail-price { font-size: 1.7rem; font-weight: 800; color: $(primary.color); margin-bottom: 6px; }
+  .detail-status { display: inline-block; border-radius: 6px; padding: 4px 12px; font-size: .85rem; font-weight: 700; margin-bottom: 14px; background: #f1f3f4; color: #5f6368; }
+  .detail-status.is-available { background: #e5f6eb; color: #137333; }
+  .detail-status.is-unavailable { background: #fce8e6; color: #c5221f; }
+
+  /* ===== Inquiry / contact form ===== */
+  .inquiry-form { margin-top: 18px; display: grid; gap: 10px; }
+  .inquiry-form .field { display: grid; gap: 4px; }
+  .inquiry-form label { font-size: .82rem; font-weight: 600; color: $(text.color); }
+  .inquiry-form input, .inquiry-form select, .inquiry-form textarea {
+    width: 100%; padding: 9px 12px; border: 1px solid $(border.color); border-radius: 8px;
+    font-family: inherit; font-size: .9rem; background: #fff; color: $(text.color);
+  }
+  .inquiry-form textarea { min-height: 84px; resize: vertical; }
+  .inquiry-form input:focus, .inquiry-form select:focus, .inquiry-form textarea:focus { outline: 3px solid rgba(201,150,43,.35); border-color: $(accent.color); }
+  .inquiry-form .field.invalid input, .inquiry-form .field.invalid select { border-color: #c5221f; }
+  .inquiry-form .field-error { color: #c5221f; font-size: .76rem; min-height: 1em; }
+  .inquiry-form .form-submit { background: $(whatsapp.color); color: #fff; border: none; padding: 12px; border-radius: 10px; font-weight: 700; font-size: 1rem; cursor: pointer; font-family: inherit; }
+  .inquiry-form .form-submit:hover { opacity: .92; }
+  .inquiry-form .form-note { font-size: .76rem; color: $(muted.color); margin-top: 2px; }
+  .inquiry-form .form-success { background: #e5f6eb; color: #137333; border-radius: 8px; padding: 10px 12px; font-size: .85rem; }
+  .whatsapp-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: $(whatsapp.color); color: #fff; padding: 12px 20px; border-radius: 10px; font-weight: 700; font-size: .95rem; width: 100%; margin-bottom: 14px; }
+  .whatsapp-cta:hover { opacity: .92; color: #fff; }
+  .whatsapp-note { font-size: .78rem; color: $(muted.color); margin-top: 8px; }
+  .whatsapp-float { position: fixed; bottom: 18px; inset-inline-end: 18px; z-index: 260; width: 56px; height: 56px; border-radius: 50%; background: $(whatsapp.color); color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.25); transition: transform .2s ease, box-shadow .2s ease; }
+  .whatsapp-float:hover { transform: scale(1.06); color: #fff; box-shadow: 0 8px 22px rgba(0,0,0,.3); }
+  .whatsapp-float svg { width: 28px; height: 28px; }
+  body:has(.compare-bar:not([hidden])) .whatsapp-float { bottom: 74px; }
+  @media (max-width: 768px) { .whatsapp-float { width: 52px; height: 52px; bottom: 14px; inset-inline-end: 14px; } .whatsapp-float svg { width: 26px; height: 26px; } }
+
+  /* ===== Body content (description / amenities) ===== */
+  .post-body { line-height: 1.9; overflow-wrap: anywhere; }
+  .post-body p { margin-bottom: 12px; }
+  .post-body h2, .post-body h3 { margin: 22px 0 10px; font-weight: 700; color: $(primary.dark); }
+  .post-body ul { padding-inline-start: 20px; list-style: disc; margin-bottom: 12px; }
+  .post-body li { margin-bottom: 4px; }
+  .post-body img { border-radius: 10px; margin: 8px 0; }
+  .post-body table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  .post-body td, .post-body th { border: 1px solid $(border.color); padding: 8px; text-align: start; }
+
+  /* ===== Similar properties ===== */
+  .similar-section { margin-top: 36px; }
+  .similar-section .property-grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+
+  /* ===== Filters ===== */
+  .darna-filters { background: $(card.bg); border: 1px solid $(border.color); border-radius: 12px; padding: 16px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+  .darna-filters .filters-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; align-items: end; }
+  .darna-filters .filter-field { display: grid; gap: 4px; }
+  .darna-filters .filter-field label { font-size: .78rem; font-weight: 600; color: $(muted.color); }
+  .darna-filters input, .darna-filters select { width: 100%; padding: 9px 12px; border: 1px solid $(border.color); border-radius: 8px; font-family: inherit; font-size: .88rem; background: #fff; color: $(text.color); }
+  .darna-filters input:focus, .darna-filters select:focus { outline: 3px solid rgba(201,150,43,.35); border-color: $(accent.color); }
+  .darna-filters .filter-actions { display: flex; gap: 8px; align-items: end; }
+  .darna-filters .filter-reset { background: $(bg.color); border: 1px solid $(border.color); color: $(text.color); padding: 9px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; font-family: inherit; font-size: .88rem; }
+  .darna-filters .filter-reset:hover { border-color: $(primary.color); color: $(primary.color); }
+  .darna-filters .filters-status { margin-top: 12px; font-size: .85rem; color: $(muted.color); }
+  .darna-filters .filters-status strong { color: $(primary.dark); }
+
+  /* ===== Filter chips bar ===== */
+  .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; padding: 8px 0; align-items: center; }
+  .filter-bar .filter-label { font-weight: 600; font-size: .9rem; color: $(muted.color); }
+  .filter-bar .filter-chip { background: $(card.bg); border: 1px solid $(border.color); padding: 6px 14px; border-radius: 20px; font-size: .85rem; color: $(text.color); transition: all .2s ease; }
+  .filter-bar .filter-chip:hover, .filter-bar .filter-chip.active { background: $(primary.color); color: #fff; border-color: $(primary.color); }
+
+  /* ===== No results / loading ===== */
+  .no-results, .loading-state { text-align: center; padding: 40px; color: $(muted.color); font-size: 1.1rem; }
+
+  /* ===== Pagination ===== */
+  .pagination { display: flex; justify-content: center; gap: 4px; padding: 24px 0; flex-wrap: wrap; }
+  .pagination a, .pagination span { padding: 8px 14px; border-radius: 6px; font-size: .9rem; font-weight: 600; border: 1px solid $(border.color); background: $(card.bg); color: $(text.color); }
+  .pagination a:hover { background: $(primary.color); color: #fff; border-color: $(primary.color); }
+  .pagination .current-page { background: $(primary.color); color: #fff; border-color: $(primary.color); }
+
+  /* ===== Sidebar widgets ===== */
+  .sidebar { display: flex; flex-direction: column; gap: 20px; }
+  .widget-card { background: $(card.bg); border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+  .widget-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; color: $(primary.dark); }
+  .widget-card ul li { padding: 6px 0; border-bottom: 1px solid $(border.color); font-size: .9rem; }
+  .widget-card ul li:last-child { border-bottom: none; }
+  .widget-card img { border-radius: 8px; }
+  .ad-slot { background: $(bg.color); border: 2px dashed $(border.color); border-radius: 8px; padding: 20px; text-align: center; color: $(muted.color); font-size: .85rem; min-height: 90px; display: flex; align-items: center; justify-content: center; }
+
+  /* ===== Generic post / static page ===== */
+  .post { background: $(card.bg); border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+  .post-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; }
+  .post-meta { font-size: .8rem; color: $(muted.color); margin-bottom: 16px; }
+
+  /* ===== Footer ===== */
+  .site-footer { background: $(footer.bg); color: rgba(255,255,255,.8); padding: 40px 0 20px; margin-top: 40px; }
+  .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-bottom: 24px; }
+  .footer-grid h4 { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 12px; }
+  .footer-grid ul li { padding: 4px 0; }
+  .footer-grid ul li a { color: rgba(255,255,255,.7); font-size: .9rem; }
+  .footer-grid ul li a:hover { color: #fff; }
+  .footer-contact { font-size: .9rem; }
+  .footer-contact a { color: $(whatsapp.color); font-weight: 600; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); padding-top: 16px; text-align: center; font-size: .85rem; color: rgba(255,255,255,.5); }
+  .footer-widgets .widget { color: rgba(255,255,255,.8); margin-bottom: 16px; }
+  .footer-widgets .widget h2 { color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+
+  /* ===== Main content layout ===== */
+  .main-content { display: flex; gap: 24px; padding: 40px 0; }
+  .content-area { flex: 1; min-width: 0; }
+  .sidebar-area { width: 300px; flex-shrink: 0; }
+
+  /* ===== RTL ===== */
+  html[dir="rtl"] .gallery-btn.prev { left: auto; right: 12px; }
+  html[dir="rtl"] .gallery-btn.next { right: auto; left: 12px; }
+  html[dir="rtl"] .property-photo-carousel .photo-prev { left: auto; right: 10px; }
+  html[dir="rtl"] .property-photo-carousel .photo-next { right: auto; left: 10px; }
+
+  /* ===== Place-dj additions (cards, discovery, favourites, compare, language, comments) ===== */
+  .site-logo .logo-icon { background: transparent; padding: 0; width: 40px; height: 40px; }
+  .site-logo .logo-icon svg { width: 40px; height: 40px; display: block; }
+  .site-logo .logo-text { font-weight: 800; letter-spacing: .2px; }
+
+  .header-tools { display: flex; align-items: center; gap: 8px; }
+  .lang-switch select { background: rgba(255,255,255,.14); color: #fff; border: 1px solid rgba(255,255,255,.3); border-radius: 8px; padding: 7px 10px; font-family: inherit; font-size: .85rem; }
+  .lang-switch select option { color: #1a1a1a; }
+  .icon-btn { position: relative; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); color: #fff; border-radius: 8px; width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+  .icon-btn:hover { background: rgba(255,255,255,.24); }
+  .icon-btn .fav-badge { position: absolute; top: -6px; inset-inline-end: -6px; background: #D7141A; color: #fff; font-size: 11px; min-width: 18px; height: 18px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; padding: 0 4px; }
+
+  .card-loc { display: flex; align-items: center; gap: 4px; color: $(muted.color); font-size: .82rem; margin-bottom: 4px; }
+  .card-loc .loc-icon { display: inline-flex; align-items: center; }
+  .card-loc .loc-icon svg { width: 1em; height: 1em; }
+  .property-card .card-desc { color: $(muted.color); font-size: .85rem; line-height: 1.6; margin: 6px 0 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .property-photo-carousel .card-type { position: absolute; top: 10px; inset-inline-start: 10px; z-index: 3; padding: 3px 10px; border-radius: 4px; font-size: .78rem; font-weight: 700; color: #fff; background: rgba(13,110,168,.92); box-shadow: 0 1px 4px rgba(0,0,0,.2); }
+  .property-photo-carousel .card-fav,
+  .property-photo-carousel .card-compare { position: absolute; top: 10px; z-index: 3; width: 34px; height: 34px; border-radius: 50%; border: 0; background: rgba(255,255,255,.92); color: #444; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 1px 5px rgba(0,0,0,.18); }
+  .property-photo-carousel .card-fav { inset-inline-end: 10px; }
+  .property-photo-carousel .card-compare { inset-inline-end: 50px; }
+  .property-photo-carousel .card-fav.is-active { color: #D7141A; }
+  .property-photo-carousel .card-compare.is-active { color: $(primary.color); }
+  .property-photo-carousel .card-fav svg, .property-photo-carousel .card-compare svg { width: 18px; height: 18px; }
+  .property-photo-carousel .card-image.is-broken { background: $(border.color); }
+
+  .detail-actions { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+  .detail-actions .detail-btn { flex: 1; min-width: 130px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: $(bg.color); border: 1px solid $(border.color); color: $(text.color); padding: 10px 12px; border-radius: 8px; font-weight: 600; font-size: .85rem; cursor: pointer; font-family: inherit; }
+  .detail-actions .detail-btn.is-active { border-color: $(primary.color); color: $(primary.color); }
+  .detail-actions .detail-fav.is-active { border-color: #D7141A; color: #D7141A; }
+  .detail-type { display: inline-block; background: $(bg.color); border: 1px solid $(border.color); color: $(muted.color); border-radius: 6px; padding: 4px 12px; font-size: .82rem; margin-bottom: 14px; }
+  .price-includes { font-size: .82rem; color: $(muted.color); margin: 2px 0 14px; }
+
+  .discovery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-bottom: 24px; }
+  .discovery-card { background: $(card.bg); border: 1px solid $(border.color); border-radius: 12px; padding: 16px; text-align: center; color: $(text.color); transition: transform .2s ease, border-color .2s ease; }
+  .discovery-card:hover { transform: translateY(-3px); border-color: $(primary.color); color: $(primary.color); }
+  .discovery-card .discovery-icon { font-size: 1.6rem; display: block; margin-bottom: 6px; }
+  .discovery-card .discovery-name { font-weight: 700; font-size: .95rem; }
+
+  .add-property-card { background: linear-gradient(135deg, $(primary.color), $(primary.dark)); color: #fff; border-radius: 14px; padding: 32px 24px; text-align: center; }
+  .add-property-card h2 { font-size: 1.4rem; margin-bottom: 8px; }
+  .add-property-card p { opacity: .92; max-width: 620px; margin: 0 auto 18px; }
+  .add-property-btn { display: inline-block; background: $(accent.color); color: #fff; padding: 12px 30px; border-radius: 10px; font-weight: 700; }
+  .add-property-btn:hover { color: #fff; opacity: .94; }
+  .add-property-note { font-size: .78rem; opacity: .8; margin-top: 12px; }
+
+  .placedj-panel { position: fixed; top: 0; inset-inline-end: 0; width: min(380px, 92vw); height: 100%; background: $(card.bg); box-shadow: -4px 0 24px rgba(0,0,0,.18); z-index: 300; overflow-y: auto; padding: 18px; }
+  .placedj-panel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .placedj-panel-head h2 { font-size: 1.15rem; color: $(primary.dark); }
+  .placedj-close { background: none; border: 0; font-size: 1.5rem; cursor: pointer; color: $(muted.color); line-height: 1; }
+  .fav-item { display: flex; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid $(border.color); }
+  .fav-thumb { width: 64px; height: 48px; border-radius: 8px; overflow: hidden; flex-shrink: 0; background: $(bg.color); display: flex; align-items: center; justify-content: center; }
+  .fav-thumb img { width: 100%; height: 100%; object-fit: cover; }
+  .fav-noimg { font-size: .7rem; color: $(muted.color); }
+  .fav-info { flex: 1; min-width: 0; }
+  .fav-title { display: block; font-weight: 700; font-size: .9rem; color: $(text.color); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .fav-meta { font-size: .76rem; color: $(muted.color); }
+  .fav-price { font-size: .85rem; font-weight: 700; color: $(primary.color); }
+  .fav-remove { background: none; border: 0; color: $(muted.color); font-size: 1.2rem; cursor: pointer; }
+  .fav-empty, .compare-empty { color: $(muted.color); font-size: .9rem; text-align: center; padding: 20px 0; }
+
+  .compare-bar { position: fixed; bottom: 0; inset-inline: 0; background: $(primary.dark); color: #fff; padding: 10px 16px; display: flex; align-items: center; gap: 12px; justify-content: center; z-index: 250; flex-wrap: wrap; }
+  .compare-bar button { border: 0; border-radius: 8px; padding: 8px 18px; font-weight: 700; cursor: pointer; font-family: inherit; }
+  .compare-bar .compare-open { background: $(accent.color); color: #fff; }
+  .compare-bar .compare-clear { background: rgba(255,255,255,.16); color: #fff; }
+  .placedj-modal { position: fixed; inset: 0; background: rgba(0,0,0,.55); z-index: 320; display: flex; align-items: center; justify-content: center; padding: 16px; }
+  .placedj-modal .modal-inner { background: $(card.bg); border-radius: 14px; width: min(960px, 96vw); max-height: 88vh; overflow: auto; padding: 20px; position: relative; }
+  .placedj-modal .modal-close { position: absolute; top: 10px; inset-inline-end: 14px; background: none; border: 0; font-size: 1.6rem; cursor: pointer; color: $(muted.color); }
+  .compare-scroll { overflow-x: auto; }
+  .compare-table { width: 100%; border-collapse: collapse; min-width: 560px; }
+  .compare-table th, .compare-table td { border: 1px solid $(border.color); padding: 10px; text-align: start; font-size: .85rem; vertical-align: top; }
+  .compare-table thead th { background: $(bg.color); }
+  .compare-table tbody th { background: $(bg.color); white-space: nowrap; }
+  .cmp-head { display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center; }
+  .cmp-head img { width: 100%; max-width: 140px; height: 90px; object-fit: cover; border-radius: 8px; }
+  .cmp-head a { font-weight: 700; color: $(text.color); font-size: .85rem; }
+  .cmp-remove { background: none; border: 0; color: $(muted.color); font-size: 1.1rem; cursor: pointer; }
+  .cmp-na { color: $(muted.color); font-style: italic; }
+
+  .comments-section { margin-top: 36px; }
+  .comments-section .comments { background: $(card.bg); border-radius: 12px; padding: 20px; }
+  .comments-section .comments h3, .comments-section .comments h4 { color: $(primary.dark); margin-bottom: 10px; }
+  .comments-section iframe { width: 100%; border: 0; }
+
+  .filters-scope { font-size: .78rem; color: $(muted.color); margin-bottom: 10px; }
+  .filters-disclosure { margin: 0; }
+  .filters-disclosure > summary.filters-summary { cursor: pointer; font-weight: 700; color: $(primary.dark); padding: 6px 0; list-style: none; display: flex; align-items: center; gap: 6px; }
+  .filters-disclosure > summary.filters-summary::-webkit-details-marker { display: none; }
+  .filters-disclosure > summary.filters-summary::before { content: '\25B8'; font-size: .95rem; transition: transform .2s ease; }
+  .filters-disclosure[open] > summary.filters-summary::before { transform: rotate(90deg); }
+  .darna-filters .filter-apply { background: $(primary.color); border: 1px solid $(primary.color); color: #fff; padding: 9px 18px; border-radius: 8px; font-weight: 600; cursor: pointer; font-family: inherit; font-size: .88rem; }
+  .darna-filters .filter-apply:hover { background: $(primary.dark); border-color: $(primary.dark); }
+  @media (min-width: 769px) { .filters-disclosure > summary.filters-summary { display: none; } }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .nav-toggle { display: block; }
+    .main-nav { display: none; width: 100%; flex-direction: column; padding: 8px 0; }
+    .main-nav.open { display: flex; }
+    .main-nav a { width: 100%; }
+    .search-bar { width: 100%; }
+    .search-bar input[type="text"] { flex: 1; }
+    .hero h1 { font-size: 1.6rem; }
+    .hero p { font-size: 1rem; }
+    .property-grid { grid-template-columns: minmax(0, 1fr); }
+    .footer-grid { grid-template-columns: 1fr; }
+    .main-content { flex-direction: column; }
+    .sidebar-area { width: 100%; }
+    .detail-side { position: static; }
+  }
+  @media (min-width: 769px) and (max-width: 1099px) {
+    .property-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 1500px) {
+    .container { max-width: 1320px; }
+    .property-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+  @media (max-width: 768px) {
+    .header-inner { gap: 10px; }
+    .header-tools { width: 100%; justify-content: space-between; }
+    .compare-bar { font-size: .85rem; }
+  }
+
+  /* ===== Reduced motion ===== */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ===== Focus visibility ===== */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 3px solid $(accent.color);
+    outline-offset: 2px;
+  }
+
+  /* ===== Structured data holder ===== */
+  .structured-data { display: none; }
+  ]]></b:skin>
+
+  <b:template-skin>
+    <![CDATA[
+    body { min-height: 100vh; display: flex; flex-direction: column; }
+    #main-wrapper { flex: 1 0 auto; }
+    body#layout { display: block !important; min-height: 0 !important; }
+    ]]>
+  </b:template-skin>
+</head>
+
+<body>
+
+<a class='skip-link' href='#main-content'>تخط&#1614;&#1617; إلى المحتوى</a>
+
+<!-- ===== Header ===== -->
+<header class='site-header'>
+  <div class='container'>
+    <div class='header-inner'>
+      <a aria-label='بلاَس — الصفحة الرئيسية' class='site-logo' expr:href='data:blog.homepageUrl'>
+        <span aria-hidden='true' class='logo-icon'>
+          <svg focusable='false' role='img' viewBox='0 0 48 48'><rect fill='#0d6ea8' height='48' rx='11' width='48'/><path d='M24 11 L39 24 H34 V37 H27 V29 H21 V37 H14 V24 H9 Z' fill='#ffffff'/><path d='M24 11 L39 24 H34 V22 L24 13.5 L14 22 V24 H9 Z' fill='#12AD2B'/><circle cx='24' cy='20.5' fill='#D7141A' r='2.6'/></svg>
+        </span>
+        <span class='logo-text'>بلاَس</span>
+      </a>
+      <button aria-label='القائمة' class='nav-toggle' onclick='this.nextElementSibling.classList.toggle(&quot;open&quot;)' type='button'>&#9776;</button>
+      <nav class='main-nav'>
+        <a expr:href='data:blog.homepageUrl'>الرئيسية</a>
+        <a expr:href='data:blog.homepageUrl + &quot;search/label/شقة&quot;'>شقق</a>
+        <a expr:href='data:blog.homepageUrl + &quot;search/label/فيلا&quot;'>فلل</a>
+        <a expr:href='data:blog.homepageUrl + &quot;search/label/منزل&quot;'>منازل</a>
+        <a expr:href='data:blog.homepageUrl + &quot;search/label/استوديو&quot;'>استوديوهات</a>
+        <a expr:href='data:blog.homepageUrl + &quot;search/label/غرفة&quot;'>غرف</a>
+        <a expr:href='data:blog.homepageUrl + &quot;p/contact.html&quot;'>تواصل</a>
+      </nav>
+      <form aria-label='بحث شامل في كل المنشورات' class='search-bar' expr:action='data:blog.searchUrl' method='get' role='search'>
+        <input aria-label='بحث شامل' name='q' placeholder='ابحث في كل العقارات...' type='text'/>
+        <button type='submit'>بحث</button>
+      </form>
+      <div class='header-tools'>
+        <div class='lang-switch'>
+          <label class='visually-hidden' for='lang-select'>اللغة</label>
+          <select aria-label='اختيار اللغة' id='lang-select'>
+            <option value='ar'>العربية</option>
+            <option value='en'>English</option>
+            <option value='fr'>Français</option>
+          </select>
+        </div>
+        <button aria-controls='favorites-panel' aria-expanded='false' aria-label='المفضلة' class='icon-btn' id='favorites-toggle' type='button'>
+          <svg aria-hidden='true' fill='currentColor' height='18' viewBox='0 0 24 24' width='18'><path d='M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z'/></svg>
+          <span class='fav-badge'>0</span>
+        </button>
+      </div>
+    </div>
+    <b:section class='header-widgets' id='header-widgets' maxwidgets='2' showaddelement='yes'/>
+  </div>
+</header>
+
+<div id='main-wrapper'>
+
+<!-- ===== Homepage Hero ===== -->
+<b:if cond='data:view.isHomepage'>
+  <section class='hero'>
+    <div class='container'>
+      <h1>بلاَس &#8212; اعثر على سكنك في جيبوتي</h1>
+      <p>اكتشف الشقق والفلل والمنازل والاستوديوهات، واستكشف الخيارات المناسبة لك وتواصل معنا للتحقق من التوفر والحجز.</p>
+      <div class='hero-filters'>
+        <input aria-label='بحث' id='hero-search' placeholder='ابحث بكلمة...' type='text'/>
+        <select aria-label='النوع' id='hero-type'>
+          <option value=''>كل الأنواع</option>
+          <option value='شقة'>شقة</option>
+          <option value='فيلا'>فيلا</option>
+          <option value='منزل'>منزل</option>
+          <option value='استوديو'>استوديو</option>
+          <option value='غرفة'>غرفة</option>
+        </select>
+        <select aria-label='المنطقة' id='hero-area'>
+          <option value=''>كل المناطق</option>
+          <option value='جيبوتي المدينة'>جيبوتي المدينة</option>
+          <option value='علي صبيح'>علي صبيح</option>
+          <option value='تاجورة'>تاجورة</option>
+          <option value='أوبوك'>أوبوك</option>
+          <option value='أرتا'>أرتا</option>
+          <option value='دخيل'>دخيل</option>
+        </select>
+        <button onclick='darnaHeroFilter()' type='button'>تصفية</button>
+      </div>
+    </div>
+  </section>
+</b:if>
+
+<!-- ===== Main Content ===== -->
+<div class='container'>
+  <div class='main-content' id='main-content'>
+    <div class='content-area'>
+
+      <b:if cond='data:view.isHomepage'>
+        <b:section class='home-before-posts' id='home-before-posts' maxwidgets='2' showaddelement='yes'/>
+      </b:if>
+
+      <b:section class='main' id='main-blog' maxwidgets='1' showaddelement='no'>
+        <b:widget id='Blog1' locked='true' title='رسائل المدونة الإلكترونية' type='Blog' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+            <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='showShareButtons'>false</b:widget-setting>
+            <b:widget-setting name='showCommentLink'>false</b:widget-setting>
+            <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='showAuthor'>false</b:widget-setting>
+            <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+            <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='timestampLabel'>-</b:widget-setting>
+            <b:widget-setting name='reactionsLabel'/>
+            <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+            <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+            <b:widget-setting name='showLabels'>false</b:widget-setting>
+            <b:widget-setting name='showLocation'>false</b:widget-setting>
+            <b:widget-setting name='postLabelsLabel'/>
+            <b:widget-setting name='showTimestamp'>false</b:widget-setting>
+            <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+            <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+            <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+            <b:widget-setting name='showReactions'>false</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main' var='top'>
+
+            <!-- ============ POST DETAIL ============ -->
+            <b:if cond='data:view.isPost'>
+              <b:loop values='data:posts' var='post'>
+                <article class='post property-detail' expr:data-post-id='data:post.id'>
+                  <span class='darna-labels' hidden='hidden'>
+                    <b:loop values='data:post.labels' var='label'><span class='darna-label'><data:label.name/></span></b:loop>
+                  </span>
+
+                  <div class='detail-grid'>
+                    <div class='detail-main'>
+                      <div class='detail-header'>
+                        <h1 class='detail-title'><data:post.title/></h1>
+                        <b:if cond='data:post.labels'>
+                          <div class='detail-tags'>
+                            <b:loop values='data:post.labels' var='label'>
+                              <a class='detail-tag darna-label' expr:href='data:label.url'><data:label.name/></a>
+                            </b:loop>
+                          </div>
+                        </b:if>
+                      </div>
+
+                      <div class='gallery-container'>
+                        <div class='gallery-main' id='gallery-main'>
+                          <b:if cond='data:post.featuredImage'>
+                            <img expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 1200, &quot;16:10&quot;)' id='gallery-main-img'/>
+                          <b:else/>
+                            <div id='gallery-main-img' style='height:100%;display:flex;align-items:center;justify-content:center;color:#999;'>لا توجد صور</div>
+                          </b:if>
+                          <button aria-label='الصورة السابقة' class='gallery-btn prev' type='button'>&#8249;</button>
+                          <button aria-label='الصورة التالية' class='gallery-btn next' type='button'>&#8250;</button>
+                          <span aria-live='polite' class='gallery-counter' id='gallery-counter'>1/1</span>
+                        </div>
+                        <div class='gallery-nav' id='gallery-thumbs'/>
+                      </div>
+
+                      <div class='detail-specs' id='detail-specs'/>
+
+                      <div class='post-body' id='detail-body'>
+                        <data:post.body/>
+                      </div>
+                    </div>
+
+                    <aside class='detail-side'>
+                      <div class='detail-price-card'>
+                        <div class='detail-price' data-darna-price='1' data-lang='ar'><span class='darna-price-value'>&#8230;</span></div>
+                        <p class='price-includes'>تشمل الأسعار جميع الرسوم.</p>
+                        <div class='detail-status' data-status='unknown'>الحالة غير محددة</div>
+                        <span class='detail-type' hidden='hidden'/>
+                        <div class='detail-actions'>
+                          <button aria-pressed='false' class='detail-btn detail-fav' type='button'><span aria-hidden='true'>&#9829;</span> المفضلة</button>
+                          <button aria-pressed='false' class='detail-btn detail-compare' type='button'><span aria-hidden='true'>&#8644;</span> المقارنة</button>
+                        </div>
+
+                        <a class='whatsapp-cta' expr:href='&quot;https://wa.me/25377313443?text=&quot; + data:post.url' rel='noopener' target='_blank'>
+                          <span aria-hidden='true' style='font-size:1.2rem;'>💬</span> استفسر عن هذا العقار عبر واتساب
+                        </a>
+                        <p class='whatsapp-note'>الرقم: <bdi dir='ltr'>+253 77 31 34 43</bdi> &#8212; سيتم إدراج عنوان العقار ورابطه في رسالتك.</p>
+
+                        <form class='inquiry-form' id='inquiry-form' novalidate='novalidate'>
+                          <input expr:value='data:post.title' id='inq-property' type='hidden'/>
+                          <input expr:value='data:post.url' id='inq-url' type='hidden'/>
+                          <div class='field' id='fld-name'>
+                            <label for='inq-name'>الاسم <span aria-hidden='true'>*</span></label>
+                            <input autocomplete='name' id='inq-name' name='name' type='text'/>
+                            <span class='field-error' id='err-name'/>
+                          </div>
+                          <div class='field' id='fld-phone'>
+                            <label for='inq-phone'>رقم الهاتف <span aria-hidden='true'>*</span></label>
+                            <input autocomplete='tel' id='inq-phone' inputmode='tel' name='phone' type='tel'/>
+                            <span class='field-error' id='err-phone'/>
+                          </div>
+                          <div class='field'>
+                            <label for='inq-type'>نوع الطلب</label>
+                            <select id='inq-type' name='type'>
+                              <option value='استفسار'>استفسار</option>
+                              <option value='إيجار'>إيجار</option>
+                            </select>
+                          </div>
+                          <div class='field'>
+                            <label for='inq-checkin'>تاريخ الوصول</label>
+                            <input id='inq-checkin' name='checkin' type='date'/>
+                          </div>
+                          <div class='field'>
+                            <label for='inq-checkout'>تاريخ المغادرة</label>
+                            <input id='inq-checkout' name='checkout' type='date'/>
+                          </div>
+                          <div class='field'>
+                            <label for='inq-guests'>عدد الأشخاص</label>
+                            <input id='inq-guests' min='1' name='guests' type='number'/>
+                          </div>
+                          <div class='field'>
+                            <label for='inq-msg'>الرسالة</label>
+                            <textarea id='inq-msg' name='message'/>
+                          </div>
+                          <button class='form-submit' type='submit'>إرسال الطلب عبر واتساب</button>
+                          <p class='form-note'>إرسال الطلب يفتح واتساب فقط&#1548; ولا يؤكد الحجز. الإدارة تؤكد التوفر والسعر والشروط كتابي&#1611;ا.</p>
+                          <div class='form-success' hidden='hidden' id='inq-success'/>
+                        </form>
+                      </div>
+                    </aside>
+                  </div>
+
+                  <section class='similar-section' hidden='hidden' id='similar-section'>
+                    <h2 class='section-title'>عقارات مشابهة</h2>
+                    <div class='property-grid' id='similar-grid'/>
+                  </section>
+
+                  <b:if cond='data:post.allowComments'>
+                  <section class='comments-section' id='guest-reviews'>
+                    <b:if cond='data:post.numberOfComments &gt; 0'>
+                      <h2 class='section-title'>آراء الضيوف</h2>
+                    <b:else/>
+                      <h2 class='section-title'>كن أول من يشارك رأيه</h2>
+                    </b:if>
+                    <div class='comments-wrap'>
+                      <b:include data='post' name='comments'/>
+                    </div>
+                  </section>
+                  </b:if>
+                </article>
+              </b:loop>
+
+            <!-- ============ STATIC PAGE ============ -->
+            <b:elseif cond='data:view.isPage'/>
+              <b:loop values='data:posts' var='post'>
+                <article class='post'>
+                  <h1 class='post-title'><data:post.title/></h1>
+                  <div class='post-body'><data:post.body/></div>
+                </article>
+              </b:loop>
+
+            <!-- ============ LIST (homepage / archive / label / search) ============ -->
+            <b:else/>
+              <b:if cond='data:view.isHomepage'>
+                <section class='section'>
+                  <h2 class='section-title'>عقارات مميزة</h2>
+                </section>
+              <b:else/>
+                <section class='section' style='padding-bottom:0;'>
+                  <h1 class='section-title'>
+                    <b:if cond='data:view.isSearch'>نتائج البحث: <data:blog.searchQuery/>
+                    <b:else/><data:blog.pageName/>
+                    </b:if>
+                  </h1>
+                </section>
+              </b:if>
+
+              <div class='darna-filters' id='darna-filters'>
+                <p class='filters-scope'>ت&#1615;طب&#1614;&#1617;ق هذه الفلاتر على العقارات المعروضة في هذه الصفحة فقط. للبحث في كل المنشورات استخدم صندوق البحث في الأعلى.</p>
+                <details class='filters-disclosure' id='filters-disclosure' open='open'>
+                <summary class='filters-summary'>كل الفلاتر</summary>
+                <div class='filters-row'>
+                  <div class='filter-field' style='grid-column:1/-1;'>
+                    <label for='f-q'>تصفية نصية (داخل هذه الصفحة)</label>
+                    <input id='f-q' placeholder='ابحث بالاسم أو الوصف أو المنطقة...' type='search'/>
+                  </div>
+                  <div class='filter-field'>
+                    <label for='f-type'>النوع</label>
+                    <select id='f-type'><option value=''>كل الأنواع</option></select>
+                  </div>
+                  <div class='filter-field'>
+                    <label for='f-area'>المنطقة</label>
+                    <select id='f-area'><option value=''>كل المناطق</option></select>
+                  </div>
+                  <div class='filter-field'>
+                    <label for='f-status'>التوفر</label>
+                    <select id='f-status'>
+                      <option value=''>الكل</option>
+                      <option value='available'>متوفر</option>
+                      <option value='unavailable'>غير متوفر</option>
+                    </select>
+                  </div>
+                  <div class='filter-field'>
+                    <label for='f-min'>أدنى سعر ($)</label>
+                    <input id='f-min' inputmode='numeric' min='0' type='number'/>
+                  </div>
+                  <div class='filter-field'>
+                    <label for='f-max'>أقصى سعر ($)</label>
+                    <input id='f-max' inputmode='numeric' min='0' type='number'/>
+                  </div>
+                  <div class='filter-field'>
+                    <label for='f-unit'>وحدة السعر</label>
+                    <select id='f-unit'><option value=''>كل الوحدات</option></select>
+                  </div>
+                  <div class='filter-field'>
+                    <label for='f-beds'>غرف النوم</label>
+                    <select id='f-beds'>
+                      <option value=''>الكل</option>
+                      <option value='1'>1+</option>
+                      <option value='2'>2+</option>
+                      <option value='3'>3+</option>
+                      <option value='4'>4+</option>
+                      <option value='5'>5+</option>
+                    </select>
+                  </div>
+                  <div class='filter-field'>
+                    <label for='f-baths'>الحمامات</label>
+                    <select id='f-baths'>
+                      <option value=''>الكل</option>
+                      <option value='1'>1+</option>
+                      <option value='2'>2+</option>
+                      <option value='3'>3+</option>
+                    </select>
+                  </div>
+                  <div class='filter-field'>
+                    <label for='f-sqm'>أدنى مساحة (م&#178;)</label>
+                    <input id='f-sqm' inputmode='numeric' min='0' type='number'/>
+                  </div>
+                  <div class='filter-field'>
+                    <label for='f-sort'>الترتيب</label>
+                    <select id='f-sort'>
+                      <option value='default'>الافتراضي</option>
+                      <option value='price-asc'>السعر: من الأقل للأعلى</option>
+                      <option value='price-desc'>السعر: من الأعلى للأقل</option>
+                      <option value='beds-desc'>غرف النوم: الأكثر أولا&#1611;</option>
+                      <option value='sqm-desc'>المساحة: الأكبر أولا&#1611;</option>
+                    </select>
+                  </div>
+                  <div class='filter-actions'>
+                    <button class='filter-apply' id='f-apply' type='button'>تطبيق</button>
+                    <button class='filter-reset' id='f-reset' type='button'>إعادة تعيين</button>
+                  </div>
+                </div></details>
+                <div aria-live='polite' class='filters-status' id='f-count'/>
+              </div>
+
+              <div class='blog-posts'>
+                <b:if cond='data:posts.empty'>
+                  <div class='no-results'>
+                    <p>لا توجد عقارات مطابقة في هذه الصفحة.</p>
+                    <p style='font-size:.85rem;margin-top:8px;'>جر&#1617;ب تغيير كلمات البحث أو تصف&#1617;ح التصنيفات.</p>
+                  </div>
+                <b:else/>
+                  <div class='property-grid' id='property-grid'>
+                    <b:loop values='data:posts' var='post'>
+                      <article class='property-card' expr:data-post-id='data:post.id' expr:data-title='data:post.title' expr:data-url='data:post.url'>
+                        <div class='property-photo-carousel' expr:data-post-url='data:post.url'>
+                          <a class='property-photo-link' expr:aria-label='data:post.title' expr:href='data:post.url'>
+                            <b:if cond='data:post.featuredImage'>
+                              <img class='card-image carousel-current-image' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 900, &quot;4:3&quot;)' loading='lazy'/>
+                            <b:else/>
+                              <div class='card-image carousel-empty'>لا توجد صورة</div>
+                            </b:if>
+                          </a>
+                          <button aria-label='الصورة السابقة' class='photo-nav photo-prev' type='button'>&#8249;</button>
+                          <button aria-label='الصورة التالية' class='photo-nav photo-next' type='button'>&#8250;</button>
+                          <span aria-live='polite' class='photo-counter'>1/1</span>
+                          <span class='card-type' hidden='hidden'/>
+                          <button aria-label='إضافة إلى المفضلة' aria-pressed='false' class='card-fav' type='button'>
+                            <svg aria-hidden='true' fill='currentColor' viewBox='0 0 24 24'><path d='M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z'/></svg>
+                          </button>
+                          <button aria-label='إضافة إلى المقارنة' aria-pressed='false' class='card-compare' type='button'>
+                            <svg aria-hidden='true' fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24'><path d='M4 7h16M4 12h16M4 17h10'/></svg>
+                          </button>
+                          <textarea aria-hidden='true' class='carousel-post-images' hidden='hidden' tabindex='-1'><data:post.body/></textarea>
+                        </div>
+                        <div class='card-body'>
+                          <span class='darna-labels' hidden='hidden'>
+                            <b:loop values='data:post.labels' var='label'><span class='darna-label'><data:label.name/></span></b:loop>
+                          </span>
+                          <div class='card-loc'><span aria-hidden='true' class='loc-icon'><svg fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24'><path d='M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z'/><circle cx='12' cy='10' r='2.6'/></svg></span><span class='card-area'/></div>
+                          <h3 class='card-title'><a expr:href='data:post.url'><data:post.title/></a></h3>
+                          <div aria-label='مواصفات العقار' class='card-meta property-features'>
+                            <span class='feature-item'><span aria-hidden='true' class='feature-icon'><svg fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24'><path d='M3 18v-5h18v5'/><path d='M3 18v2M21 18v2'/><path d='M6 13V9a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v4'/><path d='M6 11h12'/></svg></span><span class='feature-value' data-value='beds'>&#8212;</span><span>غرف</span></span>
+                            <span class='feature-item'><span aria-hidden='true' class='feature-icon'><svg fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24'><path d='M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-3z'/><path d='M6 12V6a2 2 0 0 1 4 0'/><path d='M7 19l-1 2M17 19l1 2'/></svg></span><span class='feature-value' data-value='baths'>&#8212;</span><span>حمامات</span></span>
+                            <span class='feature-item'><span aria-hidden='true' class='feature-icon'><svg fill='none' stroke='currentColor' stroke-width='2' viewBox='0 0 24 24'><rect height='16' rx='2' width='16' x='4' y='4'/><path d='M9 15l6-6M9 15h4M9 15v-4'/></svg></span><span class='feature-value' data-value='sqm'>&#8212;</span><span>م&#178;</span></span>
+                            <span class='feature-status' data-status='unknown'>الحالة غير محددة</span>
+                          </div>
+                          <div class='card-price' data-darna-price='1' data-lang='ar'><span class='darna-price-value'>&#8230;</span></div>
+                          <a class='card-link' expr:href='data:post.url'>عرض التفاصيل</a>
+                        </div>
+                      </article>
+                    </b:loop>
+                  </div>
+
+                  <b:if cond='data:olderPageUrl or data:newerPageUrl'>
+                    <div class='pagination'>
+                      <b:if cond='data:newerPageUrl'><a expr:href='data:newerPageUrl'>&#171; السابق</a></b:if>
+                      <span class='current-page'><data:blog.pageNumber/></span>
+                      <b:if cond='data:olderPageUrl'><a expr:href='data:olderPageUrl'>التالي &#187;</a></b:if>
+                    </div>
+                  </b:if>
+                </b:if>
+              </div>
+            </b:if>
+          </b:includable>
+          <b:includable id='aboutPostAuthor'>
+  <div class='author-name'>
+    <a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'>
+      <span>
+        <data:post.author.name/>
+      </span>
+    </a>
+  </div>
+  <div>
+    <span class='author-desc'>
+      <data:post.author.aboutMe/>
+    </span>
+  </div>
+</b:includable>
+          <b:includable id='addComments'>
+  <a expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
+    <b:message name='messages.postAComment'/>
+  </a>
+</b:includable>
+          <b:includable id='commentAuthorAvatar'>
+  <div class='avatar-image-container'>
+    <img class='author-avatar' expr:src='data:comment.authorAvatarSrc' height='35' width='35'/>
+  </div>
+</b:includable>
+          <b:includable id='commentDeleteIcon' var='comment'>
+  <span expr:class='&quot;item-control &quot; + data:comment.adminClass'>
+    <b:if cond='data:showCmtPopup'>
+      <div class='goog-toggle-button'>
+        <div class='goog-inline-block comment-action-icon'/>
+      </div>
+    <b:else/>
+      <a class='comment-delete' expr:href='data:comment.deleteUrl' expr:title='data:messages.deleteComment'>
+        <img src='https://resources.blogblog.com/img/icon_delete13.gif'/>
+      </a>
+    </b:if>
+  </span>
+</b:includable>
+          <b:includable id='commentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+          <b:includable id='commentFormIframeSrc' var='post'>
+  <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+</b:includable>
+          <b:includable id='commentItem' var='comment'>
+  <div class='comment' expr:id='&quot;c&quot; + data:comment.id'>
+    <b:include cond='data:blog.enabledCommentProfileImages' name='commentAuthorAvatar'/>
+
+    <div class='comment-block'>
+      <div class='comment-author'>
+        <b:if cond='data:comment.authorUrl'>
+          <b:message name='messages.authorSaidWithLink'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+            <b:param expr:value='data:comment.authorUrl' name='authorUrl'/>
+          </b:message>
+        <b:else/>
+          <b:message name='messages.authorSaid'>
+            <b:param expr:value='data:comment.author' name='authorName'/>
+          </b:message>
+        </b:if>
+      </div>
+      <div expr:class='&quot;comment-body&quot; + (data:comment.isDeleted ? &quot; deleted&quot; : &quot;&quot;)'>
+        <data:comment.body/>
+      </div>
+      <div class='comment-footer'>
+        <span class='comment-timestamp'>
+          <a expr:href='data:comment.url' title='comment permalink'>
+            <data:comment.timestamp/>
+          </a>
+          <b:include data='comment' name='commentDeleteIcon'/>
+        </span>
+      </div>
+    </div>
+  </div>
+</b:includable>
+          <b:includable id='commentList' var='comments'>
+  <div id='comments-block'>
+    <b:loop values='data:comments' var='comment'>
+      <b:include data='comment' name='commentItem'/>
+    </b:loop>
+  </div>
+</b:includable>
+          <b:includable id='commentPicker' var='post'>
+  <b:if cond='data:post.showThreadedComments'>
+    <b:include data='post' name='threadedComments'/>
+  <b:else/>
+    <b:include data='post' name='comments'/>
+  </b:if>
+</b:includable>
+          <b:includable id='comments' var='post'>
+  <section expr:class='&quot;comments&quot; + (data:post.embedCommentForm ? &quot; embed&quot; : &quot;&quot;)' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'/>
+    <b:if cond='data:post.allowComments'>
+
+      <b:include name='commentsTitle'/>
+
+      <div expr:id='data:widget.instanceId + &quot;_comments-block-wrapper&quot;'>
+        <b:include cond='data:post.comments' data='post.comments' name='commentList'/>
+      </div>
+
+      <b:if cond='data:post.commentPagingRequired'>
+        <div class='paging-control-container'>
+          <b:if cond='data:post.hasOlderLinks'>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'>
+              <data:messages.oldest/>
+            </a>
+            <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl'>
+              <data:messages.older/>
+            </a>
+          </b:if>
+
+          <span class='comment-range-text'>
+            <data:post.commentRangeText/>
+          </span>
+
+          <b:if cond='data:post.hasNewerLinks'>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl'>
+              <data:messages.newer/>
+            </a>
+            <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'>
+              <data:messages.newest/>
+            </a>
+          </b:if>
+        </div>
+      </b:if>
+
+      <div class='footer'>
+        <b:if cond='data:post.embedCommentForm'>
+          <b:if cond='data:post.allowNewComments'>
+            <b:include data='post' name='commentForm'/>
+          <b:else/>
+            <data:post.noNewCommentsText/>
+          </b:if>
+        <b:else/>
+          <b:if cond='data:post.allowComments'>
+            <b:include data='post' name='addComments'/>
+          </b:if>
+        </b:if>
+      </div>
+    </b:if>
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+          <b:includable id='commentsTitle'>
+  <h3 class='title'><data:messages.comments/></h3>
+</b:includable>
+          <b:includable id='feedLinks'>
+  <b:if cond='!data:view.isPost'> <!-- Blog feed links -->
+    <b:if cond='data:feedLinks'>
+      <div class='blog-feeds'>
+        <b:include data='feedLinks' name='feedLinksBody'/>
+      </div>
+    </b:if>
+  <b:else/> <!--Post feed links -->
+    <div class='post-feeds'>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.allowComments and data:post.feedLinks'>
+          <b:include data='post.feedLinks' name='feedLinksBody'/>
+        </b:if>
+      </b:loop>
+    </div>
+  </b:if>
+</b:includable>
+          <b:includable id='feedLinksBody' var='links'>
+  <div class='feed-links'>
+  <data:messages.subscribeTo/>
+  <b:loop values='data:links' var='f'>
+     <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'><data:f.name/> (<data:f.feedType/>)</a>
+  </b:loop>
+  </div>
+</b:includable>
+          <b:includable id='homePageLink'>
+  <a class='home-link' expr:href='data:blog.homepageUrl'>
+    <data:messages.home/>
+  </a>
+</b:includable>
+          <b:includable id='iframeComments' var='post'>
+  <!-- G+ comments, no longer available. The includable is retained for backwards-compatibility. -->
+</b:includable>
+          <b:includable id='inlineAd' var='post'>
+  <b:if cond='!data:view.isPreview'>
+    <b:if cond='data:this.adCode or data:this.adClientId or data:blog.adsenseClientId'>
+      <!-- Ad -->
+      <div class='inline-ad'>
+        <b:if cond='data:this.adCode != &quot;&quot;'>
+          <data:this.adCode/>
+        <b:else/>
+          <b:include cond='data:this.adClientId or data:blog.adsenseClientId' name='defaultAdUnit'/>
+        </b:if>
+      </div>
+    </b:if>
+  <b:else/>
+    <div class='inline-ad'>
+      <div class='inline-ad-placeholder'>
+        <span><b:message name='messages.adsGoHere'/></span>
+      </div>
+    </div>
+  </b:if>
+</b:includable>
+          <b:includable id='nextPageLink'>
+  <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:messages.olderPosts'>
+    <data:messages.olderPosts/>
+  </a>
+</b:includable>
+          <b:includable id='post' var='post'>
+  <div class='post'>
+    <b:include data='post' name='postMeta'/>
+    <b:include data='post' name='postTitle'/>
+    <b:include name='headerByline'/>
+    <b:if cond='data:view.isSingleItem'>
+      <b:include data='post' name='postBody'/>
+    <b:else/>
+      <b:include data='post' name='postBodySnippet'/>
+      <b:include data='post' name='postJumpLink'/>
+    </b:if>
+    <b:include data='post' name='postFooter'/>
+  </div>
+</b:includable>
+          <b:includable id='postBody' var='post'>
+  <!-- If metaDescription is empty, use the post body as the schema.org description too, for G+/FB snippeting. -->
+  <div class='post-body entry-content float-container' expr:id='&quot;post-body-&quot; + data:post.id'>
+    <data:post.body/>
+  </div>
+</b:includable>
+          <b:includable id='postBodySnippet' var='post'>
+  <b:include data='post' name='postBody'/>
+</b:includable>
+          <b:includable id='postCommentsAndAd' var='post'>
+  <article class='post-outer-container'>
+    <!-- Post title and body -->
+    <div class='post-outer'>
+      <b:include data='post' name='post'/>
+    </div>
+
+    <!-- Comments -->
+    <b:include cond='data:view.isSingleItem' data='post' name='commentPicker'/>
+
+    <!-- Show ad inside post container, after comments, if single item. -->
+    <b:include cond='data:view.isSingleItem and data:post.includeAd' data='post' name='inlineAd'/>
+  </article>
+
+  <!-- Show ad outside post container (between posts) for feed pages. -->
+  <b:include cond='data:view.isMultipleItems and data:post.includeAd' data='post' name='inlineAd'/>
+</b:includable>
+          <b:includable id='postCommentsLink'>
+  <b:if cond='data:view.isMultipleItems'>
+    <span class='byline post-comment-link container'>
+      <b:include cond='data:post.commentSource != 1' name='commentsLink'/>
+    </span>
+  </b:if>
+</b:includable>
+          <b:includable id='postFooter' var='post'>
+  <div class='post-footer'>
+    <b:include name='footerBylines'/>
+    <b:include data='post' name='postFooterAuthorProfile'/>
+  </div>
+</b:includable>
+          <b:includable id='postFooterAuthorProfile' var='post'>
+  <b:if cond='data:post.author.aboutMe and data:view.isPost'>
+    <div class='author-profile'>
+      <b:if cond='data:post.author.authorPhoto.url'>
+        <img class='author-image' expr:src='data:post.author.authorPhoto.url' width='50px'/>
+        <div class='author-about'>
+          <b:include data='post' name='aboutPostAuthor'/>
+        </div>
+      <b:else/>
+        <b:include data='post' name='aboutPostAuthor'/>
+      </b:if>
+    </div>
+  </b:if>
+</b:includable>
+          <b:includable id='postHeader' var='post'>
+  <b:include name='headerByline'/>
+</b:includable>
+          <b:includable id='postMeta' var='post'>
+  <b:include data='post' name='postMetadataJSON'/>
+</b:includable>
+          <b:includable id='postPagination'>
+  <div class='blog-pager container' id='blog-pager'>
+    <b:include cond='data:newerPageUrl' name='previousPageLink'/>
+    <b:include cond='data:olderPageUrl' name='nextPageLink'/>
+    <b:include cond='data:view.url != data:blog.homepageUrl' name='homePageLink'/>
+  </div>
+</b:includable>
+          <b:includable id='postTitle' var='post'>
+  <a expr:name='data:post.id'/>
+  <b:if cond='data:post.title != &quot;&quot;'>
+    <h3 class='post-title entry-title'>
+      <b:if cond='data:post.link or (data:post.url and data:view.url != data:post.url)'>
+        <a expr:href='data:post.link ?: data:post.url'><data:post.title/></a>
+      <b:else/>
+        <data:post.title/>
+      </b:if>
+    </h3>
+  </b:if>
+</b:includable>
+          <b:includable id='previousPageLink'>
+  <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:messages.newerPosts'>
+    <data:messages.newerPosts/>
+  </a>
+</b:includable>
+          <b:includable id='threadedCommentForm' var='post'>
+  <div class='comment-form'>
+    <a name='comment-form'/>
+    <h4 id='comment-post-message'><data:messages.postAComment/></h4>
+    <b:if cond='data:this.messages.blogComment != &quot;&quot;'>
+      <p><data:this.messages.blogComment/></p>
+    </b:if>
+    <b:include data='post' name='commentFormIframeSrc'/>
+    <iframe allowtransparency='allowtransparency' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight ?: &quot;90px&quot;' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;);
+    </script>
+  </div>
+</b:includable>
+          <b:includable id='threadedCommentJs' var='post'>
+  <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
+  <b:template-script inline='true' name='threaded_comments'/>
+  <script type='text/javascript'>
+    blogger.widgets.blog.initThreadedComments(
+        <data:post.commentJso/>,
+        <data:post.commentMsgs/>,
+        <data:post.commentConfig/>);
+  </script>
+</b:includable>
+          <b:includable id='threadedComments' var='post'>
+  <section class='comments threaded' expr:data-embed='data:post.embedCommentForm' expr:data-num-comments='data:post.numberOfComments' id='comments'>
+    <a name='comments'/>
+
+    <b:include name='commentsTitle'/>
+
+    <div class='comments-content'>
+      <b:if cond='data:post.embedCommentForm'>
+        <b:include data='post' name='threadedCommentJs'/>
+      </b:if>
+      <div id='comment-holder'>
+         <data:post.commentHtml/>
+      </div>
+    </div>
+
+    <p class='comment-footer'>
+      <b:if cond='data:post.allowNewComments'>
+        <b:include data='post' name='threadedCommentForm'/>
+      <b:else/>
+        <data:post.noNewCommentsText/>
+      </b:if>
+      <b:if cond='data:post.showManageComments'>
+        <b:include data='post' name='manageComments'/>
+      </b:if>
+    </p>
+
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='allowtransparency' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+  </section>
+</b:includable>
+          <b:includable id='tooltipCss'>
+  <!-- LINT.IfChange -->
+  <style>
+    .post-body a.b-tooltip-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip {
+      display: block !important;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-20%, 1px);
+      visibility: hidden;
+      opacity: 0;
+      z-index: 1;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    .post-body a.b-tooltip-container .b-tooltip iframe {
+      width: 200px;
+      height: 198px;
+      max-width: none;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (hover: hover) {
+      .post-body a.b-tooltip-container:hover .b-tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  </style>
+  <!-- LINT.ThenChange(//depot/google3/java/com/google/blogger/b2/layouts/widgets/v2-style.css) -->
+</b:includable>
+        </b:widget>
+      </b:section>
+
+      <b:if cond='data:view.isHomepage'>
+        <section class='section discovery-section'>
+          <h2 class='section-title'>تصف&#1617;ح حسب المنطقة في جيبوتي</h2>
+          <div class='discovery-grid'>
+            <a class='discovery-card' expr:href='data:blog.homepageUrl + &quot;search/label/جيبوتي المدينة&quot;'><span aria-hidden='true' class='discovery-icon'>🏙&#65039;</span><span class='discovery-name'>جيبوتي المدينة</span></a>
+            <a class='discovery-card' expr:href='data:blog.homepageUrl + &quot;search/label/علي صبيح&quot;'><span aria-hidden='true' class='discovery-icon'>🏘&#65039;</span><span class='discovery-name'>علي صبيح</span></a>
+            <a class='discovery-card' expr:href='data:blog.homepageUrl + &quot;search/label/تاجورة&quot;'><span aria-hidden='true' class='discovery-icon'>🌅</span><span class='discovery-name'>تاجورة</span></a>
+            <a class='discovery-card' expr:href='data:blog.homepageUrl + &quot;search/label/أوبوك&quot;'><span aria-hidden='true' class='discovery-icon'>&#9968;</span><span class='discovery-name'>أوبوك</span></a>
+            <a class='discovery-card' expr:href='data:blog.homepageUrl + &quot;search/label/أرتا&quot;'><span aria-hidden='true' class='discovery-icon'>🌊</span><span class='discovery-name'>أرتا</span></a>
+            <a class='discovery-card' expr:href='data:blog.homepageUrl + &quot;search/label/دخيل&quot;'><span aria-hidden='true' class='discovery-icon'>🏖&#65039;</span><span class='discovery-name'>دخيل</span></a>
+          </div>
+          <h2 class='section-title'>تصف&#1617;ح حسب النوع</h2>
+          <div class='filter-bar'>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/شقة&quot;'>شقق</a>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/فيلا&quot;'>فلل</a>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/منزل&quot;'>منازل</a>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/استوديو&quot;'>استوديوهات</a>
+            <a class='filter-chip' expr:href='data:blog.homepageUrl + &quot;search/label/غرفة&quot;'>غرف</a>
+          </div>
+        </section>
+
+        <section class='section'>
+          <div class='add-property-card'>
+            <h2>هل تملك عقار&#1611;ا في جيبوتي&#1567;</h2>
+            <p>أضف عقارك إلى بلاَس ليصل إلى المستأجرين الباحثين عن سكن في جيبوتي.</p>
+            <a class='add-property-btn' href='#' id='add-property-btn' rel='noopener' target='_blank'>أضف عقارك</a>
+            <p class='add-property-note' id='add-property-note'>إرسال النموذج لا يعني النشر التلقائي&#1563; تتم مراجعة العقار قبل النشر.</p>
+          </div>
+        </section>
+
+        <b:section class='home-after-posts' id='home-after-posts' maxwidgets='2' showaddelement='yes'/>
+      </b:if>
+
+    </div><!-- /.content-area -->
+
+    <!-- ===== Sidebar ===== -->
+    <aside class='sidebar-area sidebar'>
+      <b:section class='sidebar-section' id='sidebar-widgets' preferred='yes' showaddelement='yes'>
+        <b:widget id='Label1' locked='false' title='تصفح حسب النوع' type='Label' version='2' visible='false'>
+          <b:widget-settings>
+            <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+            <b:widget-setting name='display'>LIST</b:widget-setting>
+            <b:widget-setting name='selectedLabelsList'/>
+            <b:widget-setting name='showType'>ALL</b:widget-setting>
+            <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <div class='widget-card'>
+              <h3><data:title/></h3>
+              <ul>
+                <b:loop values='data:labels' var='label'>
+                  <li><a expr:href='data:label.url'><data:label.name/></a></li>
+                </b:loop>
+              </ul>
+            </div>
+          </b:includable>
+          <b:includable id='cloud'>
+  <b:loop values='data:labels' var='label'>
+    <span class='label-size'>
+      <b:class expr:name='&quot;label-size-&quot; + data:label.cssSize'/>
+      <a class='label-name' expr:href='data:label.url'>
+        <data:label.name/>
+        <b:if cond='data:this.showFreqNumbers'>
+          <span class='label-count'><data:label.count/></span>
+        </b:if>
+      </a>
+    </span>
+  </b:loop>
+</b:includable>
+          <b:includable id='content'>
+  <div class='widget-content'>
+    <b:class expr:name='data:this.display + &quot;-label-widget-content&quot;'/>
+    <b:include cond='data:this.display == &quot;list&quot;' name='list'/>
+    <b:include cond='data:this.display == &quot;cloud&quot;' name='cloud'/>
+  </div>
+</b:includable>
+          <b:includable id='list'>
+  <ul>
+    <b:loop values='data:labels' var='label'>
+      <li>
+        <a class='label-name' expr:href='data:label.url'>
+          <data:label.name/>
+          <b:if cond='data:this.showFreqNumbers'>
+            <span class='label-count'><data:label.count/></span>
+          </b:if>
+        </a>
+      </li>
+    </b:loop>
+  </ul>
+</b:includable>
+        </b:widget>
+        <b:widget id='HTML2' locked='false' title='مساحة إعلانية' type='HTML' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='content'><![CDATA[<div class="ad-slot">مساحة إعلانية -تواصل معنا للاعلان</div>]]></b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <div class='widget-card'>
+              <h3><data:title/></h3>
+              <div class='widget-content'><data:content/></div>
+            </div>
+          </b:includable>
+        </b:widget>
+        <b:widget id='PopularPosts1' locked='false' title='يفضلها الزائرون' type='PopularPosts' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
+            <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+            <b:widget-setting name='showSnippets'>true</b:widget-setting>
+            <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <div class='widget-card'>
+              <h3><data:title/></h3>
+              <ul>
+                <b:loop values='data:posts' var='post'>
+                  <li><a expr:href='data:post.url'><data:post.title/></a></li>
+                </b:loop>
+              </ul>
+            </div>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </aside>
+
+  </div><!-- /.main-content -->
+</div><!-- /.container -->
+
+</div><!-- /#main-wrapper -->
+
+<!-- ===== Footer ===== -->
+<footer class='site-footer'>
+  <div class='container'>
+    <b:section class='footer-widgets' id='footer-widgets' maxwidgets='3' showaddelement='yes'/>
+    <div class='footer-grid'>
+      <div>
+        <h4>بلاَس</h4>
+        <p style='font-size:.9rem;opacity:.7;'>منصة تأجير العقارات في جيبوتي. أسعار واضحة بالدولار وتواصل مباشر.</p>
+      </div>
+      <div>
+        <h4>روابط</h4>
+        <ul>
+          <li><a expr:href='data:blog.homepageUrl'>الرئيسية</a></li>
+          <li><a expr:href='data:blog.homepageUrl + &quot;p/contact.html&quot;'>تواصل معنا</a></li>
+          <li><a expr:href='data:blog.homepageUrl + &quot;p/terms.html&quot;'>الشروط والأحكام</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>سياسات</h4>
+        <ul>
+          <li><a expr:href='data:blog.homepageUrl + &quot;p/privacy.html&quot;'>الخصوصية</a></li>
+          <li><a expr:href='data:blog.homepageUrl + &quot;p/cancellation.html&quot;'>الإلغاء والاسترداد</a></li>
+          <li><a expr:href='data:blog.homepageUrl + &quot;p/complaints.html&quot;'>تقديم شكوى</a></li>
+          <li><a expr:href='data:blog.homepageUrl + &quot;p/advertise.html&quot;'>الإعلان</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>تواصل</h4>
+        <div class='footer-contact'>
+          <p>واتساب: <a dir='ltr' href='https://wa.me/25377313443'>+253 77 31 34 43</a></p>
+          <p style='margin-top:8px;'>الاستفسار لا يؤكد التوفر أو الحجز</p>
+        </div>
+      </div>
+    </div>
+    <div class='footer-bottom'>
+      <p>&#169; <data:blog.title/> &#8212; جميع الحقوق محفوظة.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Floating WhatsApp (hidden on single-post pages; the property CTA covers those) ===== -->
+<b:if cond='!data:view.isPost'>
+  <a aria-label='تواصل معنا عبر واتساب' class='whatsapp-float' href='https://wa.me/25377313443?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D8%B9%D9%82%D8%A7%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D8%AA%D8%A7%D8%AD%D8%A9%20%D9%84%D9%84%D8%A5%D9%8A%D8%AC%D8%A7%D8%B1%20%D9%81%D9%8A%20%D8%AC%D9%8A%D8%A8%D9%88%D8%AA%D9%8A.' rel='noopener' target='_blank'>
+    <svg aria-hidden='true' viewBox='0 0 448 512' xmlns='http://www.w3.org/2000/svg'><path d='M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z' fill='currentColor'/></svg>
+  </a>
+</b:if>
+
+<!-- ===== Favourites panel ===== -->
+<aside aria-label='المفضلة' class='placedj-panel' hidden='hidden' id='favorites-panel'>
+  <div class='placedj-panel-head'>
+    <h2>المفضلة</h2>
+    <button aria-label='إغلاق' class='placedj-close' id='favorites-close' type='button'>&#215;</button>
+  </div>
+  <div id='favorites-list'/>
+</aside>
+
+<!-- ===== Compare bar + modal ===== -->
+<div class='compare-bar' hidden='hidden' id='compare-bar'>
+  <span id='compare-items'>المقارنة (0/4)</span>
+  <button class='compare-open' id='compare-open' type='button'>قارن الآن</button>
+  <button class='compare-clear' id='compare-clear' type='button'>مسح الكل</button>
+</div>
+<div aria-label='مقارنة العقارات' aria-modal='true' class='placedj-modal' hidden='hidden' id='compare-modal' role='dialog'>
+  <div class='modal-inner'>
+    <button aria-label='إغلاق' class='modal-close' id='compare-close' type='button'>&#215;</button>
+    <h2 class='section-title'>مقارنة العقارات</h2>
+    <div class='compare-scroll' id='compare-table'/>
+  </div>
+</div>
+
+<!-- ===== Theme Scripts ===== -->
+<script type='text/javascript'>
+//<![CDATA[
+(function () {
+  'use strict';
+
+  /* ================= Arabic text normalisation (matching only) ================= */
+  function darnaNorm(s) {
+    return String(s == null ? '' : s)
+      .replace(/[\u064B-\u0652\u0640]/g, '')
+      .replace(/[\u0622\u0623\u0625\u0627]/g, '\u0627')
+      .replace(/\u0649/g, '\u064A')
+      .replace(/\u0629/g, '\u0647')
+      .replace(/\u0624/g, '\u0648')
+      .replace(/\u0626/g, '\u064A')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+  }
+
+  /* ================= Unified price logic (single source of truth) =================
+     Recorded-price convention (Blogger post labels; separator may be ':' '-' or '_'):
+       price:100       -> base price BEFORE the 10% tenant service fee -> displayed = base * 1.10
+       pricefinal:110  -> final price ALREADY including the 10% fee    -> displayed as-is (no extra)
+       cur:USD         -> currency code (default USD)
+       per:night       -> pricing unit (night|day|week|month|stay)
+     The 10% tenant service fee is applied exactly once. Never fabricate a price and never hide the numeric price. */
+  var DARNA_SERVICE_FEE_RATE = 0.10;
+  var DARNA_PRICE_LABEL_RE = /^(pricefinal|price|cur|per)\s*[:\-_]\s*(.+)$/i;
+  var DARNA_CUR_SYMBOL = { USD: '$', EUR: '\u20AC', GBP: '\u00A3', JPY: '\u00A5', CNY: '\u00A5', INR: '\u20B9', NGN: '\u20A6', TRY: '\u20BA', RUB: '\u20BD', KRW: '\u20A9', MRU: 'UM', DJF: 'Fdj', SAR: 'SR', AED: 'AED', EGP: 'E\u00A3', MAD: 'MAD', QAR: 'QR', KWD: 'KD' };
+  var DARNA_UNITS = {
+    ar: { night: '\u0644\u064A\u0644\u0629', day: '\u064A\u0648\u0645', week: '\u0623\u0633\u0628\u0648\u0639', month: '\u0634\u0647\u0631', stay: '\u0645\u062F\u0629 \u0627\u0644\u0625\u0642\u0627\u0645\u0629' },
+    en: { night: 'night', day: 'day', week: 'week', month: 'month', stay: 'stay' },
+    fr: { night: 'nuit', day: 'jour', week: 'semaine', month: 'mois', stay: 's\u00E9jour' }
+  };
+
+  function darnaParsePriceLabels(labels) {
+    var out = { base: null, final: null, cur: 'USD', per: '' };
+    (labels || []).forEach(function (raw) {
+      if (raw == null) return;
+      var normalized = String(raw).replace(/[\u00A0\u200B\uFEFF]/g, '').trim();
+      var m = DARNA_PRICE_LABEL_RE.exec(normalized);
+      if (!m) return;
+      var key = m[1].toLowerCase();
+      var val = m[2].trim();
+      if (key === 'price') out.base = val;
+      else if (key === 'pricefinal') out.final = val;
+      else if (key === 'cur') out.cur = val.toUpperCase();
+      else if (key === 'per') out.per = val.toLowerCase();
+    });
+    return out;
+  }
+
+  function darnaComputePrice(labels) {
+    var p = darnaParsePriceLabels(labels);
+    var num = null, source = null;
+    if (p.final !== null && isFinite(parseFloat(p.final))) { num = parseFloat(p.final); source = 'final'; }
+    else if (p.base !== null && isFinite(parseFloat(p.base))) { num = parseFloat(p.base) * (1 + DARNA_SERVICE_FEE_RATE); source = 'base'; }
+    if (num === null || !isFinite(num)) return null;
+    num = Math.round(num * 100) / 100;
+    return { amount: num, currency: p.cur, per: p.per, source: source };
+  }
+
+  function darnaFormatNumber(n) {
+    var s = (n % 1 === 0) ? String(n) : n.toFixed(2);
+    var parts = s.split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return parts.join('.');
+  }
+
+  function darnaFormatPrice(info, lang) {
+    if (!info) return null;
+    lang = lang || 'ar';
+    var amount = darnaFormatNumber(info.amount);
+    var sym = DARNA_CUR_SYMBOL[info.currency] || (info.currency + ' ');
+    var unit = '';
+    if (info.per) { var map = DARNA_UNITS[lang] || DARNA_UNITS.en; unit = map[info.per] || info.per; }
+    return sym + amount + (unit ? ' / ' + unit : '');
+  }
+  // Expose for testing
+  window.darnaParsePriceLabels = darnaParsePriceLabels;
+  window.darnaComputePrice = darnaComputePrice;
+  window.darnaFormatPrice = darnaFormatPrice;
+  window.darnaParseFields = darnaParseFields;
+  window.darnaStatusClass = darnaStatusClass;
+  window.darnaNorm = darnaNorm;
+
+  /* ================= Small helpers ================= */
+  function escapeHtml(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+  function readStore(key) {
+    try { var v = JSON.parse(localStorage.getItem(key) || '[]'); return Array.isArray(v) ? v : []; }
+    catch (e) { return []; }
+  }
+  function writeStore(key, arr) {
+    try { localStorage.setItem(key, JSON.stringify(arr)); } catch (e) { /* storage unavailable */ }
+  }
+
+  /* ================= Label parsing shared by cards + detail ================= */
+  var DARNA_LABEL_RE = /^(pricefinal|price|cur|per|beds|bedrooms|baths|bathrooms|kitchens|kitchen|sqm|area|size|cap|guests|status|availability|type|ptype|loc|location|area_name)\s*[:\-_]\s*(.+)$/i;
+  // Labels that look like a place name but are NOT a region — never parse as area.
+  var DARNA_NON_AREA = /^(\u0639\u0642\u0627\u0631\u0627\u062a|\u0639\u0642\u0627\u0631|\u0644\u0644\u0625\u064a\u062c\u0627\u0631|\u0644\u0644\u0628\u064a\u0639|\u0645\u0645\u064a\u0632|\u0645\u0645\u064a\u0632\u0629|\u062c\u062f\u064a\u062f|\u062c\u062f\u064a\u062f\u0629|\u0645\u0641\u0631\u0648\u0634|\u0645\u0641\u0631\u0648\u0634\u0629|\u0645\u0624\u0643\u062f|\u0645\u0648\u062b\u0642|\u0645\u0642\u062a\u0631\u062d|\u0645\u0637\u0644\u0648\u0628)$/;
+  var DARNA_STATUS_WORDS = /^(available|unavailable|occupied|\u0645\u062a\u0648\u0641\u0631|\u0645\u062a\u0648\u0641\u0631\u0629|\u063a\u064a\u0631 \u0645\u062a\u0648\u0641\u0631|\u063a\u064a\u0631 \u0645\u062a\u0648\u0641\u0631\u0629)$/i;
+
+  function darnaReadLabels(scope) {
+    var labels = [];
+    scope.querySelectorAll('.darna-label').forEach(function (n) {
+      var t = (n.textContent || '').replace(/[\u00A0\u200B\uFEFF]/g, '').trim();
+      if (t) labels.push(t);
+    });
+    return labels;
+  }
+
+  function darnaParseFields(labels) {
+    var f = { price: null, cur: 'USD', per: '', beds: null, baths: null, kitchens: null, sqm: null, cap: null, status: '', type: '', area: '' };
+    (labels || []).forEach(function (raw) {
+      var t = String(raw).replace(/[\u00A0\u200B\uFEFF]/g, '').trim();
+      var m = DARNA_LABEL_RE.exec(t);
+      if (m) {
+        var k = m[1].toLowerCase(), v = m[2].trim();
+        if (k === 'beds' || k === 'bedrooms') f.beds = v;
+        else if (k === 'baths' || k === 'bathrooms') f.baths = v;
+        else if (k === 'kitchens' || k === 'kitchen') f.kitchens = v;
+        else if (k === 'sqm' || k === 'area' || k === 'size') f.sqm = v;
+        else if (k === 'cap' || k === 'guests') f.cap = v;
+        else if (k === 'status' || k === 'availability') f.status = v;
+        else if (k === 'type' || k === 'ptype') f.type = v;
+        else if (k === 'loc' || k === 'location' || k === 'area_name') f.area = v;
+        return;
+      }
+      if (DARNA_STATUS_WORDS.test(t)) { if (!f.status) f.status = t; return; }
+      // Plain-label fallbacks (Arabic / English property words) — rental product only.
+      if (!f.type && /^(\u0634\u0642\u0629|\u0634\u0642\u0629 \u0645\u0641\u0631\u0648\u0634\u0629|\u0641\u064a\u0644\u0627|\u0645\u0646\u0632\u0644|\u0627\u0633\u062a\u0648\u062f\u064a\u0648|\u063a\u0631\u0641\u0629|\u0645\u0641\u0631\u0648\u0634|apartment|villa|house|studio|room)/i.test(t)) f.type = t;
+      else if (!f.area && /^[\u0600-\u06FF\s\-]{3,40}$/.test(t) && !DARNA_NON_AREA.test(t)) f.area = t;
+    });
+    return f;
+  }
+
+  function darnaStatusClass(status) {
+    var s = darnaNorm(status);
+    if (/unavailable|occupied|\u063a\u064a\u0631/.test(s)) return { label: '\u063a\u064a\u0631 \u0645\u062a\u0648\u0641\u0631', cls: 'is-unavailable' };
+    if (/available|\u0645\u062a\u0648\u0641\u0631/.test(s)) return { label: '\u0645\u062a\u0648\u0641\u0631', cls: 'is-available' };
+    return { label: '\u0627\u0644\u062d\u0627\u0644\u0629 \u063a\u064a\u0631 \u0645\u062d\u062f\u062f\u0629', cls: '' };
+  }
+
+  /* ================= Property record (shared by cards, detail, favourites, compare) ================= */
+  function darnaRecordFrom(card) {
+    var labels = darnaReadLabels(card);
+    var f = darnaParseFields(labels);
+    var info = darnaComputePrice(labels);
+    var img = card.querySelector('.carousel-current-image') || card.querySelector('#gallery-main-img');
+    var titleEl = card.querySelector('.card-title') || card.querySelector('.detail-title');
+    var title = card.getAttribute('data-title') || (titleEl ? titleEl.textContent.trim() : '');
+    return {
+      id: card.getAttribute('data-post-id') || card.getAttribute('data-url') || '',
+      title: title,
+      url: card.getAttribute('data-url') || window.location.href,
+      image: (img && img.tagName === 'IMG') ? (img.getAttribute('src') || '') : '',
+      price: info ? darnaFormatPrice(info, 'ar') : '',
+      priceAmount: info ? info.amount : null,
+      unit: info && info.per ? (DARNA_UNITS.ar[info.per] || info.per) : '',
+      type: f.type || '',
+      area: f.area || '',
+      beds: f.beds || '',
+      baths: f.baths || '',
+      sqm: f.sqm || '',
+      status: darnaStatusClass(f.status).label
+    };
+  }
+
+  /* ================= Card rendering ================= */
+  function darnaRenderCard(card) {
+    var labels = darnaReadLabels(card);
+    var f = darnaParseFields(labels);
+    var info = darnaComputePrice(labels);
+
+    // price (prominent, USD, thousands separator, unit)
+    var priceEl = card.querySelector('[data-darna-price] .darna-price-value');
+    if (priceEl) {
+      priceEl.textContent = info ? darnaFormatPrice(info, 'ar') : '';
+      var wrap = card.querySelector('.card-price');
+      if (wrap) wrap.setAttribute('data-price-value', info ? String(info.amount) : '');
+    }
+
+    // features: beds / baths / area (sqm)
+    function setVal(sel, v) { var e = card.querySelector(sel); if (e) e.textContent = (v == null || v === '') ? '\u2014' : v; }
+    setVal('[data-value="beds"]', f.beds);
+    setVal('[data-value="baths"]', f.baths);
+    setVal('[data-value="sqm"]', f.sqm);
+
+    // city / area
+    var areaEl = card.querySelector('.card-area');
+    if (areaEl) areaEl.textContent = f.area || '';
+    var locWrap = card.querySelector('.card-loc');
+    if (locWrap && !f.area) locWrap.hidden = true;
+
+    // type chip (separate from availability)
+    var typeChip = card.querySelector('.card-type');
+    if (typeChip) {
+      if (f.type) { typeChip.textContent = f.type; typeChip.hidden = false; }
+      else { typeChip.hidden = true; }
+    }
+
+    // availability badge (separate from type) — hidden when no status is recorded
+    var st = darnaStatusClass(f.status);
+    var badge = card.querySelector('.feature-status');
+    if (badge) {
+      badge.classList.remove('is-available', 'is-unavailable');
+      if (st.cls) { badge.textContent = st.label; badge.classList.add(st.cls); badge.hidden = false; }
+      else { badge.textContent = ''; badge.hidden = true; }
+    }
+
+    // short description (1-2 lines)
+    var srcEl = card.querySelector('.carousel-post-images');
+    var bodyText = srcEl ? (srcEl.tagName === 'TEXTAREA' ? srcEl.value : srcEl.textContent) : '';
+    bodyText = bodyText.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+    var descEl = card.querySelector('.card-desc');
+    if (descEl) {
+      if (bodyText) { descEl.textContent = bodyText.slice(0, 110) + (bodyText.length > 110 ? '\u2026' : ''); }
+      else { descEl.hidden = true; }
+    }
+
+    // data attributes for LOCAL filtering
+    card.setAttribute('data-type', f.type || '');
+    card.setAttribute('data-area', f.area || '');
+    card.setAttribute('data-status', /unavailable|\u063a\u064a\u0631/.test(darnaNorm(f.status)) ? 'unavailable' : 'available');
+    card.setAttribute('data-beds', f.beds != null ? String(parseInt(f.beds, 10) || 0) : '');
+    card.setAttribute('data-baths', f.baths != null ? String(parseInt(f.baths, 10) || 0) : '');
+    card.setAttribute('data-sqm', f.sqm != null ? String(parseFloat(f.sqm) || 0) : '');
+    card.setAttribute('data-unit', info && info.per ? info.per : '');
+    card.setAttribute('data-price', info ? String(info.amount) : '');
+    card.setAttribute('data-search', darnaNorm((card.getAttribute('data-title') || '') + ' ' + bodyText + ' ' + labels.join(' ')));
+    // mark whether this post is a real property listing (has a type, an area, or a price)
+    card.setAttribute('data-property', (f.type || f.beds || f.baths || f.sqm || f.kitchens || (info && info.amount != null)) ? '1' : '0');
+  }
+
+  /* ================= Card photo carousel (one click = one image) ================= */
+  function darnaCarousel(box) {
+    if (box.getAttribute('data-carousel-init') === '1') return;
+    box.setAttribute('data-carousel-init', '1');
+    var img = box.querySelector('.carousel-current-image');
+    var prev = box.querySelector('.photo-prev'), next = box.querySelector('.photo-next');
+    var count = box.querySelector('.photo-counter');
+    var source = box.querySelector('.carousel-post-images');
+    var link = box.querySelector('.property-photo-link');
+    if (!prev || !next) return;
+
+    var urls = [];
+    function add(u) {
+      if (!u) return;
+      u = String(u).replace(/&amp;/g, '&');
+      if (/^data:/i.test(u) || /transparent\.gif/i.test(u) || /sprite/i.test(u)) return;
+      if (urls.indexOf(u) < 0) urls.push(u);
+    }
+    if (img && img.tagName === 'IMG') add(img.getAttribute('src'));
+    if (source) {
+      if (source.tagName === 'TEXTAREA') {
+        var re = /<img[^>]+src=["']([^"']+)["']/gi, mm;
+        while ((mm = re.exec(source.value || ''))) add(mm[1]);
+      } else {
+        source.querySelectorAll('img').forEach(function (i) {
+          add(i.getAttribute('src') || i.getAttribute('data-src') || i.getAttribute('data-original'));
+        });
+      }
+    }
+
+    if (!urls.length) {
+      prev.hidden = next.hidden = true;
+      if (count) count.hidden = true;
+      box.setAttribute('data-image-count', '0');
+      return;
+    }
+
+    var index = 0;
+    function show(i) {
+      index = (i + urls.length) % urls.length;
+      if (img && img.tagName === 'IMG') {
+        img.classList.remove('is-broken');
+        img.setAttribute('src', urls[index]);
+      }
+      if (count) count.textContent = (index + 1) + '/' + urls.length;
+      box.setAttribute('data-image-count', String(urls.length));
+      var multi = urls.length > 1;
+      prev.disabled = next.disabled = !multi;
+      prev.hidden = next.hidden = !multi;
+      if (count) count.hidden = !multi;
+    }
+    function go(delta) { show(index + delta); }
+
+    // Buttons: exactly one transition per click. Never suppressed by the swipe guard.
+    prev.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); go(-1); });
+    next.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); go(1); });
+
+    // Broken image handling
+    if (img && img.tagName === 'IMG') {
+      img.addEventListener('error', function () {
+        img.classList.add('is-broken');
+        img.setAttribute('alt', '\u062a\u0639\u0630\u0651\u0631 \u062a\u062d\u0645\u064a\u0644 \u0627\u0644\u0635\u0648\u0631\u0629');
+      });
+    }
+
+    // Keyboard support (arrow keys) when the carousel is focused
+    box.setAttribute('tabindex', '0');
+    box.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { go(1); }
+      else if (e.key === 'ArrowLeft') { go(-1); }
+    });
+
+    // Touch / drag swipe via Pointer Events. Only the LINK click is suppressed after a swipe.
+    var startX = 0, startY = 0, moved = false, suppressLink = false;
+    box.addEventListener('pointerdown', function (e) {
+      if (e.target.closest('button')) return;
+      startX = e.clientX; startY = e.clientY; moved = false; suppressLink = false;
+    }, { passive: true });
+    box.addEventListener('pointermove', function (e) {
+      if (e.target.closest('button')) return;
+      if (Math.abs(e.clientX - startX) > 8) moved = true;
+    }, { passive: true });
+    box.addEventListener('pointerup', function (e) {
+      if (e.target.closest('button')) return;
+      var dx = e.clientX - startX, dy = e.clientY - startY;
+      if (urls.length > 1 && moved && Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.25) {
+        suppressLink = true;
+        go(dx < 0 ? 1 : -1);
+      }
+    }, { passive: true });
+    if (link) {
+      link.addEventListener('click', function (e) {
+        if (suppressLink) { e.preventDefault(); e.stopPropagation(); suppressLink = false; }
+      });
+    }
+
+    show(0);
+  }
+
+  /* ================= Detail page ================= */
+  function darnaRenderDetail() {
+    var art = document.querySelector('.property-detail');
+    if (!art) return;
+    var labels = darnaReadLabels(art);
+    var f = darnaParseFields(labels);
+    var info = darnaComputePrice(labels);
+
+    var priceEl = art.querySelector('[data-darna-price] .darna-price-value');
+    if (priceEl) priceEl.textContent = info ? darnaFormatPrice(info, 'ar') : '';
+
+    var st = darnaStatusClass(f.status);
+    var badge = art.querySelector('.detail-status');
+    if (badge) {
+      badge.classList.remove('is-available', 'is-unavailable');
+      if (st.cls) { badge.textContent = st.label; badge.classList.add(st.cls); }
+      else { badge.textContent = 'التوفر يُتحقق عند التواصل'; }
+    }
+
+    // type chip (separate from availability)
+    var typeChip = art.querySelector('.detail-type');
+    if (typeChip) {
+      if (f.type) { typeChip.textContent = f.type; typeChip.hidden = false; }
+      else { typeChip.hidden = true; }
+    }
+
+    // specs
+    var specs = art.querySelector('#detail-specs');
+    if (specs) {
+      var items = [];
+      if (f.beds) items.push(['\uD83D\uDECF', f.beds, '\u063a\u0631\u0641 \u0627\u0644\u0646\u0648\u0645']);
+      if (f.baths) items.push(['\uD83D\uDEBF', f.baths, '\u0627\u0644\u062d\u0645\u0627\u0645\u0627\u062a']);
+      if (f.sqm) items.push(['\uD83D\uDCD0', f.sqm + ' \u0645\u00B2', '\u0627\u0644\u0645\u0633\u0627\u062d\u0629']);
+      if (f.cap) items.push(['\uD83D\uDC65', f.cap, '\u0627\u0644\u0633\u0639\u0629']);
+      if (f.type) items.push(['\uD83C\uDFE0', f.type, '\u0627\u0644\u0646\u0648\u0639']);
+      if (f.area) items.push(['\uD83D\uDCCD', f.area, '\u0627\u0644\u0645\u0646\u0637\u0642\u0629']);
+      specs.innerHTML = items.map(function (it) {
+        return '<div class="spec-item"><span class="spec-icon" aria-hidden="true">' + it[0] + '</span><span class="spec-value">' + escapeHtml(it[1]) + '</span><span class="spec-label">' + it[2] + '</span></div>';
+      }).join('');
+      if (!items.length) specs.style.display = 'none';
+    }
+
+    // gallery from featured image + body images
+    var main = art.querySelector('#gallery-main-img');
+    var thumbs = art.querySelector('#gallery-thumbs');
+    var counter = art.querySelector('#gallery-counter');
+    var bodyImgs = art.querySelectorAll('#detail-body img');
+    var urls = [];
+    function add(u) { if (!u) return; u = String(u).replace(/&amp;/g, '&'); if (/^data:/i.test(u) || /transparent\.gif/i.test(u)) return; if (urls.indexOf(u) < 0) urls.push(u); }
+    if (main && main.getAttribute('src')) add(main.getAttribute('src'));
+    bodyImgs.forEach(function (i) { add(i.getAttribute('src') || i.getAttribute('data-src')); i.style.display = 'none'; });
+    var idx = 0;
+    function showDetail(i) {
+      if (!urls.length) return;
+      idx = (i + urls.length) % urls.length;
+      if (main && main.tagName === 'IMG') main.setAttribute('src', urls[idx]);
+      if (counter) counter.textContent = (idx + 1) + '/' + urls.length;
+      if (thumbs) Array.prototype.forEach.call(thumbs.children, function (t, k) { t.classList.toggle('active', k === idx); });
+      var multi = urls.length > 1;
+      var pb = art.querySelector('.gallery-btn.prev'), nb = art.querySelector('.gallery-btn.next');
+      if (pb) pb.hidden = !multi;
+      if (nb) nb.hidden = !multi;
+      if (counter) counter.hidden = !multi;
+    }
+    if (thumbs) {
+      thumbs.innerHTML = '';
+      urls.forEach(function (u, i) {
+        var t = document.createElement('img');
+        t.className = 'gallery-thumb' + (i === 0 ? ' active' : '');
+        t.src = u; t.alt = '\u0635\u0648\u0631\u0629 ' + (i + 1);
+        t.setAttribute('role', 'button'); t.setAttribute('tabindex', '0');
+        t.addEventListener('click', function () { showDetail(i); });
+        t.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showDetail(i); } });
+        thumbs.appendChild(t);
+      });
+    }
+    var pb = art.querySelector('.gallery-btn.prev'), nb = art.querySelector('.gallery-btn.next');
+    if (pb) pb.addEventListener('click', function () { showDetail(idx - 1); });
+    if (nb) nb.addEventListener('click', function () { showDetail(idx + 1); });
+    var gmain = art.querySelector('#gallery-main');
+    if (gmain) {
+      var sx = 0, moved = false;
+      gmain.addEventListener('pointerdown', function (e) { if (!e.target.closest('button')) { sx = e.clientX; moved = false; } }, { passive: true });
+      gmain.addEventListener('pointermove', function (e) { if (Math.abs(e.clientX - sx) > 8) moved = true; }, { passive: true });
+      gmain.addEventListener('pointerup', function (e) {
+        if (e.target.closest('button')) return;
+        var dx = e.clientX - sx;
+        if (urls.length > 1 && moved && Math.abs(dx) > 45) showDetail(idx + (dx < 0 ? 1 : -1));
+      }, { passive: true });
+    }
+    showDetail(0);
+
+    darnaLoadSimilar(art, labels);
+  }
+
+  function darnaLoadSimilar(art, labels) {
+    var section = art.querySelector('#similar-section');
+    var grid = art.querySelector('#similar-grid');
+    if (!section || !grid) return;
+    var skip = /^(price|pricefinal|cur|per|beds|bedrooms|baths|bathrooms|kitchens|kitchen|sqm|area|size|cap|guests|status|availability|type|ptype|loc|location)\s*[:\-_]/i;
+    var label = null;
+    for (var i = 0; i < labels.length; i++) { if (!skip.test(labels[i])) { label = labels[i]; break; } }
+    if (!label) return;
+    var base = (window.location.origin || '') + '/feeds/posts/default/-/' + encodeURIComponent(label) + '?alt=json&max-results=5';
+    fetch(base).then(function (r) { return r.json(); }).then(function (data) {
+      var entries = (data && data.feed && data.feed.entry) || [];
+      var current = window.location.href;
+      var shown = 0;
+      entries.forEach(function (e) {
+        var link = '';
+        (e.link || []).forEach(function (l) { if (l.rel === 'alternate') link = l.href; });
+        if (!link || link === current) return;
+        var title = e.title && e.title.$t ? e.title.$t : '';
+        var img = '';
+        try {
+          if (e.media$thumbnail && e.media$thumbnail.url) {
+            img = e.media$thumbnail.url.replace(/\/s72-c\//, '/w600-h450-c/');
+          } else if (e.content && e.content.$t) {
+            var mm = e.content.$t.match(/<img[^>]+(?:src|data-src)=["']([^"']+)["']/i);
+            if (mm && mm[1]) img = mm[1].replace(/^http:/, 'https:');
+          }
+        } catch (err) { img = ''; }
+        img = img ? escapeHtml(img) : '';
+        var card = document.createElement('article');
+        card.className = 'property-card';
+        card.setAttribute('data-url', link);
+        card.setAttribute('data-title', title);
+        card.innerHTML =
+          '<div class="property-photo-carousel" data-image-count="1">' +
+          '<a class="property-photo-link" href="' + link + '" aria-label="' + escapeHtml(title) + '">' +
+          (img ? '<img class="card-image carousel-current-image" src="' + img + '" alt="' + escapeHtml(title) + '" loading="lazy"/>' : '<div class="card-image carousel-empty">\u0644\u0627 \u062a\u0648\u062c\u062f \u0635\u0648\u0631\u0629</div>') +
+          '</a></div>' +
+          '<div class="card-body"><h3 class="card-title"><a href="' + link + '">' + escapeHtml(title) + '</a></h3>' +
+          '<a class="card-link" href="' + link + '">\u0639\u0631\u0636 \u0627\u0644\u062a\u0641\u0627\u0635\u064a\u0644</a></div>';
+        grid.appendChild(card);
+        shown++;
+      });
+      if (shown) section.hidden = false;
+    }).catch(function () { /* graceful: leave hidden */ });
+  }
+
+  /* ================= Inquiry form ================= */
+  function darnaInitInquiry() {
+    var form = document.getElementById('inquiry-form');
+    if (!form) return;
+    var nameEl = document.getElementById('inq-name');
+    var phoneEl = document.getElementById('inq-phone');
+    function setErr(fieldId, errId, msg) {
+      var fld = document.getElementById(fieldId), err = document.getElementById(errId);
+      if (fld) fld.classList.toggle('invalid', !!msg);
+      if (err) err.textContent = msg || '';
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (form.getAttribute('data-sending') === '1') return;
+      var ok = true;
+      var name = (nameEl.value || '').trim();
+      var phone = (phoneEl.value || '').trim();
+      if (name.length < 2) { setErr('fld-name', 'err-name', '\u064a\u0631\u062c\u0649 \u0625\u062f\u062e\u0627\u0644 \u0627\u0644\u0627\u0633\u0645.'); ok = false; } else setErr('fld-name', 'err-name', '');
+      if (!/^[+0-9\s\-()]{6,}$/.test(phone)) { setErr('fld-phone', 'err-phone', '\u064a\u0631\u062c\u0649 \u0625\u062f\u062e\u0627\u0644 \u0631\u0642\u0645 \u0647\u0627\u062a\u0641 \u0635\u062d\u064a\u062d.'); ok = false; } else setErr('fld-phone', 'err-phone', '');
+      if (!ok) { var bad = form.querySelector('.invalid input'); if (bad) bad.focus(); return; }
+      var prop = document.getElementById('inq-property').value || '';
+      var url = document.getElementById('inq-url').value || window.location.href;
+      var type = document.getElementById('inq-type').value || '\u0627\u0633\u062a\u0641\u0633\u0627\u0631';
+      var checkin = document.getElementById('inq-checkin').value || '';
+      var checkout = document.getElementById('inq-checkout').value || '';
+      var guests = document.getElementById('inq-guests').value || '';
+      var msg = (document.getElementById('inq-msg').value || '').trim();
+      var lines = [
+        '\u0627\u0644\u0633\u0644\u0627\u0645 \u0639\u0644\u064a\u0643\u0645\u060c \u0623\u0631\u063a\u0628 \u0628\u0627\u0644\u0627\u0633\u062a\u0641\u0633\u0627\u0631 \u0639\u0628\u0631 بلاَس.',
+        '\u0627\u0644\u0639\u0642\u0627\u0631: ' + prop,
+        '\u0646\u0648\u0639 \u0627\u0644\u0637\u0644\u0628: ' + type,
+        '\u0627\u0644\u0627\u0633\u0645: ' + name,
+        '\u0627\u0644\u0647\u0627\u062a\u0641: ' + phone
+      ];
+      if (checkin) lines.push('\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0648\u0635\u0648\u0644: ' + checkin);
+      if (checkout) lines.push('\u062a\u0627\u0631\u064a\u062e \u0627\u0644\u0645\u063a\u0627\u062f\u0631\u0629: ' + checkout);
+      if (guests) lines.push('\u0639\u062f\u062f \u0627\u0644\u0623\u0634\u062e\u0627\u0635: ' + guests);
+      if (msg) lines.push('\u0627\u0644\u0631\u0633\u0627\u0644\u0629: ' + msg);
+      lines.push('\u0631\u0627\u0628\u0637 \u0627\u0644\u0639\u0642\u0627\u0631: ' + url);
+      var wa = 'https://wa.me/25377313443?text=' + encodeURIComponent(lines.join('\n'));
+      form.setAttribute('data-sending', '1');
+      window.open(wa, '_blank', 'noopener');
+      var success = document.getElementById('inq-success');
+      if (success) { success.hidden = false; success.textContent = '\u062a\u0645 \u0641\u062a\u062d \u0648\u0627\u062a\u0633\u0627\u0628 \u0628\u0631\u0633\u0627\u0644\u062a\u0643. \u0627\u0644\u0625\u0631\u0633\u0627\u0644 \u0644\u0627 \u064a\u0624\u0643\u062f \u0627\u0644\u062d\u062c\u0632 \u2014 \u0627\u0644\u0625\u062f\u0627\u0631\u0629 \u062a\u0624\u0643\u062f \u0627\u0644\u062a\u0648\u0641\u0631 \u0648\u0627\u0644\u0633\u0639\u0631 \u0643\u062a\u0627\u0628\u064a\u064b\u0627.'; }
+      setTimeout(function () { form.removeAttribute('data-sending'); }, 1500);
+    });
+  }
+
+  /* ================= Local filters (current page results only) ================= */
+  function darnaInitFilters() {
+    var panel = document.getElementById('darna-filters');
+    var grid = document.getElementById('property-grid');
+    if (!panel || !grid) return;
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.property-card'));
+    if (!cards.length) return;
+
+    var qEl = document.getElementById('f-q'), typeEl = document.getElementById('f-type'), areaEl = document.getElementById('f-area');
+    var statusEl = document.getElementById('f-status'), unitEl = document.getElementById('f-unit');
+    var minEl = document.getElementById('f-min'), maxEl = document.getElementById('f-max');
+    var bedsEl = document.getElementById('f-beds'), bathsEl = document.getElementById('f-baths');
+    var sqmEl = document.getElementById('f-sqm'), sortEl = document.getElementById('f-sort');
+    var countEl = document.getElementById('f-count'), resetEl = document.getElementById('f-reset');
+
+    var types = {}, areas = {}, units = {};
+    cards.forEach(function (c) {
+      var t = c.getAttribute('data-type'), a = c.getAttribute('data-area'), u = c.getAttribute('data-unit');
+      if (t) types[t] = 1; if (a) areas[a] = 1; if (u) units[u] = 1;
+    });
+    function fill(sel, obj) {
+      if (!sel) return;
+      Object.keys(obj).forEach(function (v) { var o = document.createElement('option'); o.value = v; o.textContent = v; sel.appendChild(o); });
+    }
+    fill(typeEl, types); fill(areaEl, areas); fill(unitEl, units);
+    function syncHero(sel, vals) {
+      if (!sel) return;
+      vals.forEach(function (v) {
+        var exists = Array.prototype.some.call(sel.options, function (o) { return o.value === v; });
+        if (!exists) { var o = document.createElement('option'); o.value = v; o.textContent = v; sel.appendChild(o); }
+      });
+    }
+    syncHero(document.getElementById('hero-type'), Object.keys(types));
+    syncHero(document.getElementById('hero-area'), Object.keys(areas));
+
+    var originalOrder = cards.slice();
+    var noResults = document.createElement('div');
+    noResults.className = 'no-results';
+    noResults.style.display = 'none';
+    noResults.innerHTML = '<p>\u0644\u0627 \u062a\u0648\u062c\u062f \u0639\u0642\u0627\u0631\u0627\u062a \u0645\u0637\u0627\u0628\u0642\u0629 \u0644\u0644\u0641\u0644\u0627\u062a\u0631 \u0627\u0644\u0645\u062d\u062f\u062f\u0629.</p>';
+    grid.parentNode.insertBefore(noResults, grid.nextSibling);
+
+    function apply() {
+      var q = darnaNorm(qEl ? qEl.value : '');
+      var type = typeEl ? typeEl.value : '', area = areaEl ? areaEl.value : '';
+      var status = statusEl ? statusEl.value : '', unit = unitEl ? unitEl.value : '';
+      var min = minEl && minEl.value !== '' ? parseFloat(minEl.value) : null;
+      var max = maxEl && maxEl.value !== '' ? parseFloat(maxEl.value) : null;
+      var beds = bedsEl && bedsEl.value ? parseInt(bedsEl.value, 10) : null;
+      var baths = bathsEl && bathsEl.value ? parseInt(bathsEl.value, 10) : null;
+      var sqm = sqmEl && sqmEl.value !== '' ? parseFloat(sqmEl.value) : null;
+      var visible = 0;
+      cards.forEach(function (c) {
+        var ok = true;
+        var price = c.getAttribute('data-price') !== '' ? parseFloat(c.getAttribute('data-price')) : null;
+        var cbeds = c.getAttribute('data-beds') !== '' ? parseInt(c.getAttribute('data-beds'), 10) : null;
+        var cbaths = c.getAttribute('data-baths') !== '' ? parseInt(c.getAttribute('data-baths'), 10) : null;
+        var csqm = c.getAttribute('data-sqm') !== '' ? parseFloat(c.getAttribute('data-sqm')) : null;
+        if (q && (c.getAttribute('data-search') || '').indexOf(q) < 0) ok = false;
+        if (ok && type && c.getAttribute('data-type') !== type) ok = false;
+        if (ok && area && c.getAttribute('data-area') !== area) ok = false;
+        if (ok && status && c.getAttribute('data-status') !== status) ok = false;
+        if (ok && unit && c.getAttribute('data-unit') !== unit) ok = false;
+        if (ok && min !== null && (price === null || price < min)) ok = false;
+        if (ok && max !== null && (price === null || price > max)) ok = false;
+        if (ok && beds !== null && (cbeds === null || cbeds < beds)) ok = false;
+        if (ok && baths !== null && (cbaths === null || cbaths < baths)) ok = false;
+        if (ok && sqm !== null && (csqm === null || csqm < sqm)) ok = false;
+        c.style.display = ok ? '' : 'none';
+        if (ok) visible++;
+      });
+      var sort = sortEl ? sortEl.value : 'default';
+      var ordered = originalOrder.slice();
+      if (sort === 'price-asc') ordered.sort(function (a, b) { return (parseFloat(a.getAttribute('data-price')) || Infinity) - (parseFloat(b.getAttribute('data-price')) || Infinity); });
+      else if (sort === 'price-desc') ordered.sort(function (a, b) { return (parseFloat(b.getAttribute('data-price')) || -Infinity) - (parseFloat(a.getAttribute('data-price')) || -Infinity); });
+      else if (sort === 'beds-desc') ordered.sort(function (a, b) { return (parseInt(b.getAttribute('data-beds'), 10) || 0) - (parseInt(a.getAttribute('data-beds'), 10) || 0); });
+      else if (sort === 'sqm-desc') ordered.sort(function (a, b) { return (parseFloat(b.getAttribute('data-sqm')) || 0) - (parseFloat(a.getAttribute('data-sqm')) || 0); });
+      ordered.forEach(function (c) { grid.appendChild(c); });
+      if (countEl) countEl.innerHTML = '\u0639\u062f\u062f \u0627\u0644\u0646\u062a\u0627\u0626\u062c \u0627\u0644\u0645\u0639\u0631\u0648\u0636\u0629: <strong>' + visible + '</strong>';
+      noResults.style.display = visible ? 'none' : '';
+      grid.style.display = visible ? '' : 'none';
+    }
+
+    function debounce(fn, wait) { var t; return function () { var a = arguments, s = this; clearTimeout(t); t = setTimeout(function () { fn.apply(s, a); }, wait); }; }
+    var applyDebounced = debounce(apply, 220);
+    [qEl, minEl, maxEl, sqmEl].forEach(function (el) {
+      if (!el) return;
+      el.addEventListener('input', applyDebounced);
+      el.addEventListener('change', apply);
+    });
+    [typeEl, areaEl, statusEl, unitEl, bedsEl, bathsEl, sortEl].forEach(function (el) {
+      if (!el) return;
+      el.addEventListener('change', apply);
+    });
+    var applyBtn = document.getElementById('f-apply');
+    if (applyBtn) applyBtn.addEventListener('click', function () {
+      apply();
+      var d = document.getElementById('filters-disclosure');
+      if (d && window.innerWidth < 769) d.open = false;
+    });
+    if (resetEl) resetEl.addEventListener('click', function () {
+      [qEl, typeEl, areaEl, statusEl, unitEl, minEl, maxEl, bedsEl, bathsEl, sqmEl].forEach(function (el) { if (el) el.value = ''; });
+      if (sortEl) sortEl.value = 'default';
+      apply();
+    });
+    window.darnaApplyFilters = apply;
+    apply();
+  }
+
+  /* ================= Favourites ================= */
+  var FAV_KEY = 'placedj_favorites_v1';
+  function favList() { return readStore(FAV_KEY); }
+  function isFav(id) { return favList().some(function (r) { return r.id === id; }); }
+  function toggleFav(rec) {
+    if (!rec || !rec.id) return false;
+    var list = favList();
+    var i = -1;
+    list.forEach(function (r, k) { if (r.id === rec.id) i = k; });
+    if (i >= 0) list.splice(i, 1); else list.unshift(rec);
+    writeStore(FAV_KEY, list);
+    syncFavButtons(); renderFavPanel();
+    return i < 0;
+  }
+  function removeFav(id) {
+    writeStore(FAV_KEY, favList().filter(function (r) { return r.id !== id; }));
+    syncFavButtons(); renderFavPanel();
+  }
+  function syncFavButtons() {
+    document.querySelectorAll('.card-fav').forEach(function (btn) {
+      var card = btn.closest('.property-card');
+      var id = card ? (card.getAttribute('data-post-id') || card.getAttribute('data-url')) : '';
+      var on = isFav(id);
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? '\u0625\u0632\u0627\u0644\u0629 \u0645\u0646 \u0627\u0644\u0645\u0641\u0636\u0644\u0629' : '\u0625\u0636\u0627\u0641\u0629 \u0625\u0644\u0649 \u0627\u0644\u0645\u0641\u0636\u0644\u0629');
+    });
+    var dt = document.querySelector('.detail-fav');
+    if (dt) {
+      var art = document.querySelector('.property-detail');
+      var id2 = art ? (art.getAttribute('data-post-id') || '') : '';
+      var on2 = isFav(id2);
+      dt.classList.toggle('is-active', on2);
+      dt.setAttribute('aria-pressed', on2 ? 'true' : 'false');
+      dt.setAttribute('aria-label', on2 ? '\u0625\u0632\u0627\u0644\u0629 \u0645\u0646 \u0627\u0644\u0645\u0641\u0636\u0644\u0629' : '\u0625\u0636\u0627\u0641\u0629 \u0625\u0644\u0649 \u0627\u0644\u0645\u0641\u0636\u0644\u0629');
+    }
+  }
+  function renderFavPanel() {
+    var listEl = document.getElementById('favorites-list');
+    var list = favList();
+    var toggle = document.getElementById('favorites-toggle');
+    if (toggle) { toggle.setAttribute('data-count', String(list.length)); var b = toggle.querySelector('.fav-badge'); if (b) b.textContent = String(list.length); }
+    if (!listEl) return;
+    if (!list.length) {
+      listEl.innerHTML = '<p class="fav-empty">\u0644\u0627 \u062a\u0648\u062c\u062f \u0639\u0642\u0627\u0631\u0627\u062a \u0641\u064a \u0627\u0644\u0645\u0641\u0636\u0644\u0629 \u0628\u0639\u062f. \u0627\u0636\u063a\u0637 \u0639\u0644\u0649 \u0627\u0644\u0642\u0644\u0628 \u0641\u064a \u0623\u064a \u0628\u0637\u0627\u0642\u0629 \u0644\u0625\u0636\u0627\u0641\u062a\u0647\u0627.</p>';
+      return;
+    }
+    listEl.innerHTML = list.map(function (r) {
+      return '<article class="fav-item">' +
+        '<a class="fav-thumb" href="' + r.url + '">' + (r.image ? '<img src="' + r.image + '" alt="" loading="lazy"/>' : '<span class="fav-noimg">\u0644\u0627 \u0635\u0648\u0631\u0629</span>') + '</a>' +
+        '<div class="fav-info"><a class="fav-title" href="' + r.url + '">' + escapeHtml(r.title) + '</a>' +
+        '<div class="fav-meta">' + escapeHtml([r.type, r.area].filter(Boolean).join(' \u00B7 ')) + '</div>' +
+        '<div class="fav-price">' + escapeHtml(r.price || '') + '</div></div>' +
+        '<button type="button" class="fav-remove" data-id="' + escapeHtml(r.id) + '" aria-label="\u0625\u0632\u0627\u0644\u0629 \u0645\u0646 \u0627\u0644\u0645\u0641\u0636\u0644\u0629">\u00D7</button>' +
+        '</article>';
+    }).join('');
+    listEl.querySelectorAll('.fav-remove').forEach(function (b) {
+      b.addEventListener('click', function () { removeFav(b.getAttribute('data-id')); });
+    });
+  }
+  function darnaInitFavorites() {
+    document.querySelectorAll('.property-card .card-fav').forEach(function (btn) {
+      if (btn.getAttribute('data-fav-init') === '1') return;
+      btn.setAttribute('data-fav-init', '1');
+      btn.addEventListener('click', function (e) {
+        e.preventDefault(); e.stopPropagation();
+        var card = btn.closest('.property-card');
+        if (card) toggleFav(darnaRecordFrom(card));
+      });
+    });
+    var dt = document.querySelector('.detail-fav');
+    if (dt && dt.getAttribute('data-fav-init') !== '1') {
+      dt.setAttribute('data-fav-init', '1');
+      dt.addEventListener('click', function (e) {
+        e.preventDefault();
+        var art = document.querySelector('.property-detail');
+        if (art) toggleFav(darnaRecordFrom(art));
+      });
+    }
+    var toggle = document.getElementById('favorites-toggle');
+    var panel = document.getElementById('favorites-panel');
+    if (toggle && panel) {
+      toggle.addEventListener('click', function () {
+        panel.hidden = !panel.hidden;
+        toggle.setAttribute('aria-expanded', panel.hidden ? 'false' : 'true');
+      });
+    }
+    var close = document.getElementById('favorites-close');
+    if (close && panel) close.addEventListener('click', function () { panel.hidden = true; });
+    syncFavButtons();
+    renderFavPanel();
+  }
+
+  /* ================= Comparison ================= */
+  var CMP_KEY = 'placedj_compare_v1';
+  var CMP_MAX = 4;
+  function cmpList() { return readStore(CMP_KEY); }
+  function isCmp(id) { return cmpList().some(function (r) { return r.id === id; }); }
+  function toggleCmp(rec) {
+    if (!rec || !rec.id) return false;
+    var list = cmpList();
+    var i = -1;
+    list.forEach(function (r, k) { if (r.id === rec.id) i = k; });
+    if (i >= 0) list.splice(i, 1);
+    else { if (list.length >= CMP_MAX) { window.alert('\u064a\u0645\u0643\u0646 \u0645\u0642\u0627\u0631\u0646\u0629 ' + CMP_MAX + ' \u0639\u0642\u0627\u0631\u0627\u062a \u0643\u062d\u062f \u0623\u0642\u0635\u0649.'); return false; } list.push(rec); }
+    writeStore(CMP_KEY, list);
+    syncCmpButtons(); renderCompareBar(); renderCompareTable();
+    return i < 0;
+  }
+  function removeCmp(id) {
+    writeStore(CMP_KEY, cmpList().filter(function (r) { return r.id !== id; }));
+    syncCmpButtons(); renderCompareBar(); renderCompareTable();
+  }
+  function syncCmpButtons() {
+    document.querySelectorAll('.card-compare').forEach(function (btn) {
+      var card = btn.closest('.property-card');
+      var id = card ? (card.getAttribute('data-post-id') || card.getAttribute('data-url')) : '';
+      var on = isCmp(id);
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', on ? '\u0625\u0632\u0627\u0644\u0629 \u0645\u0646 \u0627\u0644\u0645\u0642\u0627\u0631\u0646\u0629' : '\u0625\u0636\u0627\u0641\u0629 \u0625\u0644\u0649 \u0627\u0644\u0645\u0642\u0627\u0631\u0646\u0629');
+    });
+    var dc = document.querySelector('.detail-compare');
+    if (dc) {
+      var art = document.querySelector('.property-detail');
+      var id2 = art ? (art.getAttribute('data-post-id') || '') : '';
+      var on2 = isCmp(id2);
+      dc.classList.toggle('is-active', on2);
+      dc.setAttribute('aria-pressed', on2 ? 'true' : 'false');
+    }
+  }
+  function renderCompareBar() {
+    var bar = document.getElementById('compare-bar');
+    var items = document.getElementById('compare-items');
+    if (!bar) return;
+    var list = cmpList();
+    bar.hidden = !list.length;
+    if (items) items.textContent = '\u0627\u0644\u0645\u0642\u0627\u0631\u0646\u0629 (' + list.length + '/' + CMP_MAX + ')';
+  }
+  function renderCompareTable() {
+    var wrap = document.getElementById('compare-table');
+    if (!wrap) return;
+    var list = cmpList();
+    if (!list.length) { wrap.innerHTML = '<p class="compare-empty">\u0644\u0645 \u062a\u064f\u0636\u0641 \u0623\u064a \u0639\u0642\u0627\u0631\u0627\u062a \u0644\u0644\u0645\u0642\u0627\u0631\u0646\u0629 \u0628\u0639\u062f.</p>'; return; }
+    var rows = [
+      ['\u0627\u0644\u0633\u0639\u0631', 'price'],
+      ['\u0648\u062d\u062f\u0629 \u0627\u0644\u0633\u0639\u0631', 'unit'],
+      ['\u0627\u0644\u0646\u0648\u0639', 'type'],
+      ['\u0627\u0644\u0645\u0646\u0637\u0642\u0629', 'area'],
+      ['\u0627\u0644\u0645\u0633\u0627\u062d\u0629 (\u0645\u00B2)', 'sqm'],
+      ['\u063a\u0631\u0641 \u0627\u0644\u0646\u0648\u0645', 'beds'],
+      ['\u0627\u0644\u062d\u0645\u0627\u0645\u0627\u062a', 'baths'],
+      ['\u0627\u0644\u062a\u0648\u0641\u0631', 'status']
+    ];
+    var html = '<table class="compare-table"><thead><tr><th scope="col">\u0627\u0644\u062e\u0627\u0635\u064a\u0629</th>';
+    list.forEach(function (r) {
+      html += '<th scope="col"><div class="cmp-head">' + (r.image ? '<img src="' + r.image + '" alt="" loading="lazy"/>' : '') +
+        '<a href="' + r.url + '">' + escapeHtml(r.title) + '</a>' +
+        '<button type="button" class="cmp-remove" data-id="' + escapeHtml(r.id) + '" aria-label="\u0625\u0632\u0627\u0644\u0629 \u0645\u0646 \u0627\u0644\u0645\u0642\u0627\u0631\u0646\u0629">\u00D7</button></div></th>';
+    });
+    html += '</tr></thead><tbody>';
+    rows.forEach(function (row) {
+      html += '<tr><th scope="row">' + row[0] + '</th>';
+      list.forEach(function (r) {
+        var v = r[row[1]];
+        html += '<td>' + (v != null && v !== '' ? escapeHtml(String(v)) : '<span class="cmp-na">\u063a\u064a\u0631 \u0645\u062a\u0648\u0641\u0631</span>') + '</td>';
+      });
+      html += '</tr>';
+    });
+    html += '</tbody></table>';
+    wrap.innerHTML = html;
+    wrap.querySelectorAll('.cmp-remove').forEach(function (b) {
+      b.addEventListener('click', function () { removeCmp(b.getAttribute('data-id')); });
+    });
+  }
+  function darnaInitCompare() {
+    document.querySelectorAll('.property-card .card-compare').forEach(function (btn) {
+      if (btn.getAttribute('data-cmp-init') === '1') return;
+      btn.setAttribute('data-cmp-init', '1');
+      btn.addEventListener('click', function (e) {
+        e.preventDefault(); e.stopPropagation();
+        var card = btn.closest('.property-card');
+        if (card) toggleCmp(darnaRecordFrom(card));
+      });
+    });
+    var dc = document.querySelector('.detail-compare');
+    if (dc && dc.getAttribute('data-cmp-init') !== '1') {
+      dc.setAttribute('data-cmp-init', '1');
+      dc.addEventListener('click', function (e) {
+        e.preventDefault();
+        var art = document.querySelector('.property-detail');
+        if (art) toggleCmp(darnaRecordFrom(art));
+      });
+    }
+    var open = document.getElementById('compare-open');
+    var modal = document.getElementById('compare-modal');
+    if (open && modal) open.addEventListener('click', function () { renderCompareTable(); modal.hidden = false; });
+    var close = document.getElementById('compare-close');
+    if (close && modal) close.addEventListener('click', function () { modal.hidden = true; });
+    var clear = document.getElementById('compare-clear');
+    if (clear) clear.addEventListener('click', function () { writeStore(CMP_KEY, []); syncCmpButtons(); renderCompareBar(); renderCompareTable(); });
+    syncCmpButtons(); renderCompareBar();
+  }
+
+  /* ================= Language selector (configurable) ================= */
+  var LANG_KEY = 'placedj_lang_v1';
+  // Edit these three URLs to point at your language versions. Empty = current blog with Blogger's ?hl= UI language.
+  var PLACEDJ_LANGS = { ar: '', en: '?hl=en', fr: '?hl=fr' };
+  function darnaInitLang() {
+    var sel = document.getElementById('lang-select');
+    if (!sel) return;
+    var saved = null;
+    try { saved = localStorage.getItem(LANG_KEY); } catch (e) { }
+    if (saved && PLACEDJ_LANGS[saved] !== undefined) sel.value = saved;
+    sel.addEventListener('change', function () {
+      var v = sel.value;
+      try { localStorage.setItem(LANG_KEY, v); } catch (e) { }
+      var suffix = PLACEDJ_LANGS[v] || '';
+      var clean = window.location.pathname.replace(/\?.*$/, '');
+      window.location.href = clean + suffix;
+    });
+  }
+
+  /* ================= Add-property section (single editable setting) ================= */
+  // Set this to your Google Form URL after creating it with the owner's Google account.
+  // While empty, the button safely falls back to a real WhatsApp intake (never a dead placeholder).
+  window.PLACEDJ_ADD_PROPERTY_URL = '';
+  function darnaInitAddProperty() {
+    var btn = document.getElementById('add-property-btn');
+    if (!btn) return;
+    var url = String(window.PLACEDJ_ADD_PROPERTY_URL || '').trim();
+    var note = document.getElementById('add-property-note');
+    if (url && url !== '#') {
+      btn.setAttribute('href', url);
+      btn.setAttribute('target', '_blank');
+      btn.setAttribute('rel', 'noopener');
+      return;
+    }
+    // Google Form not configured yet (BLOCKED pending the owner's Google account).
+    // Fall back to a working WhatsApp intake so the CTA is never a broken link.
+    var waMsg = 'أرغب بإضافة عقاري إلى بلاَس (Place-dj).\nالاسم: \nنوع العقار: \nالمنطقة: \nالسعر ووحدة السعر: \nالوصف: \nروابط الصور: ';
+    btn.setAttribute('href', 'https://wa.me/25377313443?text=' + encodeURIComponent(waMsg));
+    btn.setAttribute('target', '_blank');
+    btn.setAttribute('rel', 'noopener');
+    if (note) note.textContent = 'نموذج Google Forms قيد التجهيز من حساب المالك. حاليًا يُرسل طلبك عبر واتساب، وتُراجع الإدارة العقار قبل النشر.';
+  }
+
+  /* ================= Hero quick filter ================= */
+  window.darnaHeroFilter = function () {
+    var s = document.getElementById('hero-search'), t = document.getElementById('hero-type'), a = document.getElementById('hero-area');
+    var panel = document.getElementById('darna-filters');
+    if (!panel) {
+      var q = s && s.value.trim();
+      if (q) { window.location.href = window.location.origin + '/search?q=' + encodeURIComponent(q); return; }
+      var parts = [];
+      if (t && t.value) parts.push(t.value);
+      if (a && a.value) parts.push(a.value);
+      window.location.href = parts.length ? (window.location.origin + '/search/label/' + encodeURIComponent(parts.join('+'))) : window.location.origin;
+      return;
+    }
+    if (s && document.getElementById('f-q')) document.getElementById('f-q').value = s.value;
+    if (t && t.value && document.getElementById('f-type')) document.getElementById('f-type').value = t.value;
+    if (a && a.value && document.getElementById('f-area')) document.getElementById('f-area').value = a.value;
+    if (window.darnaApplyFilters) window.darnaApplyFilters();
+    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  /* ================= Date direction isolation (RTL) ================= */
+  function darnaIsolateDates(root) {
+    if (!root || !document.createTreeWalker) return;
+    var re = /\d{4}-\d{2}-\d{2}/;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) { if (re.test(n.nodeValue)) nodes.push(n); }
+    nodes.forEach(function (node) {
+      var parts = node.nodeValue.split(/(\d{4}-\d{2}-\d{2})/);
+      var frag = document.createDocumentFragment();
+      parts.forEach(function (p) {
+        if (/^\d{4}-\d{2}-\d{2}$/.test(p)) {
+          var b = document.createElement('bdi');
+          b.setAttribute('dir', 'ltr');
+          b.textContent = p;
+          frag.appendChild(b);
+        } else if (p) { frag.appendChild(document.createTextNode(p)); }
+      });
+      if (node.parentNode) node.parentNode.replaceChild(frag, node);
+    });
+  }
+
+  /* ================= Init ================= */
+  function darnaInit() {
+    document.querySelectorAll('.property-card').forEach(function (c) {
+      if (c.closest('#similar-grid')) return;
+      darnaRenderCard(c);
+    });
+    // Exclude non-property posts (e.g. complaint / informational posts) from the property grid
+    document.querySelectorAll('#property-grid .property-card[data-property="0"]').forEach(function (c) {
+      if (c.parentNode) c.parentNode.removeChild(c);
+    });
+    document.querySelectorAll('.property-photo-carousel').forEach(function (b) {
+      if (b.closest('#similar-grid')) return;
+      darnaCarousel(b);
+    });
+    darnaRenderDetail();
+    document.querySelectorAll('.post-body').forEach(function (b) { darnaIsolateDates(b); });
+    var waCta = document.querySelector('.whatsapp-cta');
+    if (waCta) {
+      var ttlEl = document.querySelector('.detail-title');
+      var waMsg = 'استفسار عن العقار: ' + (ttlEl ? ttlEl.textContent.trim() : document.title) + '\n' + window.location.href;
+      waCta.setAttribute('href', 'https://wa.me/25377313443?text=' + encodeURIComponent(waMsg));
+    }
+    darnaInitInquiry();
+    darnaInitFilters();
+    darnaInitFavorites();
+    darnaInitCompare();
+    darnaInitLang();
+    darnaInitAddProperty();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', darnaInit);
+  else darnaInit();
+})();
+//]]>
+</script>
+
+<b:include data='blog' name='google-analytics'/>
+
+</body>
+</html>
