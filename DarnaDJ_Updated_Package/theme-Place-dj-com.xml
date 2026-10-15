@@ -697,7 +697,7 @@
 
       <b:if cond='data:view.isHomepage'>
         <b:section class='home-top-picks' id='home-top-picks' maxwidgets='1' showaddelement='yes'>
-          <b:widget id='HTMLTopPicks1' locked='false' title='يفضلها الكثيرون' type='HTML' version='2' visible='true'>
+          <b:widget id='HTML3' locked='false' title='يفضلها الكثيرون' type='HTML' version='2' visible='true'>
             <b:widget-settings>
               <b:widget-setting name='content'><![CDATA[<section class="top-picks-section" data-source="editorial" hidden="hidden" id="top-picks-section">
   <h2 class="section-title">يفضلها الكثيرون</h2>
@@ -1503,7 +1503,7 @@
             </div>
           </b:includable>
         </b:widget>
-        <b:widget id='HTMLFilter1' locked='false' title='تصفية نصية (داخل هذه الصفحة)' type='HTML' version='2' visible='true'>
+        <b:widget id='HTML4' locked='false' title='تصفية نصية (داخل هذه الصفحة)' type='HTML' version='2' visible='true'>
           <b:widget-settings>
             <b:widget-setting name='content'><![CDATA[<div class="darna-filters" id="darna-filters">
   <p class="filters-scope">تُطبَّق هذه الفلاتر على العقارات المعروضة في هذه الصفحة فقط. للبحث في كل المنشورات استخدم صندوق البحث في الأعلى.</p>

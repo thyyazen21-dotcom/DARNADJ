@@ -19,7 +19,7 @@
 - [x] U6 hero/footer/add-property marketing copy
 - [x] U7 region section (9 cards + intro + place-dj.com links, verbatim)
 - [x] U2 remove filter from content-area
-- [x] U2 insert HTMLFilter1 widget in sidebar (below HTML2 ad)
+- [x] U2 insert HTML4 widget in sidebar (below HTML2 ad)
 - [x] U3 insert home-top-picks section before «عقارات مميزة»
 - [x] U4 insert rating section before «عقارات مشابهة»
 
@@ -48,6 +48,14 @@
 ## Final — Package, commit (in progress)
 - [x] Write test report (PASS/FAIL/NOT TESTED/BLOCKED)
 - [x] Update PLACE_DJ_EXECUTION_STATE.md
-- [ ] Build ZIP package (final XML, backup, state, report, import/rollback)
-- [ ] Commit + push to GitHub
-- [ ] Deliver report with readiness status
+- [x] Build ZIP package (final XML, backup, state, report, import/rollback) → Place-dj_Final_Package.zip (127,565 bytes, 12 files)
+- [x] Commit + push to GitHub → commit d12a4c9 pushed to thyyazen21-dotcom/DARNADJ main
+- [x] Deliver report with readiness status → READY TO IMPORT (not published)
+
+## Hotfix — Blogger widget id validation (owner install error)
+- [x] Diagnose: "The new widget id HTMLFilter1 is invalid for type: HTML"
+- [x] Rename HTMLTopPicks1 → HTML3, HTMLFilter1 → HTML4 (Blogger requires <Type><Number>)
+- [x] Add widget-id-format guard to both test suites
+- [x] Re-run tests (45 structure + 56 JS = 101 pass, 0 fail)
+- [x] Update test report + execution state
+- [ ] Rebuild ZIP + re-commit + re-push

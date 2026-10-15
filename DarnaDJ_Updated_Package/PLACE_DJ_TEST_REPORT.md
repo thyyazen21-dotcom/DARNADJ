@@ -10,8 +10,8 @@
 
 | المؤشّر | القيمة |
 |---|---|
-| اختبارات الوحدة (JS) | **52 / 52 ناجح** |
-| اختبارات البنية (XML/JS) | **44 / 44 ناجح** |
+| اختبارات الوحدة (JS) | **56 / 56 ناجح** |
+| اختبارات البنية (XML/JS) | **45 / 45 ناجح** |
 | XML صالح (well-formed) | ✅ `xml.dom.minidom` |
 | JS صالح | ✅ `node --check` |
 | حالة التسليم | **READY TO IMPORT** |
@@ -22,6 +22,24 @@
 - **FAIL** = فشل.
 - **NOT TESTED** = يتطلب بيئة Blogger حيّة (لم تُختبر).
 - **BLOCKED** = يتطلب صلاحية/حساب خارجي لا توفّر في هذه الجلسة.
+
+---
+
+## 0.1 إصلاح حرج — معرّفات أدوات Blogger (Critical Fix)
+
+> **الخطأ الذي واجهه المالك عند التنصيب:** `The new widget id "HTMLFilter1" is invalid for type: HTML`
+
+**السبب:** يفرض Blogger أن يكون معرّف كل أداة `b:widget` بالصيغة `<النوع><رقم>` حصرًا (مثل `HTML1`، `HTML2`). المعرّفان المخصّصان `HTMLFilter1` و`HTMLTopPicks1` خالفا هذه القاعدة، فرفض Blogger الاستيراد.
+
+**الإصلاح (مُنفَّذ):**
+- `HTMLTopPicks1` → **`HTML3`**
+- `HTMLFilter1` → **`HTML4`**
+
+لم تتغيّر أي وظيفة: نفس المحتوى، نفس المعرّفات الداخلية (`#darna-filters`، `#top-picks-rail`)، نفس الـ JS. تغيّر اسم الأداة فقط ليصبح مطابقًا لصيغة Blogger.
+
+**تحقّق وقائي مضاف:** فحص جديد في `tests/validate_structure.py` و`tests/place_dj_theme.test.js` يتأكد أن **كل** معرّفات الأدوات تطابق `<Type><Number>`، لمنع تكرار هذا الخطأ.
+
+**حالة الإصلاح:** **PASS** (ثابت — XML صالح + الفحص الوقائي ناجح).
 
 ---
 
@@ -44,7 +62,7 @@
 
 | البند | الحالة | الدليل |
 |---|---|---|
-| ويدجت `HTMLFilter1` موجود في `sidebar-widgets` | **PASS** | `<b:widget id='HTMLFilter1' ... type='HTML' ...>` بعد `HTML2` وقبل `PopularPosts1`. |
+| ويدجت `HTML4` موجود في `sidebar-widgets` | **PASS** | `<b:widget id='HTML4' ... type='HTML' ...>` بعد `HTML2` وقبل `PopularPosts1`. |
 | العنوان المطلوب | **PASS** | `title='تصفية نصية (داخل هذه الصفحة)'` |
 | الملاحظة التوضيحية | **PASS** | «تُطبَّق هذه الفلاتر على العقارات المعروضة في هذه الصفحة فقط. للبحث في كل المنشورات استخدم صندوق البحث في الأعلى.» |
 | **نُقل لا نُسخ (نسخة واحدة فقط)** | **PASS** | `id="darna-filters"` يظهر **مرة واحدة** في الملف. لا نموذجان متوازيان. |
@@ -62,7 +80,7 @@
 | البند | الحالة | الدليل |
 |---|---|---|
 | القسم موجود **قبل** `main-blog` (عقارات مميزة) | **PASS** | `<b:section class='home-top-picks' id='home-top-picks'>` بين `home-before-posts` و`main-blog`. |
-| ويدجت `HTMLTopPicks1` بالعنوان المطلوب | **PASS** | `title='يفضلها الكثيرون'` |
+| ويدجت `HTML3` بالعنوان المطلوب | **PASS** | `title='يفضلها الكثيرون'` |
 | شريط أفقي (rail) + دعم RTL | **PASS** | `<section class="top-picks-section" data-source="editorial" hidden="hidden" id="top-picks-section">` + `<div class="top-picks-rail" id="top-picks-rail" role="list">` |
 | تمرير لمسي سلس + دعم لوحة المفاتيح | **PASS (ثابت)** | CSS `overflow-x:auto; scroll-snap-type` + `role='list'`؛ البطاقات روابط قابلة للتركيز. |
 | **عدم اختلاق أرقام مشاهدات** | **PASS** | لا توجد أي أرقام مشاهدات مُختلقة؛ المصدر `data-source="editorial"` (اختيار تحريري). |
@@ -151,7 +169,7 @@
 | البند | الحالة | الدليل |
 |---|---|---|
 | 7 أقسام `b:section` بمعرّفات فريدة ثابتة | **PASS** | `header-widgets, home-before-posts, home-top-picks, main-blog, home-after-posts, sidebar-widgets, footer-widgets` |
-| 6 أدوات `b:widget` | **PASS** | `HTMLTopPicks1, Blog1, Label1, HTML2, HTMLFilter1, PopularPosts1` |
+| 6 أدوات `b:widget` | **PASS** | `HTML3, Blog1, Label1, HTML2, HTML4, PopularPosts1` |
 | الترويسة/الفوتر مرئيان في وضع التخطيط | **PASS** | قواعد `body#layout` تجعل `.site-header`/`.site-footer` لوحات فاتحة (لم تبقَ `display:none`). |
 | أقسام قابلة للإضافة | **PASS** | `home-top-picks` → `showaddelement='yes'`؛ `header-widgets`, `home-before-posts`, `home-after-posts`, `sidebar-widgets`, `footer-widgets` كلها `yes`. |
 | الحفاظ على الوظائف الحيوية عند حذف ويدجت اختياري | **PASS** | `Blog1` (`locked='true'`) محمي؛ الفلترة/التقييم/المفضلة تعتمد على JS + معرّفات ثابتة لا على أدوات قابلة للحذف. |

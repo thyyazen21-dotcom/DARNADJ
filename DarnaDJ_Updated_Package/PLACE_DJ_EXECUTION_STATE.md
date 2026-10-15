@@ -18,8 +18,9 @@
 | المستودع | `github.com/thyyazen21-dotcom/DARNADJ` (branch `main`) |
 | آخر commit أساس | `3322990` ("Place-dj: record delivery commit SHA in execution state") |
 | حالة التسليم | **READY TO IMPORT** (نشر الموقع الحيّ يتطلب إذن المالك — لم يُنشر) |
-| اختبارات الوحدة (JS) | **52/52 ناجح** |
-| اختبارات البنية (XML/JS) | **44/44 ناجح** |
+| إصلاح حرج (معرّفات الأدوات) | ✅ `HTMLTopPicks1`→`HTML3`، `HTMLFilter1`→`HTML4` (خطأ Blogger: `invalid widget id`) |
+| اختبارات الوحدة (JS) | **56/56 ناجح** |
+| اختبارات البنية (XML/JS) | **45/45 ناجح** |
 | XML صالح | ✅ `xml.dom.minidom` |
 | JS صالح | ✅ `node --check` |
 | تقرير الاختبار | `PLACE_DJ_TEST_REPORT.md` |
@@ -32,8 +33,8 @@
 | # | المحور | الحالة | الدليل المختصر |
 |---|---|---|---|
 | 1 | إصلاح نموذج فلترة الترويسة | ✅ منفَّذ | `.header-inner min-height:60px; gap:12px 16px` + `.search-bar min-width:0; flex:0 1 auto` + فصل البحث الشامل (`data:blog.searchUrl`). السلوك الحيّ = NOT TESTED. |
-| 2 | نقل نموذج الفلترة إلى الشريط الجانبي تحت HTML2 | ✅ منفَّذ | ويدجت `HTMLFilter1` (type HTML، title «تصفية نصية (داخل هذه الصفحة)») بعد `HTML2`؛ نُقل لا نُسخ (نسخة واحدة `#darna-filters`)؛ كل المعرّفات محفوظة؛ منطق `darnaInitFilters` لم يتغيّر. |
-| 3 | قسم «يفضلها الكثيرون» قبل «عقارات مميزة» | ✅ منفَّذ | قسم `home-top-picks` + ويدجت `HTMLTopPicks1` + `#top-picks-rail`؛ مصدر تحريري `window.PLACEDJ_TOP_PICKS` (بيانات حقيقية فقط، بلا أرقام مشاهدات مُختلقة)؛ `darnaInitTopPicks()` موصول. |
+| 2 | نقل نموذج الفلترة إلى الشريط الجانبي تحت HTML2 | ✅ منفَّذ | ويدجت `HTML4` (type HTML، title «تصفية نصية (داخل هذه الصفحة)») بعد `HTML2`؛ نُقل لا نُسخ (نسخة واحدة `#darna-filters`)؛ كل المعرّفات محفوظة؛ منطق `darnaInitFilters` لم يتغيّر. |
+| 3 | قسم «يفضلها الكثيرون» قبل «عقارات مميزة» | ✅ منفَّذ | قسم `home-top-picks` + ويدجت `HTML3` + `#top-picks-rail`؛ مصدر تحريري `window.PLACEDJ_TOP_PICKS` (بيانات حقيقية فقط، بلا أرقام مشاهدات مُختلقة)؛ `darnaInitTopPicks()` موصول. |
 | 4 | نظام التقييم داخل صفحة العقار | ✅ منفَّذ | `#rating-section` بين `.detail-grid` و`.similar-section`؛ 5 نجوم + تعليق + متوسط + قائمة سابقة؛ `localStorage` لكل جهاز؛ نقطة تكامل `PLACEDJ_RATINGS_ENDPOINT`؛ `darnaInitRating()` موصول. التخزين المشترك = BLOCKED. |
 | 5 | الفوتر بعمودين على الجوال (روابط/سياسات) | ✅ منفَّذ | `@media(max-width:768px){ .footer-grid{grid-template-columns:1fr 1fr} }` + الصف الأول/الأخير بعرض كامل؛ كل الروابط محفوظة؛ الروابط الحيّة تم التحقق منها. |
 | 6 | إزالة الرسائل القديمة واستبدالها بنص تسويقي | ✅ منفَّذ | النصوص الثلاثة القديمة أُزيلت (عدد الظهور = 0)؛ نصوص تسويقية جديدة في Hero/الفوتر/إضافة عقار/meta. |

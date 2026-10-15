@@ -30,10 +30,17 @@ for s in required_sections:
     check(f"section present: {s}", s in found_sections)
 
 # 3. Required widgets
-required_widgets = {"Blog1":"Blog","Label1":"Label","HTML2":"HTML","HTMLFilter1":"HTML","HTMLTopPicks1":"HTML","PopularPosts1":"PopularPosts"}
+required_widgets = {"Blog1":"Blog","Label1":"Label","HTML2":"HTML","HTML3":"HTML","HTML4":"HTML","PopularPosts1":"PopularPosts"}
 found_widgets = dict(re.findall(r"<b:widget[^>]*\bid='([^']+)'[^>]*\btype='([^']+)'", raw))
 for wid, wtype in required_widgets.items():
     check(f"widget present: {wid} ({wtype})", found_widgets.get(wid) == wtype, found_widgets.get(wid,"missing"))
+
+# 3b. Blogger requires widget ids of the exact form <Type><Number> (e.g. HTML3, Blog1).
+# An id like 'HTMLFilter1' is rejected on import with:
+#   The new widget id "HTMLFilter1" is invalid for type: HTML
+bad_widget_ids = [wid for wid, wtype in found_widgets.items()
+                  if not re.fullmatch(re.escape(wtype) + r"\d+", wid)]
+check("widget ids match <Type><Number>", len(bad_widget_ids) == 0, ", ".join(bad_widget_ids))
 
 # 4. Duplicate id attributes on rendered HTML elements.
 # Exclusions (documented, all legitimate):
@@ -65,7 +72,7 @@ for tag in ["b:section","b:widget","b:includable"]:
 features = {
     "search form (data:blog.searchUrl)": "data:blog.searchUrl",
     "filter panel (darna-filters)": 'id="darna-filters"',
-    "sidebar filter widget": "id='HTMLFilter1'",
+    "sidebar filter widget": "id='HTML4'",
     "top picks section": "id='home-top-picks'",
     "top picks rail": 'id="top-picks-rail"',
     "rating section": "id='rating-section'",

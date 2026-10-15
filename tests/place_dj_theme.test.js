@@ -34,12 +34,16 @@ ok('XML parses', (() => {
   try { require('child_process').execSync(`python3 -c "import xml.dom.minidom as m; m.parse('${XML}')"`, { stdio: 'ignore' }); return true; }
   catch (e) { return false; }
 })());
-for (const sec of ['header-widgets', 'home-before-posts', 'main-blog', 'home-after-posts', 'sidebar-widgets', 'footer-widgets']) {
+for (const sec of ['header-widgets', 'home-before-posts', 'home-top-picks', 'main-blog', 'home-after-posts', 'sidebar-widgets', 'footer-widgets']) {
   ok(`section present: ${sec}`, src.includes(`id='${sec}'`));
 }
-for (const wid of ['Blog1', 'Label1', 'HTML2', 'PopularPosts1']) {
+for (const wid of ['Blog1', 'Label1', 'HTML2', 'HTML3', 'HTML4', 'PopularPosts1']) {
   ok(`widget present: ${wid}`, src.includes(`id='${wid}'`));
 }
+ok('widget ids match <Type><Number>', (src.match(/<b:widget id='[^']+'[^>]*type='[^']+'/g) || []).every(tag => {
+  const m = tag.match(/id='([^']+)'[^>]*type='([^']+)'/);
+  return new RegExp('^' + m[2] + '\\d+$').test(m[1]);
+}));
 ok('hero H1 exact (بلاَس — اعثر على سكنك في جيبوتي)', src.includes('<h1>بلاَس &#8212; اعثر على سكنك في جيبوتي</h1>'));
 ok('hero description exact (marketing copy)', src.includes('اكتشف خيارات السكن في جيبوتي، وقارن العقارات المتاحة، واختر ما يناسب احتياجاتك.'));
 ok('browse-by-region has 9 regions', ['قلب جيبوتي المدينة','حي هيرون','هراموس','غبودة','أمبولي','البلاتو','بُلوص','أربها','بلبلا وما حولها'].every(r => src.includes(r)));
@@ -47,7 +51,7 @@ ok('region links use place-dj.com (9)', (src.match(/https:\/\/www\.place-dj\.com
 ok('old disclaimer removed', !src.includes('الاستفسار لا يؤكد التوفر أو الحجز'));
 ok('old brand tagline removed', !src.includes('منصة تأجير العقارات في جيبوتي. أسعار واضحة بالدولار وتواصل مباشر.'));
 ok('old Google Forms note removed', !src.includes('نموذج Google Forms قيد التجهيز'));
-ok('sidebar filter widget present', src.includes("id='HTMLFilter1'"));
+ok('sidebar filter widget present', src.includes("id='HTML4'"));
 ok('top picks section present', src.includes("id='home-top-picks'"));
 ok('top picks rail present', src.includes('id="top-picks-rail"'));
 ok('rating section present', src.includes("id='rating-section'"));
