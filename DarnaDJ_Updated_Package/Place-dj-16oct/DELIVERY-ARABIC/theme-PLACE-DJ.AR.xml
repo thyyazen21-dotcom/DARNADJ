@@ -190,7 +190,7 @@
   .search-bar { position: relative; z-index: 2; pointer-events: auto; background: rgba(255,255,255,.1); border-radius: 8px; padding: 6px 9px; display: flex; align-items: center; gap: 6px; flex: 0 1 245px; min-width: 150px; }
   .search-bar input[type="text"], .search-bar input[type="search"] { background: transparent; border: none; color: #fff; font-size: clamp(.82rem, .95vw, .95rem); outline: none; width: 100%; min-width: 0; min-height: 34px; font-family: inherit; }
   .search-bar input[type="text"]::placeholder, .search-bar input[type="search"]::placeholder { color: rgba(255,255,255,.6); }
-  .search-bar button { position: relative; z-index: 3; pointer-events: auto; background: $(accent.color); border: none; color: #fff; min-height: 34px; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: .84rem; font-weight: 700; font-family: inherit; white-space: nowrap; }
+  .search-bar button { position: relative; z-index: 3; pointer-events: auto; background: $(primary.dark); border: none; color: #fff; min-height: 34px; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: .84rem; font-weight: 700; font-family: inherit; white-space: nowrap; }
 
   /* ===== Lightweight Hero slider ===== */
   .hero { background: $(primary.dark); color: #fff; padding: 0 0 8px; text-align: center; }
@@ -751,7 +751,7 @@
 
 <!-- ===== Main Content ===== -->
 <div class='container'>
-  <div class='main-content' id='main-content'>
+  <div class='main-content' id='main-content' role='main' aria-label='المحتوى الرئيسي'>
     <div class='content-area'>
 
       <b:if cond='data:view.isHomepage'>
@@ -864,7 +864,7 @@
                       <div class='gallery-container'>
                         <div class='gallery-main' id='gallery-main'>
                           <b:if cond='data:post.featuredImage'>
-                            <img expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 1200, &quot;16:10&quot;)' id='gallery-main-img'/>
+                            <img expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 1200, &quot;16:10&quot;)' width='1200' height='750' decoding='async' fetchpriority='high' id='gallery-main-img'/>
                           <b:else/>
                             <div id='gallery-main-img' style='height:100%;display:flex;align-items:center;justify-content:center;color:#999;'>لا توجد صور</div>
                           </b:if>
@@ -998,7 +998,7 @@
                         <div class='property-photo-carousel' expr:data-post-url='data:post.url'>
                           <a class='property-photo-link' expr:aria-label='data:post.title' expr:href='data:post.url'>
                             <b:if cond='data:post.featuredImage'>
-                              <img class='card-image carousel-current-image' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 900, &quot;4:3&quot;)' loading='lazy' decoding='async'/>
+                              <img class='card-image carousel-current-image' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 720, &quot;4:3&quot;)' width='720' height='540' loading='lazy' decoding='async'/>
                             <b:else/>
                               <div class='card-image carousel-empty'>لا توجد صورة</div>
                             </b:if>
@@ -1028,7 +1028,7 @@
                             <span class='feature-status' data-status='unknown'>الحالة غير محددة</span>
                           </div>
                           <div class='card-price' data-darna-price='1' data-lang='ar'><span class='darna-price-value'>&#8230;</span></div>
-                          <a class='card-link' expr:href='data:post.url'>عرض التفاصيل</a>
+                          <a class='card-link' expr:aria-label='&quot;عرض تفاصيل العقار: &quot; + data:post.title' expr:href='data:post.url'>عرض التفاصيل</a>
                         </div>
                       </article>
                     </b:loop>

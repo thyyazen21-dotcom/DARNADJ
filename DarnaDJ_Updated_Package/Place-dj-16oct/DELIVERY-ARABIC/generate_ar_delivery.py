@@ -61,6 +61,12 @@ output = output.replace("<input autocomplete='name' id='inq-name' name='name' ty
 output = output.replace("<label for='inq-phone'>رقم الهاتف <span aria-hidden='true'>*</span></label>", "<label for='inq-phone'>رقم الهاتف <span class='visually-hidden'>(مطلوب)</span></label>")
 output = output.replace("<input autocomplete='tel' id='inq-phone' inputmode='tel' name='phone' type='tel'/>", "<input autocomplete='tel' id='inq-phone' inputmode='tel' name='phone' type='tel' required='required'/>")
 output = output.replace("var DARNA_SERVICE_FEE_RATE = 0.10;", "var DARNA_SERVICE_FEE_RATE = 0;")
+# Performance and accessibility hardening; keep this build deterministic.
+output = output.replace("<div class='main-content' id='main-content'>", "<div class='main-content' id='main-content' role='main' aria-label='المحتوى الرئيسي'>")
+output = output.replace("background: $(accent.color); border: none; color: #fff; min-height: 34px; padding: 6px 12px;", "background: $(primary.dark); border: none; color: #fff; min-height: 34px; padding: 6px 12px;")
+output = output.replace("<a class='card-link' expr:href='data:post.url'>عرض التفاصيل</a>", "<a class='card-link' expr:aria-label='&quot;عرض تفاصيل العقار: &quot; + data:post.title' expr:href='data:post.url'>عرض التفاصيل</a>")
+output = output.replace("expr:src='resizeImage(data:post.featuredImage, 900, &quot;4:3&quot;)' loading='lazy' decoding='async'", "expr:src='resizeImage(data:post.featuredImage, 720, &quot;4:3&quot;)' width='720' height='540' loading='lazy' decoding='async'")
+output = output.replace("<img expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 1200, &quot;16:10&quot;)' id='gallery-main-img'/>", "<img expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 1200, &quot;16:10&quot;)' width='1200' height='750' decoding='async' fetchpriority='high' id='gallery-main-img'/>")
 output = output.replace("price:100       -> base price BEFORE the 10% tenant service fee -> displayed = base * 1.10", "price:100       -> quoted price displayed as entered (no automatic fee)")
 output = output.replace("The 10% tenant service fee is applied exactly once. Never fabricate a price and never hide the numeric price.", "Never add an automatic fee to owner-entered prices. Never fabricate a price and never hide the numeric price.")
 if "class='rating-stars'" in output or "class='whatsapp-cta'" in output:
