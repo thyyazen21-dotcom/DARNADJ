@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='2.0.0' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+  <meta charset='UTF-8'/>
+  <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+  <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+
+  <b:include data='blog' name='all-head-content'/>
+
+  <!-- Title: overrides the Blogger blog-title setting ("بلاس") with the Place-dj brand.
+       NOTE: og:title on the homepage is emitted by all-head-content from the blog-title
+       setting and cannot be overridden here without creating a duplicate tag; the owner
+       should also set the blog title to "Place-dj" in Blogger Settings (external action). -->
+  <b:if cond='data:view.isHomepage'>
+    <title>Place-dj &#8212; منصة تأجير العقارات في جيبوتي</title>
+  <b:else/>
+    <title><data:view.title/> &#8212; Place-dj</title>
+  </b:if>
+
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' name='description'/>
+  <b:else/>
+    <meta content='بلاَس | Place-dj — اكتشف الشقق والفلل والمنازل والاستوديوهات في جيبوتي وتواصل مباشرة مع المعلنين.' name='description'/>
+  </b:if>
+
+  <!-- NOTE: canonical, og:url, og:title, og:description and og:image are already emitted
+       correctly by Blogger's all-head-content. We intentionally do NOT re-declare them here
+       to avoid duplicate tags and the empty og:url on post pages. -->
+  <meta content='Place-dj' property='og:site_name'/>
+  <meta content='ar_DJ' property='og:locale'/>
+  <meta content='summary_large_image' name='twitter:card'/>
+  <meta expr:content='data:view.title' name='twitter:title'/>
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+  <b:else/>
+    <meta content='بلاَس | Place-dj — اكتشف الشقق والفلل والمنازل والاستوديوهات في جيبوتي وتواصل مباشرة مع المعلنين.' name='twitter:description'/>
+  </b:if>
+  <b:if cond='data:view.isPost'>
+    <b:if cond='data:blog.postImageUrl'>
+      <meta expr:content='data:blog.postImageUrl' name='twitter:image'/>
+    <b:else/>
+      <meta content='https://files.manuscdn.com/user_upload_by_module/session_file/310519664023593322/thGxdOoayXSBCnDX.png' name='twitter:image'/>
+    </b:if>
+  <b:else/>
+    <meta content='https://files.manuscdn.com/user_upload_by_module/session_file/310519664023593322/thGxdOoayXSBCnDX.png' name='twitter:image'/>
+  </b:if>
+  <meta content='1200' name='twitter:image:width'/>
+  <meta content='630' name='twitter:image:height'/>
+  <meta content='image/png' name='twitter:image:type'/>
+  <meta content='#084a72' name='theme-color'/>
+  <!-- Favicon and mobile icon use the supplied standalone Place-DJ icon; embedded to keep this review copy self-contained. -->
+  <link href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAANK0lEQVR42u2be3Bc9XXHP+f3u3d3Ja0ky0+MIAwEE2OblIBpQimJWupkkmAMAblpaGaSMmXShv6TSSmTPkakk6ZMhzYldWbI5AGdKWSsOKZ4ICXQ[...]' rel='icon'/>
+  <link href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAn/0lEQVR42u2deZxcV3Xnv+fe92rpvVuLZVve8IItecELAa9qB2zsAa+4FYZhMZABwjoDSViSCU3iEBMmCYMTQgw2EEICbi+AWIzN0sLYGFsWtuyW[...]' rel='apple-touch-icon'/>
+  <b:if cond='data:view.isPost'>
+    <meta content='article' property='og:type'/>
+  <b:else/>
+    <meta content='website' property='og:type'/>
+  </b:if>
+  <b:if cond='data:view.isPost'>
+    <script type='application/ld+json'>
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"<data:view.title.jsonEscaped/>","mainEntityOfPage":"<data:blog.homepageUrl/>"}
+    </script>
+  <b:else/>
+    <script type='application/ld+json'>
+    {"@context":"https://schema.org","@type":"WebSite","name":"Place-dj","url":"<data:blog.homepageUrl/>","inLanguage":"ar"}
+    </script>
+  </b:if>
+
+  <b:if cond='data:view.isHomepage'>
+    <link expr:href='data:blog.homepageUrl' hreflang='ar' rel='alternate'/>
+  </b:if>
+
+  <b:skin><![CDATA[
+  /* Variable Definitions
+  ====================
+  <Variable name="bg.color" description="خلفية الصفحة" type="color" default="#f3f7fa" value="#f3f7fa"/>
+  <Variable name="card.bg" description="خلفية البطاقات" type="color" default="#ffffff" value="#ffffff"/>
+  <Variable name="primary.color" description="اللون الأساسي" type="color" default="#084a72" value="#084a72"/>
+  <Variable name="primary.dark" description="اللون الأساسي الداكن" type="color" default="#084a72" value="#084a72"/>
+  <Variable name="accent.color" description="لون التمييز" type="color" default="#12AD2B" value="#12AD2B"/>
+  <Variable name="text.color" description="لون النص" type="color" default="#1a1a1a" value="#1a1a1a"/>
+  <Variable name="muted.color" description="لون النص الثانوي" type="color" default="#6b6b6b" value="#6b6b6b"/>
+  <Variable name="border.color" description="لون الحدود" type="color" default="#dbe4ea" value="#dbe4ea"/>
+  <Variable name="header.bg" description="خلفية الرأس" type="color" default="#0d6ea8" value="#0d6ea8"/>
+  <Variable name="footer.bg" description="خلفية التذييل" type="color" default="#084a72" value="#084a72"/>
+  <Variable name="whatsapp.color" description="لون واتساب" type="color" default="#12AD2B" value="#12AD2B"/>
+  */
+
+  /* ===== Reset & Base ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Tahoma, Arial, sans-serif;
+    background: $(bg.color);
+    color: $(text.color);
+    line-height: 1.55;
+    font-size: clamp(16px, 1.15vw, 18px);
+    overflow-x: hidden;
+  }
+  a { color: $(primary.color); text-decoration: none; transition: color .2s ease; }
+  a:hover { color: $(primary.dark); }
+  img { max-width: 100%; height: auto; display: block; }
+  ul { list-style: none; }
+  .visually-hidden { position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+  .skip-link { position:absolute; inset-inline-start:-9999px; top:0; background:$(primary.dark); color:#fff; padding:10px 16px; z-index:9999; border-radius:0 0 8px 0; }
+  .skip-link:focus { inset-inline-start:0; }
+  [hidden] { display: none !important; }
+
+  /* ===== Unified container (Section 2) ===== */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: clamp(14px, 4vw, 32px);
+    box-sizing: border-box;
+  }
+
+  /* ===== Blogger Layout Editor isolation (body#layout) ===== */
+  /* The Blogger layout editor must never inherit the visitor-facing layout rules. */
+  body#layout {
+    display: block !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    background: #eef1f4 !important;
+    color: #1a1a1a !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    padding: 0 !important;
+  }
+  body#layout #main-wrapper { display: block !important; flex: none !important; }
+  body#layout .site-header,
+  body#layout .site-footer,
+  body#layout .search-bar,
+  body#layout .nav-toggle,
+  body#layout .main-nav,
+  body#layout .skip-link { display: none !important; }
+  body#layout .container { max-width: 100% !important; padding: 0 10px !important; }
+  body#layout .main-content { display: block !important; padding: 10px 0 !important; }
+  body#layout .content-area,
+  body#layout .sidebar-area,
+  body#layout .sidebar { display: block !important; width: auto !important; max-width: 100% !important; float: none !important; }
+  body#layout .property-grid,
+  body#layout .blog-posts,
+  body#layout .blog-posts > .section,
+  body#layout .post,
+  body#layout .property-card { display: block !important; width: auto !important; max-width: 100% !important; }
+  body#layout .section { margin: 10px 0 !important; }
+  body#layout .section h2,
+  body#layout .section h3 { font-size: 13px !important; }
+  body#layout .widget { margin: 8px 0 !important; }
+  body#layout .layout-title,
+  body#layout .layout-widget-description { display: block !important; }
+
+  /* ===== Header ===== */
+  .site-header {
+    background: $(header.bg);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,.12);
+  }
+  /* truncated for brevity */
+  ]]></b:skin>
+
+  <b:template-skin>
+    <![CDATA[
+    body { min-height: 100vh; display: flex; flex-direction: column; }
+    #main-wrapper { flex: 1 0 auto; }
+    body#layout { display: block !important; min-height: 0 !important; }
+    ]]>
+  </b:template-skin>
+</head>
+
+<body>
+<!-- PLACE-DJ final template repair: full-logo containment, icon-only social placeholders; protected search/filter/preferred-card logic unchanged. -->
+
+<a class='skip-link' href='#main-content'>تخط&#1614;&#1617; إلى المحتوى</a>
+
+<!-- ===== Header ===== -->
+<header class='site-header'>
+  <div class='container'>
+    <div class='header-inner'>
+      <a aria-label='Place-dj — الصفحة الرئيسية' class='site-logo' expr:href='data:blog.homepageUrl'>
+        <span aria-hidden='true' class='logo-icon'>
+          <img alt='' class='brand-logo' height='165' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAClCAYAAADmtcDRAABHpklEQVR42u19eXxlVZXut9be5w5JbmoMxTzJXIBIFaNIJSKgIAJqFWoLNna3U7c+pb[...]'/>
+        </span>
+      </a>
+      <button aria-label='القائمة' class='nav-toggle' onclick='this.nextElementSibling.classList.toggle("open")' type='button'>&#9776;</button>
+      <nav class='main-nav'>
+        <a expr:href='data:blog.homepageUrl'>الرئيسية</a>
+        <a expr:href='data:blog.homepageUrl + "search/label/شقة"'>شقق</a>
+        <a expr:href='data:blog.homepageUrl + "search/label/فيلا"'>فلل</a>
+        <a expr:href='data:blog.homepageUrl + "search/label/منزل"'>منازل</a>
+        <a expr:href='data:blog.homepageUrl + "search/label/استوديو"'>استوديوهات</a>
+        <a expr:href='data:blog.homepageUrl + "search/label/غرفة"'>غرف</a>
+        <a expr:href='data:blog.homepageUrl + "p/contact.html"'>تواصل</a>
+      </nav>
+      <form aria-label='بحث شامل في كل المنشورات' class='search-bar' expr:action='data:blog.searchUrl' method='get' onsubmit='return darnaSubmitSearch(this);' role='search'>
+        <input aria-label='بحث شامل' autocomplete='off' enterkeyhint='search' name='q' placeholder='ابحث في كل العقارات...' required='required' type='search'/>
+        <button type='submit'>بحث</button>
+      </form>
+      <div class='header-tools'>
+        <div aria-label='Language selector' class='lang-switch' role='group'>
+          <a aria-current='page' aria-label='العربية' class='lang-link' data-lang='ar' href='https://www.place-dj.com' title='العربية'><svg aria-hidden='true' focusable='false'/>العربية</a>
+          <a aria-label='English' class='lang-link' data-lang='en' href='https://en.place-dj.com' title='English'><svg aria-hidden='true' focusable='false'/>EN</a>
+          <a aria-label='Français' class='lang-link' data-lang='fr' href='https://fr.place-dj.com' title='Français'><svg aria-hidden='true' focusable='false'/>FR</a>
+        </div>
+        <button aria-controls='favorites-panel' aria-expanded='false' aria-label='المفضلة' class='icon-btn' id='favorites-toggle' type='button'>
+          <svg aria-hidden='true' fill='currentColor' height='18' viewBox='0 0 24 24' width='18'><path d='M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z'/></svg>
+          <span class='fav-badge'>0</span>
+        </button>
+      </div>
+    </div>
+      <b:section class='navigation-layout' id='navigation-layout' maxwidgets='1' showaddelement='yes'/>
+  </div>
+</header>
+
+<div id='main-wrapper'>
+
+
+      <b:if cond='data:view.isHomepage'>
+      <b:section class='header-widgets' id='header-widgets' maxwidgets='2' showaddelement='yes'>
+        <b:widget id='HTML9' locked='false' title='رسالة الشريط العلوي' type='HTML' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='content'><![CDATA[<div class="header-promo-bar" role="note">مكانك يبدأ هنا</div>]]></b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'><data:content/></b:includable>
+        </b:widget>
+      </b:section>
+      </b:if>
+
+<!-- ===== Homepage Hero ===== -->
+<b:if cond='data:view.isHomepage'>
+  <section class='hero'>
+    <div class='container'>
+      <div aria-label='صور مختارة من العقارات' class='hero-slider' id='hero-slider'>
+        <div aria-label='صور مختارة من العقارات' class='hero-slides'>
+          <article class='hero-slide is-active'><img alt='مشهد ساحلي في جيبوتي' fetchpriority='high' height='771' src='https://files.manuscdn.com/user_upload_by_module/session_file/...'/></article>
+          <article class='hero-slide'><img alt='فيلا عصرية في جيبوتي' height='771' loading='lazy' src='https://files.manuscdn.com/user_upload_by_module/session_file/...'/></article>
+          <article class='hero-slide'><img alt='استوديو مفروش في جيبوتي' height='771' loading='lazy' src='https://files.manuscdn.com/user_upload_by_module/session_file/...'/></article>
+        </div>
+        <div aria-label='اختيار صورة Hero' class='hero-slider-dots' role='tablist'/>
+      </div>
+    </div>
+  </section>
+</b:if>
+  <!-- Structural hero markup is fixed; this named section is an optional Layout extension point. -->
+  <b:if cond='data:view.isHomepage'><b:section class='hero-layout-controls' id='hero-layout-controls' maxwidgets='1' showaddelement='yes'/></b:if>
+
+<!-- ===== Main Content ===== -->
+<div class='container'>
+  <div class='main-content' id='main-content'>
+    <div class='content-area'>
+
+      <b:if cond='data:view.isHomepage'>
+        <b:section class='home-before-posts' id='home-before-posts' maxwidgets='2' showaddelement='yes'>
+          <b:widget id='HTML8' locked='false' title='مقدمة الصفحة الرئيسية' type='HTML' version='2' visible='true'>
+            <b:widget-settings>
+              <b:widget-setting name='content'><![CDATA[<section class="home-intro" aria-labelledby="home-intro-title">
+                <h1 id="home-intro-title">بلاَس — اعثر على سكنك في جيبوتي</h1>
+                <p>اكتشف الشقق والفلل والمنازل والاستوديوهات، واستكشف الخيارات المناسبة لك وتواصل معنا للتحقق من التفاصيل.</p>
+              </section>]]></b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'><data:content/></b:includable>
+          </b:widget>
+        </b:section>
+      </b:if>
+
+      <b:if cond='data:view.isHomepage'>
+      <b:section class='preferred-section' id='preferred-section' maxwidgets='1' showaddelement='yes'>
+        <b:widget id='HTML6' locked='false' title='يفضلها الكثيرون — اختيار تحريري قابل للتعديل' type='HTML' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='content'><![CDATA[<section class="section preferred-visitors" aria-labelledby="preferred-title">
+              <h2 class="section-title" id="preferred-title">مفضلة لدى الضيوف</h2>
+              <p class="section-note">أماكن تستحق الاكتشاف — تصفّح عقارات لافتة، واكتشف خيارات جديدة قد تجد بينها مكانك المناسب.</p>
+              <div class="preferred-carousel" data-preferred-carousel="1">
+                <button aria-label="البطاقات السابقة" class="preferred-nav preferred-prev" type="button">&#8249;</button>
+                <div aria-label="عقارات مختارة" class="preferred-viewport" tabindex="0">
+                  <div class="preferred-strip">
+                    <a class="preferred-card" href="https://www.place-dj.com/2026/10/Beach-villa-rent-djibouti-DJ-VIL-0012.html">
+                      <img src="https://lh3.googleusercontent.com/..."/>
+                      <span><strong>فيلا شاطئية للإيجار</strong><small>أوبوك · إيجار ليلي · 300 دولار</small></span>
+                    </a>
+                    <!-- more cards... -->
+                  </div>
+                </div>
+                <button aria-label="البطاقات التالية" class="preferred-nav preferred-next" type="button">&#8250;</button>
+              </div>
+            </section>]]></b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'><data:content/></b:includable>
+        </b:widget>
+      </b:section>
+      </b:if>
+
+      <!-- Blog1 owns post lists and post-detail structure; this section remains locked by Blogger. -->
+      <b:section class='main' id='main-blog' maxwidgets='1' showaddelement='no'>
+        <b:widget id='Blog1' locked='true' title='رسائل المدونة الإلكترونية' type='Blog' version='2' visible='true'>
+          <b:widget-settings>
+            <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+            <b:widget-setting name='commentLabel'>comments</b:widget-setting>
+            <b:widget-setting name='showShareButtons'>false</b:widget-setting>
+            <b:widget-setting name='showCommentLink'>false</b:widget-setting>
+            <b:widget-setting name='postLocationLabel'>Location:</b:widget-setting>
+            <b:widget-setting name='showAuthor'>false</b:widget-setting>
+            <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+            <b:widget-setting name='timestampLabel'>-</b:widget-setting>
+            <b:widget-setting name='reactionsLabel'/>
+            <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+            <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+            <b:widget-setting name='showLabels'>false</b:widget-setting>
+            <b:widget-setting name='showLocation'>false</b:widget-setting>
+            <b:widget-setting name='postLabelsLabel'/>
+            <b:widget-setting name='showTimestamp'>false</b:widget-setting>
+            <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+            <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+            <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+            <b:widget-setting name='showReactions'>false</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main' var='top'>
+
+            <!-- ============ POST DETAIL ============ -->
+            <b:if cond='data:view.isPost'>
+              <b:loop values='data:posts' var='post'>
+                <article class='post property-detail' expr:data-post-id='data:post.id'>
+                  <span class='darna-labels' hidden='hidden'>
+                    <b:loop values='data:post.labels' var='label'><span class='darna-label'><data:label.name/></span></b:loop>
+                  </span>
+
+                  <div class='detail-grid'>
+                    <div class='detail-main'>
+                      <div class='detail-header'>
+                        <h1 class='detail-title'><data:post.title/></h1>
+                        <b:if cond='data:post.labels'>
+                          <div class='detail-tags'>
+                            <b:loop values='data:post.labels' var='label'>
+                              <a class='detail-tag darna-label' expr:href='data:label.url'><data:label.name/></a>
+                            </b:loop>
+                          </div>
+                        </b:if>
+                      </div>
+
+                      <div class='gallery-container'>
+                        <div class='gallery-main' id='gallery-main'>
+                          <b:if cond='data:post.featuredImage'>
+                            <img expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 1200, "16:10")' id='gallery-main-img'/>
+                          <b:else/>
+                            <div id='gallery-main-img' style='height:100%;display:flex;align-items:center;justify-content:center;color:#999;'>لا توجد صور</div>
+                          </b:if>
+                          <button aria-label='الصورة السابقة' class='gallery-btn prev' type='button'>&#8249;</button>
+                          <button aria-label='الصورة التالية' class='gallery-btn next' type='button'>&#8250;</button>
+                          <span aria-live='polite' class='gallery-counter' id='gallery-counter'>1/1</span>
+                        </div>
+                        <div class='gallery-nav' id='gallery-thumbs'/>
+                      </div>
+
+                      <div class='detail-specs' id='detail-specs'/>
+
+                      <div class='post-body' id='detail-body'>
+                        <data:post.body/>
+                      </div>
+                      <section aria-labelledby='rating-title' class='property-rating' id='property-rating'>
+                        <h2 class='section-title' id='rating-title'>شاركنا رأيك</h2>
+                        <p class='rating-status'>لإضافة تعليق أو ملاحظة حول هذا العقار، استخدم قسم التعليقات أدناه.</p>
+                        <p><a class='detail-btn' href='#guest-reviews'>اذهب إلى التعليقات</a></p>
+                      </section>
+                    </div>
+
+                    <aside class='detail-side'>
+                      <div class='detail-price-card'>
+                        <div class='detail-price' data-darna-price='1' data-lang='ar'><span class='darna-price-value'>&#8230;</span></div>
+                        <p class='price-includes'>تشمل الأسعار جميع الرسوم.</p>
+                        <div class='detail-status' data-status='unknown'>الحالة غير محددة</div>
+                        <span class='detail-type' hidden='hidden'/>
+                        <div class='detail-actions'>
+                          <button aria-pressed='false' class='detail-btn detail-fav' type='button'><span aria-hidden='true'>&#9829;</span> المفضلة</button>
+                          <button aria-pressed='false' class='detail-btn detail-compare' type='button'><span aria-hidden='true'>&#8644;</span> المقارنة</button>
+                        </div>
+
+                        <!-- WhatsApp CTA intentionally removed from delivery build; communication instructions provided via inquiry form. -->
+
+                        <form class='inquiry-form' id='inquiry-form' novalidate='novalidate'>
+                          <input expr:value='data:post.title' id='inq-property' type='hidden'/>
+                          <input expr:value='data:post.url' id='inq-url' type='hidden'/>
+                          <div class='field' id='fld-name'>
+                            <label for='inq-name'>الاسم <span class='visually-hidden'>(مطلوب)</span></label>
+                            <input autocomplete='name' id='inq-name' name='name' type='text' required='required'/>
+                            <span class='field-error' id='err-name'/>
+                          </div>
+                          <div class='field' id='fld-phone'>
+                            <label for='inq-phone'>رقم الهاتف <span class='visually-hidden'>(مطلوب)</span></label>
+                            <input autocomplete='tel' id='inq-phone' inputmode='tel' name='phone' type='tel' required='required'/>
+                            <span class='field-error' id='err-phone'/>
+                          </div>
+                          <div class='field'>
+                            <label for='inq-type'>نوع الطلب</label>
+                            <select id='inq-type' name='type'>
+                              <option value='استفسار'>استفسار</option>
+                              <option value='إيجار'>إيجار</option>
+                            </select>
+                          </div>
+                          <div class='field'>
+                            <label for='inq-checkin'>تاريخ الوصول</label>
+                            <input id='inq-checkin' name='checkin' type='date'/>
+                          </div>
+                          <div class='field'>
+                            <label for='inq-checkout'>تاريخ المغادرة</label>
+                            <input id='inq-checkout' name='checkout' type='date'/>
+                          </div>
+                          <div class='field'>
+                            <label for='inq-guests'>عدد الأشخاص</label>
+                            <input id='inq-guests' min='1' name='guests' type='number'/>
+                          </div>
+                          <div class='field'>
+                            <label for='inq-msg'>الرسالة</label>
+                            <textarea id='inq-msg' name='message'></textarea>
+                          </div>
+                          <button class='form-submit' type='submit'>إرسال الطلب</button>
+                          <p class='form-note'>يمكنك إرسال طلب الاستفسار وسيتم توجيهه إلى القائمين على الموقع.</p>
+                          <div class='form-success' hidden='hidden' id='inq-success'/>
+                        </form>
+                      </div>
+                    </aside>
+                  </div>
+
+                  <section class='similar-section' hidden='hidden' id='similar-section'>
+                    <h2 class='section-title'>عقارات مشابهة</h2>
+                    <div class='property-grid' id='similar-grid'/>
+                  </section>
+
+                  <b:if cond='data:post.allowComments'>
+                  <section class='comments-section' id='guest-reviews'>
+                    <b:if cond='data:post.numberOfComments &gt; 0'>
+                      <h2 class='section-title'>آراء الضيوف</h2>
+                    <b:else/>
+                      <h2 class='section-title'>كن أول من يشارك رأيه</h2>
+                    </b:if>
+                    <div class='comments-wrap'>
+                      <b:include data='post' name='comments'/>
+                    </div>
+                  </section>
+                  </b:if>
+                </article>
+              </b:loop>
+
+            <!-- ============ STATIC PAGE ============ -->
+            <b:elseif cond='data:view.isPage'/>
+              <b:loop values='data:posts' var='post'>
+                <article class='post'>
+                  <h1 class='post-title'><data:post.title/></h1>
+                  <div class='post-body'><data:post.body/></div>
+                </article>
+              </b:loop>
+
+            <!-- ============ LIST (homepage / archive / label / search) ============ -->
+            <b:else/>
+              <b:if cond='data:view.isHomepage'>
+                <section class='section'>
+                  <h2 class='section-title'>عقارات مميزة</h2>
+                </section>
+              <b:else/>
+                <section class='section' style='padding-bottom:0;'>
+                  <h1 class='section-title'>
+                    <b:if cond='data:view.isSearch'>نتائج البحث: <data:blog.searchQuery/>
+                    <b:else/><data:blog.pageName/>
+                    </b:if>
+                  </h1>
+                </section>
+              </b:if>
+
+</div>
+</body>
+</html>
