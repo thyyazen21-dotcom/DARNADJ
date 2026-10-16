@@ -37,21 +37,21 @@ missing = [item for item in required if item not in source]
 if missing:
     fail("Required source anchors missing: " + ", ".join(missing))
 
-root_match = re.search(r"<html\\b([^>]*)>", source, re.S)
+root_match = re.search(r"<html\b([^>]*)>", source, re.S)
 if not root_match:
     fail("Root html element not found.")
 attrs = root_match.group(1)
-attrs = re.sub(r"\\s+expr:dir=(['\\"]).*?\\1", "", attrs)
-attrs = re.sub(r"\\s+expr:lang=(['\\"]).*?\\1", "", attrs)
-attrs = re.sub(r"\\s+dir=(['\\"]).*?\\1", "", attrs)
-attrs = re.sub(r"\\s+lang=(['\\"]).*?\\1", "", attrs)
+attrs = re.sub(r"\s+expr:dir=(['\"]).*?\1", "", attrs)
+attrs = re.sub(r"\s+expr:lang=(['\"]).*?\1", "", attrs)
+attrs = re.sub(r"\s+dir=(['\"]).*?\1", "", attrs)
+attrs = re.sub(r"\s+lang=(['\"]).*?\1", "", attrs)
 output = source[:root_match.start()] + "<html" + attrs + " dir='rtl' lang='ar'>" + source[root_match.end():]
 
-rating_pattern = r"<section aria-labelledby='rating-title' class='property-rating'[^>]*>[\\s\\S]*?</section>"
+rating_pattern = r"<section aria-labelledby='rating-title' class='property-rating'[^>]*>[\s\S]*?</section>"
 output, rating_count = re.subn(rating_pattern, "<section aria-labelledby='rating-title' class='property-rating' id='property-rating'><h2 class='section-title' id='rating-title'>شاركنا رأيك</h2><p class='rating-status'>يمكنك كتابة رأيك في قسم التعليقات أدناه.</p><p><a class='detail-btn' href='#guest-reviews'>اذهب إلى التعليقات</a></p></section>", output, count=1)
 if rating_count != 1:
     fail("Expected exactly one local rating section; no output generated.")
-output, whatsapp_count = re.subn(r"<a class='whatsapp-cta'[\\s\\S]*?</a>\\s*<p class='whatsapp-note'[\\s\\S]*?</p>", "", output, count=1)
+output, whatsapp_count = re.subn(r"<a class='whatsapp-cta'[\s\S]*?</a>\s*<p class='whatsapp-note'[\s\S]*?</p>", "", output, count=1)
 if whatsapp_count != 1:
     fail("Expected the redundant detail WhatsApp CTA and phone note exactly once.")
 output = output.replace("<p class='price-includes'>تشمل الأسعار جميع الرسوم.</p>", "")
@@ -84,5 +84,5 @@ report = {
  "checks":{"source_reference_byte_identical":True,"no_truncation_markers":True,"source_xml_well_formed":True,"output_xml_well_formed":True,"protected_anchors_preserved":True,"fake_rating_removed":True,"redundant_detail_whatsapp_removed":True,"automatic_price_fee_disabled":True},
  "limitations":["Import into Blogger, Layout editor, actual post labels/images, search/filter behavior and responsive UI must still be verified in a real test blog."]
 }
-REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=2)+"\\n", encoding="utf-8")
+REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
 print(json.dumps(report, ensure_ascii=False, indent=2))
