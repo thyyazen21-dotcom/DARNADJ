@@ -2,7 +2,7 @@
 """Fail-closed PLACE-DJ Arabic delivery builder. Run from repository root."""
 from pathlib import Path
 import hashlib,json,re,sys,xml.etree.ElementTree as ET
-ROOT=Path(__file__).resolve().parents[4]
+ROOT=Path(__file__).resolve().parents[3]
 SRC=ROOT/"DarnaDJ_Updated_Package/Place-dj-16oct/PLACE-DJ-TEMPLATE-FINAL.xml"
 REF=ROOT/"DarnaDJ_Updated_Package/Place-dj-16oct/DELIVERY-ARABIC/original-PLACE-DJ-TEMPLATE-FINAL.xml"
 OUTDIR=ROOT/"DarnaDJ_Updated_Package/Place-dj-16oct/DELIVERY-ARABIC"
