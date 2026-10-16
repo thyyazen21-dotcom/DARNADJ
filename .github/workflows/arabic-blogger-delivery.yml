@@ -19,5 +19,7 @@ jobs:
         run: python -m unittest discover -s DarnaDJ_Updated_Package/Place-dj-16oct/DELIVERY-ARABIC -p "test_*.py" -v
       - name: Build and validate complete Arabic Blogger XML
         run: python DarnaDJ_Updated_Package/Place-dj-16oct/DELIVERY-ARABIC/generate_ar_delivery.py
-      - name: Confirm generated delivery exists
-        run: test -s DarnaDJ_Updated_Package/Place-dj-16oct/DELIVERY-ARABIC/theme-PLACE-DJ.AR.xml
+      - name: Confirm generated delivery exists and is reproducible
+        run: |
+          test -s DarnaDJ_Updated_Package/Place-dj-16oct/DELIVERY-ARABIC/theme-PLACE-DJ.AR.xml
+          git diff --exit-code -- DarnaDJ_Updated_Package/Place-dj-16oct/DELIVERY-ARABIC/theme-PLACE-DJ.AR.xml
