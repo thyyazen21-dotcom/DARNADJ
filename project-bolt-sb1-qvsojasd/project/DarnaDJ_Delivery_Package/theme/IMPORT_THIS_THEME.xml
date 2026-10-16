@@ -13,7 +13,7 @@
   <b:if cond='data:blog.metaDescription'>
     <meta expr:content='data:blog.metaDescription' name='description'/>
   <b:else/>
-    <meta content='منصة دارنا للإيجار في جيبوتي — شقق وفلل ومنازل للإيجار مع أسعار واضحة ورسوم شفافة وتواصل مباشر عبر واتساب' name='description'/>
+    <meta content='بلاَس ... مكانك يبدأ هنا | شقق وفلل ومنازل للإيجار في جيبوتي' name='description'/>
   </b:if>
 
   <link expr:href='data:blog.canonicalUrl' rel='canonical'/>
@@ -102,7 +102,6 @@
   }
   body#layout #main-wrapper { display: block !important; flex: none !important; }
   body#layout .site-header,
-  body#layout .hero,
   body#layout .site-footer,
   body#layout .search-bar,
   body#layout .nav-toggle,
@@ -136,6 +135,8 @@
     box-shadow: 0 2px 12px rgba(0,0,0,.12);
   }
   .header-inner {
+    padding-top: 8px;
+    padding-bottom: 8px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -159,10 +160,10 @@
   .search-bar { background: rgba(255,255,255,.1); border-radius: 8px; padding: 8px 16px; display: flex; align-items: center; gap: 8px; }
   .search-bar input[type="text"] { background: transparent; border: none; color: #fff; font-size: .9rem; outline: none; width: 180px; font-family: inherit; }
   .search-bar input[type="text"]::placeholder { color: rgba(255,255,255,.6); }
-  .search-bar button { background: $(accent.color); border: none; color: #fff; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: .85rem; font-weight: 600; font-family: inherit; }
+  .search-bar button { background: #0e7c66; border: none; color: #fff; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: .85rem; font-weight: 600; font-family: inherit; }
 
   /* ===== Hero ===== */
-  .hero { background: linear-gradient(135deg, $(primary.color) 0%, $(primary.dark) 100%); color: #fff; padding: 60px 0 48px; text-align: center; }
+  .hero { background: linear-gradient(135deg, $(primary.color) 0%, $(primary.dark) 100%); color: #fff; padding: 8px 0; text-align: center; }
   .hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 12px; }
   .hero p { font-size: 1.1rem; opacity: .9; max-width: 700px; margin: 0 auto 24px; }
   .hero-filters { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; max-width: 700px; margin: 0 auto; }
@@ -467,36 +468,7 @@
 
 <div id='main-wrapper'>
 
-<!-- ===== Homepage Hero ===== -->
-<b:if cond='data:view.isHomepage'>
-  <section class='hero'>
-    <div class='container'>
-      <h1>منصة دارنا للإيجار في جيبوتي</h1>
-      <p>اعثر على شقق وفلل ومنازل للإيجار مع أسعار واضحة ورسوم شفافة وتواصل مباشر عبر واتساب</p>
-      <div class='hero-filters'>
-        <input aria-label='بحث' id='hero-search' placeholder='ابحث بكلمة...' type='text'/>
-        <select aria-label='النوع' id='hero-type'>
-          <option value=''>كل الأنواع</option>
-          <option value='شقة'>شقة</option>
-          <option value='فيلا'>فيلا</option>
-          <option value='منزل'>منزل</option>
-          <option value='استوديو'>استوديو</option>
-          <option value='غرفة'>غرفة</option>
-        </select>
-        <select aria-label='المنطقة' id='hero-area'>
-          <option value=''>كل المناطق</option>
-          <option value='جيبوتي المدينة'>جيبوتي المدينة</option>
-          <option value='علي صبيح'>علي صبيح</option>
-          <option value='تاجورة'>تاجورة</option>
-          <option value='أوبوك'>أوبوك</option>
-          <option value='أرتا'>أرتا</option>
-          <option value='دخيل'>دخيل</option>
-        </select>
-        <button onclick='darnaHeroFilter()' type='button'>تصفية</button>
-      </div>
-    </div>
-  </section>
-</b:if>
+<!-- Homepage hero slider and duplicate search controls removed. -->
 
 <!-- ===== Main Content ===== -->
 <div class='container'>
@@ -577,7 +549,7 @@
                         <a class='whatsapp-cta' expr:href='&quot;https://wa.me/25377313443?text=&quot; + data:post.url' rel='noopener' target='_blank'>
                           <span aria-hidden='true' style='font-size:1.2rem;'>&#128172;</span> استفسر عن هذا العقار عبر واتساب
                         </a>
-                        <p class='whatsapp-note'>الرقم: +253 77 31 34 43 — سيتم إدراج عنوان العقار ورابطه في رسالتك.</p>
+                        <p class='whatsapp-note'>الرقم: +253 77 31 34 43، وسيتم إدراج عنوان العقار ورابطه في رسالتك.</p>
 
                         <form class='inquiry-form' id='inquiry-form' novalidate='novalidate'>
                           <input expr:value='data:post.title' id='inq-property' type='hidden'/>
@@ -858,7 +830,7 @@
           </b:includable>
         </b:widget>
 
-        <b:widget id='PopularPosts1' locked='false' title='عقارات شائعة' type='PopularPosts' version='2' visible='true'>
+        <b:widget id='PopularPosts1' locked='false' title='مفضل لدى الزوار' type='PopularPosts' version='2' visible='true'>
           <b:widget-settings>
             <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
             <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
@@ -918,7 +890,7 @@
       </div>
     </div>
     <div class='footer-bottom'>
-      <p>&#169; <data:blog.title/> — جميع الحقوق محفوظة.</p>
+      <p>&#169; <data:blog.title/>، جميع الحقوق محفوظة.</p>
     </div>
   </div>
 </footer>
@@ -1348,7 +1320,7 @@
       form.setAttribute('data-sending', '1');
       window.open(wa, '_blank', 'noopener');
       var success = document.getElementById('inq-success');
-      if (success) { success.hidden = false; success.textContent = 'تم فتح واتساب برسالتك. الإرسال لا يؤكد الحجز — الإدارة تؤكد التوفر والسعر كتابيًا.'; }
+      if (success) { success.hidden = false; success.textContent = 'تم فتح واتساب برسالتك. الإرسال لا يؤكد الحجز؛ الإدارة تؤكد التوفر والسعر كتابيًا.'; }
       setTimeout(function () { form.removeAttribute('data-sending'); }, 1500);
     });
   }
